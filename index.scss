@@ -81,7 +81,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: $gray;
-    max-height: 75vh;
+    // max-height: 75vh;
     overflow: hidden;
     &:after {
         content: '';
@@ -111,7 +111,7 @@ body {
     color: white;
     z-index: 2;
     &:hover {
-        cursor: pointer;
+        cursor: pointer !important;
         transform: translateY(-15px);
         &::before {
             transform: translate(-15px, 30px);
@@ -131,6 +131,14 @@ body {
         // transition: 1s;
         z-index: -1;
         transform: translate(-15px, 15px);
+    }
+    .project-header {
+        h3, h5 {
+            text-transform: lowercase;
+        }
+        h3 {
+            color: $gray;
+        }
     }
 }
 

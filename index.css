@@ -71,7 +71,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #8D99AE;
-  max-height: 75vh;
   overflow: hidden;
 }
 #projects-grid:after {
@@ -102,7 +101,7 @@ body {
   z-index: 2;
 }
 .project-cell:hover {
-  cursor: pointer;
+  cursor: pointer !important;
   transform: translateY(-15px);
 }
 .project-cell:hover::before {
@@ -121,6 +120,12 @@ body {
   transition: 0.1s;
   z-index: -1;
   transform: translate(-15px, 15px);
+}
+.project-cell .project-header h3, .project-cell .project-header h5 {
+  text-transform: lowercase;
+}
+.project-cell .project-header h3 {
+  color: #8D99AE;
 }
 
 footer {
