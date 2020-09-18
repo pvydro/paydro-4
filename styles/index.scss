@@ -1,5 +1,5 @@
 $black: #08080C;
-$darkeestgray: #181925;
+$darkestgray: #181925;
 $darkgray: #313149;
 $darkishgray: #556177;
 $gray: #8D99AE;
@@ -51,10 +51,6 @@ body {
     }
 }
 
-#projects-page {
-    background-color: $gray;
-}
-
 .scrolldown-button {
     cursor: default;
     color: $gray;
@@ -75,14 +71,22 @@ body {
     color: $darkgray;
 }
 
-#projects-grid {
-    margin-top: $defaultpadding;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+#projects-page {
     background-color: $gray;
-    // max-height: 75vh;
+    padding-bottom: calc(#{$defaultpadding} * 2);
+    min-height: 10vh;
+}
+
+#project-expansion-holder {
+    position: relative;
+    max-height: 900px;
+	-webkit-transition: max-height 0.8s;
+	-moz-transition: max-height 0.8s;
+    transition: max-height 0.8s;
     overflow: hidden;
+    &.expanded {
+        max-height: 9999vh;
+    }
     &:after {
         content: '';
         position: absolute;
@@ -93,6 +97,17 @@ body {
         background-color: #1e1e1e;
         z-index: 3;
     }
+}
+
+#projects-grid {
+    margin-top: $defaultpadding;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: $gray;
+    // height: 75vh;
+    // overflow: hidden;
+    // transition: 2s;
 }
 
 .projects-row {
@@ -106,6 +121,7 @@ body {
     position: relative;
     width: 50%;
     min-height: 33vh;
+    height: 33vh;
     margin: $defaultpadding;
     background-color: $darkgray;
     color: white;
@@ -128,7 +144,6 @@ body {
         background-color: rgba(0, 0, 0, 1);
         opacity: 0.2;
         transition: 0.1s;
-        // transition: 1s;
         z-index: -1;
         transform: translate(-15px, 15px);
     }
@@ -139,6 +154,32 @@ body {
         h3 {
             color: $gray;
         }
+    }
+}
+
+#projects-dropper {
+    position: absolute;
+    bottom: $defaultpadding;//calc(#{$defaultpadding} * 2);//128;
+    left: calc(#{$defaultpadding} * 4);
+    font-size: 100px;
+    z-index: 20;
+    line-height: 0;
+    color: $darkishgray;
+    transition: 0;
+    &:hover {
+        cursor: pointer !important;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 128px;
+        height: 128px;
+        background-color: $gray;
+        z-index: -1;
+        border-radius: 50%;
     }
 }
 

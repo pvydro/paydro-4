@@ -41,10 +41,6 @@ body {
   color: #8D99AE;
 }
 
-#projects-page {
-  background-color: #8D99AE;
-}
-
 .scrolldown-button {
   cursor: default;
   color: #8D99AE;
@@ -65,15 +61,24 @@ body {
   color: #313149;
 }
 
-#projects-grid {
-  margin-top: 40px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+#projects-page {
   background-color: #8D99AE;
+  padding-bottom: calc(40px * 2);
+  min-height: 10vh;
+}
+
+#project-expansion-holder {
+  position: relative;
+  max-height: 900px;
+  -webkit-transition: max-height 0.8s;
+  -moz-transition: max-height 0.8s;
+  transition: max-height 0.8s;
   overflow: hidden;
 }
-#projects-grid:after {
+#project-expansion-holder.expanded {
+  max-height: 9999vh;
+}
+#project-expansion-holder:after {
   content: "";
   position: absolute;
   bottom: 0px;
@@ -82,6 +87,14 @@ body {
   height: 5px;
   background-color: #1e1e1e;
   z-index: 3;
+}
+
+#projects-grid {
+  margin-top: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #8D99AE;
 }
 
 .projects-row {
@@ -95,6 +108,7 @@ body {
   position: relative;
   width: 50%;
   min-height: 33vh;
+  height: 33vh;
   margin: 40px;
   background-color: #313149;
   color: white;
@@ -126,6 +140,32 @@ body {
 }
 .project-cell .project-header h3 {
   color: #8D99AE;
+}
+
+#projects-dropper {
+  position: absolute;
+  bottom: 40px;
+  left: calc(40px * 4);
+  font-size: 100px;
+  z-index: 20;
+  line-height: 0;
+  color: #556177;
+  transition: 0;
+}
+#projects-dropper:hover {
+  cursor: pointer !important;
+}
+#projects-dropper::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 128px;
+  height: 128px;
+  background-color: #8D99AE;
+  z-index: -1;
+  border-radius: 50%;
 }
 
 footer {
