@@ -1,5 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 * {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Cormorant Garamond", serif;
   padding: 0px;
   margin: 0px;
   transition: 0.75s;
@@ -12,33 +16,60 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 body {
-  background-color: #313149;
+  background-color: #1e1e1e;
 }
 
 .full-page {
   position: relative;
   max-width: 100%;
-  min-height: 100vh;
   padding: 0px 40px;
 }
 .full-page.subber {
   width: 95%;
 }
 
+#header-page {
+  min-height: 100vh;
+}
+
 .intro-header {
   position: absolute;
+  font-weight: 300;
   top: 50%;
   width: calc(100vw - calc(40px * 2));
   transform: translateY(-50%);
   color: white;
 }
 .intro-header h1 {
-  font-size: 10vw;
+  font-size: 175px;
 }
 .intro-header h2 {
-  width: 100%;
-  text-align: right;
+  font-size: 24px;
+  position: absolute;
+  top: 25%;
   color: #8D99AE;
+}
+
+.sweep {
+  position: absolute;
+  width: 620px;
+  height: 320px;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+#header-sweep-a {
+  left: 150px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#header-sweep-b {
+  background-color: rgba(200, 200, 200, 0.2);
+  top: 55%;
+  transform: translateY(-50%);
+  height: 72px;
+  width: 42.5%;
 }
 
 .scrolldown-button {
@@ -54,17 +85,19 @@ body {
 }
 
 .subber-page-header {
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
   width: calc(100% - 40px);
   text-align: right;
   font-size: 4vw;
   padding-top: 40px;
-  color: #313149;
+  text-transform: uppercase;
+  color: #1e1e1e;
 }
 
 #projects-page {
   background-color: #8D99AE;
   padding-bottom: calc(40px * 4);
-  min-height: 10vh;
 }
 
 #project-expansion-holder {
@@ -89,7 +122,7 @@ body {
   margin-top: 40px;
   background-color: #8D99AE;
   transition: max-height 2s ease-in;
-  max-height: 900px;
+  max-height: 500px;
 }
 #projects-grid.expanded {
   max-height: 999vh;
@@ -101,43 +134,47 @@ body {
 }
 
 .project-cell {
-  border: 1px dotted black;
   padding: 40px;
   position: relative;
   width: 50%;
-  min-height: 33vh;
-  height: 33vh;
+  height: 164px;
   margin: 40px;
-  background-color: #313149;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-right: 3px solid #1e1e1e;
+  color: #08080C;
   z-index: 2;
 }
 .project-cell:hover {
-  cursor: pointer !important;
-  transform: translateY(-15px);
+  cursor: default !important;
+  transform: translateX(5px);
 }
-.project-cell:hover::before {
-  transform: translate(-15px, 30px);
-  opacity: 0.15;
+.project-cell:hover .project-header h1::after {
+  width: 150px;
 }
-.project-cell::before {
+.project-cell .project-header h1 {
+  position: relative;
+  font-family: "Mate SC", serif;
+  margin-bottom: 16px;
+}
+.project-cell .project-header h1::after {
   content: "";
   position: absolute;
-  top: 0px;
+  bottom: -8px;
   left: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.2;
-  transition: 0.1s;
-  z-index: -1;
-  transform: translate(-15px, 15px);
+  width: 100px;
+  height: 2px;
+  transition-timing-function: cubic-bezier(0, 0.93, 0, 0.95);
+  transition: 0.2s;
+  background-color: #1e1e1e;
 }
 .project-cell .project-header h3, .project-cell .project-header h5 {
+  font-size: 20px;
   text-transform: lowercase;
 }
 .project-cell .project-header h3 {
-  color: #8D99AE;
+  font-size: 12px;
+  font-family: "Fredoka One", sans-serif;
+  color: #556177;
 }
 
 #projects-dropper {
@@ -151,21 +188,23 @@ body {
   transform-origin: 50% 50%;
   transform: translateX(-50%);
   transition: 0.5s;
+  transition-delay: 1s;
 }
 #projects-dropper h3 {
   font-family: "Fredoka One", sans-serif;
-  display: none;
+  visibility: hidden;
   position: absolute;
   top: 40px;
   text-transform: uppercase;
   width: 196px;
   font-size: 24px;
   opacity: 0;
-  transition: 5s;
   transform-origin: 0% 50%;
   transform: rotate(90deg) translateY(-50%);
   word-break: keep-all;
   color: #556177;
+  transition: 0.25s;
+  transition-delay: 1s;
 }
 #projects-dropper.removed {
   transform: translate(-50%, 100%);
@@ -182,16 +221,23 @@ body {
 }
 #projects-dropper:hover:active {
   transition: 0.2s;
-  transition-delay: 0s;
   font-size: 50px;
 }
+#projects-dropper:hover::after {
+  cursor: pointer !important;
+  border-bottom-left-radius: 0px;
+}
 #projects-dropper:hover::before {
+  cursor: pointer !important;
   height: 212px;
   transition: height 0.2s;
+  border-bottom-left-radius: 0px;
 }
 #projects-dropper:hover h3 {
-  transition: 5s;
-  display: block;
+  cursor: pointer !important;
+  transition: 1s;
+  transition-delay: 0s;
+  visibility: visible;
   opacity: 1;
 }
 #projects-dropper::before, #projects-dropper::after {
@@ -205,6 +251,7 @@ body {
 }
 #projects-dropper::before {
   transition: height 0.5s;
+  transition-delay: 1s;
   transform: translateX(-50%);
   height: 0px;
   border-bottom-left-radius: 32px;
@@ -215,6 +262,9 @@ body {
   height: 64px;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
+}
+#projects-dropper:active i {
+  transform: rotate(90deg);
 }
 
 footer {
