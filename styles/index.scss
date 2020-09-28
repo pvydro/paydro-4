@@ -12,9 +12,11 @@ $lightgray: #EDF2F4;
 $subbermargin: 60px;
 
 $defaultpadding: 40px;
+$count: 15;
 
 $easeboing: cubic-bezier(.34,1.5,0,.94);
 $snapandeaseout: cubic-bezier(0,.93,0,.95);
+$lightsnapandeaseout: cubic-bezier(.07,.75,.32,.96);
 
 * {
     font-family: 'Cormorant Garamond', serif;
@@ -38,7 +40,8 @@ body {
     max-width: 100%;
     padding: 0px $defaultpadding;
     &.subber {
-        width: 95%;
+        width: 70%;
+        margin-left: $defaultpadding
     }
 }
 
@@ -91,7 +94,7 @@ body {
     font-size: 5vw;
     position: absolute;
     bottom: 0px;
-    right: $defaultpadding;
+    left: 70%;
     &:hover {
         cursor: pointer !important;
     }
@@ -106,6 +109,9 @@ body {
     padding-top: $defaultpadding;
     text-transform: uppercase;
     color: $darkgray;
+}
+#projects-header {
+
 }
 #projects-page {
     // border: 3px dashed red;
@@ -158,34 +164,41 @@ body {
     height: 164px;
     margin: $defaultpadding;
     // background-color: $darkgray;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-right: 3px solid $darkgray;
+    background-color: rgba(0, 0, 0, 0.03);
+    // border-right: 4px solid $darkgray;
     color: $black;//white;
     z-index: 2;
-    &:hover {
-        cursor: default !important;
-        transform: translateX(5px);
-        .project-header h1::after {
-            width: 150px;
-        }
-        // &::before {
-        //     transform: translate(-15px, 30px);
-        //     opacity: 0.15;
-        // }
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        height: 100%;
+        width: 1px;
+        background-color: $darkishgray;
+        transition: 0.15s;
+        // transform: translateX(50%);
     }
-    // &::before {
-    //     content: '';
-    //     position: absolute;
-    //     top: 0px;
-    //     left: 0px;
-    //     width: 100%;
-    //     height: 100%;
-    //     background-color: rgba(0, 0, 0, 1);
-    //     opacity: 0.2;
-    //     transition: 0.1s;
-    //     z-index: -1;
-    //     transform: translate(-15px, 15px);
-    // }
+    &:hover {
+        border-right-width: 8px;
+        // cursor: default !important;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.1);
+        // transform: translateY(-5px);
+        &::after {
+            width: 8px;
+        }
+        .project-header h1::after {
+            width: 110px;
+        }
+        .project-image {
+            opacity: 0.075;
+            transition: opacity 4s;
+        }
+        * {
+            cursor: pointer;
+        }
+    }
     .project-header {
         h1 {
             position: relative;
@@ -203,14 +216,35 @@ body {
                 background-color: $darkgray;
             }
         }
-        h3, h5 {
-            font-size: 20px;
+        h5 {
+            font-size: 15px;
             text-transform: lowercase;
+            font-family: 'Manrope', sans-serif;
         }
         h3 {
+            text-transform: uppercase;
             font-size: 12px;
             font-family: 'Fredoka One', sans-serif;
             color: $darkishgray;// rgb(80, 80, 80);//$gray;
+        }
+    }
+    .project-image {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border: 3xp dashed red;
+        overflow: hidden;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 1s;
+        img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 100%;
+            height: auto;
         }
     }
 }
@@ -254,7 +288,7 @@ body {
         margin-bottom: 5px;
         transform: translateX(-50%) rotate(-90deg);
         transition: 0.5s;
-        transition-timing-function: $easeboing;
+        transition-timing-function: $lightsnapandeaseout;//$easeboing;
         &:active {
           transition: 0.2s;
           font-size: 50px;
