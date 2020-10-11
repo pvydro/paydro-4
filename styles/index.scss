@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+@import './animations.scss';
 
 $black: #08080C;
 $darkestgray: #181925;
@@ -38,6 +39,7 @@ body {
 .full-page {
     position: relative;
     max-width: 100%;
+    height: 100%;
     padding: 0px $defaultpadding;
     &.subber {
         width: 70%;
@@ -45,302 +47,49 @@ body {
     }
 }
 
-#header-page {
-    min-height: 100vh;
-}
-
 .intro-header {
-    position: absolute;
-    font-weight: 300;
-    top: 50%;
-    width: calc(100vw - calc(#{$defaultpadding} * 2));
-    transform: translateY(-50%);
-    color: white;
-    h1 {
-        font-size: 175px;
-    }
-    h2 {
-        font-size: 24px;
-        position: absolute;
-        top: 25%;
-        color: $gray;
-    }
-}
-
-.sweep {
-    position: absolute;
-    width: 620px;
-    height: 320px;
-    background-color: rgba(0, 0, 0, 0.2);
-    z-index: -1;
-}
-
-#header-sweep-a {
-    left: 150px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-#header-sweep-b {
-    background-color: rgba(200, 200, 200, 0.2);
-    top: 55%;
-    transform: translateY(-50%);
-    height: 72px;
-    width: 42.5%;
-}
-
-.scrolldown-button {
-    cursor: default;
-    color: $gray;
-    font-size: 5vw;
-    position: absolute;
-    bottom: 0px;
-    left: 70%;
-    &:hover {
-        cursor: pointer !important;
-    }
-}
-
-.subber-page-header {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 300;
-    width: calc(100% - #{$defaultpadding});
-    text-align: right;
-    font-size: 4vw;
-    padding-top: $defaultpadding;
-    text-transform: uppercase;
-    color: $darkgray;
-}
-#projects-header {
-
-}
-#projects-page {
+    $intro-header-delay: 1s;
+    $intro-sub-header-delay: 1.5s;
     // border: 3px dashed red;
-    background-color: $gray;
-    padding-bottom: calc(#{$defaultpadding} * 4);
-}
-#about-page {
-    // margin-top: $subbermargin;
-}
-
-#project-expansion-holder {
-    position: relative;
-    overflow: hidden;
-    &.expanded {
-        transition: max-height 1s ease-in-out;
-    }
-    &:after {
-        content: '';
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        width: 100%;
-        height: 5px;
-        background-color: #1e1e1e;
-        z-index: 3;
-    }
-}
-#projects-grid {
-    margin-top: $defaultpadding;
-    background-color: $gray;
-    transition: max-height 2s ease-in;
-    max-height: 500px;
-    &.expanded {
-        // border: 4px dashed red;
-        max-height: 999vh;
-    }
-}
-.projects-row {
-    display: flex;
-    flex-direction: row;
-}
-
-.project-cell {
-    // border: 1px dotted black;
-    padding: $defaultpadding;
-    position: relative;
-    width: 50%;
-    // min-height: 33vh;
-    // height: 12vh;
-    height: 164px;
-    margin: $defaultpadding;
-    // background-color: $darkgray;
-    background-color: rgba(0, 0, 0, 0.03);
-    // border-right: 4px solid $darkgray;
-    color: $black;//white;
-    z-index: 2;
-    &::after {
-        content: '';
-        position: absolute;
-        right: 0px;
-        top: 0px;
-        height: 100%;
-        width: 1px;
-        background-color: $darkishgray;
-        transition: 0.15s;
-        // transform: translateX(50%);
-    }
-    &:hover {
-        border-right-width: 8px;
-        // cursor: default !important;
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.1);
-        // transform: translateY(-5px);
-        &::after {
-            width: 8px;
-        }
-        .project-header h1::after {
-            width: 110px;
-        }
-        .project-image {
-            opacity: 0.075;
-            transition: opacity 4s;
-        }
-        * {
-            cursor: pointer;
-        }
-    }
-    .project-header {
-        h1 {
-            position: relative;
-            font-family: 'Mate SC', serif;
-            margin-bottom: 16px;
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -8px;
-                left: 0px;
-                width: 100px;
-                height: 2px;
-                transition-timing-function: $snapandeaseout;
-                transition: 0.2s;
-                background-color: $darkgray;
-            }
-        }
-        h5 {
-            font-size: 15px;
-            text-transform: lowercase;
-            font-family: 'Manrope', sans-serif;
-        }
-        h3 {
-            text-transform: uppercase;
-            font-size: 12px;
-            font-family: 'Fredoka One', sans-serif;
-            color: $darkishgray;// rgb(80, 80, 80);//$gray;
-        }
-    }
-    .project-image {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        border: 3xp dashed red;
-        overflow: hidden;
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 1s;
-        img {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            max-width: 100%;
-            height: auto;
-        }
-    }
-}
-#projects-dropper {
+    width: 375px;
+    height: 375px;
     position: absolute;
-    padding: 0px;
-    bottom: calc(#{$defaultpadding} * 3.25);//128;
-    left: calc(#{$defaultpadding} * 4);
-    font-size: 50px;
-    z-index: 20;
-    color: $darkishgray;
-    transform-origin: 50% 50%;
-    transform: translateX(-50%);
-    transition: 0.5s;
-    transition-delay: 1s;
-    h3 {
-        font-family: 'Fredoka One', sans-serif;
-        // display: none;
-        visibility: hidden;
+    top: 120px;
+    left: 150px;
+    color: white;
+    transform: scale(1.2);
+    .intro-header-letter {
+        font-size: 300px;
         position: absolute;
-        top: $defaultpadding;
-        text-transform: uppercase;
-        width: 196px;
-        font-size: 24px;
-        opacity: 0;
-        transform-origin: 0% 50%;
-        transform: rotate(90deg) translateY(-50%);
-        word-break: keep-all;
-        color: $darkishgray;
-        transition: 0.25s;
-        transition-delay: 1s;
-    }
-    &.removed {
-        transform: translate(-50%, 100%);
-        i {
+        z-index: 1;
+        &:nth-child(1), &:nth-child(2) {
             opacity: 0;
         }
-    }
-    &:hover {
-        cursor: pointer !important;
-        margin-bottom: 5px;
-        transform: translateX(-50%) rotate(-90deg);
-        transition: 0.5s;
-        transition-timing-function: $lightsnapandeaseout;//$easeboing;
-        &:active {
-          transition: 0.2s;
-          font-size: 50px;
+        &:nth-child(1) {
+            // opacity: 0;
+            animation: intro-header-letter-down 0.5s $intro-header-delay forwards $lightsnapandeaseout;
         }
-        &::after {
-          cursor: pointer !important;
-          border-bottom-left-radius: 0px;
-        }
-        &::before {
-          cursor: pointer !important;
-          height: 212px;
-          transition: height 0.2s;
-          border-bottom-left-radius: 0px;
-        }
-        h3 {
-          cursor: pointer !important;
-          transition: 1s;
-          transition-delay: 0s;
-          visibility: visible;
-          // display: block;
-          opacity: 1;
+        &:nth-child(2) {
+            // opacity: 0;
+            color: lightgray;
+            z-index: 0;
+            left: 75px;
+            animation: intro-header-letter-up 0.5s $intro-header-delay forwards $lightsnapandeaseout;
         }
     }
-    &::before, &::after {
-        content: '';
+    #intro-sub-header {
+        h2 {
+            font-family: "Mate SC", serif;
+            font-size: 28px;
+            opacity: 0;
+            animation: intro-header-letter-up 0.5s $intro-sub-header-delay forwards $lightsnapandeaseout;
+        }
         position: absolute;
-        width: 64px;
-        left: 50%;
-        top: 50%;
-        background-color: $gray;
-        z-index: -1;
-    }
-    &::before {
-        transition: height 0.5s;
-        transition-delay: 1s;
-        transform: translateX(-50%);
-        height: 0px;
-        border-bottom-left-radius: 32px;
-        border-bottom-right-radius: 32px;
-    }
-    &::after {
-        transform: translate(-50%, -50%);
-        height: 64px;
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-    }
-    &:active {
-      i {
-        transform: rotate(90deg);
-      }
+        left: 115px;
+        bottom: 60px;
     }
 }
+
 footer {
     height: 200px;
 }

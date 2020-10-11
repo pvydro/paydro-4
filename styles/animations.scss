@@ -1,0 +1,20 @@
+@keyframes intro-header-letter-down {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+@keyframes intro-header-letter-up {
+    0% {
+        opacity: 0;
+        margin-top: 20px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
