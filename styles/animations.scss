@@ -18,3 +18,11 @@
         margin-top: 0px;
     }
 }
+@keyframes intro-separator-expand {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 120px;
+    }
+}
