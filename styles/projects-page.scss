@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Mina&display=swap');
+@import './vars.scss';
+
+#projects-page {
+    position: relative;
+    #projects-page-header {
+        position: absolute;
+        font-size: 60px;
+        // border: 1px dashed orange;
+        right: 70px;
+        h3 {
+            font-family: 'Mate SC', sans-serif;
+        }
+        .popout {
+            font-family: 'Mina', sans-serif;
+            font-size: 24px;
+            position: fixed;//absolute;
+            // top: -20px;
+            // right: 0px;
+            right: 70px;
+            bottom: 10px;
+            // width: 100%;
+            width: 100px;
+            transform: translateY(-100%);
+            text-align: right;
+            opacity: 0;
+            transition: 0.5s;
+            animation: popout-up 0.25s 3s forwards;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 0px;
+                height: 2px;
+                border-radius: 1px;
+                right: 0px;
+                bottom: -10px;
+                background-color: white;
+                opacity: 0.5;
+                animation: popout-expand 0.25s 3.25s forwards $lightsnapandeaseout;
+            }
+            &.hidden {
+                opacity: 0.5;
+                animation: popout-fade-out 0.5s 0.2s forwards;
+            }
+        }
+    }
+}
