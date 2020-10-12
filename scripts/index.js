@@ -1,9 +1,10 @@
 $(document).ready(() => {
-    // Cascadia elements
+    // my lil libs
     cascadia({
         delayIncrement: 250,
         showByDefault: true
     })
+    followme()
 
     if (isScrolledIntoView('#projects-page-header', true)) {
         $('#projects-page-header .popout').css('display', 'none')

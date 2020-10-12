@@ -10,4 +10,6 @@ $(document).ready(() => {
 
         $('#projects-grid').addClass('expanded')
     })
+
+    followme()
 })

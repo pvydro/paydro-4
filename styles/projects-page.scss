@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Mina&display=swap');
 @import './vars.scss';
 
+:root {
+    dipper-width: 20px;
+}
+
 #projects-page {
     position: relative;
     #projects-page-header {
@@ -41,6 +45,119 @@
             &.hidden {
                 opacity: 0.5;
                 animation: popout-fade-out 0.5s 0.2s forwards;
+            }
+        }
+    }
+    .projects-grid {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        // border: 2px dashed orange;
+        width: 100%;
+        padding-top: 150px;
+        .project-cell {
+            position: relative;
+            height: 700px;
+            width: 80%;
+            // border: 2px dashed red;
+            margin: 60px 70px;
+            overflow: hidden;
+            &:hover {
+                cursor: pointer !important;
+                .project-header {
+                    opacity: 1;
+                    transition: opacity 0.2s;
+                    h1::after {
+                        margin-left: 10px;
+                        width: 250px;
+                    }
+
+                    h1::before {
+                        margin-left: 70px;
+                        // width: 20px;
+                        width: var(--dipper-width);
+                        transition-delay: 0.25s;
+                    }
+                    h5 {
+                        transition-delay: 0.5s;
+                        opacity: 0.8;
+                    }
+                    h3 {
+                        transition-delay: 0.75s;
+                        opacity: 0.5;
+                    }
+                }
+                .project-image {
+                }
+            }
+            .project-header {
+                position: absolute;
+                left: 0px;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 9;
+                opacity: 0.5;
+                transition: opacity .75s;
+                transition-timing-function: $lightsnapandeaseout;
+                h1 {
+                    $bottom-sep-width: 200px;
+                    position: relative;
+                    font-family: "Manrope", sans-serif;
+                    font-size: 60px;
+                    margin-bottom: 40px;
+                    &::after {
+                        left: 0px;
+                        width: $bottom-sep-width;
+                    }
+                    &::after, &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: -20px;
+                        background-color: white;
+                        height: 4px;
+                        border-radius: 1px;
+                        transition: 0.5s;
+                        transition-timing-function: $lightsnapandeaseout;
+                    }
+                    &::before {
+                        left: calc(#{$bottom-sep-width} + 20px);
+                        width: 0px;
+                        transition-delay: 0.1s;
+                    }
+                }
+                h5 {
+                    font-family: "Inconsolata", sans-serif;//"Manrope", sans-serif;
+                    font-size: 24px;
+                    opacity: 0.4;
+                }
+                h3 {
+                    opacity: 0.3;
+                    margin-top: 10px;
+                    text-transform: uppercase;
+                    font-family: "Fredoka One", sans-serif;
+                    font-size: 18px;
+                }
+            }
+            .project-image {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                // z-index: -1;
+                width: 95%;
+                max-height: 100%;
+                overflow: hidden;
+                border-radius: 10px;
+                img {
+                    transition: 5s;
+                    transition-timing-function: cubic-bezier(.25,.98,.53,.97);//cubic-bezier(.27,.46,.42,.99);
+                    border-radius: inherit;
+                    opacity: 0.4;
+                    width: 100%;
+                }
+            }
+            &.right {
+                margin-left: auto;
+                // justify-content: space-between;
             }
         }
     }

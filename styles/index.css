@@ -88,6 +88,10 @@
     opacity: 0;
   }
 }
+:root {
+  dipper-width: 20px;
+}
+
 #projects-page {
   position: relative;
 }
@@ -128,6 +132,110 @@
   opacity: 0.5;
   animation: popout-fade-out 0.5s 0.2s forwards;
 }
+#projects-page .projects-grid {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 150px;
+}
+#projects-page .projects-grid .project-cell {
+  position: relative;
+  height: 700px;
+  width: 80%;
+  margin: 60px 70px;
+  overflow: hidden;
+}
+#projects-page .projects-grid .project-cell:hover {
+  cursor: pointer !important;
+}
+#projects-page .projects-grid .project-cell:hover .project-header {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+#projects-page .projects-grid .project-cell:hover .project-header h1::after {
+  margin-left: 10px;
+  width: 250px;
+}
+#projects-page .projects-grid .project-cell:hover .project-header h1::before {
+  margin-left: 70px;
+  width: var(--dipper-width);
+  transition-delay: 0.25s;
+}
+#projects-page .projects-grid .project-cell:hover .project-header h5 {
+  transition-delay: 0.5s;
+  opacity: 0.8;
+}
+#projects-page .projects-grid .project-cell:hover .project-header h3 {
+  transition-delay: 0.75s;
+  opacity: 0.5;
+}
+#projects-page .projects-grid .project-cell .project-header {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  opacity: 0.5;
+  transition: opacity 0.75s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+#projects-page .projects-grid .project-cell .project-header h1 {
+  position: relative;
+  font-family: "Manrope", sans-serif;
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+#projects-page .projects-grid .project-cell .project-header h1::after {
+  left: 0px;
+  width: 200px;
+}
+#projects-page .projects-grid .project-cell .project-header h1::after, #projects-page .projects-grid .project-cell .project-header h1::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  background-color: white;
+  height: 4px;
+  border-radius: 1px;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+#projects-page .projects-grid .project-cell .project-header h1::before {
+  left: calc(200px + 20px);
+  width: 0px;
+  transition-delay: 0.1s;
+}
+#projects-page .projects-grid .project-cell .project-header h5 {
+  font-family: "Inconsolata", sans-serif;
+  font-size: 24px;
+  opacity: 0.4;
+}
+#projects-page .projects-grid .project-cell .project-header h3 {
+  opacity: 0.3;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-family: "Fredoka One", sans-serif;
+  font-size: 18px;
+}
+#projects-page .projects-grid .project-cell .project-image {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 95%;
+  max-height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+#projects-page .projects-grid .project-cell .project-image img {
+  transition: 5s;
+  transition-timing-function: cubic-bezier(0.25, 0.98, 0.53, 0.97);
+  border-radius: inherit;
+  opacity: 0.4;
+  width: 100%;
+}
+#projects-page .projects-grid .project-cell.right {
+  margin-left: auto;
+}
 
 * {
   font-family: "Cormorant Garamond", serif;
@@ -135,8 +243,8 @@
   padding: 0px;
   margin: 0px;
   transition: 0.75s;
-  transition-timing-function: cubic-bezier(0.13, 0.9, 0, 1.03);
-  animation-timing-function: cubic-bezier(0.13, 0.9, 0, 1.03);
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  animation-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   cursor: default;
 }
 
