@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @keyframes intro-header-letter-down {
   0% {
@@ -30,8 +31,34 @@
     width: 120px;
   }
 }
+@keyframes intro-sub-header-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+@keyframes intro-center-separator {
+  0% {
+    width: 0px;
+  }
+  60% {
+    width: 120%;
+    border-radius: 1px;
+  }
+  80% {
+    width: 120%;
+    border-radius: 1px;
+  }
+  100% {
+    width: 120%;
+    border-radius: 25%;
+  }
+}
 * {
   font-family: "Cormorant Garamond", serif;
+  color: white;
   padding: 0px;
   margin: 0px;
   transition: 0.75s;
@@ -63,14 +90,47 @@ body {
   width: 375px;
 }
 
+#intro-center {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#intro-center h1 {
+  opacity: 0;
+  font-family: "Inconsolata", sans-serif;
+  font-size: 70px;
+  text-transform: uppercase;
+  transition: 8s;
+  width: 100%;
+  white-space: nowrap;
+  transition-timing-function: cubic-bezier(0.51, 0.06, 0.31, 0.95);
+}
+#intro-center h1 .separator {
+  opacity: 0.5;
+  left: 50%;
+  bottom: -40px;
+  width: 0px;
+  transform: translateX(-50%);
+  animation: intro-center-separator 2s 2s forwards cubic-bezier(0.63, 0.02, 0.29, 0.94);
+}
+
+.separator {
+  position: absolute;
+  background-color: white;
+  height: 4px;
+  width: 100px;
+  border-radius: 1px;
+}
+
 .intro-header {
   width: 100%;
   height: 375px;
   position: absolute;
-  top: 0px;
-  left: 60px;
+  top: -40px;
+  left: 0px;
   color: white;
-  transform: scale(0.8);
+  transform: scale(0.6);
 }
 .intro-header *:hover {
   cursor: default;
@@ -101,7 +161,7 @@ body {
   font-family: "Mate SC", serif;
   font-size: 28px;
   opacity: 0;
-  animation: intro-header-letter-up 0.5s 1.25s forwards cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  animation: intro-sub-header-in 0.5s 1.25s forwards cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .intro-header .intro-separator {
   width: 0px;
@@ -126,6 +186,64 @@ body {
   font-family: "Manrope", sans-serif;
   padding: 10px 0px;
   font-size: 24px;
+  transition: 0.8s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+.intro-header .intro-nav ul li.cascadia-show {
+  opacity: 0.7 !important;
+}
+.intro-header .intro-nav ul li:hover.cascadia-show {
+  transition: 0.2s;
+  opacity: 1 !important;
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+#intro-subpiece {
+  position: absolute;
+  top: 230px;
+  right: 70px;
+}
+#intro-subpiece::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  height: 1px;
+  width: 100vw;
+}
+#intro-subpiece .intro-side-piece {
+  opacity: 0;
+  font-family: "Manrope", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 16px;
+}
+#intro-subpiece .intro-side-piece span {
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+}
+#intro-subpiece .intro-side-piece span.cascadia-show {
+  opacity: 0.8 !important;
+}
+#intro-subpiece #social-links {
+  position: absolute;
+  right: 0px;
+  top: -5px;
+  transform: translateY(-100%);
+}
+#intro-subpiece #social-links i {
+  opacity: 0;
+  font-size: 32px;
+  padding-left: 10px;
+}
+#intro-subpiece #social-links i.cascadia-show {
+  opacity: 0.7 !important;
+}
+#intro-subpiece #social-links i:hover.cascadia-show {
+  cursor: pointer;
+  transition: 0.2s;
+  opacity: 0.9 !important;
 }
 
 footer {

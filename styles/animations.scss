@@ -26,3 +26,28 @@
         width: 120px;
     }
 }
+@keyframes intro-sub-header-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+@keyframes intro-center-separator {
+    0% {
+        width: 0px;
+    }
+    60% {
+        width: 120%;
+        border-radius: 1px;
+    }
+    80% {
+        width: 120%;
+        border-radius: 1px;
+    }
+    100% {
+        width: 120%;
+        border-radius: 25%;
+    }
+}

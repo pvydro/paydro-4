@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
 @import './animations.scss';
 
@@ -21,6 +22,7 @@ $lightsnapandeaseout: cubic-bezier(.07,.75,.32,.96);
 
 * {
     font-family: 'Cormorant Garamond', serif;
+    color: white;
     padding: 0px;
     margin: 0px;
     transition: 0.75s;
@@ -53,6 +55,41 @@ body {
     width: 375px;
 }
 
+#intro-center {
+    // border: 3px dashed yellow;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    h1 {
+        opacity: 0;
+        font-family: "Inconsolata", sans-serif;
+        font-size: 70px;
+        text-transform: uppercase;
+        transition: 8s;
+        width: 100%;
+        white-space: nowrap;
+        transition-timing-function: cubic-bezier(.51,.06,.31,.95);
+        .separator {
+            opacity: 0.5;
+            left: 50%;
+            bottom: -40px;
+            width: 0px;
+            transform: translateX(-50%);
+            animation: intro-center-separator 2s 2s forwards cubic-bezier(.63,.02,.29,.94);
+        }
+    }
+}
+
+.separator {
+    position: absolute;
+    background-color: white;
+    height: 4px;
+    width: 100px;
+    border-radius: 1px;
+}
+
 .intro-header {
     $intro-header-delay: 1s;
     $intro-sub-header-delay: 1.25s;
@@ -62,10 +99,10 @@ body {
     width: 100%;
     height: 375px;
     position: absolute;
-    top: 0px;//120px;
-    left: 60px;//150px;
+    top: -40px;//120px;
+    left: 0px;//150px;
     color: white;
-    transform: scale(0.8);
+    transform: scale(0.6);
     *:hover {
         cursor: default;
     }
@@ -93,7 +130,7 @@ body {
             font-family: "Mate SC", serif;
             font-size: 28px;
             opacity: 0;
-            animation: intro-header-letter-up 0.5s $intro-sub-header-delay forwards $lightsnapandeaseout;
+            animation: intro-sub-header-in 0.5s $intro-sub-header-delay forwards $lightsnapandeaseout;
         }
         position: absolute;
         left: 115px;
@@ -121,6 +158,70 @@ body {
                 font-family: "Manrope", sans-serif;
                 padding: 10px 0px;
                 font-size: 24px;
+                transition: 0.8s;
+                transition-timing-function: $lightsnapandeaseout;
+                &.cascadia-show {
+                    opacity: 0.7 !important;
+                    
+                }
+                &:hover {
+                    &.cascadia-show {
+                        transition: 0.2s;
+                        opacity: 1 !important;
+                        cursor: pointer;
+                        margin-left: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#intro-subpiece {
+    // border: 2px dashed yellow;
+    position: absolute;
+    top: 230px;
+    right: 70px;
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        height: 1px;
+        width: 100vw;
+        // background-color: rgba(250, 150, 150, 1);
+    }
+    .intro-side-piece {
+        opacity: 0;
+        font-family: "Manrope", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 16px;
+        span {
+            font-family: "Manrope", sans-serif;
+            font-size: 12px;
+            &.cascadia-show {
+                opacity: 0.8 !important;
+            }
+        }
+    }
+    #social-links {
+        position: absolute;
+        // border: 1px dashed white;
+        right: 0px;
+        top: -5px;
+        transform: translateY(-100%);
+        i {
+            opacity: 0;
+            font-size: 32px;
+            padding-left: 10px;
+            &.cascadia-show {
+                opacity: 0.7 !important;
+            }
+            &:hover.cascadia-show  {
+                cursor: pointer;
+                transition: 0.2s;
+                opacity: 0.9 !important
             }
         }
     }
