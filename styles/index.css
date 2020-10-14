@@ -186,13 +186,13 @@
 }
 #projects-page .projects-grid .project-cell .project-header .db {
   content: "";
-  height: 100px;
+  height: 175px;
   background-color: white;
   width: 4px;
   position: absolute;
   border-radius: 2px;
   left: 8%;
-  transition: calc(5s / 1.5);
+  transition: calc(5s * 1.5);
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 #projects-page .projects-grid .project-cell .project-header .db-top {
@@ -221,7 +221,7 @@
   height: 4px;
   border-radius: 1px;
   transition: 0.5s;
-  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transition-timing-function: cubic-bezier(0.37, 0, 0.11, 1.09);
 }
 #projects-page .projects-grid .project-cell .project-header h1::before {
   left: calc(200px + 20px);

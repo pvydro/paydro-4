@@ -108,13 +108,13 @@
                 transition-timing-function: $lightsnapandeaseout;
                 .db {
                     content: '';
-                    height: 100px;
+                    height: 175px;
                     background-color: white;
                     width: $lineWidth;
                     position: absolute;
                     border-radius: 2px;
                     left: 8%;
-                    transition: calc(#{$img-trans-time} / 1.5);
+                    transition: calc(#{$img-trans-time} * 1.5);
                     transition-timing-function: $lightsnapandeaseout;;//ease-in-out;
                     // transition-timing-function: $img-trans-func;
                 }
@@ -145,7 +145,7 @@
                         height: $lineWidth;
                         border-radius: 1px;
                         transition: 0.5s;
-                        transition-timing-function: $lightsnapandeaseout;
+                        transition-timing-function: cubic-bezier(.37,0,.11,1.09);//cubic-bezier(.76,-0.01,.11,1.09);//$lightsnapandeaseout;
                     }
                     &::before {
                         left: calc(#{$bottom-sep-width} + 20px);
