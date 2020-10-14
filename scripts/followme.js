@@ -18,16 +18,29 @@ function followme() {
         return 
     })
 
-    $('.project-cell .project-image').on('mousemove', (ev) => {
-        const distX = ev.clientX - centerX
-        const marginX = distX / 25
-        const el = $(event.target)
+    $('.project-cell').each((i, el) => {
+        const cell = $(el)
+        const img = $(el).find('img')
+        img.on('mousemove', (ev) => {
+            const distX = ev.clientX - centerX
+            const marginX = distX / 25
+            const mx = Math.max(0, marginX)
 
-        el.css('margin-left', marginX + 'px')
+            img.css('margin-left', marginX)
+
+
+            // $(el).find('.db').css('border', '20px dashed white')
+            $(el).find('.db').css('margin-left', mx + 'px')
+                // .css('margin-left', 'mx')
+        })
     })
 
-    $(document).on('mousemove', (ev) => {
-        const x = ev.pageX; const y = ev.pageY
-        
-    })
+    // $('.project-cell .project-image img').on('mousemove', (ev) => {
+    //     const el = $(event.target)
+    //     const distX = ev.clientX - centerX
+    //     const marginX = distX / 25
+
+    //     // Apply margin to image
+    //     el.css('margin-left', marginX + 'px')
+    // })
 }
