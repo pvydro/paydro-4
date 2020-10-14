@@ -146,6 +146,9 @@
   margin: 60px 70px;
   overflow: hidden;
 }
+#projects-page .projects-grid .project-cell:hover {
+  cursor: pointer !important;
+}
 #projects-page .projects-grid .project-cell:hover * {
   cursor: pointer !important;
 }
@@ -167,12 +170,17 @@
   transition-delay: 0.25s;
 }
 #projects-page .projects-grid .project-cell:hover .project-header h5 {
-  transition-delay: 0.5s;
+  color: #ff7c0a;
+  transition-delay: opacity 0.5s;
   opacity: 0.8;
 }
 #projects-page .projects-grid .project-cell:hover .project-header h3 {
   transition-delay: 0.75s;
   opacity: 0.5;
+}
+#projects-page .projects-grid .project-cell:hover .project-header .db {
+  background-color: #ff7c0a;
+  height: 120%;
 }
 #projects-page .projects-grid .project-cell .project-header {
   position: absolute;
@@ -190,9 +198,9 @@
   background-color: white;
   width: 4px;
   position: absolute;
-  border-radius: 2px;
+  border-radius: calc(4px / 2);
   left: 8%;
-  transition: calc(5s * 1.5);
+  transition: 0.5s, margin-left calc(10s * 2), height 2s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 #projects-page .projects-grid .project-cell .project-header .db-top {
@@ -253,10 +261,11 @@
   transition-timing-function: cubic-bezier(1, 0.02, 0.65, 1.06);
 }
 #projects-page .projects-grid .project-cell .project-image img {
+  transition-timing-function: cubic-bezier(0.37, 0.56, 0.44, 0.93);
   position: absolute;
   width: auto;
   min-height: 100%;
-  transition: 5s;
+  transition: 10s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   border-radius: inherit;
   opacity: 0.4;
@@ -330,7 +339,7 @@ body {
 .separator {
   position: absolute;
   background-color: white;
-  height: 4px;
+  height: line-width;
   width: 100px;
   border-radius: 1px;
 }
@@ -377,7 +386,7 @@ body {
 }
 .intro-header .intro-separator {
   width: 0px;
-  height: 4px;
+  height: line-width;
   background-color: white;
   border-radius: 1px;
   position: absolute;

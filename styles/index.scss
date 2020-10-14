@@ -70,7 +70,7 @@ body {
 .separator {
     position: absolute;
     background-color: white;
-    height: 4px;
+    height:line-width;
     width: 100px;
     border-radius: 1px;
 }
@@ -123,7 +123,7 @@ body {
     }
     .intro-separator {
         width: 0px;
-        height: 4px;
+        height:line-width;
         background-color: white;
         border-radius: 1px;
         position: absolute;

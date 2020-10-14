@@ -14,16 +14,27 @@ function followme() {
         const min = Math.ceil(2)
         const max = Math.floor(60)
         const newW = (Math.floor(Math.random() * (max - min) + min))
+        const elem = $(ev.target)
         document.documentElement.style.setProperty("--dipper-width", newW + 'px')
+
+        elem.parent().parent().on('mouseleave', () => {
+            console.log('msout')
+        })
+
+        
+
         return 
     })
+    // $('project-cell').on('mouseleave', () => {
+    //     console.log('msout')
+    // })
 
     $('.project-cell').each((i, el) => {
         const cell = $(el)
         const img = $(el).find('img')
         img.on('mousemove', (ev) => {
             const distX = ev.clientX - centerX
-            const marginX = distX / 25
+            const marginX = distX / 18
             const mx = Math.max(0, marginX)
 
             img.css('margin-left', marginX)
