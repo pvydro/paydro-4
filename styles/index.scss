@@ -27,6 +27,13 @@ body {
     }
 }
 
+#interdimensions {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: transparent;
+}
+
 #header-page {
     height: 120vh;
 }
@@ -70,7 +77,7 @@ body {
 .separator {
     position: absolute;
     background-color: white;
-    height:line-width;
+    height: 4px;
     width: 100px;
     border-radius: 1px;
 }
@@ -123,7 +130,7 @@ body {
     }
     .intro-separator {
         width: 0px;
-        height:line-width;
+        height: 4px;
         background-color: white;
         border-radius: 1px;
         position: absolute;

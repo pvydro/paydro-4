@@ -261,6 +261,7 @@
   transition-timing-function: cubic-bezier(1, 0.02, 0.65, 1.06);
 }
 #projects-page .projects-grid .project-cell .project-image img {
+  transition-delay: 2s;
   transition-timing-function: cubic-bezier(0.37, 0.56, 0.44, 0.93);
   position: absolute;
   width: auto;
@@ -297,6 +298,13 @@ body {
 .full-page.subber {
   width: 70%;
   margin-left: 40px;
+}
+
+#interdimensions {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: transparent;
 }
 
 #header-page {
@@ -339,7 +347,7 @@ body {
 .separator {
   position: absolute;
   background-color: white;
-  height: line-width;
+  height: 4px;
   width: 100px;
   border-radius: 1px;
 }
@@ -386,7 +394,7 @@ body {
 }
 .intro-header .intro-separator {
   width: 0px;
-  height: line-width;
+  height: 4px;
   background-color: white;
   border-radius: 1px;
   position: absolute;
