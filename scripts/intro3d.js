@@ -53,8 +53,9 @@ var scene = new THREE.Scene()
 var renderer = new THREE.WebGLRenderer({ alpha: true })
 var rotationSpeed = 1
 var targetRotationSpeed = 0.001
-var targetRotationZ = 0
-var targetTargetRotationZ = 0
+var baseXRotation = 0.5
+var targetRotationX = baseXRotation 
+var targetTargetRotationX = baseXRotation 
 var spunUpRotationSpeed = 0.06
 var expandIntroModel = false
 
@@ -86,9 +87,9 @@ var intro3d = (() => {
                 targetRotationSpeed += (0.001 - targetRotationSpeed) / 20
             }
 
-            targetRotationZ += (targetTargetRotationZ - targetRotationZ) / 150
+            targetRotationX += (targetTargetRotationX - targetRotationX) / 150
             
-            introModel.rotation.z += (targetRotationZ - introModel.rotation.z) / 25
+            introModel.rotation.x += (targetRotationX - introModel.rotation.x) / 25
         }
         renderer.render(scene, camera)
     }
@@ -139,12 +140,12 @@ var intro3d = (() => {
             $(document).on('mousemove', (e) => {
                 var centerX = window.innerWidth * 0.5;
                 var centerY = window.innerHeight * 0.5;
-                var tol = 8
+                var tol = 6
                 var distX = (e.clientX - centerX) / (centerX * tol)
                 var distY = (e.clientY - centerY) / (centerY * tol)
 
                 //targetRotationZ += (distX - targetRotationZ) / 50
-                targetTargetRotationZ = distX
+                targetTargetRotationX = baseXRotation + distY
             })
 
             $(document).on('scroll', (e) => {
