@@ -19,7 +19,6 @@ $(document).ready(() => {
     $(document).on('scroll', () => {
         // console.log('scroll')
         if (isScrolledIntoView('#projects-page-header', true)) {
-            console.log('here')
             $('#projects-page-header .popout').addClass('hidden')
         }
     })

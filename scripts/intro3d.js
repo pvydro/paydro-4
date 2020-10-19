@@ -51,6 +51,15 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 var introModel = undefined
 var scene = new THREE.Scene()
 var renderer = new THREE.WebGLRenderer({ alpha: true })
+var rotationSpeed = 1
+var targetRotationSpeed = 0.001
+var targetRotationZ = 0
+var targetTargetRotationZ = 0
+var spunUpRotationSpeed = 0.06
+var expandIntroModel = false
+
+var isSpinningUp = false
+var spinningUpTimeout
 
 var intro3d = (() => {
     renderer.domElement.id = 'interdimensions'
@@ -64,7 +73,22 @@ var intro3d = (() => {
         requestAnimationFrame(animateIntroModel)
         if (introModel !== undefined) {
             // introModel.rotation.x += 0.01
-            introModel.rotation.y += 0.001
+            introModel.rotation.y += rotationSpeed
+            rotationSpeed += (targetRotationSpeed - rotationSpeed) / 40
+
+            if (expandIntroModel) {
+                introModel.scale.y += (1 - introModel.scale.y) / 40
+            }
+
+            if (isSpinningUp) {
+                targetRotationSpeed += (spunUpRotationSpeed - targetRotationSpeed) / 10
+            } else {
+                targetRotationSpeed += (0.001 - targetRotationSpeed) / 20
+            }
+
+            targetRotationZ += (targetTargetRotationZ - targetRotationZ) / 150
+            
+            introModel.rotation.z += (targetRotationZ - introModel.rotation.z) / 25
         }
         renderer.render(scene, camera)
     }
@@ -77,7 +101,10 @@ var intro3d = (() => {
             // gltf.material.color.setHex(0xff0000)
             // gltf.material.needsUpdate = true
             introModel = gltf.scene
+            // introModel.rotation.z = 0.5
             introModel.rotation.x = 0.5
+            introModel.scale.y = 4//0
+            setTimeout(() => { expandIntroModel = true }, 250)
 
             // var newMaterial = new THREE.MeshStandardMaterial({color: 0xffffff})
             // introModel.traverse((o) => {
@@ -106,7 +133,42 @@ var intro3d = (() => {
             scene.add(lights[1])
             scene.add(lights[2])
             
-            scene.add(introModel)            
+            scene.add(introModel)
+            
+            
+            $(document).on('mousemove', (e) => {
+                var centerX = window.innerWidth * 0.5;
+                var centerY = window.innerHeight * 0.5;
+                var tol = 8
+                var distX = (e.clientX - centerX) / (centerX * tol)
+                var distY = (e.clientY - centerY) / (centerY * tol)
+
+                //targetRotationZ += (distX - targetRotationZ) / 50
+                targetTargetRotationZ = distX
+            })
+
+            $(document).on('scroll', (e) => {
+                if (!isSpinningUp) {
+                    console.log('spin up!')
+                    isSpinningUp = true
+                    spinningUpTimeout = window.setTimeout(() => {
+                        isSpinningUp = false
+                    }, 500)
+                } else {
+                    if (spinningUpTimeout) {
+                        window.clearTimeout(spinningUpTimeout)
+                    }
+                    spinningUpTimeout = window.setTimeout(() => {
+                        isSpinningUp = false
+                    }, 100)
+                }
+            })
+                // var centerX = window.innerWidth * 0.5;
+                // var centerY = window.innerHeight * 0.5;
+                
+                // plane.rotation.y = (e.clientX - centerX) / centerX * mouseTolerance;
+                // plane.rotation.x = (e.clientY - centerY) / centerY * mouseTolerance;
+                
         }, undefined, (e) => {
             console.error(e)
         } )

@@ -28,10 +28,13 @@ body {
 }
 
 #interdimensions {
+    pointer-events: none;
     position: absolute;
     top: 0px;
     left: 0px;
     background-color: transparent;
+    opacity: 0;//snapandeaseout
+    animation: intro-model-up 2.5s cubic-bezier(.34,1.25,0,.94) 0.25s forwards;
 }
 
 #header-page {
