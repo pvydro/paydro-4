@@ -35,7 +35,6 @@
                 position: absolute;
                 width: 0px;
                 height: 2px;
-                // border-radius: 1px;
                 right: 0px;
                 bottom: -10px;
                 background-color: white;
@@ -50,7 +49,7 @@
     }
     .projects-grid {
         $img-trans-time: 10s;
-        $img-trans-func: ease-in-out;//cubic-bezier(.25, .98, .53, .97);
+        $img-trans-func: ease-in-out;
         position: relative;
         display: flex;
         flex-direction: column;

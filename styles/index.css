@@ -328,7 +328,7 @@ body {
 #interdimensions.stuck-at-bottom {
   transition: 0.5s;
   opacity: 0.6;
-  transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
+  transition-timing-function: cubic-bezier(0.52, 0.06, 0, 0.93);
   animation: intro-model-outscroll 0.5s forwards;
 }
 #interdimensions.scrolling {

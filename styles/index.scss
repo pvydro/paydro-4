@@ -44,7 +44,7 @@ body {
     &.stuck-at-bottom {
         transition: 0.5s;
         opacity: 0.6;
-        transition-timing-function: $easeinoutxtra;
+        transition-timing-function: cubic-bezier(.52,.06,0,.93);//$easeinoutxtra;
         // transition-timing-function: ease-out;
         animation: intro-model-outscroll 0.5s forwards;
     }

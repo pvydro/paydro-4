@@ -22,6 +22,7 @@ var spinningUpTimeout
 var isScrolling = false
 var isPreciseScrolling = false
 var scrollDisableTimer
+var scrollTimerIteration = 0
 
 var transitionedToBottom = false
 var bottomCogScale = 0.3
@@ -150,7 +151,7 @@ var intro3d = (() => {
                 if (!transitionedToBottom) {
                     const topBreakPoint = window.innerHeight - (window.innerHeight * 0.6)
                     if ($(window).scrollTop() > topBreakPoint) {
-                        var box = new THREE.Box3().setFromObject(introModel)
+                        
                         transitionedToBottom = true
                         raycaster.setFromCamera(bottomCorner, camera)
                         raycaster.ray.intersectPlane(plane, bottomCornerPoint)
@@ -158,10 +159,6 @@ var intro3d = (() => {
                         bottomCornerPoint.x -= 0.6
 
                         triggerInterdimensionalTimingChange(600, 500)
-                        // window.setTimeout(() => {
-                        //     triggerInterdimensionalTimingChange()
-                        //     
-                        // }, 2000)
                     }
                 }
             })
@@ -178,14 +175,15 @@ var intro3d = (() => {
     }
 
     function triggerInterdimensionalTimingChange(time, subtime) {
-        console.log('check')
         try {
             window.setTimeout(() => {
                 if (!isPreciseScrolling) {
-                    $('#interdimensions').css('transition-timing-function',  'cubic-bezier(.64,.42,.08,.76)') //'cubic-bezier(.29,.42,.07,.86)')
-                } else {
-                    triggerInterdimensionalTimingChange(subtime, subtime / 2)
-                }
+                    $('#interdimensions').css('transition-timing-function', 'cubic-bezier(.64,.42,.08,.76)') // 'cubic-bezier(.29,.42,.07,.86)')
+                } 
+                // if (!isScrolling) {
+                // }else {
+                //     triggerInterdimensionalTimingChange(subtime, subtime / 2)
+                // }
             }, time)
         } catch (e) {
             console.error(e)
@@ -213,12 +211,15 @@ var intro3d = (() => {
             window.clearTimeout(scrollDisableTimer)
         }
 
-        const i = 0
         scrollDisableTimer = window.setTimeout(() => {
+            scrollTimerIteration++
             isPreciseScrolling = false
-            i++
-            if (i === 4) {
+            if (scrollTimerIteration >= 4) {
                 isScrolling = false
+                scrollTimerIteration = 0
+                triggerInterdimensionalTimingChange()
+            } else {
+                triggerScrollDisableTimer()
             }
         }, 250)
     }
