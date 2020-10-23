@@ -151,14 +151,14 @@ var intro3d = (() => {
                 if (!transitionedToBottom) {
                     const topBreakPoint = window.innerHeight - (window.innerHeight * 0.6)
                     if ($(window).scrollTop() > topBreakPoint) {
-                        
+
                         transitionedToBottom = true
                         raycaster.setFromCamera(bottomCorner, camera)
                         raycaster.ray.intersectPlane(plane, bottomCornerPoint)
                         bottomCornerPoint.y += 0.6
                         bottomCornerPoint.x -= 0.6
 
-                        triggerInterdimensionalTimingChange(600, 500)
+                        triggerInterdimensionalTimingChange(50, 25)
                     }
                 }
             })
@@ -177,7 +177,7 @@ var intro3d = (() => {
     function triggerInterdimensionalTimingChange(time, subtime) {
         try {
             window.setTimeout(() => {
-                if (!isPreciseScrolling) {
+                if (!isPreciseScrolling || window.scrollTop() > window.innerHeight) {
                     $('#interdimensions').css('transition-timing-function', 'cubic-bezier(.64,.42,.08,.76)') // 'cubic-bezier(.29,.42,.07,.86)')
                 } 
                 // if (!isScrolling) {
@@ -214,14 +214,14 @@ var intro3d = (() => {
         scrollDisableTimer = window.setTimeout(() => {
             scrollTimerIteration++
             isPreciseScrolling = false
-            if (scrollTimerIteration >= 4) {
+            if (scrollTimerIteration >= 50) {
                 isScrolling = false
                 scrollTimerIteration = 0
                 triggerInterdimensionalTimingChange()
             } else {
                 triggerScrollDisableTimer()
             }
-        }, 250)
+        }, 20)
     }
 })
 
