@@ -15,6 +15,7 @@
 
 body {
     background-color: $darkgray;
+    overflow-x: hidden;
 }
 
 .full-page {
@@ -34,7 +35,22 @@ body {
     left: 0px;
     background-color: transparent;
     opacity: 0;
-    animation: intro-model-up 2.5s cubic-bezier(.34,1.25,0,.94) 0.25s forwards;
+    transition: 2s;
+    // transition-timing-function: $easeinoutxtra;
+    &:not(.stuck-at-bottom) {
+        animation: intro-model-up 2.5s cubic-bezier(.34,1.25,0,.94) 0.25s forwards;
+    }
+    &.stuck-at-bottom {
+        transition: 0.5s;
+        opacity: 0.6;
+        transition-timing-function: $easeinoutxtra;
+        // transition-timing-function: ease-out;
+        animation: intro-model-outscroll 0.5s forwards;
+    }
+    &.scrolling {
+        // opacity: 0.1 !important;
+        animation: intro-model-toscroll 0.5s forwards 0.5s;
+    }
 }
 
 #header-page {

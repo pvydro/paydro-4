@@ -5,10 +5,6 @@
     dipper-width: 20px;
 }
 
-body {
-    overflow-x: hidden;
-}
-
 #projects-page {
     position: relative;
     #projects-page-header {
@@ -24,9 +20,7 @@ body {
         .popout {
             font-family: 'Mina', sans-serif;
             font-size: 24px;
-            position: fixed;//absolute;
-            // top: -20px;
-            // right: 0px;
+            position: fixed;
             right: 70px;
             bottom: 10px;
             // width: 100%;
@@ -60,30 +54,18 @@ body {
         position: relative;
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 100vw;
         padding-top: 150px;
+        // border: 2px dashed pink;
+        overflow-x: hidden;
         .project-cell {
             // border: 2px dashed orange;
             position: relative;
             height: 300px;
-            width: 80%;
+            width: 100vw;
+            max-width: 100vw;
+            padding: 0px 10%;
             margin: 60px 70px;
-            overflow: visible;
-            // border: 2px dashed red;
-            &::before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 200%;
-                height: 70%;
-                transform: translate(-50%, -50%);
-                opacity: 0.1;
-                background-color: rgba(0, 0, 0, 1);
-                z-index: -3;
-                transition: 1s;
-                transition-timing-function: ease-out;
-            }
             &:hover {
                 cursor: pointer !important;
                 * {
@@ -186,6 +168,7 @@ body {
                 filter: brightness(0.6);
                 transition: filter 2s;
                 transition-timing-function: cubic-bezier(1, .02, .65, 1.06);
+                // border: 2px dashed pink;
                 img {
                     transition-delay: 2s;//0.25s;
                     transition-timing-function: cubic-bezier(.37,.56,.44,.93);

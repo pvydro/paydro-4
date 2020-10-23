@@ -28,9 +28,9 @@ $(document).ready(() => {
     // Hide popout on scrollY
     $(document).on('scroll', () => {
         // console.log('scroll')
-        if (isScrolledIntoView('#projects-page-header', true)) {
-            $('#projects-page-header .popout').addClass('hidden')
-        }
+        // if (isScrolledIntoView('#projects-page-header', true)) {
+        //     $('#projects-page-header .popout').addClass('hidden')
+        // }
     })
 })
 
