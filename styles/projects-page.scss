@@ -5,15 +5,21 @@
     dipper-width: 20px;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 #projects-page {
     position: relative;
     #projects-page-header {
         position: absolute;
         font-size: 60px;
         // border: 1px dashed orange;
-        right: 70px;
+        // right: 70px;
+        left: 50%;
+        transform: translateX(-50%);
         h3 {
-            font-family: 'Mate SC', sans-serif;
+            font-family: 'Cormorant Garamond', serif;
         }
         .popout {
             font-family: 'Mina', sans-serif;
@@ -35,7 +41,7 @@
                 position: absolute;
                 width: 0px;
                 height: 2px;
-                border-radius: 1px;
+                // border-radius: 1px;
                 right: 0px;
                 bottom: -10px;
                 background-color: white;
@@ -54,24 +60,38 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        // border: 2px dashed orange;
         width: 100%;
         padding-top: 150px;
         .project-cell {
+            // border: 2px dashed orange;
             position: relative;
-            height: 700px;
+            height: 300px;
             width: 80%;
             margin: 60px 70px;
-            overflow: hidden;
+            overflow: visible;
             // border: 2px dashed red;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 200%;
+                height: 70%;
+                transform: translate(-50%, -50%);
+                opacity: 0.1;
+                background-color: rgba(0, 0, 0, 1);
+                z-index: -3;
+                transition: 1s;
+                transition-timing-function: ease-out;
+            }
             &:hover {
                 cursor: pointer !important;
                 * {
                     cursor: pointer !important;
                 }
-                .project-image {
-                    transition: filter 0.2s;
-                    filter: brightness(1.0);
+                &::before {
+                    transition-timing-function: $lightsnapandeaseout;
+                    opacity: 0.5;
                 }
                 .project-header {
                     opacity: 1;
@@ -96,9 +116,10 @@
                         opacity: 0.5;
                     }
                 }
-                .project-header .db {
-                    background-color: $orange;
-                    height: 120%;
+                .project-image {
+                    img {
+                        opacity: 0.1;
+                    }
                 }
             }
             .project-header {
@@ -111,32 +132,11 @@
                 opacity: 0.5;
                 transition: opacity .75s;
                 transition-timing-function: $lightsnapandeaseout;
-                .db {
-                    content: '';
-                    height: 175px;
-                    background-color: white;
-                    width: $line-width;
-                    position: absolute;
-                    border-radius: calc(#{$line-width} / 2);
-                    left: 8%;
-                    transition: 0.5s, margin-left calc(#{$img-trans-time} * 2), height 2s;
-                    transition-timing-function: $lightsnapandeaseout;;//ease-in-out;
-                    // transition-timing-function: $img-trans-func;
-                }
-                .db-top {
-                    top: -10px;
-                    transform: translateY(-100%);
-                }
-                .db-bottom {
-                    // top: auto;
-                    bottom: -25px;
-                    transform: translateY(100%);
-                }
                 h1 {
                     $bottom-sep-width: 200px;
                     position: relative;
                     font-family: "Manrope", sans-serif;
-                    font-size: 60px;
+                    font-size: 40px;
                     margin-bottom: 40px;
                     &::after {
                         left: 0px;
@@ -148,7 +148,7 @@
                         bottom: -20px;
                         background-color: white;
                         height: $line-width;
-                        border-radius: 1px;
+                        // border-radius: 1px;
                         transition: 0.5s;
                         transition-timing-function: cubic-bezier(.37,0,.11,1.09);//cubic-bezier(.76,-0.01,.11,1.09);//$lightsnapandeaseout;
                     }
@@ -162,7 +162,7 @@
                     // font-family: "Inconsolata", sans-serif;
                     text-transform: uppercase;
                     font-family: "Manrope", sans-serif;
-                    font-size: 24px;
+                    font-size: 18px;
                     opacity: 0.4;
                 }
                 h3 {
@@ -175,14 +175,14 @@
                 }
             }
             .project-image {
-                // border: 1px dashed green;
-                position: absolute;
-                top: 0px;
+                // border: 10px dashed green;
+                position: relative;
+                top: 50%;
                 right: 0px;
                 width: 95%;
                 min-height: 100%;
                 overflow: hidden;
-                border-radius: 10px;
+                transform: translateY(-50%);
                 filter: brightness(0.6);
                 transition: filter 2s;
                 transition-timing-function: cubic-bezier(1, .02, .65, 1.06);
@@ -190,12 +190,13 @@
                     transition-delay: 2s;//0.25s;
                     transition-timing-function: cubic-bezier(.37,.56,.44,.93);
                     position: absolute;
-                    width: auto;
+                    left: 50px;
+                    width: 100%;
                     min-height: 100%;
                     transition: $img-trans-time;
                     transition-timing-function: $lightsnapandeaseout;
                     border-radius: inherit;
-                    opacity: 0.4;
+                    opacity: 0.1;
                 }
             }
             &.right {

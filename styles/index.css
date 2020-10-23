@@ -28,7 +28,7 @@
     opacity: 0;
   }
   100% {
-    opacity: 1;
+    opacity: 0.5;
     margin-top: 0px;
   }
 }
@@ -105,16 +105,21 @@
   dipper-width: 20px;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 #projects-page {
   position: relative;
 }
 #projects-page #projects-page-header {
   position: absolute;
   font-size: 60px;
-  right: 70px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 #projects-page #projects-page-header h3 {
-  font-family: "Mate SC", sans-serif;
+  font-family: "Cormorant Garamond", serif;
 }
 #projects-page #projects-page-header .popout {
   font-family: "Mina", sans-serif;
@@ -134,7 +139,6 @@
   position: absolute;
   width: 0px;
   height: 2px;
-  border-radius: 1px;
   right: 0px;
   bottom: -10px;
   background-color: white;
@@ -154,10 +158,24 @@
 }
 #projects-page .projects-grid .project-cell {
   position: relative;
-  height: 700px;
+  height: 300px;
   width: 80%;
   margin: 60px 70px;
-  overflow: hidden;
+  overflow: visible;
+}
+#projects-page .projects-grid .project-cell::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+  background-color: black;
+  z-index: -3;
+  transition: 1s;
+  transition-timing-function: ease-out;
 }
 #projects-page .projects-grid .project-cell:hover {
   cursor: pointer !important;
@@ -165,9 +183,9 @@
 #projects-page .projects-grid .project-cell:hover * {
   cursor: pointer !important;
 }
-#projects-page .projects-grid .project-cell:hover .project-image {
-  transition: filter 0.2s;
-  filter: brightness(1);
+#projects-page .projects-grid .project-cell:hover::before {
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  opacity: 0.5;
 }
 #projects-page .projects-grid .project-cell:hover .project-header {
   opacity: 1;
@@ -191,9 +209,8 @@
   transition-delay: 0.75s;
   opacity: 0.5;
 }
-#projects-page .projects-grid .project-cell:hover .project-header .db {
-  background-color: #ff7c0a;
-  height: 120%;
+#projects-page .projects-grid .project-cell:hover .project-image img {
+  opacity: 0.1;
 }
 #projects-page .projects-grid .project-cell .project-header {
   position: absolute;
@@ -205,29 +222,10 @@
   transition: opacity 0.75s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
-#projects-page .projects-grid .project-cell .project-header .db {
-  content: "";
-  height: 175px;
-  background-color: white;
-  width: 4px;
-  position: absolute;
-  border-radius: calc(4px / 2);
-  left: 8%;
-  transition: 0.5s, margin-left calc(10s * 2), height 2s;
-  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
-}
-#projects-page .projects-grid .project-cell .project-header .db-top {
-  top: -10px;
-  transform: translateY(-100%);
-}
-#projects-page .projects-grid .project-cell .project-header .db-bottom {
-  bottom: -25px;
-  transform: translateY(100%);
-}
 #projects-page .projects-grid .project-cell .project-header h1 {
   position: relative;
   font-family: "Manrope", sans-serif;
-  font-size: 60px;
+  font-size: 40px;
   margin-bottom: 40px;
 }
 #projects-page .projects-grid .project-cell .project-header h1::after {
@@ -240,7 +238,6 @@
   bottom: -20px;
   background-color: white;
   height: 4px;
-  border-radius: 1px;
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.37, 0, 0.11, 1.09);
 }
@@ -252,7 +249,7 @@
 #projects-page .projects-grid .project-cell .project-header h5 {
   text-transform: uppercase;
   font-family: "Manrope", sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   opacity: 0.4;
 }
 #projects-page .projects-grid .project-cell .project-header h3 {
@@ -262,13 +259,13 @@
   font-size: 18px;
 }
 #projects-page .projects-grid .project-cell .project-image {
-  position: absolute;
-  top: 0px;
+  position: relative;
+  top: 50%;
   right: 0px;
   width: 95%;
   min-height: 100%;
   overflow: hidden;
-  border-radius: 10px;
+  transform: translateY(-50%);
   filter: brightness(0.6);
   transition: filter 2s;
   transition-timing-function: cubic-bezier(1, 0.02, 0.65, 1.06);
@@ -277,12 +274,13 @@
   transition-delay: 2s;
   transition-timing-function: cubic-bezier(0.37, 0.56, 0.44, 0.93);
   position: absolute;
-  width: auto;
+  left: 50px;
+  width: 100%;
   min-height: 100%;
   transition: 10s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   border-radius: inherit;
-  opacity: 0.4;
+  opacity: 0.1;
 }
 #projects-page .projects-grid .project-cell.right {
   margin-left: auto;

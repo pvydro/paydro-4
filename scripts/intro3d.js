@@ -50,7 +50,10 @@ import * as THREE from './three.module.js'//'../three.js'
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
 var introModel = undefined
 var scene = new THREE.Scene()
-var renderer = new THREE.WebGLRenderer({ alpha: true })
+var renderer = new THREE.WebGLRenderer({
+    alpha: true,
+    antialias: true
+})
 var rotationSpeed = 1
 var targetRotationSpeed = 0.001
 var baseXRotation = 0.5
@@ -98,19 +101,10 @@ var intro3d = (() => {
         var loader = new GLTFLoader()
     
         loader.load('../assets/3d/cog/cog.gltf', (gltf) => {
-            console.log('loaded cog')
-            // gltf.material.color.setHex(0xff0000)
-            // gltf.material.needsUpdate = true
             introModel = gltf.scene
-            // introModel.rotation.z = 0.5
             introModel.rotation.x = 0.5
             introModel.scale.y = 4//0
             setTimeout(() => { expandIntroModel = true }, 250)
-
-            // var newMaterial = new THREE.MeshStandardMaterial({color: 0xffffff})
-            // introModel.traverse((o) => {
-            //     if (o.isMesh) o.material = newMaterial
-            // })
 
             var newMaterial = new THREE.MeshPhongMaterial({
                 color: 0xffffff,
@@ -164,29 +158,14 @@ var intro3d = (() => {
                     }, 100)
                 }
             })
-                // var centerX = window.innerWidth * 0.5;
-                // var centerY = window.innerHeight * 0.5;
-                
-                // plane.rotation.y = (e.clientX - centerX) / centerX * mouseTolerance;
-                // plane.rotation.x = (e.clientY - centerY) / centerY * mouseTolerance;
                 
         }, undefined, (e) => {
             console.error(e)
-        } )
-
-        // Light
-        // var light1 = new THREE.PointLight(0xffffff, 0.5, 100)
-        // var light2 = new THREE.PointLight(0xffffff, 1, 100)
-        // light.position.set( 50, 50, 50 )
-        // light1.position.set(18, 8, 5)
-        // light1.position.set(0, 65, 0)
-        // light2.position.set(0, -8, 0)
-        // scene.add(light1)
-        // scene.add(light2)
+        })
     
 
-        var ambientLight = new THREE.AmbientLight(0x999999 );
-        scene.add(ambientLight);
+        var ambientLight = new THREE.AmbientLight(0x999999)
+        scene.add(ambientLight)
 
         camera.position.set(0, 0, 5)
     }
