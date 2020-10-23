@@ -20,6 +20,7 @@ var targetPos = { x: 0, y: 0 }
 var isSpinningUp = false
 var spinningUpTimeout
 var isScrolling = false
+var isPreciseScrolling = false
 var scrollDisableTimer
 
 var transitionedToBottom = false
@@ -128,10 +129,10 @@ var intro3d = (() => {
 
             $(document).on('scroll', (e) => {
                 isScrolling = true
+                isPreciseScrolling = true
                 triggerScrollDisableTimer()
 
                 if (!isSpinningUp) {
-                    console.log('spin up!')
                     isSpinningUp = true
                     spinningUpTimeout = window.setTimeout(() => {
                         isSpinningUp = false
@@ -156,7 +157,7 @@ var intro3d = (() => {
                         bottomCornerPoint.y += 0.6
                         bottomCornerPoint.x -= 0.6
 
-                        triggerInterdimensionalTimingChange(1000, 750)
+                        triggerInterdimensionalTimingChange(600, 500)
                         // window.setTimeout(() => {
                         //     triggerInterdimensionalTimingChange()
                         //     
@@ -178,14 +179,17 @@ var intro3d = (() => {
 
     function triggerInterdimensionalTimingChange(time, subtime) {
         console.log('check')
-        window.setTimeout(() => {
-            if (!isScrolling) {
-                console.log('notscrolling')
-                $('#interdimensions').css('transition-timing-function', 'cubic-bezier(.74,0,.48,1.01)')
-            } else {
-                triggerInterdimensionalTimingChange(subtime, subtime / 2)
-            }
-        }, time)
+        try {
+            window.setTimeout(() => {
+                if (!isPreciseScrolling) {
+                    $('#interdimensions').css('transition-timing-function',  'cubic-bezier(.64,.42,.08,.76)') //'cubic-bezier(.29,.42,.07,.86)')
+                } else {
+                    triggerInterdimensionalTimingChange(subtime, subtime / 2)
+                }
+            }, time)
+        } catch (e) {
+            console.error(e)
+        }
     }
 
     function fixCanvasToTop() {
@@ -209,9 +213,14 @@ var intro3d = (() => {
             window.clearTimeout(scrollDisableTimer)
         }
 
+        const i = 0
         scrollDisableTimer = window.setTimeout(() => {
-            isScrolling = false
-        }, 1000)
+            isPreciseScrolling = false
+            i++
+            if (i === 4) {
+                isScrolling = false
+            }
+        }, 250)
     }
 })
 

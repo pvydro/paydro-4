@@ -36,6 +36,7 @@ body {
     background-color: transparent;
     opacity: 0;
     transition: 2s;
+    transition-timing-function: cubic-bezier(.64,.42,.07,.86);
     // transition-timing-function: $easeinoutxtra;
     &:not(.stuck-at-bottom) {
         animation: intro-model-up 2.5s cubic-bezier(.34,1.25,0,.94) 0.25s forwards;
