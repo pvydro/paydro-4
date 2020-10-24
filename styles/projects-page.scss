@@ -96,7 +96,13 @@
                 }
                 .project-image {
                     img {
-                        opacity: 0.1;
+                        opacity: 0.4;
+                        transition-timing-function: cubic-bezier(.36,0,.43,1);
+                        transition: transform 20s, opacity 3s;//50-60s is good
+                        transition-delay: 0.5s;
+                        transform: translateY(calc(100% - 300px));
+                        // top: 0px;
+                        // bottom: auto;
                     }
                 }
             }
@@ -157,7 +163,9 @@
                 position: relative;
                 top: 50%;
                 right: 0px;
-                width: 95%;
+                // width: 95%;
+                width: 100%;
+                // min-width: 1024;
                 min-height: 100%;
                 overflow: hidden;
                 transform: translateY(-50%);
@@ -170,6 +178,7 @@
                     transition-timing-function: cubic-bezier(.37,.56,.44,.93);
                     position: absolute;
                     left: 50px;
+                    bottom: 0px;
                     width: 100%;
                     min-height: 100%;
                     transition: $img-trans-time;

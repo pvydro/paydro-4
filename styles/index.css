@@ -207,7 +207,11 @@
   opacity: 0.5;
 }
 #projects-page .projects-grid .project-cell:hover .project-image img {
-  opacity: 0.1;
+  opacity: 0.4;
+  transition-timing-function: cubic-bezier(0.36, 0, 0.43, 1);
+  transition: transform 20s, opacity 3s;
+  transition-delay: 0.5s;
+  transform: translateY(calc(100% - 300px));
 }
 #projects-page .projects-grid .project-cell .project-header {
   position: absolute;
@@ -259,7 +263,7 @@
   position: relative;
   top: 50%;
   right: 0px;
-  width: 95%;
+  width: 100%;
   min-height: 100%;
   overflow: hidden;
   transform: translateY(-50%);
@@ -272,6 +276,7 @@
   transition-timing-function: cubic-bezier(0.37, 0.56, 0.44, 0.93);
   position: absolute;
   left: 50px;
+  bottom: 0px;
   width: 100%;
   min-height: 100%;
   transition: 10s;
@@ -310,6 +315,7 @@ body {
 }
 
 #interdimensions {
+  display: none;
   pointer-events: none;
   position: fixed;
   top: 0px;
