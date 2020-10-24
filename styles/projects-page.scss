@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Mina&display=swap');
 @import './vars.scss';
 
-:root {
-    dipper-width: 20px;
-}
-
 #projects-page {
     position: relative;
     #projects-page-header {
@@ -75,6 +71,7 @@
                     opacity: 0.5;
                 }
                 .project-header {
+                    position: absolute;
                     opacity: 1;
                     transition: opacity 0.2s;
                     h1::after {
@@ -106,7 +103,7 @@
             .project-header {
                 $dynamo-border-spacing: 30px;
                 position: absolute;
-                left: 0px;
+                left: 8%;
                 top: 50%;
                 transform: translateY(-50%);
                 z-index: 9;

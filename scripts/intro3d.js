@@ -32,6 +32,10 @@ var raycaster = new THREE.Raycaster()
 var bottomCorner = new THREE.Vector2(1, -1)
 var bottomCornerPoint = new THREE.Vector3(0, 0, 0)
 var plane = new THREE.Plane().setFromNormalAndCoplanarPoint(new THREE.Vector3(0, 0, 1), new THREE.Vector3(0, 0, 1))
+var modelParallaxY
+var currentScrollAmt = 0
+var basePos
+var canvas = $('#interdimensions')
 
 var intro3d = (() => {
     renderer.domElement.id = 'interdimensions'
@@ -60,7 +64,7 @@ var intro3d = (() => {
 
             targetRotationX += (targetTargetRotationX - targetRotationX) / 150
             
-            introModel.rotation.x += (targetRotationX - introModel.rotation.x) / 25
+            introModel.rotation.x += (-targetRotationX - introModel.rotation.x) / 25
 
             // Transitioning to bottom
             if (transitionedToBottom) {
@@ -76,7 +80,25 @@ var intro3d = (() => {
                 cogScale += (targetCogScale - cogScale) / 40
                 introModel.scale.set(cogScale, cogScale, cogScale)
 
-                fixCanvasToTop()
+                $('#interdimensions').css({
+                    top: 0,
+                    transition: '2s'
+                })
+            } else {
+                if (!modelParallaxY) {
+                    modelParallaxY = introModel.position.y
+                }
+
+                const scrollAmt = $(window).scrollTop()
+
+                console.log('it' + scrollAmt)
+                // basePos.y += (basePos.y - (basePos.y + scrollAmt)) / 2
+                $('#interdimensions').css({
+                    top: scrollAmt * -1
+                })
+
+
+                // introModel.position.y = basePos.y + (scrollAmt * 0.005)
             }
 
         }
@@ -116,6 +138,7 @@ var intro3d = (() => {
             
             scene.add(introModel)
             
+            basePos = introModel.position
             
             $(document).on('mousemove', (e) => {
                 var centerX = window.innerWidth * 0.5;
@@ -187,22 +210,6 @@ var intro3d = (() => {
             }, time)
         } catch (e) {
             console.error(e)
-        }
-    }
-
-    function fixCanvasToTop() {
-        const canvas = $('#interdimensions')
-
-        const scrollAmt = $(window).scrollTop()
-        canvas.addClass('stuck-at-bottom')
-        canvas.css({
-            top: scrollAmt
-        })
-
-        if (isScrolling && !canvas.hasClass('scrolling')) {
-            canvas.addClass('scrolling')
-        } else if (!isScrolling && canvas.hasClass('scrolling')) {
-            canvas.removeClass('scrolling')
         }
     }
 

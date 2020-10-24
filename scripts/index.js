@@ -15,16 +15,6 @@ $(document).ready(() => {
         $('#projects-page-header .popout').css('display', 'none')
     }
 
-    // popout dipper line
-    $('.project-cell').on('mouseenter', (ev) => {
-        const min = Math.ceil(2)
-        const max = Math.floor(60)
-        const newW = (Math.floor(Math.random() * (max - min) + min))
-        document.documentElement.style.setProperty("--dipper-width", newW + 'px')        
-
-        return 
-    })
-
     // Hide popout on scrollY
     $(document).on('scroll', () => {
         // console.log('scroll')

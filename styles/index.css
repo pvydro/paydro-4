@@ -117,10 +117,6 @@
     opacity: 0;
   }
 }
-:root {
-  dipper-width: 20px;
-}
-
 #projects-page {
   position: relative;
 }
@@ -188,6 +184,7 @@
   opacity: 0.5;
 }
 #projects-page .projects-grid .project-cell:hover .project-header {
+  position: absolute;
   opacity: 1;
   transition: opacity 0.2s;
 }
@@ -214,7 +211,7 @@
 }
 #projects-page .projects-grid .project-cell .project-header {
   position: absolute;
-  left: 0px;
+  left: 8%;
   top: 50%;
   transform: translateY(-50%);
   z-index: 9;
@@ -314,25 +311,20 @@ body {
 
 #interdimensions {
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   background-color: transparent;
   opacity: 0;
-  transition: 2s;
-  transition-timing-function: cubic-bezier(0.64, 0.42, 0.07, 0.86);
+  transition: 0.175s;
+  transition-timing-function: cubic-bezier(0.17, 0.67, 0.79, 1.02);
 }
 #interdimensions:not(.stuck-at-bottom) {
   animation: intro-model-up 2.5s cubic-bezier(0.34, 1.25, 0, 0.94) 0.25s forwards;
 }
 #interdimensions.stuck-at-bottom {
-  transition: 0.5s;
-  opacity: 0.6;
-  transition-timing-function: cubic-bezier(0.52, 0.06, 0, 0.93);
+  top: 0px;
   animation: intro-model-outscroll 0.5s forwards;
-}
-#interdimensions.scrolling {
-  animation: intro-model-toscroll 0.5s forwards 0.5s;
 }
 
 #header-page {

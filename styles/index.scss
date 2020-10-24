@@ -30,28 +30,31 @@ body {
 
 #interdimensions {
     pointer-events: none;
-    position: absolute;
+    // position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     background-color: transparent;
     opacity: 0;
-    transition: 2s;
-    transition-timing-function: cubic-bezier(.64,.42,.07,.86);
+    transition: 0.175s;
+    // transition: 2s;
+    transition-timing-function: cubic-bezier(.17,.67,.79,1.02);//cubic-bezier(.17,.67,.83,.67);
     // transition-timing-function: $easeinoutxtra;
     &:not(.stuck-at-bottom) {
         animation: intro-model-up 2.5s cubic-bezier(.34,1.25,0,.94) 0.25s forwards;
     }
     &.stuck-at-bottom {
-        transition: 0.5s;
-        opacity: 0.6;
-        transition-timing-function: cubic-bezier(.52,.06,0,.93);//$easeinoutxtra;
-        // transition-timing-function: ease-out;
+        top: 0px;
+    //     transition: 0.25s;
+    //     opacity: 0.6;
+        // transition-timing-function: cubic-bezier(.44,.22,.61,1.05);//cubic-bezier(.5,.04,.61,1.05);//cubic-bezier(.52,.06,0,.93);//$easeinoutxtra;
+    //     // transition-timing-function: ease-out;
         animation: intro-model-outscroll 0.5s forwards;
     }
-    &.scrolling {
-        // opacity: 0.1 !important;
-        animation: intro-model-toscroll 0.5s forwards 0.5s;
-    }
+    // &.scrolling {
+    //     // opacity: 0.1 !important;
+    //     animation: intro-model-toscroll 0.5s forwards 0.5s;
+    // }
 }
 
 #header-page {
