@@ -1,5 +1,6 @@
 @import './animations.scss';
 @import './projects-page.scss';
+@import './proj-page.scss';
 @import './vars.scss';
 
 * {
@@ -16,6 +17,12 @@
 body {
     background-color: $darkgray;
     overflow-x: hidden;
+}
+
+.content-box-padded {
+    padding: $defaultpadding 200px;
+    // width: 100%;
+    // border: 2px dashed orange;
 }
 
 .full-page {

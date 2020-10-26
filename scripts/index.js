@@ -1,4 +1,4 @@
-import { intro3d } from './intro3d.js'
+// import { intro3d } from './intro3d.js'
 
 $(document).ready(() => {
     // my lil libs
@@ -8,7 +8,7 @@ $(document).ready(() => {
     })
     try {
         // followme()
-        intro3d()
+        // intro3d()
     } catch(e) { console.error(e) }
 
     if (isScrolledIntoView('#projects-page-header', true)) {

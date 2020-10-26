@@ -4,11 +4,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @keyframes intro-header-letter-down {
   0% {
     opacity: 0;
@@ -288,6 +296,181 @@
   margin-left: auto;
 }
 
+:root {
+  --toolbox-height: 100%;
+  --toolbox-selected: 0;
+}
+
+.toolbox {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.toolbox .toolbox-nav-list {
+  position: relative;
+  list-style: none;
+}
+.toolbox .toolbox-nav-list .toolbox-nav-item {
+  font-family: "Questrial", sans-serif;
+  text-transform: uppercase;
+  position: relative;
+  margin: 5px 0px;
+  padding: 10px 10px 10px 40px;
+  font-size: 32px;
+  text-align: right;
+  opacity: 0.3;
+}
+.toolbox .toolbox-nav-list .toolbox-nav-item.active {
+  opacity: 1;
+}
+.toolbox .toolbox-nav-list .toolbox-nav-item:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.toolbox .toolbox-nav-list::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--toolbox-height) * var(--toolbox-selected));
+  height: var(--toolbox-height);
+  width: 5px;
+  background-color: #ff7c0a;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+.toolbox .toolbox-nav-list::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  right: -20px;
+  opacity: 0.5;
+  background-color: white;
+}
+.toolbox .toolbox-content {
+  width: calc(100% - 20%);
+}
+
+* {
+  transition: 0s;
+}
+
+.proj-header-page {
+  position: relative;
+  height: 50vh;
+}
+
+.proj-header-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.proj-header-image::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.4));
+}
+.proj-header-image:hover img {
+  opacity: 4;
+}
+.proj-header-image img {
+  transition: 0s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  transition: opacity 5s;
+  opacity: 0.25;
+}
+
+.proj-header {
+  position: absolute;
+  top: 100%;
+  right: 42px;
+  transform: translateY(-50%);
+}
+.proj-header h1 {
+  position: relative;
+  font-family: "Manrope", sans-serif;
+  font-size: 64px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+.proj-header h2 {
+  font-family: "Inconsolata", sans-serif;
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  transform: translateY(calc(-50% - 10px));
+  text-align: right;
+}
+.proj-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  right: -10px;
+  width: 80%;
+  background-color: white;
+  opacity: 0.3;
+  height: 2px;
+}
+.proj-header::before, .proj-header::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: calc(100vw - 100% - calc(60px * 2));
+  right: calc(100% + calc(60px / 2));
+  transform: translateY(-50%);
+  border-radius: 2px;
+  height: 5px;
+  background-color: white;
+}
+.proj-header::before {
+  background-color: #404040;
+  z-index: 0;
+  height: 2px;
+  right: -60px;
+}
+
+.proj-summary-page {
+  display: flex;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 40px;
+}
+.proj-summary-page p {
+  font-family: "Manrope", sans-serif;
+  font-size: 32px;
+  margin-bottom: 60px;
+}
+
+.summary-image {
+  margin-right: 60px;
+}
+
+.summary-header {
+  position: relative;
+  font-family: "Mate SC", sans-serif;
+  font-size: 48px;
+  margin: 64px 0px;
+}
+.summary-header::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 0px;
+  width: 30%;
+  height: 2px;
+  background-color: white;
+}
+
 * {
   font-family: "Cormorant Garamond", serif;
   color: white;
@@ -302,6 +485,10 @@
 body {
   background-color: #1e1e1e;
   overflow-x: hidden;
+}
+
+.content-box-padded {
+  padding: 40px 200px;
 }
 
 .full-page {

@@ -1,0 +1,60 @@
+:root {
+    --toolbox-height: 100%;
+    --toolbox-selected: 0;
+}
+
+.toolbox {
+    $nav-width: 20%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    // border: 2px dashed $orange;
+    .toolbox-nav-list {
+        position: relative;
+        list-style: none;
+        // border: 4px dashed blue;
+        .toolbox-nav-item {
+            font-family: 'Questrial', sans-serif;
+            text-transform: uppercase;
+            position: relative;
+            // background-color: rgba(0, 0, 0, 0.1);
+            margin: 5px 0px;
+            padding: 10px 10px 10px 40px;
+            font-size: 32px;
+            // border: 2px dashed red;
+            text-align: right;
+            opacity: 0.3;
+            &.active {
+                opacity: 1.0;
+            }
+            &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            // right: 20px;
+            top: calc(var(--toolbox-height) * var(--toolbox-selected));
+            height: var(--toolbox-height);
+            width: 5px;
+            background-color: $orange;
+            transition: 0.5s;
+            transition-timing-function: $lightsnapandeaseout;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            right: -20px;
+            opacity: 0.5;
+            background-color: white;
+        }
+    }
+    .toolbox-content {
+        width: calc(100% - #{$nav-width})
+    }
+}

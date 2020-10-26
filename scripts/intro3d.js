@@ -200,9 +200,9 @@ var intro3d = (() => {
     function triggerInterdimensionalTimingChange(time, subtime) {
         try {
             window.setTimeout(() => {
-                if (!isPreciseScrolling || window.scrollTop() > window.innerHeight) {
-                    $('#interdimensions').css('transition-timing-function', 'cubic-bezier(.64,.42,.08,.76)') // 'cubic-bezier(.29,.42,.07,.86)')
-                } 
+                // if (!isPreciseScrolling || window.scrollTop() > window.innerHeight) {
+                //     $('#interdimensions').css('transition-timing-function', 'cubic-bezier(.64,.42,.08,.76)') // 'cubic-bezier(.29,.42,.07,.86)')
+                // } 
                 // if (!isScrolling) {
                 // }else {
                 //     triggerInterdimensionalTimingChange(subtime, subtime / 2)
