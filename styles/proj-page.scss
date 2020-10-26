@@ -115,18 +115,19 @@
 }
 
 .summary-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // border: 2px dashed yellow;
     margin-right: 60px;
-}
-
-.summary-content {
-    // border: 2px dashed blue;
 }
 
 .summary-header {
     position: relative;
-    font-family: "Mate SC", sans-serif;
+    font-family: 'Questrial', sans-serif;
     font-size: 48px;
     margin: 64px 0px;
+    text-transform: uppercase;
     &::after {
         content: '';
         position: absolute;
