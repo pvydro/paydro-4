@@ -13,9 +13,9 @@ var Toolboccs = (() => {
         $(ele).on('click', (e) => {
             // console.log('cicik', index)
             clearActiveBoxes()
-            currentlySelected = index
-            $(ele).addClass('active')
-            $($('.toolbox-internal')[index]).addClass('active')
+            selectBox(index)
+            // $(ele).addClass('active')
+            
         })
     })
 
@@ -27,6 +27,8 @@ var Toolboccs = (() => {
     // select first toolbox by default
     // $('.toolbox-internal').first().addClass('active')
 
+    selectBox(0)
+
     // $('.toolbox-internal').each((index, ele) => {
 
     // })
@@ -35,5 +37,11 @@ var Toolboccs = (() => {
         console.log('clear!')
         $('.toolbox-nav-item').removeClass('active')
         $('.toolbox-internal').removeClass('active')
+    }
+
+    function selectBox(index) {
+        currentlySelected = index
+        $($('.toolbox-nav-item')[index]).addClass('active')
+        $($('.toolbox-internal')[index]).addClass('active')
     }
 })

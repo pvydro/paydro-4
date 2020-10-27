@@ -69,7 +69,6 @@
         transform: translateY(calc(-50% - 10px));
         text-align: right;
         opacity: 0.25;
-        // width: 100%;
         &::after {
             content: '';
             position: absolute;
@@ -94,12 +93,11 @@
         background-color: white;
     }
     &::before {
-        // width: 110vw;
+        width: 110vw;
         background-color: #404040;
         z-index: 0;
         height: 2px;
         right: -$spacing;
-        // right: auto;
     }
 }
 

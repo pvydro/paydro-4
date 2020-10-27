@@ -356,12 +356,11 @@
 .toolbox .toolbox-content {
   position: relative;
   width: calc(100% - 20%);
-  margin-left: 40px;
+  margin-left: 20px;
 }
 .toolbox .toolbox-content .toolbox-internal {
   display: none;
   opacity: 0;
-  border: 3px dashed cyan;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -369,8 +368,58 @@
   transition: 0s opacity 2s;
 }
 .toolbox .toolbox-content .toolbox-internal.active {
-  display: block;
+  display: flex;
   opacity: 1;
+}
+.toolbox .toolbox-content .toolbox-internal .toolbox-internal-icons {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.toolbox .toolbox-content .toolbox-internal .toolbox-internal-icons img {
+  height: 50%;
+  width: auto;
+  opacity: 0.25;
+}
+.toolbox .toolbox-content .toolbox-internal .toolbox-internal-paragraph {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30px;
+  width: 50%;
+}
+.toolbox .toolbox-content .toolbox-internal .toolbox-internal-paragraph:hover {
+  opacity: 0.85;
+}
+.toolbox .toolbox-content .toolbox-internal .toolbox-internal-paragraph:hover p {
+  opacity: 0.8;
+}
+.toolbox .toolbox-content .toolbox-internal .toolbox-internal-paragraph h2 {
+  font-family: "Questrial", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  opacity: 0.7;
+}
+.toolbox .toolbox-content .toolbox-internal .toolbox-internal-paragraph h2::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  transform: translateY(-50%);
+  left: 0px;
+  width: 50%;
+  background-color: white;
+  height: 2px;
+  opacity: 0.3;
+}
+.toolbox .toolbox-content .toolbox-internal .toolbox-internal-paragraph p {
+  font-family: "Manrope", sans-serif;
+  font-size: 28px;
+  opacity: 0.5;
+  transition: opacity 1s;
 }
 
 * {
@@ -457,6 +506,7 @@
   background-color: white;
 }
 .proj-header::before {
+  width: 110vw;
   background-color: #404040;
   z-index: 0;
   height: 2px;
