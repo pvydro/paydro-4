@@ -68,6 +68,7 @@
         right: 0px;
         transform: translateY(calc(-50% - 10px));
         text-align: right;
+        opacity: 0.25;
         // width: 100%;
         &::after {
             content: '';
@@ -76,7 +77,7 @@
             right: -10px;
             width: 80%;
             background-color: white;
-            opacity: 0.3;
+            opacity: 0.5;
             height: 2px;
         }
     }
@@ -109,7 +110,7 @@
     padding: $defaultpadding;
     p {
         font-family: "Manrope", sans-serif;
-        font-size: 32px;
+        font-size: 24px;
         margin-bottom: 60px;
     }
 }
@@ -128,6 +129,7 @@
     font-size: 48px;
     margin: 64px 0px;
     text-transform: uppercase;
+    opacity: 0.5;
     &::after {
         content: '';
         position: absolute;
@@ -136,5 +138,6 @@
         width: 30%;
         height: 2px;
         background-color: white;
+        opacity: 0.5;
     }
 }

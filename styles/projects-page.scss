@@ -124,6 +124,7 @@
                     margin-bottom: 40px;
                     &::after {
                         left: 0px;
+                        transition: 0.75s;
                         width: $bottom-sep-width;
                     }
                     &::after, &::before {

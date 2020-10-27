@@ -239,6 +239,7 @@
 }
 #projects-page .projects-grid .project-cell .project-header h1::after {
   left: 0px;
+  transition: 0.75s;
   width: 200px;
 }
 #projects-page .projects-grid .project-cell .project-header h1::after, #projects-page .projects-grid .project-cell .project-header h1::before {
@@ -320,35 +321,56 @@
   font-size: 32px;
   text-align: right;
   opacity: 0.3;
+  transition: 0.25s;
 }
 .toolbox .toolbox-nav-list .toolbox-nav-item.active {
   opacity: 1;
 }
-.toolbox .toolbox-nav-list .toolbox-nav-item:hover {
+.toolbox .toolbox-nav-list .toolbox-nav-item:hover:not(.active) {
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.65;
 }
 .toolbox .toolbox-nav-list::after {
   content: "";
   position: absolute;
+  right: -20px;
   top: calc(var(--toolbox-height) * var(--toolbox-selected));
   height: var(--toolbox-height);
   width: 5px;
   background-color: #ff7c0a;
   transition: 0.5s;
+  transition: 0.25s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transform: translateX(50%);
 }
 .toolbox .toolbox-nav-list::before {
   content: "";
   position: absolute;
+  transform: translateX(50%);
   height: 100%;
   width: 2px;
   right: -20px;
-  opacity: 0.5;
+  opacity: 0.1;
   background-color: white;
 }
 .toolbox .toolbox-content {
+  position: relative;
   width: calc(100% - 20%);
+  margin-left: 40px;
+}
+.toolbox .toolbox-content .toolbox-internal {
+  display: none;
+  opacity: 0;
+  border: 3px dashed cyan;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0px 40px;
+  transition: 0s opacity 2s;
+}
+.toolbox .toolbox-content .toolbox-internal.active {
+  display: block;
+  opacity: 1;
 }
 
 * {
@@ -411,6 +433,7 @@
   right: 0px;
   transform: translateY(calc(-50% - 10px));
   text-align: right;
+  opacity: 0.25;
 }
 .proj-header h2::after {
   content: "";
@@ -419,7 +442,7 @@
   right: -10px;
   width: 80%;
   background-color: white;
-  opacity: 0.3;
+  opacity: 0.5;
   height: 2px;
 }
 .proj-header::before, .proj-header::after {
@@ -447,7 +470,7 @@
 }
 .proj-summary-page p {
   font-family: "Manrope", sans-serif;
-  font-size: 32px;
+  font-size: 24px;
   margin-bottom: 60px;
 }
 
@@ -464,6 +487,7 @@
   font-size: 48px;
   margin: 64px 0px;
   text-transform: uppercase;
+  opacity: 0.5;
 }
 .summary-header::after {
   content: "";
@@ -473,6 +497,7 @@
   width: 30%;
   height: 2px;
   background-color: white;
+  opacity: 0.5;
 }
 
 * {
@@ -480,7 +505,6 @@
   color: white;
   padding: 0px;
   margin: 0px;
-  transition: 0.75s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   animation-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   cursor: default;

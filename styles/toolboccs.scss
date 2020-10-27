@@ -25,36 +25,57 @@
             // border: 2px dashed red;
             text-align: right;
             opacity: 0.3;
+            transition: 0.25s;
             &.active {
                 opacity: 1.0;
             }
-            &:hover {
-                cursor: pointer;
-                opacity: 0.8;
+            &:hover:not(.active) {
+            cursor: pointer;
+                opacity: 0.65;
             }
         }
         &::after {
             content: '';
             position: absolute;
-            // right: 20px;
+            right: -20px;
             top: calc(var(--toolbox-height) * var(--toolbox-selected));
             height: var(--toolbox-height);
             width: 5px;
             background-color: $orange;
             transition: 0.5s;
+            transition: 0.25s;
             transition-timing-function: $lightsnapandeaseout;
+            transform: translateX(50%);
         }
         &::before {
             content: '';
             position: absolute;
+            transform: translateX(50%);
             height: 100%;
             width: 2px;
             right: -20px;
-            opacity: 0.5;
+            opacity: 0.1;
             background-color: white;
         }
     }
     .toolbox-content {
-        width: calc(100% - #{$nav-width})
+        position: relative;
+        width: calc(100% - #{$nav-width});
+        // border: 3px dashed red;
+        margin-left: 40px;
+        .toolbox-internal {
+            display: none;
+            opacity: 0;
+            border: 3px dashed cyan;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 0px $defaultpadding;
+            transition: 0s opacity 2s;
+            &.active {
+                display: block;
+                opacity: 1;
+            }
+        }
     }
 }
