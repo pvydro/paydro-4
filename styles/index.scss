@@ -3,6 +3,11 @@
 @import './proj-page.scss';
 @import './vars.scss';
 
+html {
+    scroll-behavior: smooth;
+}
+  
+
 * {
     font-family: 'Cormorant Garamond', serif;
     color: white;

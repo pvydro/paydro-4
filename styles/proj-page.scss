@@ -196,8 +196,19 @@
         max-width: 100%;
         overflow-x: scroll;
         overflow-y: hidden;
-        // mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-        // -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            background-color: rgba(0, 0, 0, 0);
+        }
+           
+        &::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0);
+        }
+           
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
         
         mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(20%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
         -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(20%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
@@ -230,9 +241,124 @@
 }
 
 #similar-projects {
+    // border: 3px dashed white;
     .similar-projects-header h3 {
         font-family: "Manrope", sans-serif;
         font-size: 42px;
         opacity: 0.4;
+    }
+
+    .similar-projects-grid {
+        margin-top: 64px;
+        // border: 3px dashed greenyellow;
+        position: relative;
+        width: 100%;
+        .row {
+            position: relative;
+            display: flex;
+            // border: 3px dashed red;
+            width: 100%;
+            .cell {
+                $indicatorSpacing: 20px;
+                $margin: 24px;
+                position: relative;
+                width: 50%;
+                height: 240px;
+                display: flex;
+                flex-direction: row;
+                overflow: hidden;
+                &:hover {
+                    cursor: pointer;
+                    &::after {
+                        height: 90%;
+                        opacity: 0.5;
+                    }
+                    .similar-project-title {
+                        padding: 0px 64px;
+                        opacity: 1;
+                        .similar-project-subtitle {
+                            opacity: 0.4;
+                        }
+                    }
+                    // $indicatorSpacing: 40px;
+                }
+                &::before {
+                    content: '';
+                    background-color: black;
+                    position: absolute;
+                    width: calc(100% - #{$indicatorSpacing});
+                    height: 90%;
+                    left: 0px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    opacity: 0.2;
+                    z-index: -1;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: $indicatorSpacing;
+                    transform: translate(-50%, -50%);
+                    transition: 0.25s;
+                    height: 100%;
+                    width: 2px;
+                    background-color: white;
+                    opacity: 0.25;
+                }
+                &:nth-child(1) {
+                    text-align: right;
+                    &::after {
+                        left: calc(100% - #{$indicatorSpacing});
+                        transform: translate(-100%, -50%);
+                        // right: 0px;
+                    }
+                }
+                &:nth-child(2) {
+                    &::before {
+                        left: auto;
+                        right: 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    .similar-project-title {
+        width: 50%;
+        display: flex;
+        // top: 0px;
+        // bottom: 0px;
+        transition: 0.5s;
+        transition-timing-function: $lightsnapandeaseout;
+        flex-direction: column;
+        align-self: flex-end;
+        font-size: 32px;
+        padding: 0px 52px;
+        opacity: 0.7;
+        .similar-project-subtitle {
+            font-size: 16px;
+            opacity: 0.3;
+        }
+    }
+
+    .similar-project-image {
+        position: relative;
+        max-width: 50%;
+        width: 50%;
+        height: 100%;
+        align-items: safe center;
+        // align-self: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        // min-height: 100%;
+        // border: 10px dotted blue;
+        img {
+            width: 100%;
+            min-height: 100%;
+            height: auto;
+        }
     }
 }
