@@ -5,18 +5,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
 @keyframes intro-header-letter-down {
   0% {
     opacity: 0;
@@ -588,7 +591,7 @@
 
 .proj-summary-page {
   display: flex;
-  background: rgba(0, 0, 0, 0.25);
+  background: #171717;
   padding: 40px;
 }
 .proj-summary-page p {
@@ -623,6 +626,22 @@
   opacity: 0.5;
 }
 
+#spec-toolbox {
+  padding-top: 92px;
+}
+#spec-toolbox::before {
+  content: "";
+  position: absolute;
+  width: 200vw;
+  height: 420px;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 50%;
+  transform: translate(-34.5%, -50%) rotate(-45deg);
+  background-color: #171717;
+  z-index: -99;
+}
+
 #screenshots {
   position: relative;
 }
@@ -637,12 +656,11 @@
   transform: translateY(-50%);
 }
 #screenshots .screenshots-header h1 {
-  font-family: "Questrial", sans-serif;
+  font-family: "Raleway Dots", sans-serif;
   font-size: 64px;
-  text-transform: uppercase;
   text-align: right;
   opacity: 0.8;
-  letter-spacing: 10px;
+  letter-spacing: 5px;
   transform: translateX(10px);
 }
 
@@ -653,8 +671,7 @@
 .screenshots-grid::before {
   content: "";
   width: 100vw;
-  background-color: black;
-  opacity: 0.175;
+  background-color: #171717;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -714,6 +731,9 @@
   cursor: pointer;
 }
 
+#similar-projects {
+  margin-bottom: 84px;
+}
 #similar-projects .similar-projects-header h3 {
   font-family: "Manrope", sans-serif;
   font-size: 42px;
@@ -740,9 +760,19 @@
 #similar-projects .similar-projects-grid .row .cell:hover {
   cursor: pointer;
 }
+#similar-projects .similar-projects-grid .row .cell:hover * {
+  cursor: pointer !important;
+}
+#similar-projects .similar-projects-grid .row .cell:hover::before {
+  opacity: 0.2;
+}
 #similar-projects .similar-projects-grid .row .cell:hover::after {
   height: 90%;
   opacity: 0.5;
+}
+#similar-projects .similar-projects-grid .row .cell:hover .similar-project-image {
+  transition: opacity 0.5s;
+  opacity: 0.7;
 }
 #similar-projects .similar-projects-grid .row .cell:hover .similar-project-title {
   padding: 0px 64px;
@@ -760,7 +790,8 @@
   left: 0px;
   top: 50%;
   transform: translateY(-50%);
-  opacity: 0.2;
+  opacity: 0.1;
+  transition: opacity 0.5s;
   z-index: -1;
 }
 #similar-projects .similar-projects-grid .row .cell::after {
@@ -769,7 +800,7 @@
   top: 50%;
   left: 20px;
   transform: translate(-50%, -50%);
-  transition: 0.25s;
+  transition: 0.1s;
   height: 100%;
   width: 2px;
   background-color: white;
@@ -787,6 +818,7 @@
   right: 0px;
 }
 #similar-projects .similar-project-title {
+  font-family: "Raleway Dots", sans-serif;
   width: 50%;
   display: flex;
   transition: 0.5s;
@@ -798,7 +830,9 @@
   opacity: 0.7;
 }
 #similar-projects .similar-project-title .similar-project-subtitle {
+  font-family: "Inconsolata", sans-serif;
   font-size: 16px;
+  margin-bottom: 10px;
   opacity: 0.3;
 }
 #similar-projects .similar-project-image {
@@ -810,6 +844,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: opacity 0.25s;
+  opacity: 0.5;
 }
 #similar-projects .similar-project-image img {
   width: 100%;
@@ -1039,6 +1075,26 @@ body {
 
 footer {
   height: 200px;
+  margin-top: 184px;
+  background-color: #171717;
+}
+footer h3, footer h5, footer h6 {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  opacity: 0.5;
+}
+footer h5 {
+  font-size: 12px;
+  opacity: 0.25;
+}
+footer h6 {
+  font-size: 16px;
+}
+footer a {
+  text-decoration: none;
+}
+footer a:hover {
+  cursor: pointer !important;
 }
 
 /*# sourceMappingURL=index.css.map */

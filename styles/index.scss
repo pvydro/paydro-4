@@ -256,4 +256,27 @@ body {
 
 footer {
     height: 200px;
+    margin-top: 184px;
+    background-color: $darkblack;
+    h3, h5, h6 {
+        font-family: "Manrope", sans-serif;
+        font-size: 16px;
+        opacity: 0.5;
+    }
+
+    h5 {
+        font-size: 12px;
+        opacity: 0.25;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    a {
+        text-decoration: none;
+        &:hover {
+            cursor: pointer !important;
+        }
+    }
 }
