@@ -149,4 +149,21 @@
         // border: 2px dashed white;
         text-align: right;
     }
+
+    .screenshots-grid {
+        // border: 2px dashed red;
+        margin: 42px 0px 84px 0px;
+        .row {
+            display: flex;
+            flex-direction: row;
+            // border: 2px dashed blue;
+            max-width: 100%;
+            overflow: scroll;
+            img {
+                opacity: 0.5;
+                height: 720px;
+                margin: 0px 12px;
+            }
+        }
+    }
 }

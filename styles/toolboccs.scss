@@ -174,14 +174,14 @@
                 justify-content: center;
                 img {
                     transition: 0.5s;
-                    transition-delay: 0s;
+                    transition-delay: 0.125s;
                     // border: 2px dashed green;
                     height: 50%;
                     width: auto;
                     opacity: 0;
-                    &:nth-child(2) {
-                        animation-delay: 0.125s;
-                        transition-delay: 0.125s;
+                    &:nth-child(1) {
+                        animation-delay: 0.25s;
+                        transition-delay: 0.25s;
                     }
                 }
             }
@@ -192,7 +192,7 @@
                 margin-left: 30px;
                 width: 50%;
                 transition: 0.5s;
-                transition-delay: 0.5s;
+                transition-delay: 0s;
                 opacity: 0;
                 // border: 2px dashed white;
                 h2 {
