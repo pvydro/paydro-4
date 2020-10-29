@@ -148,21 +148,71 @@
         text-transform: uppercase;
         // border: 2px dashed white;
         text-align: right;
+        opacity: 0.8;
+        letter-spacing: 10px;
+        transform: translateX(10px);
     }
 
     .screenshots-grid {
-        // border: 2px dashed red;
+        position: relative;
         margin: 42px 0px 84px 0px;
+        &::before {
+            content: '';
+            width: 100vw;
+            background-color: black;
+            opacity: 0.175;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 75%;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -32px;
+            height: 90%;
+            width: 5px;
+            background-color: white;
+            opacity: 0.75;
+            transform: translate(-50%, -50%);
+        }
         .row {
             display: flex;
             flex-direction: row;
-            // border: 2px dashed blue;
             max-width: 100%;
-            overflow: scroll;
-            img {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            // mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+            // -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+            
+            mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(20%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
+            -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(20%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
+
+            .cell {
+                // mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+                // -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+                transition: 0.25s;
                 opacity: 0.5;
                 height: 720px;
                 margin: 0px 12px;
+                img {
+                    transition-timing-function: $lightsnapandeaseout;
+                    transition: 0.85s;
+                    height: 100%;
+                }
+                &:hover {
+                    transition: 1.25s;
+                    opacity: 0.6;
+                    img {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                        transition: 0.25s;
+                        transform: scale(1.0125);
+                    }
+                }
             }
         }
     }

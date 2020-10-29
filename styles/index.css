@@ -628,20 +628,66 @@
   font-size: 64px;
   text-transform: uppercase;
   text-align: right;
+  opacity: 0.8;
+  letter-spacing: 10px;
+  transform: translateX(10px);
 }
 #screenshots .screenshots-grid {
+  position: relative;
   margin: 42px 0px 84px 0px;
+}
+#screenshots .screenshots-grid::before {
+  content: "";
+  width: 100vw;
+  background-color: black;
+  opacity: 0.175;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 75%;
+}
+#screenshots .screenshots-grid:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -32px;
+  height: 90%;
+  width: 5px;
+  background-color: white;
+  opacity: 0.75;
+  transform: translate(-50%, -50%);
 }
 #screenshots .screenshots-grid .row {
   display: flex;
   flex-direction: row;
   max-width: 100%;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(20%, black), color-stop(100%, black));
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(20%, black), color-stop(100%, black));
 }
-#screenshots .screenshots-grid .row img {
+#screenshots .screenshots-grid .row .cell {
+  transition: 0.25s;
   opacity: 0.5;
   height: 720px;
   margin: 0px 12px;
+}
+#screenshots .screenshots-grid .row .cell img {
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transition: 0.85s;
+  height: 100%;
+}
+#screenshots .screenshots-grid .row .cell:hover {
+  transition: 1.25s;
+  opacity: 0.6;
+}
+#screenshots .screenshots-grid .row .cell:hover img {
+  transition: 0.25s;
+  transform: scale(1.0125);
+}
+#screenshots .screenshots-grid .row .cell:hover img:hover {
+  cursor: pointer;
 }
 
 * {
