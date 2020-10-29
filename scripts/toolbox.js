@@ -1,7 +1,7 @@
 var Toolboccs = (() => {
     var indiHeight = 100 / $('.toolbox-nav-item').length
     var internals = $('.toolbox-internal')
-    var currentlySelected = 0
+    var currentlySelected = undefined
 
     document.documentElement.style.setProperty('--toolbox-height', indiHeight + "%")
 
@@ -11,11 +11,9 @@ var Toolboccs = (() => {
             document.documentElement.style.setProperty('--toolbox-selected', index)
         })
         $(ele).on('click', (e) => {
-            // console.log('cicik', index)
-            clearActiveBoxes()
-            selectBox(index)
-            // $(ele).addClass('active')
-            
+            if (index !== currentlySelected) {
+                selectBox(index)
+            }
         })
     })
 
@@ -37,11 +35,27 @@ var Toolboccs = (() => {
         console.log('clear!')
         $('.toolbox-nav-item').removeClass('active')
         $('.toolbox-internal').removeClass('active')
+        $('.toolbox-internal').css({
+            animation: 'none'
+        })
     }
 
     function selectBox(index) {
-        currentlySelected = index
-        $($('.toolbox-nav-item')[index]).addClass('active')
-        $($('.toolbox-internal')[index]).addClass('active')
+        // Animate out
+        if (currentlySelected !== undefined) {
+            $($('.toolbox-internal')[currentlySelected]).addClass('go-away')
+            $($('.toolbox-internal')[currentlySelected]).css({
+                animation: 'fade-out 1s forwards'
+            })
+        }
+
+        // Then clear & apply
+        window.setTimeout(() => {
+            clearActiveBoxes()
+            $($('.toolbox-internal')[index]).removeClass('go-away')
+            currentlySelected = index
+            $($('.toolbox-nav-item')[index]).addClass('active')
+            $($('.toolbox-internal')[index]).addClass('active')
+        }, (currentlySelected === undefined) ? 200 : 750)
     }
 })

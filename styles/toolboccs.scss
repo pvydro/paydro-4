@@ -3,6 +3,56 @@
     --toolbox-selected: 0;
 }
 
+@keyframes fade-in-icon {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.25;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: inherit;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in-paragraph {
+    0% {
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+    12% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce-out-with-that {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 50%;
+    }
+}
+
 .toolbox {
     $nav-width: 20%;
     position: relative;
@@ -63,6 +113,15 @@
         width: calc(100% - #{$nav-width});
         // border: 3px dashed red;
         margin-left: 20px;
+
+        .toolbox-internal.go-away {
+            img {
+                opacity: 0 !important;
+            }
+            .toolbox-internal-paragraph {
+                opacity: 0;
+            }
+        }
         .toolbox-internal {
             display: none;
             opacity: 0;
@@ -75,6 +134,33 @@
             &.active {
                 display: flex;
                 opacity: 1;
+                .toolbox-internal-paragraph {
+                    animation: fade-in-paragraph 1s forwards cubic-bezier(.07,.75,.32,.96);
+                    animation-delay: 0.25s;
+
+                    p {
+                        transition: opacity 0.5s;
+                        &:hover {
+                            opacity: 0.7
+                        }
+                        opacity: 0.6
+                    }
+                    h2::after {
+                        animation: bounce-out-with-that 0.25s 0.5s forwards cubic-bezier(.07,.75,.32,.96);
+                    }
+                }
+                .toolbox-internal-icons {
+                    animation: fade-in-paragraph 1s forwards;
+
+                    img {
+                        opacity: 0.25;
+                    }
+                    // img {
+                    //     // animation: fade-in-icon 1s forwards;
+                    //     transition: 0.5s;
+                    //     opacity: 0.25;
+                    // }
+                }
             }
             .toolbox-internal-icons {
                 position: relative;
@@ -87,10 +173,16 @@
                 flex-direction: column;
                 justify-content: center;
                 img {
+                    transition: 0.5s;
+                    transition-delay: 0s;
                     // border: 2px dashed green;
                     height: 50%;
                     width: auto;
-                    opacity: 0.25;
+                    opacity: 0;
+                    &:nth-child(2) {
+                        animation-delay: 0.125s;
+                        transition-delay: 0.125s;
+                    }
                 }
             }
             .toolbox-internal-paragraph {
@@ -99,12 +191,9 @@
                 justify-content: center;
                 margin-left: 30px;
                 width: 50%;
-                &:hover {
-                    opacity: 0.85;
-                    p {
-                        opacity: 0.8;
-                    }
-                }
+                transition: 0.5s;
+                transition-delay: 0.5s;
+                opacity: 0;
                 // border: 2px dashed white;
                 h2 {
                     font-family: 'Questrial', sans-serif;
@@ -118,7 +207,9 @@
                         bottom: -15px;
                         transform: translateY(-50%);
                         left: 0px;
-                        width: 50%;
+                        // transition-delay: 0.5s !important;
+                        // transition: 0.5s !important;
+                        width: 0px;
                         background-color: white;
                         height: 2px;
                         opacity: 0.3;
@@ -127,8 +218,7 @@
                 p {
                     font-family: "Manrope", sans-serif;
                     font-size: 28px;
-                    opacity: 0.5;
-                    transition: opacity 1s;
+                    opacity: 0;
                 }
             }
         }
