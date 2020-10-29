@@ -28,6 +28,7 @@ var Toolboccs = (() => {
 
     // mouseleave = reset to active
     $('.toolbox').on('mouseleave', () => {
+        if (justSelected) return
         document.documentElement.style.setProperty('--toolbox-selected', currentlySelected)
     })
 

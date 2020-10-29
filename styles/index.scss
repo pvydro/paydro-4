@@ -19,7 +19,7 @@ body {
 }
 
 .content-box-padded {
-    padding: $defaultpadding 200px;
+    padding: $defaultpadding $contentboxpadding;
     // width: 100%;
     // border: 2px dashed orange;
 }

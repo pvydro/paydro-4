@@ -107,7 +107,7 @@
     background: rgba(0, 0, 0, 0.25);
     padding: $defaultpadding;
     p {
-        font-family: "Manrope", sans-serif;
+        font-family: 'Manrope', sans-serif;
         font-size: 24px;
         margin-bottom: 60px;
     }
@@ -141,7 +141,18 @@
 }
 
 #screenshots {
-    // border: 2px dashed red;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: $contentboxpadding;
+        width: 50%;
+        height: 4px;
+        background-color: white;
+        opacity: 0.25;
+        transform: translateY(-50%);
+    }
     .screenshots-header h1 {
         font-family: 'Questrial', sans-serif;
         font-size: 64px;
@@ -152,68 +163,76 @@
         letter-spacing: 10px;
         transform: translateX(10px);
     }
+}
 
-    .screenshots-grid {
-        position: relative;
-        margin: 42px 0px 84px 0px;
-        &::before {
-            content: '';
-            width: 100vw;
-            background-color: black;
-            opacity: 0.175;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            height: 75%;
-        }
-        &:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -32px;
-            height: 90%;
-            width: 5px;
-            background-color: white;
-            opacity: 0.75;
-            transform: translate(-50%, -50%);
-        }
-        .row {
-            display: flex;
-            flex-direction: row;
-            max-width: 100%;
-            overflow-x: scroll;
-            overflow-y: hidden;
+.screenshots-grid {
+    position: relative;
+    margin: 84px 0px 84px 0px;
+    &::before {
+        content: '';
+        width: 100vw;
+        background-color: black;
+        opacity: 0.175;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 75%;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -32px;
+        height: 90%;
+        width: 5px;
+        background-color: white;
+        opacity: 0.75;
+        transform: translate(-50%, -50%);
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        // mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+        // -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+        
+        mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(20%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
+        -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(20%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
+
+        .cell {
             // mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
             // -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-            
-            mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(20%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
-            -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(20%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
-
-            .cell {
-                // mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-                // -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-                transition: 0.25s;
-                opacity: 0.5;
-                height: 720px;
-                margin: 0px 12px;
+            transition: 0.25s;
+            opacity: 0.5;
+            height: 720px;
+            margin: 0px 12px;
+            img {
+                transition-timing-function: $lightsnapandeaseout;
+                transition: 0.85s;
+                height: 100%;
+            }
+            &:hover {
+                transition: 1.25s;
+                opacity: 0.6;
                 img {
-                    transition-timing-function: $lightsnapandeaseout;
-                    transition: 0.85s;
-                    height: 100%;
-                }
-                &:hover {
-                    transition: 1.25s;
-                    opacity: 0.6;
-                    img {
-                        &:hover {
-                            cursor: pointer;
-                        }
-                        transition: 0.25s;
-                        transform: scale(1.0125);
+                    &:hover {
+                        cursor: pointer;
                     }
+                    transition: 0.25s;
+                    transform: scale(1.0125);
                 }
             }
         }
+    }
+}
+
+#similar-projects {
+    .similar-projects-header h3 {
+        font-family: "Manrope", sans-serif;
+        font-size: 42px;
+        opacity: 0.4;
     }
 }
