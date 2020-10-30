@@ -1,0 +1,7 @@
+[data-value], .paydscroll {
+    opacity: 0;
+}
+
+.animated {
+    opacity: 1;
+}
