@@ -4,6 +4,9 @@ $(document).ready(() => {
 
     elements.forEach((e) => {
         $(e).addClass('paydscroll')
+        if($(e).hasClass('paydscroll-autoplay')) {
+            $(e).addClass('animated')
+        }
     })
 
     checkScrollElements()

@@ -58,6 +58,7 @@
         transition: 0.5s;
         &::after {
             transition-delay: 0.75s;
+            opacity: 0.75;
             width: calc(100vw - 100% - calc(#{$spacing} * 2));
         }
         h1, h2 {
@@ -168,7 +169,10 @@
     text-transform: uppercase;
     opacity: 0;
     transition: 0.5s;
+    transition-timing-function: $lightsnapandeaseout;
+    margin-left: 42px;
     &.animated {
+        margin-left: 0px;
         transition-delay: 0.8s;
         opacity: 0.5;
     }
@@ -188,7 +192,10 @@
     opacity: 0;
     transition: 0.5s;
     transition-delay: 0.9s;
+    transition-timing-function: $lightsnapandeaseout;
+    margin-left: 42px;
     &.animated {
+        margin-left: 0px;
         opacity: 0.75;
     }
 }
@@ -294,7 +301,7 @@
 @mixin screenshot-transition {
     @for $i from 1 through 6 {
         &:nth-child(#{$i}) {
-            transition: all .2s #{$i * 0.25}s ease-in;
+            transition: all .5s #{$i * 0.25}s $lightsnapandeaseout;
         }
     }
 }
@@ -306,6 +313,7 @@
         .cell {
             @include screenshot-transition;
             opacity: 1 !important;
+            transform: translateY(0px) !important;
         }
         &::before {
             transition-delay: 1s;
@@ -318,7 +326,7 @@
     }
     &::before {
         content: '';
-        width: 100vw;
+        width: 200vw;
         background-color: $darkblack;
         position: absolute;
         top: 50%;
@@ -351,6 +359,7 @@
 
         &::-webkit-scrollbar {
             background-color: rgba(0, 0, 0, 0);
+            opacity: 0.1;
         }
            
         &::-webkit-scrollbar-track {
@@ -367,10 +376,10 @@
         .cell {
             // mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
             // -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-            transition: 0.25s;
             height: 720px;
             margin: 0px 12px;
             opacity: 0;
+            transform: translateY(42px);
             img {
                 opacity: 0.5;
                 transition-timing-function: $lightsnapandeaseout;
@@ -394,18 +403,38 @@
 
 #similar-projects {
     // border: 3px dashed white;
-    margin-bottom: 84px;;
-    .similar-projects-header h3 {
-        font-family: "Manrope", sans-serif;
-        font-size: 42px;
-        opacity: 0.4;
+
+    &.animated {
+        .similar-projects-grid {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        .similar-projects-header {
+            margin-left: 0px;
+            opacity: 1;
+        }
     }
 
+    // margin-bottom: 84px;
+    .similar-projects-header {
+        transition: 0.5s;
+        transition-delay:x 0.5s;
+        margin-left: 42px;
+        opacity: 0;
+        h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 42px;
+            opacity: 0.4;
+        }
+    }
     .similar-projects-grid {
         margin-top: 64px;
-        // border: 3px dashed greenyellow;
         position: relative;
         width: 100%;
+        opacity: 0;
+        transition: 0.5s;
+        transition-delay: 1s;
+        transform: translateY(42px);
         .row {
             position: relative;
             display: flex;

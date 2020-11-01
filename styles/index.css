@@ -6,6 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
@@ -13,6 +14,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
@@ -20,6 +22,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @keyframes intro-header-letter-down {
   0% {
     opacity: 0;
@@ -549,6 +552,7 @@
 }
 .proj-header.animated::after {
   transition-delay: 0.75s;
+  opacity: 0.75;
   width: calc(100vw - 100% - calc(60px * 2));
 }
 .proj-header.animated h1, .proj-header.animated h2 {
@@ -653,8 +657,11 @@
   text-transform: uppercase;
   opacity: 0;
   transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  margin-left: 42px;
 }
 .summary-header.animated {
+  margin-left: 0px;
   transition-delay: 0.8s;
   opacity: 0.5;
 }
@@ -673,8 +680,11 @@
   opacity: 0;
   transition: 0.5s;
   transition-delay: 0.9s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  margin-left: 42px;
 }
 .summary-paragraph.animated {
+  margin-left: 0px;
   opacity: 0.75;
 }
 
@@ -770,24 +780,25 @@
 }
 .screenshots-grid.animated .cell {
   opacity: 1 !important;
+  transform: translateY(0px) !important;
 }
 .screenshots-grid.animated .cell:nth-child(1) {
-  transition: all 0.2s 0.25s ease-in;
+  transition: all 0.5s 0.25s cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .screenshots-grid.animated .cell:nth-child(2) {
-  transition: all 0.2s 0.5s ease-in;
+  transition: all 0.5s 0.5s cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .screenshots-grid.animated .cell:nth-child(3) {
-  transition: all 0.2s 0.75s ease-in;
+  transition: all 0.5s 0.75s cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .screenshots-grid.animated .cell:nth-child(4) {
-  transition: all 0.2s 1s ease-in;
+  transition: all 0.5s 1s cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .screenshots-grid.animated .cell:nth-child(5) {
-  transition: all 0.2s 1.25s ease-in;
+  transition: all 0.5s 1.25s cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .screenshots-grid.animated .cell:nth-child(6) {
-  transition: all 0.2s 1.5s ease-in;
+  transition: all 0.5s 1.5s cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .screenshots-grid.animated::before {
   transition-delay: 1s;
@@ -799,7 +810,7 @@
 }
 .screenshots-grid::before {
   content: "";
-  width: 100vw;
+  width: 200vw;
   background-color: #171717;
   position: absolute;
   top: 50%;
@@ -834,6 +845,7 @@
 }
 .screenshots-grid .row::-webkit-scrollbar {
   background-color: rgba(0, 0, 0, 0);
+  opacity: 0.1;
 }
 .screenshots-grid .row::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0);
@@ -842,10 +854,10 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 .screenshots-grid .row .cell {
-  transition: 0.25s;
   height: 720px;
   margin: 0px 12px;
   opacity: 0;
+  transform: translateY(42px);
 }
 .screenshots-grid .row .cell img {
   opacity: 0.5;
@@ -863,8 +875,19 @@
   cursor: pointer;
 }
 
-#similar-projects {
-  margin-bottom: 84px;
+#similar-projects.animated .similar-projects-grid {
+  opacity: 1;
+  transform: translateY(0px);
+}
+#similar-projects.animated .similar-projects-header {
+  margin-left: 0px;
+  opacity: 1;
+}
+#similar-projects .similar-projects-header {
+  transition: 0.5s;
+  transition-delay: x 0.5s;
+  margin-left: 42px;
+  opacity: 0;
 }
 #similar-projects .similar-projects-header h3 {
   font-family: "Manrope", sans-serif;
@@ -875,6 +898,10 @@
   margin-top: 64px;
   position: relative;
   width: 100%;
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 1s;
+  transform: translateY(42px);
 }
 #similar-projects .similar-projects-grid .row {
   position: relative;
