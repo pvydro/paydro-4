@@ -91,7 +91,6 @@
 .showcase-video {
     position: relative;
     margin-top: 42px;
-    border-radius: 20px;
     text-align: center;
     overflow: hidden;
 }
@@ -109,11 +108,22 @@
 .showcase-video {
     opacity: 0;
     transform: translateX(42px);
+    border-radius: 20px;
+}
+
+.showcase-video.open {
+    border-radius: 5px;
 }
 
 .showcase-video-container {
     height: 370px;
     overflow: hidden;
+    transition: 0.25s;
+    transition-timing-function: cubic-bezier(.07,.75,.32,.96);
+}
+
+.showcase-video.open .showcase-video-container {
+    height: 720px;
 }
 
 .showcase-video-container video {
@@ -123,7 +133,8 @@
     transform: translateX(-50%) scale(1.08);
     width: auto;
     opacity: 0.35;
-    transition: opacity 0.25s;
+    transition: 0.25s;
+    transition-timing-function: cubic-bezier(.07,.75,.32,.96);
 }
 
 .showcase-video-shine {
@@ -140,6 +151,7 @@
     transition-timing-function: cubic-bezier(.34,1.5,0,.94);
 }
 
+.showcase-video.open .showcase-video-shine,
 .showcase-video:hover .showcase-video-shine {
     cursor: pointer;
     transition: 0.3s;
@@ -148,9 +160,15 @@
     opacity: 0;
 }
 
-.showcase-video:hover video {
+.showcase-video:not(.open):hover video {
     cursor: pointer;
     opacity: 0.75;
+    transform: translateX(-50%) scale(1.04);
+}
+
+.showcase-video.open video {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
 }
 
 .showcase-video-footer {
@@ -174,10 +192,12 @@
 .showcase-video-footer .youtube-icon .fa-angle-double-right {
     position: absolute;
     right: -12px;
-    transform: translateX(calc(100% - 42px));
+    top: 50%;
+    transform: translate(calc(100% - 42px), -50%);
     opacity: 0;
     transition-timing-function: cubic-bezier(.07,.75,.32,.96);
     transition: 0.75s;
+    font-size: 50%;
 }
 
 .showcase-video-footer .youtube-icon:hover,
@@ -188,5 +208,5 @@
 .showcase-video-footer .youtube-icon:hover .fa-angle-double-right {
     transition: 0.25s;
     opacity: 1;
-    transform: translateX(100%);
+    transform: translate(100%, -50%);
 }
