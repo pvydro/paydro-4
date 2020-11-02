@@ -635,6 +635,9 @@
   font-size: 24px;
   margin-bottom: 60px;
 }
+.proj-summary-page.animated p {
+  opacity: 0.2;
+}
 
 .summary-image {
   display: flex;
@@ -1020,6 +1023,10 @@ html {
 body {
   width: 100vw;
   overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
 }
 
 * {

@@ -12,7 +12,6 @@ $(document).ready(() => {
     checkScrollElements()
 
     $(window).on('scroll', (e) => {
-        // console.log(e.pageY)
         checkScrollElements()
     })
 
@@ -23,14 +22,12 @@ $(document).ready(() => {
             if (i > limit) return
             if ($(e).hasClass('animated')) return
 
-            // console.log($(e).offset().top)
             var scrollTop     = $(window).scrollTop(),
                 elementOffset = $(e).offset().top,
                 distance      = (elementOffset - scrollTop)
-            console.log(distance)
             i++
 
-            const off = $(e).hasClass('no-padyscroll-offset') ? 0 : offset
+            const off = $(e).hasClass('no-paydscroll-offset') ? 0 : offset
 
             if (distance < window.innerHeight - off) {
                 $(e).addClass('animated')

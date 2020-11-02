@@ -146,6 +146,9 @@
         font-size: 24px;
         margin-bottom: 60px;
     }
+    &.animated p {
+        opacity: 0.2;
+    }
 }
 
 .summary-image {

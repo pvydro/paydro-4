@@ -14,14 +14,6 @@ $(document).ready(() => {
     if (isScrolledIntoView('#projects-page-header', true)) {
         $('#projects-page-header .popout').css('display', 'none')
     }
-
-    // Hide popout on scrollY
-    $(document).on('scroll', () => {
-        // console.log('scroll')
-        // if (isScrolledIntoView('#projects-page-header', true)) {
-        //     $('#projects-page-header .popout').addClass('hidden')
-        // }
-    })
 })
 
 function isScrolledIntoView(elem, minusHeight) {

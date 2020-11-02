@@ -90,15 +90,10 @@ var intro3d = (() => {
                 }
 
                 const scrollAmt = $(window).scrollTop()
-
-                console.log('it' + scrollAmt)
-                // basePos.y += (basePos.y - (basePos.y + scrollAmt)) / 2
+                
                 $('#interdimensions').css({
                     top: scrollAmt * -1
                 })
-
-
-                // introModel.position.y = basePos.y + (scrollAmt * 0.005)
             }
 
         }
