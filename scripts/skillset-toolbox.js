@@ -26,10 +26,10 @@ $(document).ready(() => {
         const eleX = $(ele).offset().left + 75
         const mouseX = ev.clientX
         const distanceFromCenter = center - eleX
-        const distanceFromMouse = mouseX - eleX // Use this for precise movements
+        const distanceFromMouse = (mouseX - (eleX + 75) * .25) // Use this for precise movements
 
         const scrollAmount = (distanceFromCenter
-            //  + (distanceFromMouse * -2)
+             + (distanceFromMouse * -2)
              ) * strength
         
         gsap.to('.skillset-toolbox-scroll-container', {

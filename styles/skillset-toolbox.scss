@@ -38,6 +38,21 @@
         transition: 0.5s;
         transform: translateY(-100%);
     }
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     width: 100vw;
+    //     height: 400%;
+    //     background-color: $darkblack;
+    //     left: 50%;
+    //     top: 50%;
+    //     opacity: 0;
+    //     transform: translate(-150%, -50%);
+    //     transition: opacity 2s, transform 0.5s;
+    //     transition-timing-function: $lightsnapandeaseout;
+    //     transition-delay: 2s !important;
+    //     z-index: -1;
+    // }
     &::after {
         content: '';
         position: absolute;
@@ -61,6 +76,10 @@
         &::after {
             width: 96px;
         }
+        &::before {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
         h3 {
             display: block;
             opacity: 0.25;
@@ -76,6 +95,22 @@
     overflow-y: visible;
     mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(10%, rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,1)), color-stop(90%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
     -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(10%, rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,1)), color-stop(90%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100vw;
+        height: 75%;
+        background-color: $darkblack;
+        left: 50%;
+        // top: 50%;
+        bottom: 0px;
+        opacity: 1;
+        transform: translateX(-50%);
+        transition: opacity 2s, transform 0.5s;
+        transition-timing-function: $lightsnapandeaseout;
+        transition-delay: 2s !important;
+        z-index: -1;
+    }
     .skillset-toolbox-content {
         position: relative;
         width: 100%;

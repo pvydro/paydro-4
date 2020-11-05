@@ -643,6 +643,10 @@
 .skillset-toolbox-header.animated::after {
   width: 96px;
 }
+.skillset-toolbox-header.animated::before {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
 .skillset-toolbox-header.animated h3 {
   display: block;
   opacity: 0.25;
@@ -656,6 +660,21 @@
   overflow-y: visible;
   mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(10%, black), color-stop(50%, black), color-stop(90%, black), color-stop(100%, rgba(0, 0, 0, 0)));
   -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(10%, black), color-stop(50%, black), color-stop(90%, black), color-stop(100%, rgba(0, 0, 0, 0)));
+}
+.skillset-toolbox::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 75%;
+  background-color: #171717;
+  left: 50%;
+  bottom: 0px;
+  opacity: 1;
+  transform: translateX(-50%);
+  transition: opacity 2s, transform 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transition-delay: 2s !important;
+  z-index: -1;
 }
 .skillset-toolbox .skillset-toolbox-content {
   position: relative;
