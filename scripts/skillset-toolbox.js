@@ -29,7 +29,7 @@ $(document).ready(() => {
         const distanceFromMouse = (mouseX - (eleX + 75) * .25) // Use this for precise movements
 
         const scrollAmount = (distanceFromCenter
-             + (distanceFromMouse * -2)
+            //  + (distanceFromMouse * -2)
              ) * strength
         
         gsap.to('.skillset-toolbox-scroll-container', {
