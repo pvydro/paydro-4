@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import './vars.scss';
+
+.skillset-toolbox-header {
+    margin-top: 84px;
+    position: relative;
+    transition: 0.25s;
+    transition-timing-function: $lightsnapandeaseout;
+    transform: translateX(48px);
+    transition-delay: 0.25s;
+    h2 {
+        font-family: 'Raleway Dots', sans-serif;
+        font-size: 48px;
+        text-transform: uppercase;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        width: 0px;
+        height: 2px;
+        left: 0px;
+        bottom: -24px;
+        background-color: white;
+        opacity: 0.5;
+        transition-delay: 1s;
+        transition: 1s;
+    }
+    &.animated {
+        opacity: 1;
+        transform: translateX(0px);
+        &::after {
+            width: 96px;
+        }
+    }
+}
+
+.skillset-toolbox {
+    position: relative;
+    margin-top: 84px;
+    width: 100%;
+    height: 240px;
+    .skillset-toolbox-content {
+        width: 100%;
+        height: 100%;
+        .skillset-toolbox-scroll-container {
+            .skillset-toolbox-row {
+                position: absolute;
+                left: 50%;
+                bottom: 48px;
+                width: 100%;
+                // border: 2px dashed white;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-grow: 1;
+                transform: translateX(-50%);
+                .skillset-toolbox-cell {
+                    $size: 150px;
+                    position: relative;
+                    width: $size;
+                    height: $size;
+                    opacity: 0.5;
+                    img {
+                        pointer-events: none !important;
+                        position: absolute;
+                        width: 100px;
+                        height: auto;
+                        bottom: 0px;
+                        left: 50%;
+                        opacity: 0.25;
+                        transform: translateX(-50%);
+                        z-index: 10;
+                        transition: 0.5s;
+                        transition-timing-function: $lightsnapandeaseout;
+                    }
+                    .skillset-tooltip {
+                        pointer-events: none !important;
+                        font-family: 'Fugaz One', sans-serif;
+                        text-transform: uppercase;
+                        font-size: 24px;
+                        position: absolute;
+                        left: 50%;
+                        top: 0px;
+                        margin-top: 96px;
+                        opacity: 0;
+                        transition: 0.1s;
+                        transition-timing-function: $lightsnapandeaseout;
+                        transform: translateX(-50%);
+                        z-index: 9;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 0.75;
+                        .skillset-tooltip {
+                            transition: 0.25s;
+                            margin-top: 0px;
+                            opacity: 0.5;
+                        }
+                        img {
+                            width: 110px;
+                            margin-bottom: 12px;
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .skillset-toolbox-bottom {
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 140px;
+        left: 0px;
+        bottom: 0px;
+        overflow-y: hidden;
+        // border: 2px dotted red;
+        // background-color: rgba(235,233,249,1);
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            background: linear-gradient(to top, rgba(235,233,249, 0.1) 0%, rgba(216,208,239, 0.06) 65%, rgba(206,199,236, 0.03) 66%, rgba(193,191,234, 0.01) 100%);
+            transform: translateY(50%);
+        }
+    }
+    .skillset-toolbox-bottom-border {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        width: 80%;
+        border: 2px solid white;
+        border-radius: 50%;
+        opacity: 0.45;
+        transform: translate(-50%, 50%);
+    }
+}

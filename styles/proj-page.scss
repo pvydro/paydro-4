@@ -1,6 +1,6 @@
-// @import '../styles/vars.scss';
 @import '../styles/vars.scss';
 @import '../styles/toolboccs.scss';
+@import '../styles/skillset-toolbox.scss';
 
 * {
     transition: 0s;
@@ -8,8 +8,6 @@
 
 .proj-header-page {
     position: relative;
-    // border: 2px dashed green;
-    // height: 100vh;
     height: 50vh;
 }
 
@@ -17,7 +15,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-    // border: 2px dashed red;
     overflow: hidden;
     &::after {
         content: '';
@@ -27,7 +24,6 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.4));
-
     }
     &:hover {
         img {
@@ -138,7 +134,6 @@
 
 .proj-summary-page {
     display: flex;
-    // border: 2px dashed red;
     background: $darkblack;
     padding: $defaultpadding;
     p {
@@ -148,6 +143,9 @@
     }
     &.animated p {
         opacity: 0.2;
+    }
+    @media (orientation: portrait) {
+        flex-direction: column;
     }
 }
 
@@ -160,7 +158,24 @@
     transition: 0.5s;
     &.animated {
         transition-delay: 0.7s;
-        opacity: 1;
+        opacity: 0.5;
+    }
+    img {
+        pointer-events: none;
+        max-width: 20vw;
+    }
+    
+    @media (orientation: portrait) {
+        margin-top: 84px;
+        width: 40%;
+        height: auto;
+        img {
+            width: 100%;
+            height: auto;
+        }
+        &.animated {
+            opacity: 0.25;
+        }
     }
 }
 
@@ -173,12 +188,7 @@
     opacity: 0;
     transition: 0.5s;
     transition-timing-function: $lightsnapandeaseout;
-    margin-left: 42px;
-    &.animated {
-        margin-left: 0px;
-        transition-delay: 0.8s;
-        opacity: 0.5;
-    }
+    transform: translateX(42px);
     &::after {
         content: '';
         position: absolute;
@@ -191,21 +201,32 @@
     }
 }
 
+.summary-content {
+    transition: 0.5s;
+    &.animated {
+        opacity: 1;
+        .summary-paragraph {
+            opacity: 0.75;
+            transform: translateX(0px);
+        }
+        .summary-header {
+            opacity: 0.5;
+            transform: translateX(0px);
+            transition-delay: 0.8s;
+        }
+    }
+}
+
 .summary-paragraph {
     opacity: 0;
     transition: 0.5s;
     transition-delay: 0.9s;
     transition-timing-function: $lightsnapandeaseout;
-    margin-left: 42px;
-    &.animated {
-        margin-left: 0px;
-        opacity: 0.75;
-    }
+    transform: translateX(42px);
 }
 
 #spec-toolbox {
     padding-top: 92px;
-    // border: 2px dashed white;
     opacity: 0;
     transition: 1s;
 
@@ -278,11 +299,15 @@
         opacity: 0.25;
         transform: translateY(-50%);
     }
+    @media (orientation: portrait) {
+        &:after {
+            opacity: 0;
+        }
+    }
     .screenshots-header {
         opacity: 0;
         transition: 0.5s;
         transition-timing-function: $lightsnapandeaseout;
-        // margin-left: 42px;
         transform: translateX(42px);
         &.animated {
             opacity: 1;
@@ -291,8 +316,6 @@
         h1 {
             font-family: 'Raleway Dots', sans-serif;
             font-size: 64px;
-            // text-transform: uppercase;
-            // border: 2px dashed white;
             text-align: right;
             opacity: 0.8;
             letter-spacing: 5px;
@@ -384,18 +407,17 @@
             opacity: 0;
             transform: translateY(42px);
             img {
+                pointer-events: none;
                 opacity: 0.5;
                 transition-timing-function: $lightsnapandeaseout;
                 transition: 0.85s;
                 height: 100%;
             }
             &:hover {
+                cursor: pointer;
                 img {
                     transition: 1.25s;
                     opacity: 0.6;
-                    &:hover {
-                        cursor: pointer;
-                    }
                     transition: 0.25s;
                     transform: scale(1.0125);
                 }
@@ -441,7 +463,6 @@
         .row {
             position: relative;
             display: flex;
-            // border: 3px dashed red;
             width: 100%;
             .cell {
                 $indicatorSpacing: 20px;
@@ -515,6 +536,16 @@
                         left: auto;
                         right: 0px;
                     }
+                }
+            }
+        }
+        @media (orientation: portrait) {
+            .row {
+                flex-direction: column;
+                width: 100%;
+                .cell {
+                    width: 100%;
+                    margin-top: 42px;
                 }
             }
         }

@@ -34,8 +34,9 @@ body {
 
 .content-box-padded {
     padding: $defaultpadding $contentboxpadding;
-    // width: 100%;
-    // border: 2px dashed orange;
+    @media (orientation: portrait) {
+        padding: $defaultpadding $contentboxpaddingportrait;
+    }
 }
 
 .full-page {
@@ -58,24 +59,14 @@ body {
     background-color: transparent;
     opacity: 0;
     transition: 0.175s;
-    // transition: 2s;
-    transition-timing-function: cubic-bezier(.17,.67,.79,1.02);//cubic-bezier(.17,.67,.83,.67);
-    // transition-timing-function: $easeinoutxtra;
+    transition-timing-function: cubic-bezier(.17,.67,.79,1.02);
     &:not(.stuck-at-bottom) {
         animation: intro-model-up 2.5s cubic-bezier(.34,1.25,0,.94) 0.25s forwards;
     }
     &.stuck-at-bottom {
         top: 0px;
-    //     transition: 0.25s;
-    //     opacity: 0.6;
-        // transition-timing-function: cubic-bezier(.44,.22,.61,1.05);//cubic-bezier(.5,.04,.61,1.05);//cubic-bezier(.52,.06,0,.93);//$easeinoutxtra;
-    //     // transition-timing-function: ease-out;
         animation: intro-model-outscroll 0.5s forwards;
     }
-    // &.scrolling {
-    //     // opacity: 0.1 !important;
-    //     animation: intro-model-toscroll 0.5s forwards 0.5s;
-    // }
 }
 
 #header-page {
@@ -84,7 +75,6 @@ body {
 
 #intro-sidebar {
     opacity: 0.5;
-    // border: 1px dashed red;
     position: relative;
     height: 100vh;
     width: 375px;
@@ -130,8 +120,6 @@ body {
     $intro-header-delay: 1s;
     $intro-sub-header-delay: 1.25s;
     $intro-separator-delay: 1.5s;
-    // border: 3px dashed red;
-    // width: 375px;
     width: 100%;
     height: 375px;
     position: absolute;
@@ -183,7 +171,6 @@ body {
         animation: intro-separator-expand 0.5s $intro-separator-delay forwards $lightsnapandeaseout;
     }
     .intro-nav {
-        // border: 3px dashed white;
         position: absolute;
         top: 420px;
         left: 10px;
@@ -214,7 +201,6 @@ body {
 }
 
 #intro-subpiece {
-    // border: 2px dashed yellow;
     position: absolute;
     top: 230px;
     right: 70px;
@@ -225,7 +211,6 @@ body {
         bottom: 0px;
         height: 1px;
         width: 100vw;
-        // background-color: rgba(250, 150, 150, 1);
     }
     .intro-side-piece {
         opacity: 0;
@@ -243,7 +228,6 @@ body {
     }
     #social-links {
         position: absolute;
-        // border: 1px dashed white;
         right: 0px;
         top: -5px;
         transform: translateY(-100%);
@@ -258,6 +242,33 @@ body {
                 cursor: pointer;
                 transition: 0.2s;
                 opacity: 0.9 !important
+            }
+        }
+    }
+}
+
+#hello-nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    border: 1px dotted rgba(255,255,255,0.25);
+    transform: translate(-50%, -50%);
+    .nav-row {
+        margin-left: 20%;
+        width: 60%;
+        border: 1px dotted rgba(255,255,255,0.25);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .nav-cell {
+            border: 1px dotted rgba(255,0,255,0.25);
+            flex-grow: 1;
+            text-align: center;
+            p {
+                text-transform: uppercase;
+                font-size: 42px;
+                font-family: "Manrope", sans-serif;
             }
         }
     }

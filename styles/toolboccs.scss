@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
+
 :root {
     --toolbox-height: 100%;
     --toolbox-selected: 0;
@@ -59,23 +61,26 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    // border: 2px dashed $orange;
+    @media (orientation: portrait) {
+        flex-direction: column;
+    }
     .toolbox-nav-list {
         position: relative;
         list-style: none;
-        // border: 4px dashed blue;
+        // border: 3px dashed red;
         .toolbox-nav-item {
             font-family: 'Questrial', sans-serif;
             text-transform: uppercase;
             position: relative;
-            // background-color: rgba(0, 0, 0, 0.1);
             margin: 5px 0px;
             padding: 10px 10px 10px 40px;
             font-size: 32px;
-            // border: 2px dashed red;
             text-align: right;
             opacity: 0.3;
             transition: 0.25s;
+            @media (orientation: portrait) {
+                text-align: left;
+            }
             &.active {
                 opacity: 1.0;
             }
@@ -111,8 +116,16 @@
     .toolbox-content {
         position: relative;
         width: calc(100% - #{$nav-width});
-        // border: 3px dashed red;
         margin-left: 20px;
+        @media (orientation: portrait) {
+            width: 100%;
+            height: 420px;
+            margin-left: 0px;
+            .toolbox-internal-icons img {
+                height: 25% !important;
+                margin-right: 42px;
+            }
+        }
 
         .toolbox-internal.go-away {
             img {
@@ -125,7 +138,6 @@
         .toolbox-internal {
             display: none;
             opacity: 0;
-            // border: 3px dashed cyan;
             position: absolute;
             width: 100%;
             height: 100%;
@@ -148,6 +160,36 @@
                     h2::after {
                         animation: bounce-out-with-that 0.25s 0.5s forwards cubic-bezier(.07,.75,.32,.96);
                     }
+                    .toolbox-see-more {
+                        font-size: 24px;
+                        position: relative;
+                        font-family: 'Montserrat Subrayada', sans-serif;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        opacity: 0.5;
+                        transition: 0.5s;
+                        transition-timing-function: cubic-bezier(.07,.45,.37,.96) !important;
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 90%;
+                            height: 1px;
+                            left: 0px;
+                            bottom: 6px;
+                            background-color: white;
+                            transition: 0.5s;
+                            opacity: 0;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            transition: 0.5s;
+                            opacity: 0.75;
+                            &::after {
+                                transition: 0.2s;
+                                opacity: 1;
+                            }
+                        }
+                    }
                 }
                 .toolbox-internal-icons {
                     animation: fade-in-paragraph 1s forwards;
@@ -155,27 +197,18 @@
                     img {
                         opacity: 0.25;
                     }
-                    // img {
-                    //     // animation: fade-in-icon 1s forwards;
-                    //     transition: 0.5s;
-                    //     opacity: 0.25;
-                    // }
                 }
             }
             .toolbox-internal-icons {
                 position: relative;
                 display: flex;
                 flex-direction: column;
-                // border: 2px dashed red;
-                // height: 50%;
                 height: 100%;
-                // width: auto;
                 flex-direction: column;
                 justify-content: center;
                 img {
                     transition: 0.5s;
                     transition-delay: 0.125s;
-                    // border: 2px dashed green;
                     height: 50%;
                     width: auto;
                     opacity: 0;
@@ -194,7 +227,10 @@
                 transition: 0.5s;
                 transition-delay: 0s;
                 opacity: 0;
-                // border: 2px dashed white;
+                @media (orientation: portrait) {
+                    width: 100%;
+                    margin-left: 0px;
+                }
                 h2 {
                     font-family: 'Questrial', sans-serif;
                     text-transform: uppercase;
@@ -207,8 +243,6 @@
                         bottom: -15px;
                         transform: translateY(-50%);
                         left: 0px;
-                        // transition-delay: 0.5s !important;
-                        // transition: 0.5s !important;
                         width: 0px;
                         background-color: white;
                         height: 2px;
@@ -220,6 +254,9 @@
                     font-size: 28px;
                     opacity: 0;
                 }
+            }
+            @media (orientation: portrait) {
+                padding: 0px
             }
         }
     }
