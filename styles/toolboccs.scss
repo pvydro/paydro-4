@@ -64,9 +64,18 @@
     @media (orientation: portrait) {
         flex-direction: column;
     }
+
     .toolbox-nav-list {
         position: relative;
         list-style: none;
+        opacity: 0.2;
+        transition: 0.75s;
+        transition-delay: 0.5s;
+        &:hover {
+            transition: 0.25s;
+            transition-delay: 0s;
+            opacity: 0.8;
+        }
         // border: 3px dashed red;
         .toolbox-nav-item {
             font-family: 'Questrial', sans-serif;
