@@ -1,0 +1,24 @@
+#work-executed {
+    margin-top: 84px;
+}
+
+.executed-header {
+    text-align: right;
+    h1 {
+        opacity: 0.5;
+        font-family: "Manrope", sans-serif;
+        font-size: 42px;
+        text-transform: uppercase;
+    }
+}
+
+.executed-cells {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .executed-cell {
+        border: 3px dotted rgba(255,255,255,0.1);
+        width: 25%;
+        min-height: 300px;
+    }
+}

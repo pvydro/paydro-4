@@ -17,6 +17,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
@@ -377,7 +378,7 @@
 .toolbox .toolbox-nav-list {
   position: relative;
   list-style: none;
-  opacity: 0.2;
+  opacity: 0.4;
   transition: 0.75s;
   transition-delay: 0.5s;
 }
@@ -572,7 +573,7 @@
 }
 .toolbox .toolbox-content .toolbox-internal .toolbox-internal-paragraph p {
   font-family: "Manrope", sans-serif;
-  font-size: 28px;
+  font-size: 22px;
   opacity: 0;
 }
 @media (orientation: portrait) {
@@ -584,15 +585,39 @@
 .skillset-toolbox-header {
   margin-top: 84px;
   position: relative;
+  display: flex;
+  flex-direction: row;
   transition: 0.25s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
-  transform: translateX(48px);
-  transition-delay: 0.25s;
+  transform: translateX(42px);
+  transition-delay: 0.25s !important;
+}
+.skillset-toolbox-header .skillset-header-icon {
+  margin-left: 84px;
+  font-size: 42px;
+  color: white;
+  align-self: flex-end;
+  opacity: 0;
+  transition-delay: 1.5s !important;
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transform: translateX(-42px);
 }
 .skillset-toolbox-header h2 {
   font-family: "Raleway Dots", sans-serif;
-  font-size: 48px;
+  font-size: 42px;
   text-transform: uppercase;
+}
+.skillset-toolbox-header h3 {
+  display: none;
+  font-family: "Inconsolata", sans-serif;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  transition-delay: 2s !important;
+  transition: 0.5s;
+  transform: translateY(-100%);
 }
 .skillset-toolbox-header::after {
   content: "";
@@ -602,16 +627,25 @@
   left: 0px;
   bottom: -24px;
   background-color: white;
-  opacity: 0.5;
-  transition-delay: 1s;
+  opacity: 0.25;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transition-delay: 1s !important;
   transition: 1s;
 }
 .skillset-toolbox-header.animated {
   opacity: 1;
   transform: translateX(0px);
 }
+.skillset-toolbox-header.animated .skillset-header-icon {
+  opacity: 0.7;
+  transform: translateX(0px);
+}
 .skillset-toolbox-header.animated::after {
   width: 96px;
+}
+.skillset-toolbox-header.animated h3 {
+  display: block;
+  opacity: 0.25;
 }
 
 .skillset-toolbox {
@@ -619,6 +653,7 @@
   margin-top: 84px;
   width: 100%;
   height: 240px;
+  overflow-y: visible;
   mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(10%, black), color-stop(50%, black), color-stop(90%, black), color-stop(100%, rgba(0, 0, 0, 0)));
   -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(10%, black), color-stop(50%, black), color-stop(90%, black), color-stop(100%, rgba(0, 0, 0, 0)));
 }
@@ -631,13 +666,13 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: 0.75s;
+  transition: 2s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .skillset-toolbox .skillset-toolbox-content .skillset-toolbox-scroll-container .skillset-toolbox-row {
   position: absolute;
   left: 50%;
-  bottom: 48px;
+  bottom: 42px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -667,7 +702,7 @@
 }
 .skillset-toolbox .skillset-toolbox-content .skillset-toolbox-scroll-container .skillset-toolbox-row .skillset-toolbox-cell .skillset-tooltip {
   pointer-events: none !important;
-  font-family: "Fugaz One", sans-serif;
+  font-family: "Bellota Text", sans-serif;
   text-transform: uppercase;
   font-size: 24px;
   position: absolute;
@@ -678,6 +713,7 @@
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   transform: translate(-50%, -12px);
   z-index: 9;
+  filter: blur(10px);
 }
 .skillset-toolbox .skillset-toolbox-content .skillset-toolbox-scroll-container .skillset-toolbox-row .skillset-toolbox-cell:hover {
   cursor: pointer;
@@ -686,7 +722,8 @@
 .skillset-toolbox .skillset-toolbox-content .skillset-toolbox-scroll-container .skillset-toolbox-row .skillset-toolbox-cell:hover .skillset-tooltip {
   transition: 0.25s;
   transform: translate(-50%, 0px);
-  opacity: 0.125;
+  opacity: 0.5;
+  filter: blur(0px);
 }
 .skillset-toolbox .skillset-toolbox-content .skillset-toolbox-scroll-container .skillset-toolbox-row .skillset-toolbox-cell:hover img {
   transition: 0.125s;
@@ -727,6 +764,31 @@
   border-radius: 50%;
   opacity: 0.45;
   transform: translate(-50%, 50%);
+}
+
+#work-executed {
+  margin-top: 84px;
+}
+
+.executed-header {
+  text-align: right;
+}
+.executed-header h1 {
+  opacity: 0.5;
+  font-family: "Manrope", sans-serif;
+  font-size: 42px;
+  text-transform: uppercase;
+}
+
+.executed-cells {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.executed-cells .executed-cell {
+  border: 3px dotted rgba(255, 255, 255, 0.1);
+  width: 25%;
+  min-height: 300px;
 }
 
 * {
@@ -1289,13 +1351,37 @@
   height: auto;
 }
 
+.project-showcaser {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.project-showcaser .project-showcaser-header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  opacity: 0.75;
+}
+.project-showcaser .project-showcaser-header h2 {
+  font-family: "Questrial", sans-serif;
+  font-size: 42px;
+}
+.project-showcaser .project-showcaser-header h2.subtext {
+  align-self: center;
+  font-size: 36px;
+  opacity: 0.5;
+}
 html {
-  width: 100vw;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+#main {
+  overflow-x: hidden !important;
 }
 
 body {
-  width: 100vw;
   overflow-x: hidden;
 }
 

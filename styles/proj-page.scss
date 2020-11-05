@@ -1,6 +1,7 @@
-@import '../styles/vars.scss';
-@import '../styles/toolboccs.scss';
-@import '../styles/skillset-toolbox.scss';
+@import './vars.scss';
+@import './toolboccs.scss';
+@import './skillset-toolbox.scss';
+@import './executed.scss';
 
 * {
     transition: 0s;
@@ -565,7 +566,7 @@
         padding: 0px 52px;
         opacity: 0.7;
         .similar-project-subtitle {
-            font-family: "Inconsolata", sans-serif;
+            font-family: 'Inconsolata', sans-serif;
             font-size: 16px;
             margin-bottom: 10px;
             opacity: 0.3;
@@ -591,5 +592,30 @@
             min-height: 100%;
             height: auto;
         }
+    }
+}
+
+.project-showcaser {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .project-showcaser-header {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        opacity: 0.75;
+        h2 {
+            font-family: 'Questrial', sans-serif;
+            font-size: 42px;
+            &.subtext {
+                align-self: center;
+                font-size: 36px;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &.right {
     }
 }

@@ -68,7 +68,7 @@
     .toolbox-nav-list {
         position: relative;
         list-style: none;
-        opacity: 0.2;
+        opacity: 0.4;
         transition: 0.75s;
         transition-delay: 0.5s;
         &:hover {
@@ -260,7 +260,7 @@
                 }
                 p {
                     font-family: 'Manrope', sans-serif;
-                    font-size: 28px;
+                    font-size: 22px;
                     opacity: 0;
                 }
             }

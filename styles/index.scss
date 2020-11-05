@@ -4,12 +4,15 @@
 @import './vars.scss';
 
 html {
-    width: 100vw;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+#main {
+    overflow-x: hidden !important;
 }
 
 body {
-    width: 100vw;
     overflow-x: hidden;
 }
 
