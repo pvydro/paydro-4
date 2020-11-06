@@ -4,7 +4,7 @@
 
 .toolbox-nav-item {
   display: flex;
-  height: 50px !important;
+  height: 30px !important;
   flex-direction: column;
   justify-content: center;
 }

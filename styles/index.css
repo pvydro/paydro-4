@@ -7,6 +7,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
@@ -15,6 +16,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300&display=swap");
@@ -26,6 +28,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
@@ -34,6 +37,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
 @keyframes intro-header-letter-down {
   0% {
     opacity: 0;
@@ -393,7 +406,7 @@
   position: relative;
   margin: 5px 0px;
   padding: 10px 10px 10px 40px;
-  font-size: 32px;
+  font-size: 24px;
   text-align: right;
   opacity: 0.3;
   transition: 0.25s;
@@ -800,14 +813,185 @@
 }
 
 .executed-cells {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 .executed-cells .executed-cell {
-  border: 3px dotted rgba(255, 255, 255, 0.1);
+  position: relative;
   width: 25%;
   min-height: 300px;
+  padding: calc(40px / 2);
+  margin: 12px;
+}
+.executed-cells .executed-cell .executed-cell-header {
+  position: relative;
+}
+.executed-cells .executed-cell .executed-cell-header h2 {
+  opacity: 0.25;
+  font-family: "Inconsolata", sans-serif;
+}
+.executed-cells .executed-cell .executed-cell-header .executed-cell-header-border-bottom {
+  position: absolute;
+  left: 0px;
+  bottom: -24px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+.executed-cells .executed-cell .executed-cell-header .executed-cell-header-border-bottom::after {
+  content: "";
+  position: absolute;
+  width: 45%;
+  height: 2px;
+  bottom: 0px;
+  transform: translateY(-50%);
+  left: 0px;
+  background-color: white;
+  mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, black), color-stop(40%, black), color-stop(100%, rgba(0, 0, 0, 0)));
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, black), color-stop(40%, black), color-stop(100%, rgba(0, 0, 0, 0)));
+}
+.executed-cells .executed-cell .executed-cell-header .executed-cell-header-border-bottom::before {
+  opacity: 0.7;
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 0px;
+  bottom: 0px;
+  left: -4px;
+  border-top: 2px dotted white;
+  transform: translateY(-50%);
+  mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, black), color-stop(40%, black), color-stop(100%, rgba(0, 0, 0, 0)));
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, black), color-stop(40%, black), color-stop(100%, rgba(0, 0, 0, 0)));
+}
+.executed-cells .executed-cell .executed-cell-content {
+  position: relative;
+  margin-top: 42px;
+  height: 81%;
+  opacity: 0.5;
+  transition: opacity 2s;
+}
+.executed-cells .executed-cell .executed-cell-content:hover {
+  opacity: 0.8;
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-list {
+  list-style: none;
+  opacity: 0.7;
+  transition: 0.25s !important;
+  transition-delay: 0.125s !important;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96) !important;
+  z-index: 99;
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-list.hidden {
+  pointer-events: none !important;
+  transition: 0.5s !important;
+  transition-delay: 0s !important;
+  opacity: 0 !important;
+  transform: translateX(calc(-15% - 40px));
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-list.hidden * {
+  pointer-events: none !important;
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-list .executed-cell-list-item {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px 0px;
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-list .executed-cell-list-item p {
+  pointer-events: none;
+  font-family: "Raleway Dots", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  opacity: 0.75;
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-list .executed-cell-list-item:hover {
+  cursor: pointer;
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-list .executed-cell-list-item:hover p {
+  opacity: 1;
+  transform: translateX(12px);
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-list .executed-cell-list-item:active p {
+  opacity: 1;
+  transform: translateX(6px);
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-more-info {
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-more-info .executed-cell-more-info-paragraph {
+  pointer-events: none;
+  transform: translateX(calc(40px + 15%));
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  opacity: 0;
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-more-info .executed-cell-more-info-paragraph p {
+  pointer-events: none;
+  font-family: "Inconsolata", sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-more-info .executed-cell-more-info-paragraph.active {
+  pointer-events: all;
+  transition-delay: 0.125s !important;
+  transition: opacity 1s, all 0.5s;
+  opacity: 0.5;
+  transform: translateX(0px);
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-more-info .executed-cell-more-info-paragraph.active:hover {
+  cursor: pointer !important;
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-more-info .executed-cell-more-info-paragraph::after {
+  content: "";
+  position: absolute;
+  left: -42px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  background-color: white;
+  width: 2px;
+  border-radius: 50%;
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-more-info .executed-cell-more-info-paragraph::before {
+  content: "back";
+  font-family: "Bellota Text", sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  left: -64px;
+  opacity: 0;
+  font-size: 18px !important;
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transform: rotate(-90deg);
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-more-info .executed-cell-more-info-paragraph:hover::before {
+  transition-delay: 0.25s;
+  opacity: 1;
+  left: -56px;
+}
+.executed-cells .executed-cell .executed-cell-content .executed-cell-more-info .executed-cell-more-info-paragraph:hover::after {
+  border-radius: 0px;
+  transition-delay: 0.125s;
+  left: -50px;
 }
 
 * {
