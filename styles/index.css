@@ -835,7 +835,7 @@
   top: 20%;
   left: 50%;
   width: 200vw;
-  height: 50%;
+  height: 80%;
   transform: translate(-50%, -50%) rotate(3.75deg);
   z-index: -2;
 }
@@ -1346,6 +1346,9 @@
   position: relative;
   margin: 84px 0px 84px 0px;
 }
+.screenshots-grid * {
+  overflow-y: hidden !important;
+}
 .screenshots-grid.animated .cell {
   opacity: 1 !important;
   transform: translateY(0px) !important;
@@ -1593,15 +1596,15 @@
 
 .project-showcaser {
   position: relative;
-  display: flex;
-  flex-direction: row;
   width: 100%;
+  margin-bottom: 42px;
 }
 .project-showcaser .project-showcaser-header {
   position: relative;
   display: flex;
   flex-direction: row;
-  opacity: 0.75;
+  transform: translateY(50%);
+  z-index: 990;
 }
 .project-showcaser .project-showcaser-header .header-pet {
   position: absolute;
@@ -1610,20 +1613,110 @@
   left: 10%;
   top: 50%;
   transform: translateY(-50%);
-  opacity: 0.25;
+  opacity: 0.125;
   z-index: -1;
+  transition: 0.5s;
+}
+.project-showcaser .project-showcaser-header .header-pet:hover {
+  transition: 2s;
+  opacity: 0.3;
 }
 .project-showcaser .project-showcaser-header h2 {
+  pointer-events: none;
   position: relative;
   font-family: "Questrial", sans-serif;
   font-size: 42px;
+  opacity: 1;
   z-index: 2;
 }
 .project-showcaser .project-showcaser-header h2.subtext {
+  opacity: 1;
   align-self: center;
   font-size: 36px;
+  color: #707070;
+}
+.project-showcaser .project-showcaser-content-background {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden !important;
+}
+.project-showcaser .project-showcaser-content-background::after, .project-showcaser .project-showcaser-content-background::before {
+  content: "";
+  position: absolute;
+  height: 200vw;
+  width: 400vw;
+  background-color: #171717;
+  z-index: -3;
+}
+.project-showcaser .project-showcaser-content-background::after {
+  top: 50%;
+  left: -80%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.project-showcaser .project-showcaser-content-background::before {
+  top: 0px;
+  right: -60%;
+  transform: translateX(50%) rotate(-45deg);
+}
+.project-showcaser .project-showcaser-content-wrapper {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-top: 2px dashed rgba(255, 255, 255, 0.025);
+  border-bottom: 2px dashed rgba(255, 255, 255, 0.025);
+}
+.project-showcaser .project-showcaser-content-wrapper::after, .project-showcaser .project-showcaser-content-wrapper::before {
+  content: "";
+  position: absolute;
+  background-color: #646464;
+  width: 40%;
+  height: 2px;
+}
+.project-showcaser .project-showcaser-content-wrapper::after {
+  transform: translateY(-100%);
+  left: 0px;
+  top: 0px;
+  mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, black), color-stop(30%, black), color-stop(100%, rgba(0, 0, 0, 0)));
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, black), color-stop(30%, black), color-stop(100%, rgba(0, 0, 0, 0)));
+}
+.project-showcaser .project-showcaser-content-wrapper::before {
+  transform: translateY(100%);
+  right: 0px;
+  bottom: 0px;
+  mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, black), color-stop(30%, black), color-stop(100%, rgba(0, 0, 0, 0)));
+  -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, black), color-stop(30%, black), color-stop(100%, rgba(0, 0, 0, 0)));
+}
+.project-showcaser .project-showcaser-content {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  max-height: 100%;
+  padding: 0px 40px;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-col-img {
+  position: relative;
+  margin-top: 5vh;
+  max-height: 80%;
+  height: 80%;
+  width: auto;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-col-img img {
+  height: 100%;
+  width: auto;
   opacity: 0.5;
 }
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -1631,10 +1724,12 @@ html {
 
 #main {
   overflow-x: hidden !important;
+  overflow-y: hidden;
 }
 
 body {
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 a {

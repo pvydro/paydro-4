@@ -10,10 +10,12 @@ html {
 
 #main {
     overflow-x: hidden !important;
+    overflow-y: hidden;
 }
 
 body {
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 a {
