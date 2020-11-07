@@ -51,12 +51,12 @@
         <div class="content-box-padded" id="spec-toolbox" data-paydscroll>
             <div class="toolbox">
                 <ul class="toolbox-nav-list">
-                    <li class="toolbox-nav-item">2020 Voice Experience</li>
-                    <li class="toolbox-nav-item">BLE Remote App</li>
-                    <li class="toolbox-nav-item">2020/2021 Out of Box Experience</li>
+                    <li class="toolbox-nav-item">2020 Voice</li>
+                    <li class="toolbox-nav-item">BT Remote App</li>
+                    <li class="toolbox-nav-item">2020/2021 OOBE</li>
                     <li class="toolbox-nav-item">Customer Support App</li>
-                    <li class="toolbox-nav-item">Smartcast UI Component Library</li>
-                    <li class="toolbox-nav-item">Smartcast Companion Library</li>
+                    <li class="toolbox-nav-item">UI Component Library</li>
+                    <li class="toolbox-nav-item">Companion Library</li>
                 </ul>
                 <div class="toolbox-content">
                     <div class="toolbox-internal">
@@ -179,156 +179,196 @@
                 <h1>Projects</h1>
             </div>
 
-            <div class="executed-cells">
-                <!-- UILib -->
-                <div class="executed-cell">
-                    <div class="executed-cell-header">
-                        <h2>SmartCast UI Component Library</h2>
-                        <span class="executed-cell-header-border-bottom"></span>
-                    </div>
-                    <div class="executed-cell-content">
-                        <ul class="executed-cell-list">
-                            <li class="executed-cell-list-item" data-executed-trigger="hundreds-components">
-                                <p>Private company library consisting of hundreds of UI Components</p>
-                            </li>
-                            <li class="executed-cell-list-item" data-executed-trigger="jfrog-artifactory">
-                                <p>Distributed to npm via JFrog Artifactory</p>
-                            </li>
-                            <li class="executed-cell-list-item" data-executed-trigger="used-in-use">
-                                <p>Used & in use to build multiple applications across the device ecosystem</p>
-                            </li>
-                            <li class="executed-cell-list-item">
-                                <p>Contained essential components such as Volume Ring, Input Switcher, Voice Search</p>
-                            </li>
-                            <li class="executed-cell-list-item">
-                                <p>Integrated unique game engine technology to bring lightning-fast responsiveness</p>
-                            </li>
-                            <li class="executed-cell-list-item">
-                                <p>Internal test application for visually assisted external development</p>
-                            </li>
-                            <li class="executed-cell-list-item">
-                                <p>API giving client dev-friendly access to asynchronously managed components</p>
-                            </li>
-                        </ul>
-                        <div class="executed-cell-more-info">
-                            <div class="executed-cell-more-info-paragraph" id="hundreds-components">
-                                <p>
-                                The UI Component Library was used internally by developers on the SmartCast teams. It 
-                                contained hundreds of UI components, using game technology to develop and configure smooth, responsive 
-                                interactions.
-                                <br><br>
-                                A strong architecture, alongside a strict inheritance tree, allowed me to develop hundreds of 
-                                unique components with ease and quality.
-                                </p>
-                            </div>
-                            <div class="executed-cell-more-info-paragraph" id="jfrog-artifactory">
-                                <p>
-                                The UI Component Library was automatically built and deployed to npm via JFrog Artifactory. 
-                                The private package was then imported into parent projects, allowing the import of individual components, 
-                                or important of a developer-friendly API.
-                                </p>
+            <div class="executed-cell-holder">
+                <div class="executed-cells">
+                    <!-- SysUI -->
+                    <div class="executed-cell">
+                        <div class="executed-cell-header">
+                            <h2>SystemUI</h2>
+                            <span class="executed-cell-header-border-bottom"></span>
+                        </div>
+                        <div class="executed-cell-content">
+                            <ul class="executed-cell-list">
+                                <li class="executed-cell-list-item" data-executed-trigger="overlay-app">
+                                    <p>Overlaying application displaying essential user-facing UI components from the UI Component Library</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="websocket-ui">
+                                    <p>Used lower level websocket messages to trigger UI scenarios</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="mvp-pattern">
+                                    <p>Used MVP pattern to develop scalable architecture, supporting countless scenarios</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="mvp-pattern">
+                                    <p>Utilized Jest to implement unit tests for spec'd user interactions</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="mvp-pattern">
+                                    <p>Initial MVP development done in 3 weeks for CES2020 Las Vegas</p>
+                                </li>
+                            </ul>
+                            <div class="executed-cell-more-info">
+                                <div class="executed-cell-more-info-paragraph" id="overlay-app">
+                                    <p>
+                                    The UI Component Library was used internally by developers on the SmartCast teams. It 
+                                    contained hundreds of UI components, using game technology to develop and configure smooth, responsive 
+                                    interactions.
+                                    <br><br>
+                                    A strong architecture, alongside a strict inheritance tree, allowed me to develop hundreds of 
+                                    unique components with ease and quality.
+                                    </p>
+                                </div>
+                                <div class="executed-cell-more-info-paragraph" id="websocket-ui">
+                                    <p>
+                                    SystemUI listened for websocket events from the TV to determine what visual components should be displayed 
+                                    and populated. These events contained essential information from the device, such as pairing status, remote battery level, 
+                                    voice command domain, current inputs, all used to configure the UI Component Library's components. These events were listened 
+                                    to via the Companion Library.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- SysUI -->
-                <div class="executed-cell">
-                    <div class="executed-cell-header">
-                        <h2>SystemUI</h2>
-                        <span class="executed-cell-header-border-bottom"></span>
-                    </div>
-                    <div class="executed-cell-content">
-                        <ul class="executed-cell-list">
-                            <li class="executed-cell-list-item" data-executed-trigger="overlay-app">
-                                <p>Overlaying application displaying essential user-facing UI components</p>
-                            </li>
-                            <li class="executed-cell-list-item" data-executed-trigger="websocket-ui">
-                                <p>Used lower level websocket messages to trigger UI scenarios</p>
-                            </li>
-                            <li class="executed-cell-list-item" data-executed-trigger="viewcontrollers">
-                                <p>Implemented UI Component Library to construct views via ViewControllers</p>
-                            </li>
-                            <li class="executed-cell-list-item" data-executed-trigger="mvp-pattern">
-                                <p>Used MVP pattern to develop scalable architecture, supporting countless scenarios</p>
-                            </li>
-                            <li class="executed-cell-list-item" data-executed-trigger="mvp-pattern">
-                                <p>Utilized Jest to implement unit tests for spec'd user interactions</p>
-                            </li>
-                            <li class="executed-cell-list-item" data-executed-trigger="mvp-pattern">
-                                <p>Initial MVP development done in 3 weeks for CES2020 Las Vegas</p>
-                            </li>
-                        </ul>
-                        <div class="executed-cell-more-info">
-                            <div class="executed-cell-more-info-paragraph" id="overlay-app">
-                                <p>
-                                The UI Component Library was used internally by developers on the SmartCast teams. It 
-                                contained hundreds of UI components, using game technology to develop and configure smooth, responsive 
-                                interactions.
-                                <br><br>
-                                A strong architecture, alongside a strict inheritance tree, allowed me to develop hundreds of 
-                                unique components with ease and quality.
-                                </p>
-                            </div>
-                            <div class="executed-cell-more-info-paragraph" id="websocket-ui">
-                                <p>
-                                The UI Component Library was automatically built and deployed to npm via JFrog Artifactory. 
-                                The private package was then imported into parent projects, allowing the import of individual components, 
-                                or important of a developer-friendly API.
-                                </p>
+                    <!-- UILib -->
+                    <div class="executed-cell">
+                        <div class="executed-cell-header">
+                            <h2>UI Component Library</h2>
+                            <span class="executed-cell-header-border-bottom"></span>
+                        </div>
+                        <div class="executed-cell-content">
+                            <ul class="executed-cell-list">
+                                <li class="executed-cell-list-item" data-executed-trigger="hundreds-components">
+                                    <p>Private company library consisting of hundreds of UI Components</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="jfrog-artifactory">
+                                    <p>Distributed to npm via JFrog Artifactory</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="used-in-use">
+                                    <p>Used & in use to build multiple applications across the device ecosystem</p>
+                                </li>
+                                <li class="executed-cell-list-item">
+                                    <p>Contains essential components such as Volume Ring, Input Switcher, Voice Search</p>
+                                </li>
+                                <li class="executed-cell-list-item">
+                                    <p>Integrates unique game engine technology to bring lightning-fast responsiveness</p>
+                                </li>
+                                <li class="executed-cell-list-item">
+                                    <p>Internal test application for visually assisted external development</p>
+                                </li>
+                                <li class="executed-cell-list-item">
+                                    <p>API giving client dev-friendly access to asynchronously managed components</p>
+                                </li>
+                            </ul>
+                            <div class="executed-cell-more-info">
+                                <div class="executed-cell-more-info-paragraph" id="hundreds-components">
+                                    <p>
+                                    The UI Component Library was used internally by developers on the SmartCast teams. It 
+                                    contained hundreds of UI components, using game technology to develop and configure smooth, responsive 
+                                    interactions.
+                                    <br><br>
+                                    A strong architecture, alongside a strict inheritance tree, allowed me to develop hundreds of 
+                                    unique components with ease and quality.
+                                    </p>
+                                </div>
+                                <div class="executed-cell-more-info-paragraph" id="jfrog-artifactory">
+                                    <p>
+                                    The UI Component Library was automatically built and deployed to npm via JFrog Artifactory. 
+                                    The private package was then imported into parent projects, allowing the import of individual components, 
+                                    or important of a developer-friendly API.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="executed-cell">
-                    <div class="executed-cell-header">
-                        <h2>Bluetooth Remote App</h2>
-                        <span class="executed-cell-header-border-bottom"></span>
+                    <!-- BLE Remote App -->
+                    <div class="executed-cell">
+                        <div class="executed-cell-header">
+                            <h2>Bluetooth Remote App</h2>
+                            <span class="executed-cell-header-border-bottom"></span>
+                        </div>
+                        <div class="executed-cell-content">
+                            <ul class="executed-cell-list">
+                                <li class="executed-cell-list-item" data-executed-trigger="utility-bt-app">
+                                    <p>Utility application for using Bluetooth Low Energy to pair new-generation Bluetooth Remotes</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="voice-remote">
+                                    <p>Developed entire Voice Remote Pairing app frontend, MVP in 1 day</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="embedded-api">
+                                    <p>Implements APIs to communicate with embedded device and perform backend interactions</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="bt-mvp-patter">
+                                    <p>Used team-common MVP pattern to develop a strong, scalable architecture</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="bt-vuejs">
+                                    <p>Leverages Vue.js to easily prop-up components with ViewModels and dynamic properties</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="executed-cell-content">
-                        <ul class="executed-cell-list">
-                            <li class="executed-cell-list-item" data-executed-trigger="overlay-app">
-                                <p>Utility application for using Bluetooth Low Energy to pair new-generation Bluetooth Remotes</p>
-                            </li>
-                            <li class="executed-cell-list-item" data-executed-trigger="overlay-app">
-                                <p>Developed entire Voice Remote Pairing app frontend, MVP in 1 day</p>
-                            </li>
-                            <li class="executed-cell-list-item" data-executed-trigger="websocket-ui">
-                                <p>Implemented APIs to communicate with embedded device and perform backend interactions</p>
-                            </li>
-                            <li class="executed-cell-list-item" data-executed-trigger="viewcontrollers">
-                                <p>Communicated & coordinated with design team to create & implement functional mockups</p>
-                            </li>
-                            <li class="executed-cell-list-item" data-executed-trigger="mvp-pattern">
-                                <p>Used team-common MVP pattern to develop a strong, scalable architecture</p>
-                            </li>
-                            <li class="executed-cell-list-item" data-executed-trigger="mvp-pattern">
-                                <p>Used Vue.js to easily prop-up components with ViewModels and dynamic properties</p>
-                            </li>
-                        </ul>
+
+                    <!-- Customer Support App -->
+                    <div class="executed-cell">
+                        <div class="executed-cell-header">
+                            <h2>Customer Support App</h2>
+                            <span class="executed-cell-header-border-bottom"></span>
+                        </div>
+                        <div class="executed-cell-content">
+                            <ul class="executed-cell-list">
+                                <li class="executed-cell-list-item" data-executed-trigger="scs-utility-app">
+                                    <p>Utility application for displaying pin to user, allowing customer support tele-troubleshooting</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="scs-react-jsx">
+                                    <p>Implemented React & JSX to rapidly render single-file components</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="scs-websocket-ui">
+                                    <p>Implemented APIs to communicate with embedded device, displaying essential system information to the user</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="executed-cell">
-                    
-                </div>
-                <div class="executed-cell">
-                    
+
+                    <!-- OOBE -->
+                    <div class="executed-cell">
+                        <div class="executed-cell-header">
+                            <h2>OOBE2020/2021</h2>
+                            <span class="executed-cell-header-border-bottom"></span>
+                        </div>
+                        <div class="executed-cell-content">
+                            <ul class="executed-cell-list">
+                                <li class="executed-cell-list-item" data-executed-trigger="oobe-app">
+                                    <p>Out of Box Experience, application displayed to user on first boot of TV</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="oobe-uilib">
+                                    <p>Implemented the UI Component Library to construct OOBE2021's lightweight user screens using game technology</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="oobe2020-frontend">
+                                    <p>Developed frontend features and architectural changes to current OOBE2020 application</p>
+                                </li>
+                                <li class="executed-cell-list-item" data-executed-trigger="oobe-design-comms">
+                                    <p>Communicated & coordinated with design team to create & implement functional mockups</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="content-box-padded project-showcaser" id="project-showcase-a">
-            <div class="project-showcaser-header">
+        <a name="ces-2020"></a>
+        <div class="project-showcaser" id="project-showcase-a">
+            <div class="project-showcaser-header content-box-padded">
                 <h2>CES2020&nbsp;</h2><h2 class="subtext"> - Las Vegas</h2>
+                <img class="header-pet" src="../../assets/project-imgs/else/ces-logo.png" alt="">
             </div>
         </div>
 
         <a name="2020-voice"></a>
-        <div class="content-box-padded project-showcaser right" id="project-showcase-a">
-            <div class="project-showcaser-header">
+        <div class="project-showcaser right" id="project-showcase-a">
+            <div class="project-showcaser-header content-box-padded">
                 <h2>2020 Voice Experience&nbsp;</h2><h2 class="subtext"> - SystemUI</h2>
             </div>
+
         </div>
     </div>
 </body>

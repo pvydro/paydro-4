@@ -13,19 +13,62 @@
         text-transform: uppercase;
     }
 }
+.executed-cell-holder {
+    position: relative;
+    overflow: visible;
+    &::after {
+        content: '';
+        position: absolute;
+        background-color: white;
+        right: 0px;
+        opacity: 0.5;
+        top: 50%;
+        width: 2px;
+        height: 50%;
+        transform: translate(50%, -50%);
+        z-index: 2;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: $darkblack;
+        top: 20%;
+        left: 50%;
+        width: 200vw;
+        height: 50%;
+        transform: translate(-50%, -50%) rotate(3.75deg);
+        z-index: -2;
+    }
+}
 
 .executed-cells {
     position: relative;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    overflow-x: auto;
+
+    mask-image: -webkit-gradient(linear, left top, right top,
+        color-stop(0%, rgba(0,0,0,0)),
+        color-stop(5%, rgba(0,0,0,1)),
+        color-stop(100%, rgba(0,0,0,1)));
+    -webkit-mask-image: -webkit-gradient(linear, left top, right top,
+        color-stop(0%, rgba(0,0,0,0)),
+        color-stop(5%, rgba(0,0,0,1)),
+        color-stop(100%, rgba(0,0,0,1)));
     .executed-cell {
         position: relative;
         // border: 3px dotted rgba(255,255,255,0.1);
+        min-width: 25%;
         width: 25%;
         min-height: 300px;
         padding: calc(#{$defaultpadding} / 2);
         margin: 12px;
+        align-self: flex-start;
+        &:nth-child(1) {
+            margin-left: 42px;
+        }
         .executed-cell-header {
             $bottom-border-bottom: -24px;
             position: relative;
@@ -151,7 +194,6 @@
                     top: 0px;
                     left: 0px;
                     height: 100%;
-                    // border: 1px dotted rgba(255, 255, 255, 0.5);
                     opacity: 0;
                     transition: 0.25s;
                     transition-timing-function: $lightsnapandeaseout;
@@ -161,7 +203,7 @@
                     p {
                         pointer-events: none;
                         font-family: "Inconsolata", sans-serif;
-                        font-size: 24px;
+                        font-size: 20px;
                         line-height: 1.5;
                     }
                     &.active {
@@ -184,6 +226,7 @@
                         background-color: white;
                         width: 2px;
                         border-radius: 50%;
+                        opacity: 0.5 !important;
                         transition: 0.25s;
                         transition-timing-function: $lightsnapandeaseout;
                     }
@@ -202,12 +245,11 @@
                     &:hover {
                         &::before {
                             transition-delay: 0.25s;
-                            opacity: 1;
+                            opacity: 0.5;
                             // left: -96px;
                             left: -56px;
                         }
                         &::after {
-                            border-radius: 0px;
                             transition-delay: 0.125s;
                             left: -50px;
                         }

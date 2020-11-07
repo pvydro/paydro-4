@@ -812,18 +812,55 @@
   text-transform: uppercase;
 }
 
+.executed-cell-holder {
+  position: relative;
+  overflow: visible;
+}
+.executed-cell-holder::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  right: 0px;
+  opacity: 0.5;
+  top: 50%;
+  width: 2px;
+  height: 50%;
+  transform: translate(50%, -50%);
+  z-index: 2;
+}
+.executed-cell-holder::before {
+  content: "";
+  position: absolute;
+  background-color: #171717;
+  top: 20%;
+  left: 50%;
+  width: 200vw;
+  height: 50%;
+  transform: translate(-50%, -50%) rotate(3.75deg);
+  z-index: -2;
+}
+
 .executed-cells {
   position: relative;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  overflow-x: auto;
+  mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(5%, black), color-stop(100%, black));
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(5%, black), color-stop(100%, black));
 }
 .executed-cells .executed-cell {
   position: relative;
+  min-width: 25%;
   width: 25%;
   min-height: 300px;
   padding: calc(40px / 2);
   margin: 12px;
+  align-self: flex-start;
+}
+.executed-cells .executed-cell:nth-child(1) {
+  margin-left: 42px;
 }
 .executed-cells .executed-cell .executed-cell-header {
   position: relative;
@@ -945,7 +982,7 @@
 .executed-cells .executed-cell .executed-cell-content .executed-cell-more-info .executed-cell-more-info-paragraph p {
   pointer-events: none;
   font-family: "Inconsolata", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.5;
 }
 .executed-cells .executed-cell .executed-cell-content .executed-cell-more-info .executed-cell-more-info-paragraph.active {
@@ -968,6 +1005,7 @@
   background-color: white;
   width: 2px;
   border-radius: 50%;
+  opacity: 0.5 !important;
   transition: 0.25s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
@@ -985,11 +1023,10 @@
 }
 .executed-cells .executed-cell .executed-cell-content .executed-cell-more-info .executed-cell-more-info-paragraph:hover::before {
   transition-delay: 0.25s;
-  opacity: 1;
+  opacity: 0.5;
   left: -56px;
 }
 .executed-cells .executed-cell .executed-cell-content .executed-cell-more-info .executed-cell-more-info-paragraph:hover::after {
-  border-radius: 0px;
   transition-delay: 0.125s;
   left: -50px;
 }
@@ -1566,9 +1603,21 @@
   flex-direction: row;
   opacity: 0.75;
 }
+.project-showcaser .project-showcaser-header .header-pet {
+  position: absolute;
+  width: auto;
+  height: 120px;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.25;
+  z-index: -1;
+}
 .project-showcaser .project-showcaser-header h2 {
+  position: relative;
   font-family: "Questrial", sans-serif;
   font-size: 42px;
+  z-index: 2;
 }
 .project-showcaser .project-showcaser-header h2.subtext {
   align-self: center;
