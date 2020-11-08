@@ -120,6 +120,7 @@
                 transform: translateX(-50%);
 
                 .skillset-toolbox-cell {
+                    pointer-events: all;
                     $size: 150px;
                     position: relative;
                     min-width: $size;

@@ -5,6 +5,7 @@
 
 * {
     transition: 0s;
+    pointer-events: none;
 }
 
 .proj-header-page {
@@ -13,6 +14,7 @@
 }
 
 .proj-header-image {
+    pointer-events: all;
     position: relative;
     width: 100%;
     height: 100%;
@@ -77,7 +79,7 @@
     }
     h1 {
         position: relative;
-        font-family: "Manrope", sans-serif;
+        font-family: 'Manrope', sans-serif;
         font-size: 64px;
         text-transform: uppercase;
         z-index: 1;
@@ -85,7 +87,7 @@
         opacity: 0;
     }
     h2 {
-        font-family: "Inconsolata", sans-serif;
+        font-family: 'Inconsolata', sans-serif;
         position: absolute;
         top: -10px;
         right: 0px;
@@ -271,7 +273,7 @@
     }
 
     &::before {
-        content: "";
+        content: '';
         position: absolute;
         width: 400vw;
         height: 420px;
@@ -410,6 +412,7 @@
             margin: 0px 12px;
             opacity: 0;
             transform: translateY(42px);
+            pointer-events: all;
             img {
                 pointer-events: none;
                 opacity: 0.5;
@@ -451,7 +454,7 @@
         margin-left: 42px;
         opacity: 0;
         h3 {
-            font-family: "Manrope", sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-size: 42px;
             opacity: 0.4;
         }
@@ -477,6 +480,7 @@
                 display: flex;
                 flex-direction: row;
                 overflow: hidden;
+                pointer-events: all;
                 &:hover {
                     cursor: pointer;
                     * {
@@ -599,10 +603,14 @@
 }
 
 .project-showcaser {
+    $showcase-height: 50vh;
+    $img-section-offset: $defaultpadding;
+    pointer-events: none;
     position: relative;
     width: 100%;
     margin-bottom: 42px;
     .project-showcaser-header {
+        pointer-events: none;
         position: relative;
         display: flex;
         flex-direction: row;
@@ -626,21 +634,23 @@
         h2 {
             pointer-events: none;
             position: relative;
-            font-family: "Questrial", sans-serif;
+            font-family: 'Questrial', sans-serif;
             font-size: 42px;
             opacity: 1;
             z-index: 2;
             &.subtext {
-                font-family: "Raleway Dots", sans-serif;
+                font-family: 'Raleway Dots', sans-serif;
                 opacity: 1;
-                align-self: center;
-                font-size: 36px;
+                align-self: flex-end;
+                font-size: 18px;
+                transform: translateY(-4.5px);
                 color: #707070;
             }
         }
     }
 
     .project-showcaser-content-background {
+        pointer-events: none;
         position: absolute;
         left: 0px;
         top: 0px;
@@ -649,20 +659,26 @@
         overflow-y: hidden !important;
         &::after, &::before {
             content: '';
+            pointer-events: all;
             position: absolute;
-            height: 200vw;
-            width: 400vw;
+            height: 4000px;//200vw;
+            width: 6000px;//400vw;
             background-color: $darkblack;
-            z-index: -10;
+            transition: 1s;
         }
         &::after {
-            top: 50%;
-            left: -80%;
-            transform: translate(-50%, -50%) rotate(-45deg);
+            top: 0px;
+            right: $img-section-offset;
+            transform: translate(50%, -50%) rotate(-45deg);
+            z-index: -10;
+            height: 200px;
+            
+            transition-timing-function: cubic-bezier(.69,.01,.65,.76);
+            transition: 0.85s;
         }
         &::before {
             top: 0px;
-            right: -60%;
+            right: calc(-1200px + #{$img-section-offset});
             transform: translateX(50%) rotate(-45deg);
             z-index: 10;
         }
@@ -670,6 +686,7 @@
     .project-showcaser-content-wrapper {
         $border: 2px dashed rgba(255, 255, 255, 0.025);
         $mask-distance: 30%;
+        pointer-events: none;
         position: relative;
         top: 0px;
         left: 0px;
@@ -677,6 +694,7 @@
         height: 100%;
         &::after, &::before {
             content: '';
+            pointer-events: none;
             position: absolute;
             background-color: rgba(100, 100, 100, 1);
             width: 40%;
@@ -700,20 +718,24 @@
     }
 
     .project-showcaser-content {
+        pointer-events: none;
         $borderW: 2px;
         $border: $borderW dashed rgba(255, 255, 255, 0.025);
         $colimgpadding: 42px;
         position: relative;
         width: 100%;
-        height: 50vh;
+        height: $showcase-height;
+        overflow-x: visible !important;
         .project-showcaser-row {
             // border: 2px dashed red;
+            pointer-events: none;
             position: relative;
             display: flex;
             flex-direction: row;
             height: 100%;
             max-height: 100%;
-            padding: 0px $defaultpadding;
+            // padding: 0px $defaultpadding;
+            overflow-x: visible !important;
             &::before {
                 content: '';
                 position: absolute;
@@ -734,18 +756,180 @@
                 border-bottom: $border;
             }
         }
+        .project-showcaser-infodump {
+            position: relative;
+            width: 100%;
+            overflow-y: hidden !important;
+            overflow-x: visible !important;
+            height: 50vh;
+            z-index: -8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            &::after {
+                content: '';
+                pointer-events: all;
+                position: absolute;
+                top: 0px;
+                right: 1000px;
+                height: 4000px;
+                width: 3200px;
+                background-color: $darkblack;
+                transform-origin: 50% 50%;
+                transform: translate(0, -50%) rotate(45deg);
+                z-index: 99;
+                transition: 1s;
+                transition-timing-function: $easeinoutxtra;
+                // transition-timing-function: $lightsnapandeaseout;
+                // border: 10px dashed yellow;
+                // overflow-y: hidden !important;
+            }
+        }
         .project-showcaser-col-img {
+            pointer-events: all;
+            $hover-deadzone: 96px;
             position: absolute;
             max-height: 100%;
             height: 100%;
             width: auto;
-            right: $colimgpadding;
+            right: calc(#{$colimgpadding} + #{$img-section-offset} - #{$hover-deadzone});
             bottom: $colimgpadding;
             z-index: 3;
+            padding-right: 64px;
+            transition: 0.75s;
+            transition-timing-function: $lightsnapandeaseout;
             img {
                 height: 100%;
                 width: auto;
-                // opacity: 0.5;
+                transition: 0.5s;
+                filter: grayscale(90%);
+            }
+            &::after {
+                content: '2020 VIZIO Voice Remote';
+                pointer-events: none;
+                text-align: left;
+                width: 300px;
+                font-family: 'Inconsolata', sans-serif;
+                font-size: 24px;
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                transition: 0.75s;
+                transition-delay: 1s !important;
+                transition-timing-function: $easeinoutxtra;
+                transform-origin: 0% 0%;
+                transform: rotate(-90deg);
+                opacity: 0;
+                z-index: -2;
+                filter: blur(10px);
+            }
+            &:hover {
+                transform: translateX(-24px);
+                img {
+                    filter: grayscale(0%);
+                }
+                &::after {
+                    opacity: 0.125;
+                    transition: 0.25s;
+                    transition-delay: 0.25s !important;
+                    transition-timing-function: $lightsnapandeaseout;
+                    left: -32px;
+                    filter: blur(0px);
+                }
+            }
+        }
+    }
+    .project-showcaser-background-clicker {
+        position: absolute;
+        right: 100px;
+        width: 1200px;
+        min-height: 90%;
+        height: 90%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -10;
+        .showcaser-bg-clicker-col {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            &.active {
+                .showcaser-bg-clicker-cell {
+                    // height: 20px;
+                    flex: 1;
+                }
+            }
+            .showcaser-bg-clicker-cell {
+                position: relative;
+                pointer-events: all;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                opacity: 0.5;
+                overflow: hidden !important;
+                height: 0px;
+                transition: 0.5s;
+                transition-timing-function: cubic-bezier(.42,.17,.37,1.01);
+                img {
+                    width: 100%;
+                    height: auto;
+                    filter: blur(3px) brightness(0.5);
+                    transition: 0.5s;
+                    transition-timing-function: $lightsnapandeaseout;
+                    opacity: 0.75;
+                }
+                &:hover:not(.active) {
+                    cursor: pointer !important;
+                    img {
+                        filter: blur(0px) brightness(0.4);
+                        transform: scale(1.01);
+                    }
+                }
+                &.active {
+                    height: $showcase-height !important;
+                    flex: 10;
+                    align-items: stretch;
+                    flex-direction: column;
+                    img {
+                        filter: blur(0px) brightness(1.0) !important;
+                    }
+                }
+            }
+            // Cover-up
+            &::after {
+                content: '';
+                pointer-events: all;
+                position: absolute;
+                width: 300px;
+                height: 200%;
+                background-color: $darkgray;
+                right: -175px;
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+                transition: 1s;
+            }
+        }
+    }
+    &.video-shown {
+        .project-showcaser-content-background {
+            &::after {
+                transition-delay: 0.45s;
+                transform: translate(20%, -50%) rotate(-45deg);
+            }
+        }
+        .project-showcaser-infodump {
+            &::after {
+                transition-delay: 0.5s;
+                transition-timing-function: cubic-bezier(.34,-0.01,.22,.99);
+                transform: translate(-200px, -50%) rotate(10deg);
+            }
+        }
+        .showcaser-bg-clicker-col {
+            &::after {
+                transition-delay: 0.85s;
+                transform: translate(1000px, -50%) rotate(45deg);
             }
         }
     }

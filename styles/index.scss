@@ -11,6 +11,7 @@ html {
 #main {
     overflow-x: hidden !important;
     overflow-y: hidden;
+    z-index: -2;
 }
 
 body {

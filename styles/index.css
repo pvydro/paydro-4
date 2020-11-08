@@ -378,6 +378,7 @@
   }
 }
 .toolbox {
+  pointer-events: all;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -394,6 +395,7 @@
   opacity: 0.4;
   transition: 0.75s;
   transition-delay: 0.5s;
+  pointer-events: all;
 }
 .toolbox .toolbox-nav-list:hover {
   transition: 0.25s;
@@ -402,6 +404,7 @@
 }
 .toolbox .toolbox-nav-list .toolbox-nav-item {
   font-family: "Questrial", sans-serif;
+  pointer-events: all;
   text-transform: uppercase;
   position: relative;
   margin: 5px 0px;
@@ -504,6 +507,7 @@
   opacity: 0.5;
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.07, 0.45, 0.37, 0.96) !important;
+  pointer-events: all;
 }
 .toolbox .toolbox-content .toolbox-internal.active .toolbox-internal-paragraph .toolbox-see-more::after {
   content: "";
@@ -713,6 +717,7 @@
   transform: translateX(-50%);
 }
 .skillset-toolbox .skillset-toolbox-content .skillset-toolbox-scroll-container .skillset-toolbox-row .skillset-toolbox-cell {
+  pointer-events: all;
   position: relative;
   min-width: 150px;
   width: 150px;
@@ -903,6 +908,7 @@
   -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, black), color-stop(40%, black), color-stop(100%, rgba(0, 0, 0, 0)));
 }
 .executed-cells .executed-cell .executed-cell-content {
+  pointer-events: all;
   position: relative;
   margin-top: 42px;
   height: 81%;
@@ -936,6 +942,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 12px 0px;
+  pointer-events: all;
 }
 .executed-cells .executed-cell .executed-cell-content .executed-cell-list .executed-cell-list-item p {
   pointer-events: none;
@@ -1033,6 +1040,7 @@
 
 * {
   transition: 0s;
+  pointer-events: none;
 }
 
 .proj-header-page {
@@ -1041,6 +1049,7 @@
 }
 
 .proj-header-image {
+  pointer-events: all;
   position: relative;
   width: 100%;
   height: 100%;
@@ -1429,6 +1438,7 @@
   margin: 0px 12px;
   opacity: 0;
   transform: translateY(42px);
+  pointer-events: all;
 }
 .screenshots-grid .row .cell img {
   pointer-events: none;
@@ -1487,6 +1497,7 @@
   display: flex;
   flex-direction: row;
   overflow: hidden;
+  pointer-events: all;
 }
 #similar-projects .similar-projects-grid .row .cell:hover {
   cursor: pointer;
@@ -1595,11 +1606,13 @@
 }
 
 .project-showcaser {
+  pointer-events: none;
   position: relative;
   width: 100%;
   margin-bottom: 42px;
 }
 .project-showcaser .project-showcaser-header {
+  pointer-events: none;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -1632,11 +1645,13 @@
 .project-showcaser .project-showcaser-header h2.subtext {
   font-family: "Raleway Dots", sans-serif;
   opacity: 1;
-  align-self: center;
-  font-size: 36px;
+  align-self: flex-end;
+  font-size: 18px;
+  transform: translateY(-4.5px);
   color: #707070;
 }
 .project-showcaser .project-showcaser-content-background {
+  pointer-events: none;
   position: absolute;
   left: 0px;
   top: 0px;
@@ -1646,24 +1661,30 @@
 }
 .project-showcaser .project-showcaser-content-background::after, .project-showcaser .project-showcaser-content-background::before {
   content: "";
+  pointer-events: all;
   position: absolute;
-  height: 200vw;
-  width: 400vw;
+  height: 4000px;
+  width: 6000px;
   background-color: #171717;
-  z-index: -10;
+  transition: 1s;
 }
 .project-showcaser .project-showcaser-content-background::after {
-  top: 50%;
-  left: -80%;
-  transform: translate(-50%, -50%) rotate(-45deg);
+  top: 0px;
+  right: 40px;
+  transform: translate(50%, -50%) rotate(-45deg);
+  z-index: -10;
+  height: 200px;
+  transition-timing-function: cubic-bezier(0.69, 0.01, 0.65, 0.76);
+  transition: 0.85s;
 }
 .project-showcaser .project-showcaser-content-background::before {
   top: 0px;
-  right: -60%;
+  right: calc(-1200px + 40px);
   transform: translateX(50%) rotate(-45deg);
   z-index: 10;
 }
 .project-showcaser .project-showcaser-content-wrapper {
+  pointer-events: none;
   position: relative;
   top: 0px;
   left: 0px;
@@ -1672,6 +1693,7 @@
 }
 .project-showcaser .project-showcaser-content-wrapper::after, .project-showcaser .project-showcaser-content-wrapper::before {
   content: "";
+  pointer-events: none;
   position: absolute;
   background-color: #646464;
   width: 40%;
@@ -1693,17 +1715,20 @@
   -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, black), color-stop(30%, black), color-stop(100%, rgba(0, 0, 0, 0)));
 }
 .project-showcaser .project-showcaser-content {
+  pointer-events: none;
   position: relative;
   width: 100%;
   height: 50vh;
+  overflow-x: visible !important;
 }
 .project-showcaser .project-showcaser-content .project-showcaser-row {
+  pointer-events: none;
   position: relative;
   display: flex;
   flex-direction: row;
   height: 100%;
   max-height: 100%;
-  padding: 0px 40px;
+  overflow-x: visible !important;
 }
 .project-showcaser .project-showcaser-content .project-showcaser-row::before {
   content: "";
@@ -1724,18 +1749,165 @@
   height: 0px;
   border-bottom: 2px dashed rgba(255, 255, 255, 0.025);
 }
+.project-showcaser .project-showcaser-content .project-showcaser-infodump {
+  position: relative;
+  width: 100%;
+  overflow-y: hidden !important;
+  overflow-x: visible !important;
+  height: 50vh;
+  z-index: -8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-infodump::after {
+  content: "";
+  pointer-events: all;
+  position: absolute;
+  top: 0px;
+  right: 1000px;
+  height: 4000px;
+  width: 3200px;
+  background-color: #171717;
+  transform-origin: 50% 50%;
+  transform: translate(0, -50%) rotate(45deg);
+  z-index: 99;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
+}
 .project-showcaser .project-showcaser-content .project-showcaser-col-img {
+  pointer-events: all;
   position: absolute;
   max-height: 100%;
   height: 100%;
   width: auto;
-  right: 42px;
+  right: calc(42px + 40px - 96px);
   bottom: 42px;
   z-index: 3;
+  padding-right: 64px;
+  transition: 0.75s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .project-showcaser .project-showcaser-content .project-showcaser-col-img img {
   height: 100%;
   width: auto;
+  transition: 0.5s;
+  filter: grayscale(90%);
+}
+.project-showcaser .project-showcaser-content .project-showcaser-col-img::after {
+  content: "2020 VIZIO Voice Remote";
+  pointer-events: none;
+  text-align: left;
+  width: 300px;
+  font-family: "Inconsolata", sans-serif;
+  font-size: 24px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  transition: 0.75s;
+  transition-delay: 1s !important;
+  transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
+  transform-origin: 0% 0%;
+  transform: rotate(-90deg);
+  opacity: 0;
+  z-index: -2;
+  filter: blur(10px);
+}
+.project-showcaser .project-showcaser-content .project-showcaser-col-img:hover {
+  transform: translateX(-24px);
+}
+.project-showcaser .project-showcaser-content .project-showcaser-col-img:hover img {
+  filter: grayscale(0%);
+}
+.project-showcaser .project-showcaser-content .project-showcaser-col-img:hover::after {
+  opacity: 0.125;
+  transition: 0.25s;
+  transition-delay: 0.25s !important;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  left: -32px;
+  filter: blur(0px);
+}
+.project-showcaser .project-showcaser-background-clicker {
+  position: absolute;
+  right: 100px;
+  width: 1200px;
+  min-height: 90%;
+  height: 90%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -10;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col.active .showcaser-bg-clicker-cell {
+  flex: 1;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell {
+  position: relative;
+  pointer-events: all;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0.5;
+  overflow: hidden !important;
+  height: 0px;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.42, 0.17, 0.37, 1.01);
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell img {
+  width: 100%;
+  height: auto;
+  filter: blur(3px) brightness(0.5);
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  opacity: 0.75;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell:hover:not(.active) {
+  cursor: pointer !important;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell:hover:not(.active) img {
+  filter: blur(0px) brightness(0.4);
+  transform: scale(1.01);
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell.active {
+  height: 50vh !important;
+  flex: 10;
+  align-items: stretch;
+  flex-direction: column;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell.active img {
+  filter: blur(0px) brightness(1) !important;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col::after {
+  content: "";
+  pointer-events: all;
+  position: absolute;
+  width: 300px;
+  height: 200%;
+  background-color: #1e1e1e;
+  right: -175px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  transition: 1s;
+}
+.project-showcaser.video-shown .project-showcaser-content-background::after {
+  transition-delay: 0.45s;
+  transform: translate(20%, -50%) rotate(-45deg);
+}
+.project-showcaser.video-shown .project-showcaser-infodump::after {
+  transition-delay: 0.5s;
+  transition-timing-function: cubic-bezier(0.34, -0.01, 0.22, 0.99);
+  transform: translate(-200px, -50%) rotate(10deg);
+}
+.project-showcaser.video-shown .showcaser-bg-clicker-col::after {
+  transition-delay: 0.85s;
+  transform: translate(1000px, -50%) rotate(45deg);
 }
 
 html {
@@ -1746,6 +1918,7 @@ html {
 #main {
   overflow-x: hidden !important;
   overflow-y: hidden;
+  z-index: -2;
 }
 
 body {

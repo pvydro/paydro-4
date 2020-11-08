@@ -124,6 +124,7 @@
         }
         .executed-cell-content {
             $swipe-percent: 15%;
+            pointer-events: all;
             position: relative;
             margin-top: 42px;
             height: 81%;
@@ -155,6 +156,7 @@
                     flex-direction: column;
                     justify-content: center;
                     padding: 12px 0px;
+                    pointer-events: all;
                     p {
                         pointer-events: none;
                         font-family: "Raleway Dots", sans-serif;

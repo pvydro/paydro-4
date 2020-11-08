@@ -56,6 +56,7 @@
 }
 
 .toolbox {
+            pointer-events: all;
     $nav-width: 20%;
     position: relative;
     display: flex;
@@ -71,6 +72,7 @@
         opacity: 0.4;
         transition: 0.75s;
         transition-delay: 0.5s;
+        pointer-events: all;
         &:hover {
             transition: 0.25s;
             transition-delay: 0s;
@@ -79,6 +81,7 @@
         // border: 3px dashed red;
         .toolbox-nav-item {
             font-family: 'Questrial', sans-serif;
+            pointer-events: all;
             text-transform: uppercase;
             position: relative;
             margin: 5px 0px;
@@ -178,6 +181,7 @@
                         opacity: 0.5;
                         transition: 0.5s;
                         transition-timing-function: cubic-bezier(.07,.45,.37,.96) !important;
+                        pointer-events: all;
                         &::after {
                             content: '';
                             position: absolute;
