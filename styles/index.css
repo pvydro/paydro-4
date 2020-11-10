@@ -57,6 +57,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @keyframes intro-header-letter-down {
   0% {
     opacity: 0;
@@ -2143,6 +2154,88 @@
   transform: translateX(-6px);
   mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(70%, black), color-stop(100%, black)) !important;
   -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(70%, black), color-stop(100%, black)) !important;
+}
+
+@keyframes flintro-box-intro {
+  0% {
+    height: 56px;
+    width: 32px;
+    top: -64px;
+    opacity: 0;
+  }
+  40% {
+    height: 52px;
+    width: 48px;
+    top: 50%;
+  }
+  50% {
+    height: 42px;
+    width: 52px;
+  }
+  100% {
+    height: 48px;
+    width: 48px;
+    opacity: 1;
+  }
+}
+@keyframes flintro-box-outro {
+  0% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 100vw;
+    height: 100vw;
+  }
+}
+@keyframes flintro-parent-byebye {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+#flintro {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color: white;
+  z-index: 1001;
+  animation: flintro-parent-byebye 0.5s 1s;
+  animation-fill-mode: forwards;
+}
+#flintro .box {
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  background-color: #171717;
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  animation: flintro-box-intro 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.25s;
+}
+#flintro .box::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: #171717;
+  border-radius: inherit;
+  animation: flintro-box-outro 0.5s 0.75s forwards;
+  animation-fill-mode: forwards;
 }
 
 html {
