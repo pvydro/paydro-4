@@ -1786,8 +1786,8 @@
   transform-origin: 50% 50%;
   transform: translate(0, -50%) rotate(45deg);
   z-index: 99;
-  transition: 1s;
-  transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational {
   position: relative;
@@ -1854,6 +1854,8 @@
   margin-left: 96px;
   transition: 0.25s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, black), color-stop(100%, black));
+  -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, black), color-stop(100%, black));
 }
 @media (max-width: 1654px) {
   .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph {
@@ -1876,6 +1878,62 @@
   -webkit-clip-path: polygon(0 100%, 100% 0, 100% 100%);
   clip-path: polygon(50% 100%, 100% 0, 100% 100%);
   right: 50px;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links {
+  position: absolute;
+  bottom: 42px;
+  left: 200px;
+  z-index: 999;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row {
+  display: flex;
+  flex-direction: row;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link {
+  pointer-events: all;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  margin: 0px 12px;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link .tooltip {
+  font-family: "Manrope", sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  width: 200%;
+  transform: translateX(-50%);
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  opacity: 0;
+  filter: blur(10px);
+  text-align: center;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link img {
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link:hover {
+  cursor: pointer;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link:hover .tooltip {
+  bottom: -24px;
+  opacity: 0.25;
+  filter: blur(0px);
+  word-break: keep-all;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link:hover img {
+  opacity: 0.75;
+  transform: translateY(-6px);
 }
 .project-showcaser .project-showcaser-content .project-showcaser-col-img {
   pointer-events: all;
@@ -2053,6 +2111,7 @@
   transform: translate(20%, -50%) rotate(-45deg);
 }
 .project-showcaser.video-shown .project-showcaser-mainsectional::after {
+  transition: 1s;
   transition-delay: 0.5s;
   transition-timing-function: cubic-bezier(0.34, -0.01, 0.22, 0.99);
   transform: translate(-200px, -50%) rotate(10deg);
@@ -2072,6 +2131,18 @@
   .project-showcaser.video-shown .project-showcaser-informational {
     opacity: 0;
   }
+}
+.project-showcaser:not(.video-shown).video-hovered .project-showcaser-mainsectional::after {
+  transition: 0.5s !important;
+  transition-delay: 0s !important;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96) !important;
+  transform: translate(-12px, -50%) rotate(44deg);
+}
+.project-showcaser:not(.video-shown).video-hovered .project-showcaser-paragraph {
+  transition: 0.5s;
+  transform: translateX(-6px);
+  mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(70%, black), color-stop(100%, black)) !important;
+  -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(70%, black), color-stop(100%, black)) !important;
 }
 
 html {

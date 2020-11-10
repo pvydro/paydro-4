@@ -782,9 +782,8 @@
                 transform-origin: 50% 50%;
                 transform: translate(0, -50%) rotate(45deg);
                 z-index: 99;
-                transition: 1s;
-                transition-timing-function: $easeinoutxtra;
-                // transition-timing-function: $lightsnapandeaseout;
+                transition: 0.25s;
+                transition-timing-function: $lightsnapandeaseout;
                 // border: 10px dashed yellow;
                 // overflow-y: hidden !important;
             }
@@ -849,6 +848,8 @@
                 margin-left: 96px;
                 transition: 0.25s;
                 transition-timing-function: $lightsnapandeaseout;
+                mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
+                -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
                 @media (max-width: 1654px) {
                     opacity: 0;
                 }
@@ -869,6 +870,62 @@
                     -webkit-clip-path: polygon(0 100%, 100% 0, 100% 100%);
                     clip-path: polygon(50% 100%, 100% 0, 100% 100%);
                     right: 50px;
+                }
+            }
+            .project-showcaser-links {
+                position: absolute;
+                bottom: 42px;
+                left: $contentboxpadding;
+                z-index: 999;
+                .project-showcaser-link-row {
+                    display: flex;
+                    flex-direction: row;
+                    .project-showcaser-link {
+                        pointer-events: all;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 96px;
+                        height: 96px;
+                        margin: 0px 12px;
+                        transition: 0.5s;
+                        transition-timing-function: $lightsnapandeaseout;
+                        .tooltip {
+                            font-family: 'Manrope', sans-serif;
+                            text-transform: uppercase;
+                            position: absolute;
+                            left: 50%;
+                            bottom: 0px;
+                            width: 200%;
+                            transform: translateX(-50%);
+                            transition: 0.25s;
+                            transition-timing-function: $lightsnapandeaseout;
+                            opacity: 0;
+                            filter: blur(10px);
+                            text-align: center;
+                        }
+                        img {
+                            transition: 0.5s;
+                            transition-timing-function: $lightsnapandeaseout;
+                            width: 100%;
+                            height: auto;
+                            opacity: 0.5;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            .tooltip {
+                                bottom: -24px;
+                                opacity: 0.25;
+                                filter: blur(0px);
+                                word-break: keep-all;
+                            }
+                            img {
+                                opacity: 0.75;
+                                transform: translateY(-6px);
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1065,6 +1122,7 @@
         }
         .project-showcaser-mainsectional {
             &::after {
+                transition: 1s;
                 transition-delay: 0.5s;
                 transition-timing-function: cubic-bezier(.34,-0.01,.22,.99);
                 transform: translate(-200px, -50%) rotate(10deg);
@@ -1089,6 +1147,20 @@
             .project-showcaser-informational {
                 opacity: 0;
             }
+        }
+    }
+    &:not(.video-shown).video-hovered {
+        .project-showcaser-mainsectional::after {
+            transition: 0.5s !important;
+            transition-delay: 0s !important;
+            transition-timing-function: $lightsnapandeaseout !important;
+            transform: translate(-12px, -50%) rotate(44deg);
+        }
+        .project-showcaser-paragraph {
+            transition: 0.5s;
+            transform: translateX(-6px);
+            mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0,0,0,0)), color-stop(70%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1))) !important;
+            -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0,0,0,0)), color-stop(70%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1))) !important;
         }
     }
 }
