@@ -1795,9 +1795,31 @@
   height: 75%;
   margin-left: 200px;
   z-index: 999;
-}
-.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content {
   text-align: right;
+}
+@media (orientation: portrait) {
+  .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 890px) {
+  .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational {
+    opacity: 0;
+  }
+}
+@media (max-width: 1654px) {
+  .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational {
+    width: 35%;
+    text-align: left;
+  }
+  .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content h2::after {
+    right: auto;
+    left: 0px;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content h2 {
   position: relative;
@@ -1826,22 +1848,27 @@
   opacity: 0.5;
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph {
-  width: 80vh;
+  width: 40vw;
   height: 40vh;
   z-index: 999;
   margin-left: 96px;
   transition: 0.25s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
+@media (max-width: 1654px) {
+  .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph {
+    opacity: 0;
+  }
+}
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph p {
   margin-top: -6px;
   font-family: "Questrial";
-  font-size: 24px;
-  line-height: 42px;
+  font-size: 1.25vw;
+  line-height: calc(2vw * .75);
   opacity: 0.25;
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph .push {
-  width: 100%;
+  width: 800px;
   height: 400px;
   float: right;
   -webkit-shape-outside: polygon(50% 100%, 100% 0, 100% 100%);
@@ -2040,6 +2067,11 @@
 .project-showcaser.video-shown .showcaser-bg-clicker-cell:hover .clicker-cell-caption {
   transition: 0.25s;
   opacity: 0.5;
+}
+@media (max-width: 1760px) {
+  .project-showcaser.video-shown .project-showcaser-informational {
+    opacity: 0;
+  }
 }
 
 html {

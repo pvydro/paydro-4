@@ -794,8 +794,26 @@
                 height: 75%;
                 margin-left: $contentboxpadding;
                 z-index: 999;
+                text-align: right;
+                @media (orientation: portrait) {
+                    margin-left: $contentboxpaddingportrait;
+                }
+                @media (max-width: 890px) {
+                    opacity: 0;
+                }
+                @media (max-width: 1654px) {
+                    width: 35%;
+                    text-align: left;
+                    .pjsc-informational-content h2::after {
+                        right: auto;
+                        left: 0px;
+                        border-top-left-radius: 0%;
+                        border-bottom-left-radius: 0%;
+                        border-top-right-radius: 50%;
+                        border-bottom-right-radius: 50%;
+                    }
+                }
                 .pjsc-informational-content {
-                    text-align: right;
                     h2 {
                         position: relative;
                         text-transform: uppercase;
@@ -825,23 +843,26 @@
                 }
             }
             .project-showcaser-paragraph {
-                width: 80vh;
+                width: 40vw;
                 height: 40vh;
                 z-index: 999;
                 margin-left: 96px;
                 transition: 0.25s;
                 transition-timing-function: $lightsnapandeaseout;
+                @media (max-width: 1654px) {
+                    opacity: 0;
+                }
                 p {
                     margin-top: -6px;
                     font-family: 'Questrial';
-                    font-size: 24px;
-                    line-height: 42px;
+                    font-size: 1.25vw;//24px;
+                    // line-height: 42px;
+                    line-height: calc(2vw * .75);
                     opacity: 0.25;
                 }
                 .push {
-                    width: 100%;
+                    width: 800px;
                     height: 400px;
-                    // background-color: green;
                     float: right;
                     -webkit-shape-outside: polygon(50% 100%, 100% 0, 100% 100%);
                     shape-outside: polygon(50% 100%, 100% 0, 100% 100%);
@@ -1008,6 +1029,9 @@
                         opacity: 1;
                     }
                     img {
+                        @media (orientation: portrait) {
+
+                        }
                         filter: blur(0px) brightness(1.0) !important;
                     }
                 }
@@ -1059,6 +1083,11 @@
             .clicker-cell-caption {
                 transition: 0.25s;
                 opacity: 0.5;
+            }
+        }
+        @media (max-width: 1760px) {
+            .project-showcaser-informational {
+                opacity: 0;
             }
         }
     }
