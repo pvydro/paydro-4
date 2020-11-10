@@ -1847,6 +1847,9 @@
 .project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col.active .showcaser-bg-clicker-cell {
   flex: 1;
 }
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col.active .showcaser-bg-clicker-cell .clicker-cell-caption {
+  display: flex;
+}
 .project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell {
   position: relative;
   pointer-events: all;
@@ -1860,8 +1863,46 @@
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.42, 0.17, 0.37, 1.01);
 }
-.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell img {
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell .clicker-cell-caption {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
   width: 100%;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0px;
+  left: 0px;
+  transition: 0.75s;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell .clicker-cell-caption p {
+  font-family: "Questrial", sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-align: right;
+  padding-right: 112px;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell .clicker-cell-caption p span {
+  pointer-events: all;
+  text-transform: none;
+  font-family: "Raleway Dots", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 12px;
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  color: #8D99AE;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell .clicker-cell-caption p span:hover {
+  cursor: pointer;
+  color: white;
+  margin-right: 12px;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell img {
+  object-fit: contain;
+  width: 100%;
+  min-width: 100%;
   height: auto;
   filter: blur(3px) brightness(0.5);
   transition: 0.5s;
@@ -1880,6 +1921,10 @@
   flex: 10;
   align-items: stretch;
   flex-direction: column;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell.active .clicker-cell-caption {
+  transition: 0.25s;
+  opacity: 1;
 }
 .project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell.active img {
   filter: blur(0px) brightness(1) !important;
@@ -1908,6 +1953,13 @@
 .project-showcaser.video-shown .showcaser-bg-clicker-col::after {
   transition-delay: 0.85s;
   transform: translate(1000px, -50%) rotate(45deg);
+}
+.project-showcaser.video-shown .showcaser-bg-clicker-cell .clicker-cell-caption {
+  transition: 0.25s !important;
+}
+.project-showcaser.video-shown .showcaser-bg-clicker-cell:hover .clicker-cell-caption {
+  transition: 0.25s;
+  opacity: 0.5;
 }
 
 html {
