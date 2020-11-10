@@ -829,6 +829,7 @@
 }
 
 .executed-header {
+  position: relative;
   text-align: right;
 }
 .executed-header h1 {
@@ -836,6 +837,16 @@
   font-family: "Manrope", sans-serif;
   font-size: 42px;
   text-transform: uppercase;
+}
+.executed-header h3 {
+  font-family: "Inconsolata", sans-serif;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  opacity: 0.25;
+  transition-delay: 2s !important;
+  transition: 0.5s;
+  transform: translateY(-100%);
 }
 
 .executed-cell-holder {
@@ -1190,6 +1201,7 @@
   display: flex;
   background: #171717;
   padding: 40px;
+  min-height: 40vh;
 }
 .proj-summary-page p {
   font-family: "Manrope", sans-serif;
@@ -1236,18 +1248,25 @@
   }
 }
 
-.summary-header {
+.summary-content {
+  transition: 0.5s;
+  transition-delay: 1.55s;
+  opacity: 0;
+}
+.summary-content.animated {
+  opacity: 1;
+}
+.summary-content .summary-header {
   position: relative;
   font-family: "Questrial", sans-serif;
   font-size: 48px;
   margin: 64px 0px;
   text-transform: uppercase;
-  opacity: 0;
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   transform: translateX(42px);
 }
-.summary-header::after {
+.summary-content .summary-header::after {
   content: "";
   position: absolute;
   bottom: -30px;
@@ -1257,14 +1276,17 @@
   background-color: white;
   opacity: 0.5;
 }
-
-.summary-content {
+.summary-content .summary-paragraph {
+  opacity: 0;
   transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transform: translateX(42px);
 }
 .summary-content.animated {
   opacity: 1;
 }
 .summary-content.animated .summary-paragraph {
+  transition-delay: 1.75s;
   opacity: 0.75;
   transform: translateX(0px);
 }
@@ -1272,14 +1294,6 @@
   opacity: 0.5;
   transform: translateX(0px);
   transition-delay: 1.5s;
-}
-
-.summary-paragraph {
-  opacity: 0;
-  transition: 0.5s;
-  transition-delay: 1.75s;
-  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
-  transform: translateX(42px);
 }
 
 #spec-toolbox {
@@ -1636,6 +1650,8 @@
   position: relative;
   width: 100%;
   margin-bottom: 42px;
+  opacity: 1;
+  transition: 0.15s;
 }
 .project-showcaser .project-showcaser-header {
   pointer-events: none;
@@ -1697,7 +1713,7 @@
 .project-showcaser .project-showcaser-content-background::after {
   top: 0px;
   right: 40px;
-  transform: translate(50%, -50%) rotate(-45deg);
+  transform: translate(0%, -50%) rotate(-45deg);
   z-index: -10;
   height: 200px;
   transition-timing-function: cubic-bezier(0.69, 0.01, 0.65, 0.76);
@@ -1794,7 +1810,7 @@
   pointer-events: all;
   position: absolute;
   top: 0px;
-  right: 1000px;
+  right: 5000px;
   height: 4000px;
   width: 3200px;
   background-color: #171717;
@@ -1836,14 +1852,19 @@
     border-bottom-right-radius: 50%;
   }
 }
-.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content h2 {
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content {
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content h2, .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content .title {
   position: relative;
   text-transform: uppercase;
   font-family: "Emblema One", sans-serif;
   margin-bottom: 12px;
-  opacity: 0.75;
+  opacity: 0;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transform: translateX(42px);
 }
-.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content h2::after {
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content h2::after, .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content .title::after {
   content: "";
   position: absolute;
   bottom: -6px;
@@ -1860,7 +1881,8 @@
   margin-bottom: 42px;
   font-size: 24px;
   line-height: 32px;
-  opacity: 0.5;
+  opacity: 0;
+  transform: translateX(42px);
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph {
   width: 40vw;
@@ -1877,12 +1899,14 @@
     opacity: 0;
   }
 }
-.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph p {
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph .showcaser-p {
   margin-top: -6px;
   font-family: "Questrial";
   font-size: 1.25vw;
   line-height: calc(2vw * .75);
-  opacity: 0.25;
+  opacity: 0;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transform: translateX(42px);
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph .push {
   width: 800px;
@@ -1899,6 +1923,7 @@
   bottom: 42px;
   left: 200px;
   z-index: 999;
+  opacity: 0;
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row {
   display: flex;
@@ -1913,8 +1938,10 @@
   width: 96px;
   height: 96px;
   margin: 0px 12px;
+  transform: translateY(96px);
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  opacity: 0;
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link .tooltip {
   font-family: "Manrope", sans-serif;
@@ -2032,11 +2059,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  opacity: 0.5;
+  opacity: 0;
   overflow: hidden !important;
   height: 0px;
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.42, 0.17, 0.37, 1.01);
+  transform: translateX(-96px);
 }
 .project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell .clicker-cell-caption {
   opacity: 0;
@@ -2158,6 +2186,61 @@
   transform: translateX(-6px);
   mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(70%, black), color-stop(100%, black)) !important;
   -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(70%, black), color-stop(100%, black)) !important;
+}
+.project-showcaser.animated .project-showcaser-background-clicker .showcaser-bg-clicker-cell {
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transform: translateX(0px);
+  transition-delay: 1.75s;
+  opacity: 0.5;
+}
+.project-showcaser.animated .project-showcaser-background-clicker .showcaser-bg-clicker-cell:nth-child(2) {
+  transition-delay: 2s;
+}
+.project-showcaser.animated .project-showcaser-background-clicker .showcaser-bg-clicker-cell:nth-child(3) {
+  transition-delay: 2.25s;
+}
+.project-showcaser.animated .project-showcaser-mainsectional::after {
+  transition-delay: 0.25s;
+  transition: 1s;
+  right: 1000px;
+}
+.project-showcaser.animated .pjsc-informational-content {
+  transition: 0.5s;
+  transition-delay: 0.15s !important;
+}
+.project-showcaser.animated .pjsc-informational-content .title {
+  transition: 0.5s;
+  transition-delay: 1.25s !important;
+  opacity: 0.75 !important;
+  transform: translateX(0px) !important;
+}
+.project-showcaser.animated .pjsc-informational-content p {
+  transition: 0.5s;
+  transition-delay: 1s !important;
+  opacity: 1 !important;
+  transform: translateX(0px) !important;
+}
+.project-showcaser.animated .project-showcaser-paragraph .showcaser-p {
+  transition: 0.75s;
+  transition-delay: 1.5s !important;
+  opacity: 0.25 !important;
+  transform: translateX(0px) !important;
+}
+.project-showcaser.animated .project-showcaser-content-background::after {
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transition: 0.75s;
+  transition-delay: 1s !important;
+  transform: translate(50%, -50%) rotate(-45deg);
+}
+.project-showcaser.animated .project-showcaser-row .project-showcaser-mainsectional .project-showcaser-links {
+  transition-delay: 2.5s;
+  opacity: 1;
+}
+.project-showcaser.animated .project-showcaser-row .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link {
+  opacity: 1 !important;
+  transition-delay: 2.5s !important;
+  transform: translateY(0px) !important;
 }
 
 @keyframes flintro-box-intro {

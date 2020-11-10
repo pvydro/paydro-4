@@ -7,8 +7,8 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://kit.fontawesome.com/93022762cf.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="../../scripts/toolbox.js"></script>
     <script src="../../scripts/skillset-toolbox.js"></script>
     <script src="../../scripts/paydscroll.js"></script>
@@ -35,10 +35,9 @@
         </div>
 
         <div class="proj-summary-page content-box-padded">
-            <div class="summary-image no-padyscroll-offset paydscroll-autoplay" data-paydscroll>
-                <img src="../../assets//project-imgs/summarypix/ammoinferno.png" alt="">
+            <div class="summary-image no-paydscroll-offset" data-paydscroll>
             </div>
-            <div class="summary-content paydscroll-autoplay" data-paydscroll>
+            <div class="summary-content" data-paydscroll>
                 <h2 class="summary-header">Summary</h2>
                 <div class="summary-paragraph">
                     <p>
@@ -179,6 +178,7 @@
 
         <div class="content-box-padded" id="work-executed">
             <div class="executed-header">
+                <h3>Things built</h3>
                 <h1>Projects</h1>
             </div>
 
@@ -266,16 +266,13 @@
                                 <li class="executed-cell-list-item" data-executed-trigger="used-in-use">
                                     <p>Used & in use to build multiple applications across the device ecosystem</p>
                                 </li>
-                                <li class="executed-cell-list-item">
+                                <li class="executed-cell-list-item" data-executed-trigger="essentials">
                                     <p>Contains essential components such as Volume Ring, Input Switcher, Voice Search</p>
                                 </li>
-                                <li class="executed-cell-list-item">
-                                    <p>Integrates unique game engine technology to bring lightning-fast responsiveness</p>
-                                </li>
-                                <li class="executed-cell-list-item">
+                                <li class="executed-cell-list-item" data-executed-trigger="test-app">
                                     <p>Internal test application for visually assisted external development</p>
                                 </li>
-                                <li class="executed-cell-list-item">
+                                <li class="executed-cell-list-item" data-executed-trigger="uilib-api">
                                     <p>API giving client dev-friendly access to asynchronously managed components</p>
                                 </li>
                             </ul>
@@ -295,6 +292,13 @@
                                     The UI Component Library was automatically built and deployed to npm via JFrog Artifactory. 
                                     The private package was then imported into parent projects, allowing the import of individual components, 
                                     or important of a developer-friendly API.
+                                    </p>
+                                </div>
+                                <div class="executed-cell-more-info-paragraph" id="essentials">
+                                    <p>
+                                    The UI Component Library held essential components such as the Voice Ring, Volume Ring, Input Switcher, 
+                                    Notifications, Toasts, Action Buttons, and more. These components are built using graphics libraries to 
+                                    render as efficiently as possible.
                                     </p>
                                 </div>
                             </div>
@@ -377,7 +381,7 @@
         </div>
 
         <a name="ces-2020"></a>
-        <div class="project-showcaser" id="project-showcase-a">
+        <div class="project-showcaser" id="project-showcase-a" data-paydscroll>
             <div class="project-showcaser-header content-box-padded">
                 <h2>CES 2020&nbsp;&nbsp;</h2><h2 class="subtext"> Las Vegas</h2>
                 <img class="header-pet" src="../../assets/project-imgs/else/ces-logo.png" alt="">
@@ -431,14 +435,14 @@
                                 
                                 <div class="project-showcaser-informational">
                                     <div class="pjsc-informational-content">
-                                        <h2>Mission</h2>
+                                        <h2 class="title">Mission</h2>
                                         <p>
                                             Develop an MVP overlaying front-end application showcasing Vizio's 
                                             2020 voice remote capabilities.
                                         </p>
                                     </div>
                                     <div class="pjsc-informational-content">
-                                        <h2>Year</h2>
+                                        <h2 class="title">Year</h2>
                                         <p>
                                             2019
                                         </p>
@@ -447,7 +451,7 @@
     
                                 <div class="project-showcaser-paragraph">
                                     <div class="push"></div>
-                                    <p>
+                                    <p class="showcaser-p">
                                         Vizio commonly showcases their latest and greatest techonlogy 
                                         at the biggest technology convention in the world: CES. For the 2020 
                                         iteration, Vizio demo'd the SystemUI MVP project, developed over 
