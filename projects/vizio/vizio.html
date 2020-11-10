@@ -7,23 +7,21 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://kit.fontawesome.com/93022762cf.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script> -->
     <script src="../../scripts/toolbox.js"></script>
     <script src="../../scripts/skillset-toolbox.js"></script>
-    <script src="../../scripts/project-page.js"></script>
     <script src="../../scripts/paydscroll.js"></script>
+    <script src="../../scripts/project-page.js"></script>
     <script src="../../scripts/executed.js"></script>
     <script src="../../scripts/flintro.js"></script>
 
-    <link rel="stylesheet" href="../../styles/paydscroll.css">
     <link rel="stylesheet" href="../../styles/index.css">
+    <link rel="stylesheet" href="../../styles/paydscroll.css">
     <link rel="stylesheet" href="./vizio.css">
 </head>
 <body>
-    <div id="flintro">
-        <div class="box"></div>
-    </div>
+    <div id="flintro"><div class="box"></div></div>
 
     <div id="main">
         <div class="proj-header-page">
@@ -38,7 +36,7 @@
 
         <div class="proj-summary-page content-box-padded">
             <div class="summary-image no-padyscroll-offset paydscroll-autoplay" data-paydscroll>
-                <!-- <img src="../../assets//project-imgs/summarypix/ammoinferno.png" alt=""> -->
+                <img src="../../assets//project-imgs/summarypix/ammoinferno.png" alt="">
             </div>
             <div class="summary-content paydscroll-autoplay" data-paydscroll>
                 <h2 class="summary-header">Summary</h2>
@@ -206,7 +204,7 @@
                                 <li class="executed-cell-list-item" data-executed-trigger="mvp-pattern">
                                     <p>Utilized Jest to implement unit tests for spec'd user interactions</p>
                                 </li>
-                                <li class="executed-cell-list-item" data-executed-trigger="mvp-pattern">
+                                <li class="executed-cell-list-item" data-executed-trigger="sys-ces-2020">
                                     <p>Initial MVP development done in 3 weeks for CES2020 Las Vegas</p>
                                 </li>
                             </ul>
@@ -214,8 +212,8 @@
                                 <div class="executed-cell-more-info-paragraph" id="overlay-app">
                                     <p>
                                     SystemUI was a user-facing application overlaying all inputs on the television with a high performance rendering layer. 
-                                    This application
-
+                                    This application displayed essential components such as a new Volume Ring, new Input Switcher, notifications, and more.
+                                    It handled hundreds of voice commands, such as "show me the weather," or "tell me about the burj khalifa."
                                     </p>
                                 </div>
                                 <div class="executed-cell-more-info-paragraph" id="websocket-ui">
@@ -224,6 +222,27 @@
                                     and populated. These events contained essential information from the device, such as pairing status, remote battery level, 
                                     voice command domain, current inputs, all used to configure the UI Component Library's components. These events were listened 
                                     to via the Companion Library.
+                                    </p>
+                                </div>
+                                <div class="executed-cell-more-info-paragraph" id="mvp-pattern">
+                                    <p>
+                                    Considering the thousands of components this app is projected to contain, we wanted to implement an architecture that could 
+                                    scale gracefully with increased complexity and real estate. The Model-View-Controller (MVC) architectural pattern is a pattern 
+                                    utilizing a rule-set to separate business logic from display logic.
+                                    </p>
+                                </div>
+                                <div class="executed-cell-more-info-paragraph" id="mvp-pattern">
+                                    <p>
+                                    While this project was very visual, we implemented Jest unit testing to ensure API calls and responses matched specifications 
+                                    provided by higher levels. Tests were written for all sorts of user behaviors, such as unplugging USB accessories, losing network 
+                                    connection, and more.
+                                    </p>
+                                </div>
+                                <div class="executed-cell-more-info-paragraph" id="sys-ces-2020">
+                                    <p>
+                                    Upon inception, SystemUI was created as an MVP in the span of a couple weeks to be showcased at the Consumer Electronics Show 
+                                    (CES2020). Development was done up until the morning-of the user demo. Even with the extremely tight timeline, the application 
+                                    was stable and performed strong.
                                     </p>
                                 </div>
                             </div>

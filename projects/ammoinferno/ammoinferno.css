@@ -120,13 +120,6 @@
     transform: translateY(-50%);
 }
 
-.showcase-video {
-    position: relative;
-    margin-top: 42px;
-    text-align: center;
-    overflow: hidden;
-}
-
 .showcase-video-description {
     transform: translateX(84px);
     opacity: 0;
@@ -138,6 +131,11 @@
 }
 
 .showcase-video {
+    pointer-events: all;
+    position: relative;
+    margin-top: 42px;
+    text-align: center;
+    overflow: hidden;
     opacity: 0;
     transform: translateX(42px);
     border-radius: 20px;
@@ -220,6 +218,10 @@
     opacity: 0;
     transform: translateX(42px);
     overflow-x: visible;
+}
+
+.showcase-video-footer .youtube-icon {
+    pointer-events: all;
 }
 
 .showcase-video-footer .youtube-icon .fa-angle-double-right {
@@ -314,6 +316,10 @@
     opacity: 0;
 }
 
+.showcase-video-control-overlay {
+    pointer-events: all;
+}
+
 .showcase-video-control-overlay .mute-button {
     opacity: 0.4;
     transition: 0.25s;
@@ -321,6 +327,7 @@
 }
 
 .showcase-video-control-overlay .mute-button i {
+    pointer-events: all;
     transform: translateY(42px);
     font-size: 42px;
     position: absolute;

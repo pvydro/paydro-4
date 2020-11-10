@@ -160,7 +160,7 @@
     opacity: 0;
     transition: 0.5s;
     &.animated {
-        transition-delay: 0.7s;
+        transition-delay: 1.5s;
         opacity: 0.5;
     }
     img {
@@ -215,7 +215,7 @@
         .summary-header {
             opacity: 0.5;
             transform: translateX(0px);
-            transition-delay: 0.8s;
+            transition-delay: 1.5s;
         }
     }
 }
@@ -223,7 +223,7 @@
 .summary-paragraph {
     opacity: 0;
     transition: 0.5s;
-    transition-delay: 0.9s;
+    transition-delay: 1.75s;
     transition-timing-function: $lightsnapandeaseout;
     transform: translateX(42px);
 }
@@ -384,10 +384,12 @@
     .row {
         display: flex;
         flex-direction: row;
-        max-width: 100%;
+        // max-width: 100%;
         overflow-x: scroll;
         overflow-y: hidden;
         scrollbar-width: none;
+        pointer-events: all;
+        justify-content: center;
 
         &::-webkit-scrollbar {
             background-color: rgba(0, 0, 0, 0);
@@ -408,17 +410,20 @@
         .cell {
             // mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
             // -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+            width: 480px;
             height: 720px;
             margin: 0px 12px;
             opacity: 0;
             transform: translateY(42px);
             pointer-events: all;
+            overflow-x: hidden;
             img {
                 pointer-events: none;
                 opacity: 0.5;
                 transition-timing-function: $lightsnapandeaseout;
                 transition: 0.85s;
                 height: 100%;
+                overflow-x: hidden;
             }
             &:hover {
                 cursor: pointer;
