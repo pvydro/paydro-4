@@ -1658,8 +1658,9 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  transform: translateY(50%);
+  transform: translate(42px, 50%);
   z-index: 990;
+  opacity: 0;
 }
 .project-showcaser .project-showcaser-header .header-pet {
   position: absolute;
@@ -1755,6 +1756,10 @@
   bottom: 0px;
   mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, black), color-stop(30%, black), color-stop(100%, rgba(0, 0, 0, 0)));
   -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, black), color-stop(30%, black), color-stop(100%, rgba(0, 0, 0, 0)));
+}
+.project-showcaser .informational-mask {
+  mask-image: -webkit-gradient(linear, left 10%, left bottom, from(black), to(rgba(0, 0, 0, 0.5)));
+  -webkit-mask-image: -webkit-gradient(linear, left 10%, left bottom, from(black), to(rgba(0, 0, 0, 0.5)));
 }
 .project-showcaser .project-showcaser-content {
   pointer-events: none;
@@ -1901,12 +1906,15 @@
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph .showcaser-p {
   margin-top: -6px;
-  font-family: "Questrial";
+  font-family: "Raleway Dots", sans-serif;
+  font-weight: 800;
   font-size: 1.25vw;
   line-height: calc(2vw * .75);
   opacity: 0;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   transform: translateX(42px);
+  mask-image: -webkit-gradient(linear, left 50%, left bottom, from(black), to(rgba(0, 0, 0, 0.5)));
+  -webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(black), to(rgba(0, 0, 0, 0.5)));
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph .push {
   width: 800px;
@@ -1962,19 +1970,19 @@
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   width: 100%;
   height: auto;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link:hover {
   cursor: pointer;
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link:hover .tooltip {
   bottom: -24px;
-  opacity: 0.25;
+  opacity: 0.125;
   filter: blur(0px);
   word-break: keep-all;
 }
 .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link:hover img {
-  opacity: 0.75;
+  opacity: 0.5;
   transform: translateY(-6px);
 }
 .project-showcaser .project-showcaser-content .project-showcaser-col-img {
@@ -2059,12 +2067,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  opacity: 0;
   overflow: hidden !important;
   height: 0px;
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.42, 0.17, 0.37, 1.01);
   transform: translateX(-96px);
+  opacity: 0 !important;
 }
 .project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell .clicker-cell-caption {
   opacity: 0;
@@ -2110,10 +2118,12 @@
   filter: blur(3px) brightness(0.5);
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
-  opacity: 0.75;
+  opacity: 0 !important;
 }
 .project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell:hover:not(.active) {
   cursor: pointer !important;
+  opacity: 0.5 !important;
+  transition-delay: 0s !important;
 }
 .project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell:hover:not(.active) img {
   filter: blur(0px) brightness(0.4);
@@ -2187,18 +2197,11 @@
   mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(70%, black), color-stop(100%, black)) !important;
   -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(70%, black), color-stop(100%, black)) !important;
 }
-.project-showcaser.animated .project-showcaser-background-clicker .showcaser-bg-clicker-cell {
+.project-showcaser.animated .project-showcaser-header {
+  opacity: 1;
+  transition-delay: 1.25s !important;
   transition: 0.5s;
-  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
-  transform: translateX(0px);
-  transition-delay: 1.75s;
-  opacity: 0.5;
-}
-.project-showcaser.animated .project-showcaser-background-clicker .showcaser-bg-clicker-cell:nth-child(2) {
-  transition-delay: 2s;
-}
-.project-showcaser.animated .project-showcaser-background-clicker .showcaser-bg-clicker-cell:nth-child(3) {
-  transition-delay: 2.25s;
+  transform: translate(0px, 50%);
 }
 .project-showcaser.animated .project-showcaser-mainsectional::after {
   transition-delay: 0.25s;
@@ -2209,29 +2212,23 @@
   transition: 0.5s;
   transition-delay: 0.15s !important;
 }
+.project-showcaser.animated .pjsc-informational-content:nth-child(2) .title {
+  transition-delay: 1.5s !important;
+}
+.project-showcaser.animated .pjsc-informational-content:nth-child(2) p {
+  transition-delay: 1.75s !important;
+}
 .project-showcaser.animated .pjsc-informational-content .title {
   transition: 0.5s;
   transition-delay: 1.25s !important;
-  opacity: 0.75 !important;
+  opacity: 0.25 !important;
   transform: translateX(0px) !important;
 }
 .project-showcaser.animated .pjsc-informational-content p {
   transition: 0.5s;
   transition-delay: 1s !important;
-  opacity: 1 !important;
+  opacity: 0.5 !important;
   transform: translateX(0px) !important;
-}
-.project-showcaser.animated .project-showcaser-paragraph .showcaser-p {
-  transition: 0.75s;
-  transition-delay: 1.5s !important;
-  opacity: 0.25 !important;
-  transform: translateX(0px) !important;
-}
-.project-showcaser.animated .project-showcaser-content-background::after {
-  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
-  transition: 0.75s;
-  transition-delay: 1s !important;
-  transform: translate(50%, -50%) rotate(-45deg);
 }
 .project-showcaser.animated .project-showcaser-row .project-showcaser-mainsectional .project-showcaser-links {
   transition-delay: 2.5s;
@@ -2241,6 +2238,38 @@
   opacity: 1 !important;
   transition-delay: 2.5s !important;
   transform: translateY(0px) !important;
+}
+.project-showcaser.animated .project-showcaser-background-clicker .showcaser-bg-clicker-cell {
+  opacity: 1 !important;
+}
+.project-showcaser:not(.video-shown).animated .project-showcaser-paragraph .showcaser-p {
+  transition: 0.75s;
+  transition-delay: 1.5s !important;
+  opacity: 0.5 !important;
+  transform: translateX(0px) !important;
+}
+.project-showcaser:not(.video-shown).animated .project-showcaser-content-background::after {
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transition: 0.75s;
+  transition-delay: 1s !important;
+  transform: translate(50%, -50%) rotate(-45deg);
+}
+.project-showcaser:not(.video-shown).animated .project-showcaser-background-clicker .showcaser-bg-clicker-cell {
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transform: translateX(0px);
+  opacity: 0.125 !important;
+}
+.project-showcaser:not(.video-shown).animated .project-showcaser-background-clicker .showcaser-bg-clicker-cell img {
+  transition: 1s;
+  transition-delay: 1.75s !important;
+  opacity: 0.75 !important;
+}
+.project-showcaser:not(.video-shown).animated .project-showcaser-background-clicker .showcaser-bg-clicker-cell img:nth-child(2) {
+  transition-delay: 2s;
+}
+.project-showcaser:not(.video-shown).animated .project-showcaser-background-clicker .showcaser-bg-clicker-cell img:nth-child(3) {
+  transition-delay: 2.25s;
 }
 
 @keyframes flintro-box-intro {

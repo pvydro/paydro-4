@@ -201,7 +201,7 @@
                                 <li class="executed-cell-list-item" data-executed-trigger="mvp-pattern">
                                     <p>Used MVP pattern to develop scalable architecture, supporting countless scenarios</p>
                                 </li>
-                                <li class="executed-cell-list-item" data-executed-trigger="mvp-pattern">
+                                <li class="executed-cell-list-item" data-executed-trigger="jest-test">
                                     <p>Utilized Jest to implement unit tests for spec'd user interactions</p>
                                 </li>
                                 <li class="executed-cell-list-item" data-executed-trigger="sys-ces-2020">
@@ -220,18 +220,19 @@
                                     <p>
                                     SystemUI listened for websocket events from the TV to determine what visual components should be displayed 
                                     and populated. These events contained essential information from the device, such as pairing status, remote battery level, 
-                                    voice command domain, current inputs, all used to configure the UI Component Library's components. These events were listened 
+                                    voice command domain, current inputs, all used to configure the UI Library's components. These events were listened 
                                     to via the Companion Library.
                                     </p>
                                 </div>
                                 <div class="executed-cell-more-info-paragraph" id="mvp-pattern">
                                     <p>
-                                    Considering the thousands of components this app is projected to contain, we wanted to implement an architecture that could 
+                                    Considering the thousands of components this app was projected to contain, we wanted to implement an architecture that could 
                                     scale gracefully with increased complexity and real estate. The Model-View-Controller (MVC) architectural pattern is a pattern 
-                                    utilizing a rule-set to separate business logic from display logic.
+                                    utilizing a rule-set to separate business logic from display logic. We strictly enforced this pattern and created a solid 
+                                    scalable platform to build upon.
                                     </p>
                                 </div>
-                                <div class="executed-cell-more-info-paragraph" id="mvp-pattern">
+                                <div class="executed-cell-more-info-paragraph" id="jest-test">
                                     <p>
                                     While this project was very visual, we implemented Jest unit testing to ensure API calls and responses matched specifications 
                                     provided by higher levels. Tests were written for all sorts of user behaviors, such as unplugging USB accessories, losing network 
@@ -279,7 +280,7 @@
                             <div class="executed-cell-more-info">
                                 <div class="executed-cell-more-info-paragraph" id="hundreds-components">
                                     <p>
-                                    The UI Component Library was used internally by developers on the SmartCast teams. It 
+                                    The UI Library was used internally by developers on the SmartCast teams. It 
                                     contained hundreds of UI components, using game technology to develop and configure smooth, responsive 
                                     interactions.
                                     <br><br>
@@ -289,17 +290,37 @@
                                 </div>
                                 <div class="executed-cell-more-info-paragraph" id="jfrog-artifactory">
                                     <p>
-                                    The UI Component Library was automatically built and deployed to npm via JFrog Artifactory. 
+                                    The UI Library was automatically built and deployed to npm via JFrog Artifactory. 
                                     The private package was then imported into parent projects, allowing the import of individual components, 
-                                    or important of a developer-friendly API.
+                                    or import of a developer-friendly API.
+                                    </p>
+                                </div>
+                                <div class="executed-cell-more-info-paragraph" id="used-in-use">
+                                    <p>
+                                    The UI Library is integrated into a number of applications under the Platform team. 
+                                    The lightweight and universal nature of the library allowed its components to be configured and used 
+                                    in any environment.
                                     </p>
                                 </div>
                                 <div class="executed-cell-more-info-paragraph" id="essentials">
                                     <p>
-                                    The UI Component Library held essential components such as the Voice Ring, Volume Ring, Input Switcher, 
-                                    Notifications, Toasts, Action Buttons, and more. These components are built using graphics libraries to 
-                                    render as efficiently as possible.
+                                    The UI Library held essential components such as the Voice Ring, Volume Ring, Input Switcher, 
+                                    Notifications, Toasts, Action Buttons, and more.
                                     </p>
+                                </div>
+                                <div class="executed-cell-more-info-paragraph" id="test-app">
+                                    <p>
+                                    In order to assist developers in testing custom components, the UI Library featured an internal test 
+                                    application, giving a straightforward and visually-assisted solution to testing these unique components. 
+                                    A range of test keys were implemented to give QA debug capabilities across devices, via test application.
+                                    </p>
+                                </div>
+                                <div class="executed-cell-more-info-paragraph" id="uilib-api">
+                                    <p>
+                                    For the UI Library, we didn't want the client to have to handle instantiations, or component management. 
+                                    To keep complexity light, a lower level API was exposed to the client, allowing them to 
+                                    trigger pre-defined component management logic, keeping all components in sync with each other.
+                                </p>
                                 </div>
                             </div>
                         </div>
@@ -434,20 +455,22 @@
                             <div class="project-showcaser-mainsectional-row">
                                 
                                 <div class="project-showcaser-informational">
-                                    <div class="pjsc-informational-content">
-                                        <h2 class="title">Mission</h2>
-                                        <p>
-                                            Develop an MVP overlaying front-end application showcasing Vizio's 
-                                            2020 voice remote capabilities.
-                                        </p>
-                                    </div>
-                                    <div class="pjsc-informational-content">
-                                        <h2 class="title">Year</h2>
-                                        <p>
-                                            2019
-                                        </p>
-                                    </div>
-                                </div>  
+                                    <div class="informational-mask">
+                                        <div class="pjsc-informational-content">
+                                            <h2 class="title">Mission</h2>
+                                            <p>
+                                                Develop an MVP overlaying front-end application showcasing Vizio's 
+                                                2020 voice remote capabilities.
+                                            </p>
+                                        </div>
+                                        <div class="pjsc-informational-content">
+                                            <h2 class="title">Year</h2>
+                                            <p>
+                                                2019
+                                            </p>
+                                        </div>
+                                    </div>  
+                                </div>
     
                                 <div class="project-showcaser-paragraph">
                                     <div class="push"></div>

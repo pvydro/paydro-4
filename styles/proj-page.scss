@@ -513,7 +513,6 @@
                             opacity: 0.4;
                         }
                     }
-                    // $indicatorSpacing: 40px;
                 }
                 &::before {
                     content: '';
@@ -625,8 +624,9 @@
         position: relative;
         display: flex;
         flex-direction: row;
-        transform: translateY(50%);
+        transform: translate(42px, 50%);
         z-index: 990;
+        opacity: 0;
         .header-pet {
             position: absolute;
             width: auto;
@@ -725,6 +725,11 @@
             mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0,0,0,1)), color-stop($mask-distance, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
             -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0,0,0,1)), color-stop($mask-distance, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
         }
+    }
+
+    .informational-mask {
+        mask-image: -webkit-gradient(linear, left 10%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.5)));
+        -webkit-mask-image: -webkit-gradient(linear, left 10%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.5)));
     }
 
     .project-showcaser-content {
@@ -869,12 +874,17 @@
                 }
                 .showcaser-p {
                     margin-top: -6px;
-                    font-family: 'Questrial';
+                    // font-family: 'Questrial';
+                    font-family: 'Raleway Dots', sans-serif;
+                    font-weight: 800;
                     font-size: 1.25vw;
                     line-height: calc(2vw * .75);
                     opacity: 0;
                     transition-timing-function: $lightsnapandeaseout;
                     transform: translateX(42px);
+
+            mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.5)));
+            -webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.5)));
                 }
                 .push {
                     width: 800px;
@@ -928,18 +938,18 @@
                             transition-timing-function: $lightsnapandeaseout;
                             width: 100%;
                             height: auto;
-                            opacity: 0.5;
+                            opacity: 0.25;
                         }
                         &:hover {
                             cursor: pointer;
                             .tooltip {
                                 bottom: -24px;
-                                opacity: 0.25;
+                                opacity: 0.125;
                                 filter: blur(0px);
                                 word-break: keep-all;
                             }
                             img {
-                                opacity: 0.75;
+                                opacity: 0.5;
                                 transform: translateY(-6px);
                             }
                         }
@@ -1032,12 +1042,12 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                opacity: 0;
                 overflow: hidden !important;
                 height: 0px;
                 transition: 0.5s;
                 transition-timing-function: cubic-bezier(.42,.17,.37,1.01);
                 transform: translateX(-96px);
+                opacity: 0 !important;
                 .clicker-cell-caption {
                     // display: none;
                     opacity: 0;
@@ -1086,10 +1096,12 @@
                     filter: blur(3px) brightness(0.5);
                     transition: 0.5s;
                     transition-timing-function: $lightsnapandeaseout;
-                    opacity: 0.75;
+                    opacity: 0 !important;
                 }
                 &:hover:not(.active) {
                     cursor: pointer !important;
+                    opacity: 0.5 !important;
+                    transition-delay: 0s !important;
                     img {
                         filter: blur(0px) brightness(0.4);
                         transform: scale(1.01);
@@ -1183,20 +1195,11 @@
         }
     }
     &.animated {
-        .project-showcaser-background-clicker {
-            .showcaser-bg-clicker-cell {
-                transition: 0.5s;
-                transition-timing-function: $lightsnapandeaseout;
-                transform: translateX(0px);
-                transition-delay: 1.75s;
-                opacity: 0.5;
-                &:nth-child(2) {
-                    transition-delay: 2s;
-                }
-                &:nth-child(3) {
-                    transition-delay: 2.25s;
-                }
-            }
+        .project-showcaser-header {
+            opacity: 1;
+            transition-delay: 1.25s !important;
+            transition: 0.5s;
+            transform: translate(0px, 50%);
         }
         .project-showcaser-mainsectional::after {
             transition-delay: 0.25s;
@@ -1206,26 +1209,55 @@
         .pjsc-informational-content {
             transition: 0.5s;
             transition-delay: 0.15s !important;
+            &:nth-child(2) {
+                .title {
+                    transition-delay: 1.5s !important;
+                }
+                p {
+                    transition-delay: 1.75s !important;
+                }
+            }
             .title {
                 transition: 0.5s;
                 transition-delay: 1.25s !important;
-                opacity: 0.75 !important;
+                opacity: 0.25 !important;
                 transform: translateX(0px) !important;
-                // display: block !important;
             }
             p {
                 transition: 0.5s;
                 transition-delay: 1s !important;
-                opacity: 1 !important;
+                opacity: 0.5 !important;
                 transform: translateX(0px) !important;
             }
         }
 
+        .project-showcaser-row {
+            .project-showcaser-mainsectional {
+                .project-showcaser-links {
+                    transition-delay: 2.5s;
+                    opacity: 1;
+                    .project-showcaser-link {
+                        opacity: 1 !important;
+                        transition-delay: 2.5s !important;
+                        transform: translateY(0px) !important;
+                    }
+                }
+            }
+        }
+
+        .project-showcaser-background-clicker {
+            .showcaser-bg-clicker-cell {
+                opacity: 1 !important;
+            }
+        }
+    }
+
+    &:not(.video-shown).animated {
         .project-showcaser-paragraph {
             .showcaser-p {
                 transition: 0.75s;
                 transition-delay: 1.5s !important;
-                opacity: 0.25 !important;
+                opacity: 0.5 !important;
                 transform: translateX(0px) !important;
             }
         }
@@ -1236,15 +1268,21 @@
             transition-delay: 1s !important;
             transform: translate(50%, -50%) rotate(-45deg);
         }
-        .project-showcaser-row {
-            .project-showcaser-mainsectional {
-                .project-showcaser-links {
-                    transition-delay: 2.5s;
-                    opacity: 1;
-                    .project-showcaser-link {
-                        opacity: 1 !important;
-                        transition-delay: 2.5s !important;
-                        transform: translateY(0px) !important;
+        .project-showcaser-background-clicker {
+            .showcaser-bg-clicker-cell {
+                transition: 0.5s;
+                transition-timing-function: $lightsnapandeaseout;
+                transform: translateX(0px);
+                opacity: 0.125 !important;
+                img {
+                    transition: 1s;
+                    transition-delay: 1.75s !important;
+                    opacity: 0.75 !important;
+                    &:nth-child(2) {
+                        transition-delay: 2s;
+                    }
+                    &:nth-child(3) {
+                        transition-delay: 2.25s;
                     }
                 }
             }
