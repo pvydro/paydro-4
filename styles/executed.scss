@@ -48,6 +48,7 @@
     flex-wrap: nowrap;
     align-items: flex-end;
     overflow-x: auto;
+    pointer-events: all;
 
     mask-image: -webkit-gradient(linear, left top, right top,
         color-stop(0%, rgba(0,0,0,0)),

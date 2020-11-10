@@ -8,6 +8,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
@@ -17,6 +19,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300&display=swap");
@@ -29,6 +33,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
@@ -38,6 +44,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
@@ -47,6 +55,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @keyframes intro-header-letter-down {
   0% {
     opacity: 0;
@@ -852,6 +862,7 @@
   flex-wrap: nowrap;
   align-items: flex-end;
   overflow-x: auto;
+  pointer-events: all;
   mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(5%, black), color-stop(100%, black));
   -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(5%, black), color-stop(100%, black));
 }
@@ -1749,18 +1760,21 @@
   height: 0px;
   border-bottom: 2px dashed rgba(255, 255, 255, 0.025);
 }
-.project-showcaser .project-showcaser-content .project-showcaser-infodump {
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional {
   position: relative;
   width: 100%;
   overflow-y: hidden !important;
   overflow-x: visible !important;
   height: 50vh;
   z-index: -8;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
-.project-showcaser .project-showcaser-content .project-showcaser-infodump::after {
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-mainsectional-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 96px;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional::after {
   content: "";
   pointer-events: all;
   position: absolute;
@@ -1774,6 +1788,67 @@
   z-index: 99;
   transition: 1s;
   transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational {
+  position: relative;
+  width: 17%;
+  height: 75%;
+  margin-left: 200px;
+  z-index: 999;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content {
+  text-align: right;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content h2 {
+  position: relative;
+  text-transform: uppercase;
+  font-family: "Emblema One", sans-serif;
+  margin-bottom: 12px;
+  opacity: 0.75;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content h2::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  right: 0px;
+  background-color: white;
+  width: 15%;
+  height: 2px;
+  opacity: 0.5;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content p {
+  font-family: "NTR", sans-serif;
+  margin-bottom: 42px;
+  font-size: 24px;
+  line-height: 32px;
+  opacity: 0.5;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph {
+  width: 80vh;
+  height: 40vh;
+  z-index: 999;
+  margin-left: 96px;
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph p {
+  margin-top: -6px;
+  font-family: "Questrial";
+  font-size: 24px;
+  line-height: 42px;
+  opacity: 0.25;
+}
+.project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph .push {
+  width: 100%;
+  height: 400px;
+  float: right;
+  -webkit-shape-outside: polygon(50% 100%, 100% 0, 100% 100%);
+  shape-outside: polygon(50% 100%, 100% 0, 100% 100%);
+  -webkit-clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  clip-path: polygon(50% 100%, 100% 0, 100% 100%);
+  right: 50px;
 }
 .project-showcaser .project-showcaser-content .project-showcaser-col-img {
   pointer-events: all;
@@ -1941,11 +2016,16 @@
   transform: translateY(-50%) rotate(45deg);
   transition: 1s;
 }
+.project-showcaser.video-shown .project-showcaser-paragraph {
+  transition-delay: 0.5s !important;
+  transform: translateX(-42px);
+  opacity: 0;
+}
 .project-showcaser.video-shown .project-showcaser-content-background::after {
   transition-delay: 0.45s;
   transform: translate(20%, -50%) rotate(-45deg);
 }
-.project-showcaser.video-shown .project-showcaser-infodump::after {
+.project-showcaser.video-shown .project-showcaser-mainsectional::after {
   transition-delay: 0.5s;
   transition-timing-function: cubic-bezier(0.34, -0.01, 0.22, 0.99);
   transform: translate(-200px, -50%) rotate(10deg);
