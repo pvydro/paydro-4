@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+.summary-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.summary-content .summary-text {
+  width: 70%;
+}
+.summary-content .summary-header {
+  font-family: "Raleway Dots", sans-serif;
+  font-weight: 800;
+}
+.summary-content .summary-paragraph {
+  width: 100%;
+}
+.summary-content .summary-paragraph p {
+  font-family: "Raleway Dots", sans-serif;
+  font-weight: 800;
+}
+.summary-content .summary-photo {
+  position: relative;
+  pointer-events: all;
+  width: 300px;
+  margin-right: 96px;
+  margin-top: 96px;
+}
+.summary-content .summary-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border-top-right-radius: 15px;
+  filter: grayscale(50%);
+  transition: 0.5s;
+  opacity: 0.5;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 10%, black 50%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 10%, black 50%);
+}
+.summary-content .summary-photo:hover img {
+  transition: transform 0.25s filter 12s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  filter: grayscale(20%);
+  opacity: 0.8;
+  transform: translateY(-1%);
+}
+.summary-content .summary-photo:hover::after {
+  transform: rotate(75deg) translate(16%, 46.5%);
+}
+.summary-content .summary-photo::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  width: 300px;
+  height: 150px;
+  border-radius: 50% 50% 0 0/100% 100% 0 0;
+  border: 4px dotted white;
+  border-bottom: 0;
+  transform: rotate(75deg) translate(15%, 47.5%);
+  opacity: 0.05;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  mask-image: linear-gradient(to right, transparent 70%, black 70.1%);
+  -webkit-mask-image: linear-gradient(to right, transparent 70%, black 70.1%);
+}
+
+/*# sourceMappingURL=emp-proj-page.css.map */

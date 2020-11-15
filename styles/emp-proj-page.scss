@@ -1,0 +1,69 @@
+@import './vars.scss';
+
+.summary-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .summary-text {
+        width: 70%;
+    }
+    .summary-header {
+        font-family: 'Raleway Dots', sans-serif;
+        font-weight: 800;
+    }
+    .summary-paragraph {
+        width: 100%;
+        p {
+            font-family: 'Raleway Dots', sans-serif;
+            font-weight: 800;
+        }
+    }
+    .summary-photo {
+        position: relative;
+        pointer-events: all;
+        width: 300px;
+        margin-right: 96px;
+        margin-top: 96px;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            border-top-right-radius: 15px;
+            filter: grayscale(50%);
+            // transition: 1s;
+            transition: 0.5s;
+            opacity: 0.5;
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 10%, black 50%);
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 10%, black 50%);
+        }
+        &:hover {
+            img {
+                transition: transform 0.25s filter 12s;
+                transition-timing-function: $lightsnapandeaseout;
+                filter: grayscale(20%);
+                opacity: 0.8;
+                transform: translateY(-1%);
+            }
+            &::after {
+                transform: rotate(75deg) translate(16%, 46.5%);
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            width: 300px;
+            height: 150px;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+            border: 4px dotted white;
+            border-bottom: 0;
+            transform: rotate(75deg) translate(15%, 47.5%);
+            opacity: 0.05;
+            transition: 0.5s;
+            transition-timing-function: $lightsnapandeaseout;
+            mask-image: linear-gradient(to right, transparent 70%, black 70.1%);
+            -webkit-mask-image: linear-gradient(to right, transparent 70%, black 70.1%);
+        }
+    }
+}

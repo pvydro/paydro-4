@@ -9,4 +9,8 @@
   justify-content: center;
 }
 
+.proj-header-image img {
+  filter: blur(4px);
+}
+
 /*# sourceMappingURL=vizio.css.map */

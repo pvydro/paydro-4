@@ -16,7 +16,6 @@ $(document).ready(() => {
             })
         })
         $('.executed-cell-more-info-paragraph').on('click', () => {
-            console.log('cliiiii')
             closeAllCells()
         })
     }

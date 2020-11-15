@@ -8,3 +8,9 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.proj-header-image {
+    img {
+        filter: blur(4px);
+    }
+}
