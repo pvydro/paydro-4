@@ -126,14 +126,15 @@
   transform: translate(-50%, -50%) rotate(2deg);
   background-color: #171717;
   width: 120vw;
-  height: 50%;
+  height: 60%;
   z-index: -3;
 }
 .play-ad-page .header-logo {
   position: absolute;
-  width: 324px;
+  width: 420px;
   left: 96px;
-  top: -112px;
+  top: 46%;
+  transform: translateY(-50%);
 }
 .play-ad-page .header-logo img {
   opacity: 0.8;
@@ -165,7 +166,8 @@
   right: 148px;
   top: -12px;
   transform: rotate(2deg);
-  transition: 5s;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.55, -0.01, 0.41, 1);
   filter: brightness(0.5) grayscale(50%);
 }
 .play-ad-page .playable-ad .player-bg {
@@ -184,16 +186,39 @@
   transform: translate(-50%, -50%);
 }
 .play-ad-page .playable-ad:hover {
-  transition: 1s;
+  transition: 0.35s;
+  transition-timing-function: cubic-bezier(0.82, 1.6, 0.35, 0.89);
   filter: brightness(1);
+  transform: rotate(1.5deg);
 }
 .play-ad-page .ad-info {
+  pointer-events: all;
   position: absolute;
   right: 612px;
   width: 50%;
   text-align: right;
   top: 50%;
   transform: translateY(-70%);
+}
+.play-ad-page .ad-info::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -24px;
+  height: 80%;
+  width: 4px;
+  background-color: white;
+  opacity: 0.5;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.4, -0.5, 0, 1.75);
+}
+.play-ad-page .ad-info .header,
+.play-ad-page .ad-info .project-header,
+.play-ad-page .ad-info .project-desc {
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .play-ad-page .ad-info .header {
   font-family: "Raleway Dots", sans-serif;
@@ -202,7 +227,7 @@
 .play-ad-page .ad-info .project-header {
   font-family: "Questrial", sans-serif;
   margin-bottom: 48px;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 .play-ad-page .ad-info .project-desc {
   font-family: "Raleway Dots", sans-serif;
@@ -210,6 +235,115 @@
   width: 480px;
   float: right;
   opacity: 0.5;
+}
+.play-ad-page .ad-info:hover .header,
+.play-ad-page .ad-info:hover .project-header,
+.play-ad-page .ad-info:hover .project-desc {
+  margin-right: 9px;
+}
+.play-ad-page .ad-info:hover::after {
+  opacity: 0.2;
+  transform: translate(3px, -50%);
+  height: 100%;
+  border-radius: 4px;
+}
+
+.other-ads-page {
+  position: relative;
+}
+.other-ads-page .other-header {
+  position: absolute;
+  right: 200px;
+  top: 96px;
+  transform: translateY(100%);
+}
+.other-ads-page .other-header h2 {
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-family: "Work Sans", sans-serif;
+}
+.other-ads-page .other-holder {
+  position: relative;
+  height: 360px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 96px;
+}
+.other-ads-page .other-holder .other-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+}
+.other-ads-page .other-holder .other-row .other-cell {
+  pointer-events: all;
+  width: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 12px;
+}
+.other-ads-page .other-holder .other-row .other-cell img {
+  width: 100%;
+  height: auto;
+  opacity: 0.35;
+  transition: 1s;
+}
+.other-ads-page .other-holder .other-row .other-cell:hover {
+  cursor: pointer;
+}
+.other-ads-page .other-holder .other-row .other-cell:hover img {
+  transition: 0.75s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  opacity: 0.85;
+}
+.other-ads-page .other-holder .other-showcase {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  width: 360px;
+  height: 100%;
+}
+.other-ads-page .other-holder .other-showcase .other-showcase-container {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+}
+.other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell {
+  pointer-events: all;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.55, -0.01, 0.41, 1);
+}
+.other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell img {
+  width: 100%;
+  height: 100%;
+}
+.other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active) {
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.55, -0.01, 0.41, 1);
+  transform: translateX(-50%) scale(0.9);
+  filter: brightness(20%);
+  z-index: -1;
+}
+.other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active).left {
+  left: 35%;
+}
+.other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active).left:hover {
+  left: 30%;
+}
+.other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active).right {
+  left: 65%;
+}
+.other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active).right:hover {
+  left: 70%;
+}
+.other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active):hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=tilting.css.map */
