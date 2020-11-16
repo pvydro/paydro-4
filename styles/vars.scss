@@ -27,6 +27,7 @@ $contentboxpaddingportrait: 50px;
 $count: 15;
 $line-width: 4px;
 
+$smoothdoubleease: cubic-bezier(.55,-0.01,.41,1);
 $easeboing: cubic-bezier(.34,1.5,0,.94);
 $snapandeaseout: cubic-bezier(0,.93,0,.95);
 $lightsnapandeaseout: cubic-bezier(.07,.75,.32,.96);

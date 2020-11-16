@@ -9,6 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 .proj-header-page .proj-header-image img {
   top: -40%;
   transform: translate(-50%, 0%);
@@ -251,6 +252,16 @@
 .other-ads-page {
   position: relative;
 }
+.other-ads-page:before {
+  content: "";
+  position: absolute;
+  height: 60%;
+  width: 120vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #171717;
+}
 .other-ads-page .other-header {
   position: absolute;
   right: 200px;
@@ -260,7 +271,7 @@
 .other-ads-page .other-header h2 {
   opacity: 0.5;
   text-transform: uppercase;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Raleway Dots", sans-serif;
 }
 .other-ads-page .other-holder {
   position: relative;
@@ -301,14 +312,23 @@
   position: absolute;
   top: 50%;
   left: 0px;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(-1.5deg);
   width: 360px;
   height: 100%;
+  filter: brightness(60%) grayscale(20%);
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0.55, -0.01, 0.41, 1);
+  transition-delay: filter 0.5s;
+}
+.other-ads-page .other-holder .other-showcase:hover {
+  transition-delay: 0s;
+  filter: brightness(100%);
 }
 .other-ads-page .other-holder .other-showcase .other-showcase-container {
   position: absolute;
   width: 100%;
   height: 200px;
+  transform: translateY(-50%);
 }
 .other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell {
   pointer-events: all;
@@ -316,34 +336,46 @@
   width: 100%;
   left: 50%;
   transform: translateX(-50%);
-  transition: 0.5s;
+  transition: 0.25s;
   transition-timing-function: cubic-bezier(0.55, -0.01, 0.41, 1);
 }
 .other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell img {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
 }
 .other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active) {
   transition: 0.5s;
-  transition-timing-function: cubic-bezier(0.55, -0.01, 0.41, 1);
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   transform: translateX(-50%) scale(0.9);
-  filter: brightness(20%);
+  filter: brightness(30%);
   z-index: -1;
+}
+.other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active) img {
+  border-radius: 15px;
+  box-shadow: none;
 }
 .other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active).left {
   left: 35%;
 }
 .other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active).left:hover {
-  left: 30%;
+  left: 33%;
 }
 .other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active).right {
   left: 65%;
 }
 .other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active).right:hover {
-  left: 70%;
+  left: 67%;
 }
 .other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active):hover {
   cursor: pointer;
+}
+.other-ads-page .other-holder .other-showcase:not(.active) {
+  opacity: 0;
+  top: 55%;
+  transition: 0.5s;
+  transition-delay: 0s;
 }
 
 /*# sourceMappingURL=tilting.css.map */
