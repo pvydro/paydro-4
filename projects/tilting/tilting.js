@@ -15,13 +15,13 @@ $(document).ready(() => {
         const otherId = ele.attr('data-other')
         currentGame = otherId
         refreshCurrentSlider()
+        ele.addClass('active')
     })
 
     // Screenshot slider
     $('.other-showcase-cell').on('click', (ev) => {
         const cell = $(ev.target)
-        console.log('outer clic')
-        console.log(cell)
+
         if (cell.hasClass('active')) {
             return
         }
@@ -37,14 +37,15 @@ $(document).ready(() => {
 
         $(selector).each((i, e) => {
             if (i == 0) {
-                $(e).addClass('left')
-            } else if (i == 1) {
                 $(e).addClass('right')
+            } else if (i == 1) {
+                $(e).addClass('left')
             }
         })
     }
 
     function clearAll() {
+        $('.other-cell').removeClass('active')
         $('.other-showcase-cell').removeClass('active')
         $('.other-showcase-cell').removeClass('right')
         $('.other-showcase-cell').removeClass('left')

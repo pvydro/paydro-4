@@ -268,6 +268,7 @@ $seccolor: #ed1c25;
 
 .other-ads-page {
     position: relative;
+    margin-top: -24px;
     &:before {
         content: '';
         position: absolute;
@@ -285,7 +286,7 @@ $seccolor: #ed1c25;
         transform: translateY(100%);
         h2 {
             opacity: 0.5;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             font-family: 'Raleway Dots', sans-serif;
         }
     }
@@ -312,6 +313,11 @@ $seccolor: #ed1c25;
                     height: auto;
                     opacity: 0.35;
                     transition: 1s;
+                }
+                &.active {
+                    img {
+                        opacity: 1;
+                    }
                 }
                 &:hover {
                     cursor: pointer;
@@ -358,6 +364,22 @@ $seccolor: #ed1c25;
                         border-radius: 10px;
                         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
                     }
+                    &.active {
+                        z-index: 999;
+                    }
+                    // &.active {
+                    //     &::after {
+                    //         content: '';
+                    //         position: absolute;
+                    //         left: 0px;
+                    //         top: 0px;
+                    //         width: 100%;
+                    //         height: 100%;
+                    //         pointer-events: all !important;
+                    //         border: 2px dashed red;
+                    //         z-index: 999;
+                    //     }
+                    // }
                     &:not(.active) {
                         transition: 0.5s;
                         transition-timing-function: $lightsnapandeaseout;
@@ -387,6 +409,10 @@ $seccolor: #ed1c25;
                 }
             }
             &:not(.active) {
+                pointer-events: none !important;
+                * {
+                    pointer-events: none !important;
+                }
                 opacity: 0;
                 top: 55%;
                 transition: 0.5s;
@@ -394,4 +420,11 @@ $seccolor: #ed1c25;
             }
         }
     }
+}
+
+#skillset-toolbox {
+    margin-top: -224px;
+}
+.skillset-toolbox {
+    margin-top: -24px;
 }

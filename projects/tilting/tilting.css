@@ -251,6 +251,7 @@
 
 .other-ads-page {
   position: relative;
+  margin-top: -24px;
 }
 .other-ads-page:before {
   content: "";
@@ -270,7 +271,6 @@
 }
 .other-ads-page .other-header h2 {
   opacity: 0.5;
-  text-transform: uppercase;
   font-family: "Raleway Dots", sans-serif;
 }
 .other-ads-page .other-holder {
@@ -299,6 +299,9 @@
   height: auto;
   opacity: 0.35;
   transition: 1s;
+}
+.other-ads-page .other-holder .other-row .other-cell.active img {
+  opacity: 1;
 }
 .other-ads-page .other-holder .other-row .other-cell:hover {
   cursor: pointer;
@@ -345,6 +348,9 @@
   border-radius: 10px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
 }
+.other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell.active {
+  z-index: 999;
+}
 .other-ads-page .other-holder .other-showcase .other-showcase-container .other-showcase-cell:not(.active) {
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
@@ -372,10 +378,22 @@
   cursor: pointer;
 }
 .other-ads-page .other-holder .other-showcase:not(.active) {
+  pointer-events: none !important;
   opacity: 0;
   top: 55%;
   transition: 0.5s;
   transition-delay: 0s;
+}
+.other-ads-page .other-holder .other-showcase:not(.active) * {
+  pointer-events: none !important;
+}
+
+#skillset-toolbox {
+  margin-top: -224px;
+}
+
+.skillset-toolbox {
+  margin-top: -24px;
 }
 
 /*# sourceMappingURL=tilting.css.map */
