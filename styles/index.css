@@ -1214,6 +1214,9 @@
   background: #171717;
   padding: 40px;
   min-height: 40vh;
+  -webkit-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 .proj-summary-page p {
   font-family: "Manrope", sans-serif;
@@ -1261,12 +1264,21 @@
 }
 
 .summary-content {
+  position: relative;
   transition: 0.5s;
   transition-delay: 1.55s;
   opacity: 0;
 }
 .summary-content.animated {
   opacity: 1;
+}
+.summary-content .time {
+  font-family: "DM Sans", sans-serif;
+  position: absolute;
+  top: 64px;
+  right: 52px;
+  font-size: 32px;
+  opacity: 0.125;
 }
 .summary-content .summary-header {
   position: relative;
@@ -1297,6 +1309,10 @@
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   transform: translateX(42px);
+}
+.summary-content .summary-paragraph p {
+  font-family: "Raleway Dots", sans-serif;
+  font-weight: 800;
 }
 .summary-content.animated {
   opacity: 1;

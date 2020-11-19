@@ -1,0 +1,13 @@
+.toolbox-internal-paragraph {
+  width: 80% !important;
+}
+
+.proj-header h1 {
+  font-family: "DM Sans", sans-serif;
+  text-transform: none;
+}
+.proj-header::before {
+  display: none;
+}
+
+/*# sourceMappingURL=microsoft.css.map */

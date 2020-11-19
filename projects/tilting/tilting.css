@@ -10,17 +10,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
-.proj-header-page .proj-header-image img {
-  top: -40%;
-  transform: translate(-50%, 0%);
-  transition: 1s;
-  transition-timing-function: cubic-bezier(0.55, -0.01, 0.41, 1);
-}
-.proj-header-page .proj-header-image:hover img {
-  transition: 6s;
-  top: -88%;
-}
-
 .proj-summary-page {
   padding: 0px;
   -webkit-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -45,16 +34,6 @@
   opacity: 0.25;
   mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(20%, black), color-stop(100%, black));
   -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(20%, black), color-stop(100%, black));
-}
-.proj-summary-page .mockup .mockup-logo {
-  position: absolute;
-  left: 24px;
-  bottom: 12px;
-  width: 148px;
-  height: auto;
-  opacity: 0.5;
-  transition: 0.5s;
-  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .proj-summary-page .mockup::before, .proj-summary-page .mockup::after {
   content: "";
@@ -87,7 +66,7 @@
   text-align: right;
 }
 .proj-summary-page .summary-content .summary-header::after {
-  background-color: #ed1c25;
+  background-color: white;
   opacity: 1;
   left: auto;
   right: 40px;
@@ -113,6 +92,17 @@
   left: 52px;
   font-size: 32px;
   opacity: 0.125;
+}
+
+.proj-header-page .proj-header-image img {
+  top: -40%;
+  transform: translate(-50%, 0%);
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0.55, -0.01, 0.41, 1);
+}
+.proj-header-page .proj-header-image:hover img {
+  transition: 6s;
+  top: -88%;
 }
 
 .play-ad-page {

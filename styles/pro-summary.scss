@@ -1,0 +1,81 @@
+@import './vars.scss';
+
+.proj-summary-page {
+    padding: 0px;
+
+    // -webkit-box-shadow:0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    //    -moz-box-shadow:0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    //         box-shadow:0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    .mockup {
+        pointer-events: all;
+        position: relative;
+        width: 50%;
+        // max-height: 50vh;
+        min-height: 100%;
+        overflow: hidden;
+        .mockup-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: auto;
+            transform: translate(-50%, -50%);
+            transition: 0.5s;
+            opacity: 0.25;
+
+            mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0,0,0,0.5)), color-stop(20%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
+            -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0,0,0,0.5)), color-stop(20%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
+        }
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            height: 35%;
+            right: 0px;
+            top: 0px;
+        }
+        &::after {
+            width: 4px;
+            background-color: white;
+        }
+        &::before {
+            height: 50%;
+            border: 2px dashed white;
+        }
+        &:hover {
+            .mockup-image {
+                opacity: 0.4;
+            }
+            .mockup-logo {
+                bottom: 24px;
+                opacity: 0.65;
+            }
+        }
+    }
+    .summary-content {
+        width: 50%;
+        .summary-header {
+            font-size: 24px;
+            text-align: right;
+            &::after {
+                background-color: white;
+                opacity: 1;
+                left: auto;
+                right: $defaultpadding;
+                bottom: auto;
+                top: -12px;
+            }
+        }
+        .summary-paragraph {
+            margin-top: 180px;
+        }
+        .summary-header,
+        .summary-paragraph p {
+            margin-left: 48px;
+            padding-right: 48px;
+        }
+        .time {
+            right: auto;
+            left: 52px;
+        }
+    }
+}

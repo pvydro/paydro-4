@@ -146,6 +146,10 @@
     background: $darkblack;
     padding: $defaultpadding;
     min-height: 40vh;
+
+    -webkit-box-shadow:0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     p {
         font-family: 'Manrope', sans-serif;
         font-size: 24px;
@@ -191,11 +195,20 @@
 
 
 .summary-content {
+    position: relative;
     transition: 0.5s;
     transition-delay: 1.55s;
     opacity: 0;
     &.animated {
         opacity: 1;
+    }
+    .time {
+        font-family: 'DM Sans', sans-serif;
+        position: absolute;
+        top: 64px;
+        right: 52px;
+        font-size: 32px;
+        opacity: 0.125;
     }
     .summary-header {
         position: relative;
@@ -226,6 +239,10 @@
         transition: 0.5s;
         transition-timing-function: $lightsnapandeaseout;
         transform: translateX(42px);
+        p {
+            font-family: 'Raleway Dots', sans-serif;
+            font-weight: 800;
+        }
     }
     &.animated {
         opacity: 1;

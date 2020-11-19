@@ -1,0 +1,14 @@
+// @import '../../styles/pro-summary.scss';
+.toolbox-internal-paragraph {
+    width: 80% !important;
+}
+
+.proj-header {
+    h1 {
+        font-family: 'DM Sans', sans-serif;
+        text-transform: none;
+    }
+    &::before {
+        display: none;
+    }
+}
