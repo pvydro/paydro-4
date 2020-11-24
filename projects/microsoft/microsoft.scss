@@ -12,3 +12,83 @@
         display: none;
     }
 }
+
+#solitaire-show {
+    margin-top: 96px;
+    .solitaire-header {
+        text-align: right;
+        h2 {
+            opacity: 0.25;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 24px;
+        }
+        h1 {
+            font-family: 'Raleway Dots', sans-serif;
+            font-size: 32px;
+            text-transform: uppercase;
+        }
+    }
+
+    .solitaire-row {
+        display: flex;
+        flex-direction: row;
+        margin-top: 48px;
+        .solitaire-show-img {
+            pointer-events: all;
+            opacity: 0.25;
+            img {
+                transition: 0.75s;
+                filter: grayscale(100%);
+                width: 300px;
+                height: auto;
+            }
+            &:hover {
+                img {
+                    filter: grayscale(60%);
+                }
+            }
+        }
+        .solitaire-paragraph {
+            position: relative;
+            // border: 1px dashed white;
+            margin-left: 96px;
+            p {
+                opacity: 0.5;
+                font-family: 'Raleway Dots', sans-serif;
+                line-height: 32px;
+                font-weight: 800;
+                &.upper {
+                    // width: 100%;
+                    padding-left: 30%;
+                    text-align: right;
+                }
+            }
+            .key-task {
+                margin-top: 48px;
+                h2 {
+                    position: relative;
+                    font-family: 'Manrope', sans-serif;
+                    font-size: 24px;
+                    opacity: 0.5;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -6px;
+                        left: 0px;
+                        width: 120px;
+                        height: 2px;
+                        background-color: white;
+                        border-top-right-radius: 50%;
+                        border-bottom-right-radius: 50%;
+                        opacity: 0.25;
+                    }
+                }
+                p {
+                    opacity: 0.75;
+                    margin-top: 24px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

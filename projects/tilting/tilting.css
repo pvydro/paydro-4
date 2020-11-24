@@ -10,11 +10,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 .proj-summary-page {
   padding: 0px;
-  -webkit-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 .proj-summary-page .mockup {
   pointer-events: all;
@@ -58,7 +67,6 @@
   opacity: 0.65;
 }
 .proj-summary-page .summary-content {
-  position: relative;
   width: 50%;
 }
 .proj-summary-page .summary-content .summary-header {
@@ -76,24 +84,19 @@
 .proj-summary-page .summary-content .summary-paragraph {
   margin-top: 180px;
 }
-.proj-summary-page .summary-content .summary-paragraph p {
-  font-family: "Raleway Dots", sans-serif;
-  font-weight: 800;
-}
 .proj-summary-page .summary-content .summary-header,
 .proj-summary-page .summary-content .summary-paragraph p {
   margin-left: 48px;
   padding-right: 48px;
 }
 .proj-summary-page .summary-content .time {
-  font-family: "DM Sans", sans-serif;
-  position: absolute;
-  top: 64px;
+  right: auto;
   left: 52px;
-  font-size: 32px;
-  opacity: 0.125;
 }
 
+.proj-header-page {
+  height: 50vh;
+}
 .proj-header-page .proj-header-image img {
   top: -40%;
   transform: translate(-50%, 0%);

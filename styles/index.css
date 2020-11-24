@@ -598,7 +598,7 @@
   }
 }
 .toolbox .toolbox-content .toolbox-internal .toolbox-internal-paragraph h2 {
-  font-family: "Questrial", sans-serif;
+  font-family: "Raleway Dots", sans-serif;
   text-transform: uppercase;
   margin-bottom: 20px;
   position: relative;
@@ -1084,7 +1084,7 @@
 
 .proj-header-page {
   position: relative;
-  height: 50vh;
+  height: 20vh;
 }
 
 .proj-header-image {
