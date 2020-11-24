@@ -1530,6 +1530,9 @@
   transform: scale(1.0125);
 }
 
+#similar-projects {
+  margin-top: 96px;
+}
 #similar-projects.animated .similar-projects-grid {
   opacity: 1;
   transform: translateY(0px);
@@ -1543,11 +1546,24 @@
   transition-delay: x 0.5s;
   margin-left: 42px;
   opacity: 0;
+  position: relative;
 }
 #similar-projects .similar-projects-header h3 {
-  font-family: "Manrope", sans-serif;
+  font-family: "Raleway Dots", sans-serif;
   font-size: 42px;
   opacity: 0.4;
+}
+#similar-projects .similar-projects-header::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0px;
+  height: 2px;
+  width: 20%;
+  background-color: white;
+  opacity: 0.25;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
 #similar-projects .similar-projects-grid {
   margin-top: 64px;

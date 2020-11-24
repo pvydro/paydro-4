@@ -1,5 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 .toolbox-internal-paragraph {
   width: 80% !important;
+}
+
+.proj-header-image {
+  filter: grayscale(80%) blur(5px);
 }
 
 .proj-header h1 {
@@ -37,11 +53,13 @@
 }
 #solitaire-show .solitaire-row .solitaire-show-img img {
   transition: 0.75s;
+  transition-delay: 0.75s;
   filter: grayscale(100%);
   width: 300px;
   height: auto;
 }
 #solitaire-show .solitaire-row .solitaire-show-img:hover img {
+  transition-delay: 0s;
   filter: grayscale(60%);
 }
 #solitaire-show .solitaire-row .solitaire-paragraph {
@@ -59,6 +77,7 @@
   text-align: right;
 }
 #solitaire-show .solitaire-row .solitaire-paragraph .key-task {
+  pointer-events: all;
   margin-top: 48px;
 }
 #solitaire-show .solitaire-row .solitaire-paragraph .key-task h2 {
@@ -66,6 +85,8 @@
   font-family: "Manrope", sans-serif;
   font-size: 24px;
   opacity: 0.5;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 #solitaire-show .solitaire-row .solitaire-paragraph .key-task h2::after {
   content: "";
@@ -78,11 +99,23 @@
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   opacity: 0.25;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 #solitaire-show .solitaire-row .solitaire-paragraph .key-task p {
   opacity: 0.75;
   margin-top: 24px;
   font-weight: 500;
+  transition: 1s;
+}
+#solitaire-show .solitaire-row .solitaire-paragraph .key-task:hover h2 {
+  margin-left: 6px;
+}
+#solitaire-show .solitaire-row .solitaire-paragraph .key-task:hover h2:after {
+  left: 6px;
+}
+#solitaire-show .solitaire-row .solitaire-paragraph .key-task:hover p {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=microsoft.css.map */

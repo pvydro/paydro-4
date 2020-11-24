@@ -472,7 +472,7 @@
 }
 
 #similar-projects {
-    // border: 3px dashed white;
+    margin-top: 96px;
 
     &.animated {
         .similar-projects-grid {
@@ -484,17 +484,28 @@
             opacity: 1;
         }
     }
-
-    // margin-bottom: 84px;
     .similar-projects-header {
         transition: 0.5s;
         transition-delay:x 0.5s;
         margin-left: 42px;
         opacity: 0;
         h3 {
-            font-family: 'Manrope', sans-serif;
+            font-family: 'Raleway Dots', sans-serif;
             font-size: 42px;
             opacity: 0.4;
+        }
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 0px;
+            height: 2px;
+            width: 20%;
+            background-color: white;
+            opacity: 0.25;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
         }
     }
     .similar-projects-grid {
