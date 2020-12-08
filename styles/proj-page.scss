@@ -305,21 +305,21 @@
         }
     }
 
-    &::before {
-        content: '';
-        position: absolute;
-        width: 400vw;
-        height: 420px;
-        top: 50%;
-        left: 50%;
-        transform-origin: 50% 50%;
-        transform: translate(-42.25%, -50%) rotate(-45deg);
-        background-color: $darkblack;
-        z-index: -99;
-        opacity: 0;
-        transition: 1s;
-        transition-delay: 1.125s;
-    }
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     width: 400vw;
+    //     height: 420px;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform-origin: 50% 50%;
+    //     transform: translate(-42.25%, -50%) rotate(-45deg);
+    //     background-color: $darkblack;
+    //     z-index: -99;
+    //     opacity: 0;
+    //     transition: 1s;
+    //     transition-delay: 1.125s;
+    // }
 }
 
 #screenshots {

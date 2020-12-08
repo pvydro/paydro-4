@@ -74,6 +74,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 @keyframes intro-header-letter-down {
   0% {
     opacity: 0;
@@ -1367,21 +1379,6 @@
 #spec-toolbox.animated::before {
   opacity: 1;
 }
-#spec-toolbox::before {
-  content: "";
-  position: absolute;
-  width: 400vw;
-  height: 420px;
-  top: 50%;
-  left: 50%;
-  transform-origin: 50% 50%;
-  transform: translate(-42.25%, -50%) rotate(-45deg);
-  background-color: #171717;
-  z-index: -99;
-  opacity: 0;
-  transition: 1s;
-  transition-delay: 1.125s;
-}
 
 #screenshots {
   position: relative;
@@ -2400,6 +2397,91 @@
   border-radius: inherit;
   animation: flintro-box-outro 0.5s 0.75s forwards;
   animation-fill-mode: forwards;
+}
+
+#project-dropper {
+  position: relative;
+  min-height: 100vh;
+}
+#project-dropper .midline {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 110%;
+  background-color: #4f4f4f;
+  transform: translate(-50%, 8%);
+  border-radius: 4px;
+}
+#project-dropper .project-dropper-col {
+  width: 50vw;
+}
+#project-dropper .project-dropper-col.right {
+  position: absolute;
+  left: 50vw;
+  top: calc(480px / 2);
+}
+#project-dropper .project-dropper-col.right .project-dropper-cell {
+  margin-left: auto;
+  margin-right: 5%;
+}
+#project-dropper .project-dropper-col.right .project-dropper-cell .cell-header {
+  right: auto;
+  text-align: left;
+  padding-left: 40px;
+}
+#project-dropper .project-dropper-col.right .project-dropper-cell::after {
+  left: calc(-5% - 5px);
+  right: auto;
+}
+#project-dropper .project-dropper-cell {
+  pointer-events: all;
+  position: relative;
+  width: 90%;
+  margin-bottom: calc(480px / 2);
+  margin-left: 5%;
+  height: 480px;
+}
+#project-dropper .project-dropper-cell .cell-header {
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+  text-align: right;
+  right: 40px;
+}
+#project-dropper .project-dropper-cell .cell-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  overflow: hidden;
+}
+#project-dropper .project-dropper-cell .cell-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(80%);
+  transition: 0.25s;
+}
+#project-dropper .project-dropper-cell::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(-5% - 5px);
+  width: 5%;
+  height: 2px;
+  background-color: #4f4f4f;
+}
+#project-dropper .project-dropper-cell:hover {
+  cursor: pointer;
+}
+#project-dropper .project-dropper-cell:hover img {
+  filter: brightness(100%);
 }
 
 html {
