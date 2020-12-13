@@ -2402,6 +2402,18 @@
 #project-dropper {
   position: relative;
   min-height: 100vh;
+  margin-bottom: 248px;
+}
+#project-dropper .project-dropper-header {
+  position: absolute;
+  top: 48px;
+  right: 40px;
+}
+#project-dropper .project-dropper-header h1 {
+  text-transform: uppercase;
+  font-family: "Manrope", sans-serif;
+  font-size: 48px;
+  opacity: 0.35;
 }
 #project-dropper .midline {
   position: absolute;
@@ -2422,7 +2434,7 @@
 }
 #project-dropper .project-dropper-col.right .project-dropper-cell {
   margin-left: auto;
-  margin-right: 5%;
+  margin-right: -10%;
 }
 #project-dropper .project-dropper-col.right .project-dropper-cell .cell-header {
   right: auto;
@@ -2430,15 +2442,20 @@
   padding-left: 40px;
 }
 #project-dropper .project-dropper-col.right .project-dropper-cell::after {
-  left: calc(-5% - 5px);
+  left: calc(-2% - 4px / 2);
   right: auto;
+}
+#project-dropper .project-dropper-col.right .project-dropper-cell::before {
+  right: auto;
+  left: 0px;
+  transform: translate(-50%, -50%);
 }
 #project-dropper .project-dropper-cell {
   pointer-events: all;
   position: relative;
-  width: 90%;
-  margin-bottom: calc(480px / 2);
-  margin-left: 5%;
+  width: 105%;
+  margin-bottom: 0px;
+  margin-left: -10%;
   height: 480px;
 }
 #project-dropper .project-dropper-cell .cell-header {
@@ -2447,12 +2464,32 @@
   bottom: 40px;
   text-align: right;
   right: 40px;
+  opacity: 0.5;
+  transition: 1.5s;
+  transition-timing-function: ease-in-out;
+}
+#project-dropper .project-dropper-cell .cell-header h1 {
+  font-family: "Raleway Dots", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 48px;
+}
+#project-dropper .project-dropper-cell .cell-header h2 {
+  font-family: "Inconsolata", sans-serif;
+  text-transform: uppercase;
+  opacity: 0.5;
+  font-size: 16px;
 }
 #project-dropper .project-dropper-cell .cell-image {
   position: relative;
   width: 100%;
   height: 100%;
+  height: 320px;
+  top: 50%;
   opacity: 0.5;
+  transform: translate(0%, -50%);
+  transition: 2s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   overflow: hidden;
 }
 #project-dropper .project-dropper-cell .cell-image img {
@@ -2465,23 +2502,65 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  filter: brightness(80%);
-  transition: 0.25s;
+  transition: 3s;
+  transition-delay: 0.25s;
+  opacity: 0.35;
+  filter: grayscale(100%) brightness(80%);
 }
 #project-dropper .project-dropper-cell::after {
   content: "";
   position: absolute;
   top: 50%;
-  right: calc(-5% - 5px);
-  width: 5%;
-  height: 2px;
-  background-color: #4f4f4f;
+  right: calc(-2% + 4px / 2);
+  transform: translateY(-50%);
+  height: 70%;
+  width: 4px;
+  border-radius: 4px;
+  background-color: white;
+  opacity: 0.5;
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.53, 0.66, 0.09, 1.68);
+}
+#project-dropper .project-dropper-cell::before {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translate(50%, -50%);
+  height: 80%;
+  width: 64px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  opacity: 0;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
+  filter: blur(15px);
 }
 #project-dropper .project-dropper-cell:hover {
   cursor: pointer;
 }
-#project-dropper .project-dropper-cell:hover img {
-  filter: brightness(100%);
+#project-dropper .project-dropper-cell:hover .cell-header {
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+#project-dropper .project-dropper-cell:hover .cell-image {
+  transition: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+#project-dropper .project-dropper-cell:hover .cell-image img {
+  transition: 0.75s;
+  transition-delay: 0s;
+  filter: grayscale(50%) brightness(100%);
+  opacity: 0.5;
+}
+#project-dropper .project-dropper-cell:hover::after {
+  opacity: 1;
+  height: 72%;
+  border-radius: 0px;
+  transition: 0.2s;
+}
+#project-dropper .project-dropper-cell:hover::before {
+  opacity: 1;
 }
 
 html {

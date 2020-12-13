@@ -29,6 +29,9 @@ $line-width: 4px;
 
 $smoothdoubleease: cubic-bezier(.55,-0.01,.41,1);
 $easeboing: cubic-bezier(.34,1.5,0,.94);
+$aggressiveeaseboing: cubic-bezier(.53,.66,.09,1.68);
+$cleaneaseboing: cubic-bezier(.59,1.46,.2,.88);
+$modesteaseboing: cubic-bezier(.41,1.57,.55,.89);
 $snapandeaseout: cubic-bezier(0,.93,0,.95);
 $lightsnapandeaseout: cubic-bezier(.07,.75,.32,.96);
 $easeinoutxtra: cubic-bezier(.74,0,.48,1.01);
