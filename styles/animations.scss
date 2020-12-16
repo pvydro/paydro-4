@@ -1,3 +1,5 @@
+@import './vars.scss';
+
 @keyframes intro-header-letter-down {
     0% {
         opacity: 0;
@@ -104,5 +106,15 @@
     }
     100% {
         opacity: 0;
+    }
+}
+@keyframes showcaser-active-border-top {
+    0% {
+        outline: 0px solid $darkblack;
+    }
+
+    100% {
+        outline: 15px solid $darkblack;
+
     }
 }

@@ -15,6 +15,7 @@
     <script src="../../scripts/project-page.js"></script>
     <script src="../../scripts/executed.js"></script>
     <script src="../../scripts/flintro.js"></script>
+    <script src="./vizio.js"></script>
 
     <link rel="stylesheet" href="../../styles/index.css">
     <link rel="stylesheet" href="../../styles/paydscroll.css">
@@ -434,6 +435,29 @@
                             </div>
                         </div>
                         <div class="showcaser-bg-clicker-cell">
+                            <div class="showcaser-video">
+                                <div class="video-controls">
+                                    <div class="central-button" id="showcaser-vid-playpause">
+                                        <div class="play-button central-inner active">
+                                            <img src="../../assets/icons/play-solid.png" alt="">
+                                        </div>
+                                        <div class="pause-button central-inner">
+                                            <img src="../../assets/icons/pause.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <video id="showcaser-vid" >
+
+                                    <source src="./demo-vid.webm"
+                                            type="video/webm">
+                                
+                                    <source src="./demo-vid.mp4"
+                                            type="video/mp4">
+                                
+                                    Sorry, your browser doesn't support embedded videos.
+                                </video>
+                            </div>
                             <div class="clicker-cell-caption">
                                 <p>
                                     SystemUI Voice Search Live Demo
