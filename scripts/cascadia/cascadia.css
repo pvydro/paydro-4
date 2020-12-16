@@ -1,7 +1,7 @@
 .cascadia-hidden {
     opacity: 0 !important;
     transition: opacity 1s;
-    transition-timing-function: cubic-bezier(.07,.45,.37,.96) !important;
+    transition-timing-function: cubic-bezier(.07,.45,.37,.96);
 }
 
 .cascadia-show {

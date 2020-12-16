@@ -1,7 +1,20 @@
 let cesIsPlaying = false
 let cesVideo;
 
+$(document).ready(() => {
+
+    cascadia({
+        delayIncrement: 350,
+        showByDefault: true
+    })
+})
+
 window.onload = () => {
+    // cascadia({
+    //     delayIncrement: 250,
+    //     showByDefault: true
+    // })
+
     console.log('viz onload')
     cesVideo = document.getElementById('showcaser-vid')
 
