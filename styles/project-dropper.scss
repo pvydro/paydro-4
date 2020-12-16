@@ -2,6 +2,7 @@
 
 $pjd-cell-height: 480px;
 $midlinecol: #4f4f4f;
+$cell-logo-distance: 7.5vw;
 
 #project-dropper {
     $dropper-highlight-line-distance: -2%;
@@ -51,6 +52,11 @@ $midlinecol: #4f4f4f;
                     padding-left: $defaultpadding;
                 }
 
+                .cell-logo {
+                    left: auto;
+                    right: $cell-logo-distance;
+                }
+
                 &::after {
                     left: calc(#{ $dropper-highlight-line-distance } - #{ $popper-width } / 2);
                     right: auto;
@@ -87,7 +93,7 @@ $midlinecol: #4f4f4f;
             bottom: $defaultpadding;
             text-align: right;
             right: $defaultpadding;
-            opacity: 0.5;
+            opacity: 0.75;
             transition: 1.5s;
             transition-timing-function: ease-in-out;
             h1 {
@@ -111,7 +117,6 @@ $midlinecol: #4f4f4f;
             // border: 3px dashed orange;
             height: 320px;
             top: 50%;
-            opacity: 0.5;
             transform: translate(0%, -50%);
             transition: 2s;
             transition-timing-function: $lightsnapandeaseout;
@@ -129,8 +134,27 @@ $midlinecol: #4f4f4f;
                 object-fit: cover;
                 transition: 3s;
                 transition-delay: 0.25s;
-                opacity: 0.35;
+                opacity: 0.25;
                 filter: grayscale(100%) brightness(80%);
+            }
+        }
+
+        .cell-logo {
+            position: absolute;
+            top: 112px;
+            left: $cell-logo-distance;
+            // height: 48px;
+            width: 96px;
+            opacity: 0.1;
+            transition: 0.5s;
+            transition-timing-function: $lightsnapandeaseout;
+            img {
+                // height: 100%;
+                // width: auto;
+                width: 100%;
+                height: auto;
+                transition: 1.5s;
+                filter: grayscale(100%);
             }
         }
 
@@ -172,6 +196,7 @@ $midlinecol: #4f4f4f;
                 transition-delay: 0.25s;
                 // transform: translateX(calc(#{ $dropper-highlight-margin } * -0.75));
             }
+
             .cell-image {
                 // transform: translate($dropper-highlight-margin, -50%);
                 transition: 0.5s;
@@ -180,7 +205,15 @@ $midlinecol: #4f4f4f;
                     transition: 0.75s;
                     transition-delay: 0s;
                     filter: grayscale(50%) brightness(100%);
-                    opacity: 0.5;
+                    opacity: 0.35;
+                }
+            }
+
+            .cell-logo {
+                top: 100px;
+                opacity: 0.25;
+                img {
+                    filter: grayscale(75%);
                 }
             }
 

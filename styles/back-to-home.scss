@@ -1,0 +1,22 @@
+@import './vars.scss';
+
+.back-to-home {
+    pointer-events: all;
+    position: absolute;
+    top: calc(#{ $defaultpadding } / 2);
+    left: calc(#{ $defaultpadding } / 2);
+    z-index: 99;
+    h1 {
+        font-family: 'Syne', sans-serif;
+        font-size: 18px;
+        text-transform: uppercase;
+        transition: 0.5s;
+        opacity: 0.25;
+    }
+    &:hover {
+        cursor: pointer;
+        h1 {
+            opacity: 0.6;
+        }
+    }
+}

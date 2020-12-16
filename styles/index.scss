@@ -240,6 +240,7 @@ body {
         top: -5px;
         transform: translateY(-100%);
         i {
+            pointer-events: all;
             opacity: 0;
             font-size: 32px;
             padding-left: 10px;

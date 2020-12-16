@@ -1,0 +1,42 @@
+.proj-header-page {
+    z-index: 5;
+    .proj-header-image {
+        img {
+            opacity: 0.5;
+        }
+    }
+}
+
+.proj-summary-page {
+    position: relative;
+    .summary-header {
+        font-size: 18px;
+    }
+    .summary-bg-gradient {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: auto;
+        z-index: 0;
+        img {
+            height: 100%;
+            width: auto;
+            opacity: 0.15;
+            filter: grayscale(20%);
+        }
+    }
+    .summary-image {
+        position: relative;
+        z-index: 2;
+        margin-left: 20%;
+    }
+    .summary-paragraph {
+        position: relative;
+        z-index: 3;
+    }
+}
+
+.toolbox-internal-paragraph {
+    width: 100% !important;
+}
