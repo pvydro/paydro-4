@@ -1,0 +1,96 @@
+.play-ad-page {
+    height: 60vh;
+    position: relative;
+    .ad-info {
+        pointer-events: all;
+        position: absolute;
+        right: 612px;
+        width: 50%;
+        text-align: right;
+        // top: 96px;
+        top: 50%;
+        transform: translateY(-70%);
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -24px;
+            height: 80%;
+            width: 4px;
+            background-color: white;
+            opacity: 0.5;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            transition: 0.5s;
+            transition-timing-function: cubic-bezier(.4,-0.5,0,1.75);
+        }
+        .header,
+        .project-header,
+        .project-desc {
+            transition: 0.5s;
+            transition-timing-function: $lightsnapandeaseout;
+        }
+        .header {
+            font-family: 'Raleway Dots', sans-serif;
+            opacity: 0.8;
+        }
+        .project-header {
+            font-family: 'Questrial', sans-serif;
+            margin-bottom: 48px;
+            opacity: 0.25;
+        }
+        .project-desc {
+            font-family: 'Raleway Dots', sans-serif;
+            font-weight: 800;
+            width: 480px;
+            float: right;
+            opacity: 0.5;
+        }
+        &:hover {
+            .header,
+            .project-header,
+            .project-desc {
+                margin-right: 9px;
+            }
+            &::after {
+                opacity: 0.2;
+                transform: translate(3px, -50%);
+                height: 100%;
+                border-radius: 4px;
+                // background-color: $seccolor;
+            }
+        }
+    }
+}
+
+.playable-ad {
+    position: absolute;
+    right: 148px;
+    top: -12px;
+    transform: rotate(2deg);
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(.55,-0.01,.41,1);
+    filter: brightness(0.5) grayscale(50%);
+    .player-bg {
+        height: 700px;
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+    .ad-iframe {
+        pointer-events: all;
+        position: absolute;
+        height: 530px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:hover {
+        opacity: 1;
+        transition: 0.35s;
+        transition-timing-function: cubic-bezier(.82,1.6,.35,.89);
+        filter: brightness(1);
+        transform: rotate(1.5deg);
+    }
+}

@@ -225,6 +225,7 @@
                     height: 50%;
                     width: auto;
                     opacity: 0;
+                    object-fit: contain;
                     &:nth-child(1) {
                         animation-delay: 0.25s;
                         transition-delay: 0.25s;

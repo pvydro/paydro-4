@@ -10,6 +10,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
@@ -22,6 +23,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne&display=swap");
 .proj-summary-page {
   padding: 0px;
 }
@@ -94,6 +96,99 @@
   left: 52px;
 }
 
+.play-ad-page {
+  height: 60vh;
+  position: relative;
+}
+.play-ad-page .ad-info {
+  pointer-events: all;
+  position: absolute;
+  right: 612px;
+  width: 50%;
+  text-align: right;
+  top: 50%;
+  transform: translateY(-70%);
+}
+.play-ad-page .ad-info::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -24px;
+  height: 80%;
+  width: 4px;
+  background-color: white;
+  opacity: 0.5;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.4, -0.5, 0, 1.75);
+}
+.play-ad-page .ad-info .header,
+.play-ad-page .ad-info .project-header,
+.play-ad-page .ad-info .project-desc {
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+.play-ad-page .ad-info .header {
+  font-family: "Raleway Dots", sans-serif;
+  opacity: 0.8;
+}
+.play-ad-page .ad-info .project-header {
+  font-family: "Questrial", sans-serif;
+  margin-bottom: 48px;
+  opacity: 0.25;
+}
+.play-ad-page .ad-info .project-desc {
+  font-family: "Raleway Dots", sans-serif;
+  font-weight: 800;
+  width: 480px;
+  float: right;
+  opacity: 0.5;
+}
+.play-ad-page .ad-info:hover .header,
+.play-ad-page .ad-info:hover .project-header,
+.play-ad-page .ad-info:hover .project-desc {
+  margin-right: 9px;
+}
+.play-ad-page .ad-info:hover::after {
+  opacity: 0.2;
+  transform: translate(3px, -50%);
+  height: 100%;
+  border-radius: 4px;
+}
+
+.playable-ad {
+  position: absolute;
+  right: 148px;
+  top: -12px;
+  transform: rotate(2deg);
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.55, -0.01, 0.41, 1);
+  filter: brightness(0.5) grayscale(50%);
+}
+.playable-ad .player-bg {
+  height: 700px;
+}
+.playable-ad .player-bg img {
+  height: 100%;
+  width: auto;
+}
+.playable-ad .ad-iframe {
+  pointer-events: all;
+  position: absolute;
+  height: 530px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.playable-ad:hover {
+  opacity: 1;
+  transition: 0.35s;
+  transition-timing-function: cubic-bezier(0.82, 1.6, 0.35, 0.89);
+  filter: brightness(1);
+  transform: rotate(1.5deg);
+}
+
 .proj-header-page {
   height: 50vh;
 }
@@ -154,92 +249,6 @@
 }
 .play-ad-page .ad-decorator img:hover {
   opacity: 0.8;
-}
-.play-ad-page .playable-ad {
-  position: absolute;
-  right: 148px;
-  top: -12px;
-  transform: rotate(2deg);
-  transition: 0.5s;
-  transition-timing-function: cubic-bezier(0.55, -0.01, 0.41, 1);
-  filter: brightness(0.5) grayscale(50%);
-}
-.play-ad-page .playable-ad .player-bg {
-  height: 700px;
-}
-.play-ad-page .playable-ad .player-bg img {
-  height: 100%;
-  width: auto;
-}
-.play-ad-page .playable-ad .ad-iframe {
-  pointer-events: all;
-  position: absolute;
-  height: 530px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.play-ad-page .playable-ad:hover {
-  transition: 0.35s;
-  transition-timing-function: cubic-bezier(0.82, 1.6, 0.35, 0.89);
-  filter: brightness(1);
-  transform: rotate(1.5deg);
-}
-.play-ad-page .ad-info {
-  pointer-events: all;
-  position: absolute;
-  right: 612px;
-  width: 50%;
-  text-align: right;
-  top: 50%;
-  transform: translateY(-70%);
-}
-.play-ad-page .ad-info::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -24px;
-  height: 80%;
-  width: 4px;
-  background-color: white;
-  opacity: 0.5;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  transition: 0.5s;
-  transition-timing-function: cubic-bezier(0.4, -0.5, 0, 1.75);
-}
-.play-ad-page .ad-info .header,
-.play-ad-page .ad-info .project-header,
-.play-ad-page .ad-info .project-desc {
-  transition: 0.5s;
-  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
-}
-.play-ad-page .ad-info .header {
-  font-family: "Raleway Dots", sans-serif;
-  opacity: 0.8;
-}
-.play-ad-page .ad-info .project-header {
-  font-family: "Questrial", sans-serif;
-  margin-bottom: 48px;
-  opacity: 0.25;
-}
-.play-ad-page .ad-info .project-desc {
-  font-family: "Raleway Dots", sans-serif;
-  font-weight: 800;
-  width: 480px;
-  float: right;
-  opacity: 0.5;
-}
-.play-ad-page .ad-info:hover .header,
-.play-ad-page .ad-info:hover .project-header,
-.play-ad-page .ad-info:hover .project-desc {
-  margin-right: 9px;
-}
-.play-ad-page .ad-info:hover::after {
-  opacity: 0.2;
-  transform: translate(3px, -50%);
-  height: 100%;
-  border-radius: 4px;
 }
 
 .other-ads-page {

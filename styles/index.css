@@ -608,6 +608,7 @@
   height: 50%;
   width: auto;
   opacity: 0;
+  object-fit: contain;
 }
 .toolbox .toolbox-content .toolbox-internal .toolbox-internal-icons img:nth-child(1) {
   animation-delay: 0.25s;

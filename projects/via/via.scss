@@ -1,3 +1,6 @@
+@import '../../styles/vars.scss';
+@import '../../styles/play-ad.scss';
+
 .proj-header-page {
     z-index: 5;
     .proj-header-image {
@@ -39,4 +42,90 @@
 
 .toolbox-internal-paragraph {
     width: 100% !important;
+}
+
+.play-ad-page {
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-2deg);
+        background-color: $darkblack;
+        width: 120vw;
+        height: 60%;
+        z-index: -3;
+    }
+    .ad-info {
+        width: auto;
+        right: auto;
+        left: $contentboxpadding;
+        text-align: left;
+        .project-desc {
+            float: auto;
+        }
+        &::after {
+            right: auto;
+            left: -24px;
+        }
+        &:hover {
+            .header,
+            .project-header,
+            .project-desc {
+                margin-left: 9px;
+            }
+            &::after {
+                transform: translate(-3px, -50%);
+            }
+            .pop-icon {
+                left: -96px;
+                img {
+                    opacity: 0.5;
+                    filter: blur(0px);
+                }
+            }
+        }
+        .pop-icon {
+            position: absolute;
+            top: 50%;
+            left: -256px;
+            width: 56px;
+            transform: translateY(-50%);
+            transition: 0.25s;
+            transition-timing-function: $lightsnapandeaseout;
+            img {
+                opacity: 0;
+                width: 100%;
+                height: auto;
+                filter: blur(15px);
+                transition: 0.25s;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+.playable-ad {
+    transition: 2s;
+    transform: rotate(0deg);
+    z-index: 5;
+    &:hover {
+        transition: 2s;
+        transform: rotate(0deg);
+    }
+}
+
+.playable-ad-row {
+    .playable-ad:nth-child(2) {
+        // filter: brightness(0.5) grayscale(70%);
+        opacity: 0.5;
+        right: 86px;//196px;
+        transform: translateX(-100%) scale(0.9);
+        z-index: 4;
+        &:hover {
+            transition: all 2s right 0.2s;
+            transition-timing-function: $easeinoutxtra;
+            right: 124px;
+        }
+    }
 }
