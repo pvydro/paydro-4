@@ -2,11 +2,21 @@
 
 .proj-header-page {
     z-index: 999;
-    .proj-header {
+    margin-bottom: $defaultpadding;
+    .super-logo {
+        position: absolute;
+        top: $defaultpadding;
+        left: $defaultpadding;
+        height: 75%;
+        img {
+            height: 100%;
+            width: auto;
+        }
     }
 }
 
 .summary-content {
+    position: relative;
     // overflow: hidden;
     .summary-header {
         font-family: 'Inconsolata', sans-serif;
@@ -16,7 +26,7 @@
         position: relative;
         width: 50%;
         line-height: 48px;
-        z-index: 999;
+        z-index: 1;
         &::before {
             content: '';
             position: absolute;
@@ -31,27 +41,37 @@
         }
     }
     .summary-mockup {
+        pointer-events: all;
         position: absolute;
-        // width: 40%;
         height: 120%;
         top: 50%;
         right: 0px;
         transform: translateY(-50%);
+        transition: 0.75s;
+        transition-timing-function: $easeinoutxtra;
         z-index: 0;
         img {
             height: 100%;
             width: auto;
+            transition: 2s;
             opacity: 0.6;
         }
-        // &::after, &::before {
-        //     content: '';
-        //     position: absolute;
-        //     width: 200px;
-        //     height: 2px;
-        //     background-color: white;
-        //     top: 10px;
-        //     left: 10px;
-        // }
+        &:hover {
+            cursor: pointer;
+            top: 55%;
+            transform: translateY(-50%) skew(0.5deg, -0.5deg);
+            transition-timing-function: $lightsnapandeaseout;
+            img {
+                opacity: 0.85;
+            }
+        }
+        &:active {
+            top: 52.5%;
+            img {
+                transition: 0.25s;
+                opacity: 0.5;
+            }
+        }
     }
     &::after, &::before {
         content: '';
@@ -59,11 +79,11 @@
         position: absolute;
     }
     &::after {
-        left: 0px;
-        width: 100%;
+        left: 50%;
+        width: 100vw;
         height: 100%;
         background-color: $darkblack;
-        transform: translateY(-100%);
+        transform: translate(-50%, -100%);
     }
     &::before {
         background-color: white;
@@ -80,67 +100,122 @@
 
 #quiz-player {
     position: relative;
-    min-height: 684px;
+    min-height: 760px;
 
+    .quiz-headers {
+        position: relative;
+        height: 48px;
+        z-index: 99;
+    }
     .quiz-header, .quiz-subheader {
         text-align: right;
         margin-right: $defaultpadding;
+        transition: 0.25s;
+        transition-timing-function: $lightsnapandeaseout;
     }
     .quiz-header {
         position: relative;
         font-family: 'Questrial', sans-serif;
         font-size: 48px;
+        height: 48px;
         text-transform: capitalize;
         margin-bottom: -20px;
-        z-index: 99;
     }
     .quiz-subheader {
         font-family: 'Raleway Dots', sans-serif;
+        font-size: 19px;
+        font-weight: 800;
+        opacity: 0.5;
     }
-}
-
-
-.quiz-frame {
-    $border-distance: 24px;
-    position: absolute;
-    width: 80%;
-    height: 640px;
-    left: 50%;
-    transform: translateX(-50%);
-    iframe {
-        pointer-events: all;
-        width: 100%;
-        height: 100%;
-        border-top-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-        transition: 1.5s;
-        filter: brightness(50%) grayscale(70%);
-        &:hover {
-            filter: brightness(100%) grayscale(20%);
+    .quiz-frame {
+        $border-hdistance: 24px;
+        $border-vdistance: 32px;
+        position: absolute;
+        width: 80%;
+        height: 760px;
+        left: 50%;
+        transform: translateX(-50%);
+        iframe {
+            pointer-events: all;
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            transition: 1.5s;
+            filter: brightness(50%) grayscale(70%);
+            &:hover {
+                filter: brightness(100%) grayscale(20%);
+            }
+        }
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            height: 40%;
+            width: 4px;
+            background-color: white;
+            z-index: 999;
+            border-radius: 50%;
+            opacity: 0.6;
+            transition: 0.75s;
+            transition-timing-function: $easeinoutxtra;
+        }
+        &::after {
+            top: $border-vdistance;
+            right: -$border-hdistance;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+        &::before {
+            bottom: $border-vdistance;
+            left: -$border-hdistance;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
         }
     }
-    &::after, &::before {
-        content: '';
-        position: absolute;
-        height: 480px;
-        width: 4px;
-        // top: 50%;
-        // transform: translateY(-50%);
-        background-color: white;
-        z-index: 999;
-        border-radius: 50%;
-        opacity: 0.6;
+    &.hovered {
+        .quiz-header {
+            transform: translateY(-85%);
+            opacity: 0.125;
+        }
+        .quiz-subheader {
+            transition-delay: 0.125s;
+            transform: translateY(50%);
+            opacity: 1;
+            // font-size: 150%;
+            transition-timing-function: $easeinoutxtra;
+        }
+        .quiz-frame {
+            $border-vdistance-hovered: -12px;
+            z-index: 3;
+            &::after, &::before {
+                height: 95%;//55%;
+                transition: 0.5s;
+                transition-delay: 0.25s;
+                transition-timing-function: cubic-bezier(.73, .19, .22, .99);
+                opacity: 0.125;
+            }
+            &::after {
+                top: $border-vdistance-hovered;
+            }
+            &::before {
+                bottom: $border-vdistance-hovered;
+            }
+        }
+        &::after {
+            opacity: 0.2;
+        }
     }
+    // Darkener
     &::after {
+        content: '';
+        position: fixed;
         top: 0px;
-        right: -$border-distance;
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-    }
-    &::before {
-        bottom: 0px;
-        left: -$border-distance;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 0;
+        transition: 1s;
+        z-index: 100;
     }
 }
