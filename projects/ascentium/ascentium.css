@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne&display=swap");
+.proj-header-page {
+  z-index: 999;
+}
+.summary-content .summary-header {
+  font-family: "Inconsolata", sans-serif;
+  font-size: 24px;
+}
+.summary-content .summary-paragraph {
+  position: relative;
+  width: 50%;
+  line-height: 48px;
+  z-index: 999;
+}
+.summary-content .summary-paragraph::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  transform: translate(-50%, -50%);
+  background-color: #171717;
+  opacity: 0.7;
+  z-index: -1;
+}
+.summary-content .summary-mockup {
+  position: absolute;
+  height: 120%;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+.summary-content .summary-mockup img {
+  height: 100%;
+  width: auto;
+  opacity: 0.6;
+}
+.summary-content::after, .summary-content::before {
+  content: "";
+  top: 0px;
+  position: absolute;
+}
+.summary-content::after {
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #171717;
+  transform: translateY(-100%);
+}
+.summary-content::before {
+  background-color: white;
+  width: 40%;
+  height: 3px;
+  right: 0px;
+  z-index: 1;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  filter: brightness(50%);
+  box-shadow: 0px 5px 10px black;
+}
+
+#quiz-player {
+  position: relative;
+  min-height: 684px;
+}
+#quiz-player .quiz-header, #quiz-player .quiz-subheader {
+  text-align: right;
+  margin-right: 40px;
+}
+#quiz-player .quiz-header {
+  position: relative;
+  font-family: "Questrial", sans-serif;
+  font-size: 48px;
+  text-transform: capitalize;
+  margin-bottom: -20px;
+  z-index: 99;
+}
+#quiz-player .quiz-subheader {
+  font-family: "Raleway Dots", sans-serif;
+}
+
+.quiz-frame {
+  position: absolute;
+  width: 80%;
+  height: 640px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.quiz-frame iframe {
+  pointer-events: all;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: 1.5s;
+  filter: brightness(50%) grayscale(70%);
+}
+.quiz-frame iframe:hover {
+  filter: brightness(100%) grayscale(20%);
+}
+.quiz-frame::after, .quiz-frame::before {
+  content: "";
+  position: absolute;
+  height: 480px;
+  width: 4px;
+  background-color: white;
+  z-index: 999;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+.quiz-frame::after {
+  top: 0px;
+  right: -24px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.quiz-frame::before {
+  bottom: 0px;
+  left: -24px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+/*# sourceMappingURL=ascentium.css.map */
