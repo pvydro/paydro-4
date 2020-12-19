@@ -27,6 +27,7 @@
         width: 50%;
         line-height: 48px;
         z-index: 1;
+        opacity: 0.8;
         &::before {
             content: '';
             position: absolute;
@@ -54,7 +55,7 @@
             height: 100%;
             width: auto;
             transition: 2s;
-            opacity: 0.6;
+            opacity: 0.4;
         }
         &:hover {
             cursor: pointer;
@@ -72,6 +73,14 @@
                 opacity: 0.5;
             }
         }
+    }
+    .summary-year {
+        font-family: 'Inconsolata', sans-serif;
+        position: absolute;
+        font-size: 24px;
+        left: 0px;
+        top: 0px;
+        opacity: 0.25;
     }
     &::after, &::before {
         content: '';
@@ -101,7 +110,7 @@
 #quiz-player {
     position: relative;
     min-height: 760px;
-
+    padding-top: calc(#{ $defaultpadding } * 4);
     .quiz-headers {
         position: relative;
         height: 48px;
@@ -217,5 +226,15 @@
         opacity: 0;
         transition: 1s;
         z-index: 100;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 150%;
+        height: 50%;
+        background-color: $darkblack;
+        transform: translate(-50%, -30%);
     }
 }

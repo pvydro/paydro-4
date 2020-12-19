@@ -38,6 +38,7 @@
   width: 50%;
   line-height: 48px;
   z-index: 1;
+  opacity: 0.8;
 }
 .summary-content .summary-paragraph::before {
   content: "";
@@ -66,7 +67,7 @@
   height: 100%;
   width: auto;
   transition: 2s;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 .summary-content .summary-mockup:hover {
   cursor: pointer;
@@ -83,6 +84,14 @@
 .summary-content .summary-mockup:active img {
   transition: 0.25s;
   opacity: 0.5;
+}
+.summary-content .summary-year {
+  font-family: "Inconsolata", sans-serif;
+  position: absolute;
+  font-size: 24px;
+  left: 0px;
+  top: 0px;
+  opacity: 0.25;
 }
 .summary-content::after, .summary-content::before {
   content: "";
@@ -111,6 +120,7 @@
 #quiz-player {
   position: relative;
   min-height: 760px;
+  padding-top: calc(40px * 4);
 }
 #quiz-player .quiz-headers {
   position: relative;
@@ -220,6 +230,16 @@
   opacity: 0;
   transition: 1s;
   z-index: 100;
+}
+#quiz-player::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 50%;
+  background-color: #171717;
+  transform: translate(-50%, -30%);
 }
 
 /*# sourceMappingURL=ascentium.css.map */
