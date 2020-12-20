@@ -2,21 +2,43 @@
 
 .back-to-home {
     pointer-events: all;
-    position: absolute;
-    top: calc(#{ $defaultpadding } / 2);
-    left: calc(#{ $defaultpadding } / 2);
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    padding: calc(#{ $defaultpadding } / 2);
     z-index: 99;
+    opacity: 0.125;
+    transition: 1s;
+    transition-timing-function: $lightsnapandeaseout;
+    width: 56px;
+    .indicator {
+        position: absolute;
+        left: calc(#{ $defaultpadding } / 2);
+        top: 50%;
+        height: 30%;
+        opacity: 0;
+        transform: translate(100%, -50%);
+        transition: 0.25s;
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
     h1 {
         font-family: 'Syne', sans-serif;
         font-size: 18px;
         text-transform: uppercase;
+        text-align: right;
         transition: 0.5s;
-        opacity: 0.25;
     }
     &:hover {
         cursor: pointer;
-        h1 {
-            opacity: 0.6;
+        opacity: 0.6;
+        padding-left: $defaultpadding;
+        transition: 0.25s;
+        .indicator {
+            opacity: 0.5;
+            transform: translate(0px, -50%);
         }
     }
 }
