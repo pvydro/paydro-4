@@ -1,5 +1,10 @@
+.summary-content .summary-paragraph p {
+  line-height: 56px;
+}
+
 .toolbox-internal-paragraph {
   width: 100% !important;
+  line-height: 42px;
 }
 
 .toolbox-nav-item {

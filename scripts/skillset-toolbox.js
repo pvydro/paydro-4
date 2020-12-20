@@ -1,6 +1,4 @@
 $(document).ready(() => {
-    console.log('skillset?')
-
     gsap.registerPlugin(CSSPlugin)
 
     $('.skillset-toolbox-cell').each((index, ele) => {
@@ -10,7 +8,6 @@ $(document).ready(() => {
     })
 
     $('.skillset-toolbox-content').on('mouseleave', () => {
-        console.log('l')
         gsap.to('.skillset-toolbox-scroll-container', {
             duration: 0.5,
             css: {

@@ -6,8 +6,9 @@
     .super-logo {
         position: absolute;
         top: $defaultpadding;
-        left: $defaultpadding;
-        height: 75%;
+        left: calc(#{ $defaultpadding } * 2);
+        height: 110%;
+        z-index: 99;
         img {
             height: 100%;
             width: auto;
@@ -17,16 +18,102 @@
 
 .summary-content {
     position: relative;
+    width: 100%;
+    min-height: 50vh;
+    .summary-graphic {
+        $leaf-brightness: 50%;
+        pointer-events: all;
+        position: relative;
+        height: 100%;
+        transform: translateY(15%);
+        .plant-leaf {
+            position: absolute;
+            height: 80%;
+            bottom: -18%;
+            left: 17%;
+            transition: 0.5s;
+            transition: 1.5s;
+            transition-timing-function: $easeinoutxtra;
+            filter: brightness($leaf-brightness);
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+        .pumpkin-plant {
+            position: absolute;
+            width: 60%;
+            left: -25%;
+            top: 50%;
+            transform: translate(0%, -30%);
+            transition: 2s;
+            transition-timing-function: $easeinoutxtra;
+            filter: brightness(65%);
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .flower-plant {
+            position: absolute;
+            right: -45%;
+            bottom: -10%;
+            transition: 2.5s;
+            height: 80%;
+            filter: brightness($leaf-brightness);
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+        .pumpkin {
+            position: absolute;
+            height: 75%;
+            top: 35%;
+            left: 7%;
+            transform: translate(-50%, -50%);
+            transition: 0.5s;
+            transition-timing-function: $aggressiveeaseboing;
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+        &:hover {
+            .pumpkin {
+                top: 30%;
+            }
+            .pumpkin-plant {
+                left: -24.6%;
+                top: 51%;
+                filter: brightness(90%);
+            }
+            .plant-leaf {
+                left: 16.8%;
+                filter: brightness(80%);
+            }
+            .flower-plant {
+                right: -44.5%;
+                filter: brightness(90%);
+            }
+        }
+    }
     .summary-header {
         font-family: 'Inconsolata', sans-serif;
         font-size: 24px;
+        text-transform: lowercase;
+        opacity: 0.5;
     }
     .summary-paragraph {
-        position: relative;
-        width: 50%;
+        pointer-events: all;
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        width: 70%;
         line-height: 48px;
         z-index: 1;
         opacity: 0.8;
+        transform: translateY(-50%);
         &::before {
             content: '';
             position: absolute;
@@ -48,28 +135,15 @@
         top: 0px;
         opacity: 0.25;
     }
-    &::after, &::before {
+    &::after {
         content: '';
         top: 0px;
         position: absolute;
-    }
-    &::after {
         left: 50%;
         width: 100vw;
         height: 100%;
         background-color: $darkblack;
         transform: translate(-50%, -100%);
-    }
-    &::before {
-        background-color: white;
-        width: 40%;
-        height: 3px;
-        right: 0px;
-        z-index: 1;
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
-        filter: brightness(50%);
-        box-shadow: 0px 5px 10px black;
     }
 }
 
@@ -204,3 +278,105 @@
         transform: translate(-50%, -30%);
     }
 }
+
+#mock-section {
+    position: relative;
+    min-height: 40vh;
+    margin-top: calc(#{ $defaultpadding } * 2);
+    .mock-header {
+        margin-bottom: $defaultpadding;
+        h1 {
+            font-family: 'Raleway Dots', sans-serif;
+            opacity: 0.25;
+            transition: 0.5s;
+        }
+    }
+    .mock-description {
+        pointer-events: all;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-60%);
+        width: 25%;
+        p {
+            font-family: 'Raleway Dots', sans-serif;
+            font-weight: 800;
+            line-height: 48px;
+            transition: 0.5s;
+            transition-timing-function: $lightsnapandeaseout;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            left: -$defaultpadding;
+            top: 50%;
+            height: 110%;
+            width: 4px;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%);
+            opacity: 0.5;
+        }
+    }
+    .mock-ipad {
+        pointer-events: all;
+        position: absolute;
+        top: 50%;
+        right: -10%;
+        width: 50%;
+        transform: translateY(-50%);
+        transition: 0.5s;
+        transition-timing-function: $lightsnapandeaseout;
+        img {
+            width: 100%;
+            height: auto;
+            filter: brightness(70%) grayscale(20%);
+            transition: 1.5s;
+        }
+        &:hover {
+            margin-top: 12px;
+            margin-right: 20px;
+            img {
+                filter: brightness(100%) grayscale(0%);
+            }
+        }
+    }
+    .mock-rake {
+        position: absolute;
+        height: 480px;
+        width: auto;
+        right: 1%;
+        top: 20%;
+        transform: translateY(-50%);
+    }
+    &:hover {
+        .mock-description p {
+            margin-left: calc(#{ $defaultpadding } / 4);
+        }
+        .mock-header h1 {
+            opacity: 0.75;
+            margin-left: calc(#{ $defaultpadding } / 2);
+        }
+    }
+}
+
+#skillset-toolbox {
+    position: relative;
+    width: 65%;
+    right: $defaultpadding;
+    transform: translateX(30%);
+    .beehouse {
+        position: absolute;
+        width: 35%;
+        top: 60%;
+        left: 0px;
+        transform: translate(-72%, -50%) rotate(-2deg);
+        filter: grayscale(20%);
+        opacity: 0.75;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+

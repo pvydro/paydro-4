@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+.proj-header-page {
+  z-index: 999;
+  margin-bottom: 40px;
+}
+.proj-header-page .super-logo {
+  position: absolute;
+  top: 40px;
+  left: calc(40px * 2);
+  height: 110%;
+  z-index: 99;
+}
+.proj-header-page .super-logo img {
+  height: 100%;
+  width: auto;
+}
+
+.summary-content {
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+}
+.summary-content .summary-graphic {
+  pointer-events: all;
+  position: relative;
+  height: 100%;
+  transform: translateY(15%);
+}
+.summary-content .summary-graphic .plant-leaf {
+  position: absolute;
+  height: 80%;
+  bottom: -18%;
+  left: 17%;
+  transition: 0.5s;
+  transition: 1.5s;
+  transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
+  filter: brightness(50%);
+}
+.summary-content .summary-graphic .plant-leaf img {
+  height: 100%;
+  width: auto;
+}
+.summary-content .summary-graphic .pumpkin-plant {
+  position: absolute;
+  width: 60%;
+  left: -25%;
+  top: 50%;
+  transform: translate(0%, -30%);
+  transition: 2s;
+  transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
+  filter: brightness(65%);
+}
+.summary-content .summary-graphic .pumpkin-plant img {
+  width: 100%;
+  height: auto;
+}
+.summary-content .summary-graphic .flower-plant {
+  position: absolute;
+  right: -45%;
+  bottom: -10%;
+  transition: 2.5s;
+  height: 80%;
+  filter: brightness(50%);
+}
+.summary-content .summary-graphic .flower-plant img {
+  height: 100%;
+  width: auto;
+}
+.summary-content .summary-graphic .pumpkin {
+  position: absolute;
+  height: 75%;
+  top: 35%;
+  left: 7%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.53, 0.66, 0.09, 1.68);
+}
+.summary-content .summary-graphic .pumpkin img {
+  height: 100%;
+  width: auto;
+}
+.summary-content .summary-graphic:hover .pumpkin {
+  top: 30%;
+}
+.summary-content .summary-graphic:hover .pumpkin-plant {
+  left: -24.6%;
+  top: 51%;
+  filter: brightness(90%);
+}
+.summary-content .summary-graphic:hover .plant-leaf {
+  left: 16.8%;
+  filter: brightness(80%);
+}
+.summary-content .summary-graphic:hover .flower-plant {
+  right: -44.5%;
+  filter: brightness(90%);
+}
+.summary-content .summary-header {
+  font-family: "Inconsolata", sans-serif;
+  font-size: 24px;
+  text-transform: lowercase;
+  opacity: 0.5;
+}
+.summary-content .summary-paragraph {
+  pointer-events: all;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  width: 70%;
+  line-height: 48px;
+  z-index: 1;
+  opacity: 0.8;
+  transform: translateY(-50%);
+}
+.summary-content .summary-paragraph::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  transform: translate(-50%, -50%);
+  background-color: #171717;
+  opacity: 0.7;
+  z-index: -1;
+}
+.summary-content .summary-year {
+  font-family: "Inconsolata", sans-serif;
+  position: absolute;
+  font-size: 24px;
+  left: 0px;
+  top: 0px;
+  opacity: 0.25;
+}
+.summary-content::after {
+  content: "";
+  top: 0px;
+  position: absolute;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  background-color: #171717;
+  transform: translate(-50%, -100%);
+}
+
+#quiz-player {
+  position: relative;
+  min-height: 760px;
+  padding-top: calc(40px * 4);
+}
+#quiz-player .quiz-headers {
+  position: relative;
+  height: 48px;
+  z-index: 99;
+}
+#quiz-player .quiz-header, #quiz-player .quiz-subheader {
+  text-align: right;
+  margin-right: 40px;
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+#quiz-player .quiz-header {
+  position: relative;
+  font-family: "Questrial", sans-serif;
+  font-size: 48px;
+  height: 48px;
+  text-transform: capitalize;
+  margin-bottom: -20px;
+}
+#quiz-player .quiz-subheader {
+  font-family: "Raleway Dots", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  opacity: 0.5;
+}
+#quiz-player .quiz-frame {
+  position: absolute;
+  width: 80%;
+  height: 760px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#quiz-player .quiz-frame iframe {
+  pointer-events: all;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: 1.5s;
+  filter: brightness(50%) grayscale(70%);
+}
+#quiz-player .quiz-frame iframe:hover {
+  filter: brightness(100%) grayscale(20%);
+}
+#quiz-player .quiz-frame::after, #quiz-player .quiz-frame::before {
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 4px;
+  background-color: white;
+  z-index: 999;
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: 0.75s;
+  transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
+}
+#quiz-player .quiz-frame::after {
+  top: 32px;
+  right: -24px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+#quiz-player .quiz-frame::before {
+  bottom: 32px;
+  left: -24px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+#quiz-player.hovered .quiz-header {
+  transform: translateY(-85%);
+  opacity: 0.125;
+}
+#quiz-player.hovered .quiz-subheader {
+  transition-delay: 0.125s;
+  transform: translateY(50%);
+  opacity: 1;
+  transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
+}
+#quiz-player.hovered .quiz-frame {
+  z-index: 3;
+}
+#quiz-player.hovered .quiz-frame::after, #quiz-player.hovered .quiz-frame::before {
+  height: 95%;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+  transition-timing-function: cubic-bezier(0.73, 0.19, 0.22, 0.99);
+  opacity: 0.125;
+}
+#quiz-player.hovered .quiz-frame::after {
+  top: -12px;
+}
+#quiz-player.hovered .quiz-frame::before {
+  bottom: -12px;
+}
+#quiz-player.hovered::after {
+  opacity: 0.2;
+}
+#quiz-player::after {
+  content: "";
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0;
+  transition: 1s;
+  z-index: 100;
+}
+#quiz-player::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 50%;
+  background-color: #171717;
+  transform: translate(-50%, -30%);
+}
+
+#mock-section {
+  position: relative;
+  min-height: 40vh;
+  margin-top: calc(40px * 2);
+}
+#mock-section .mock-header {
+  margin-bottom: 40px;
+}
+#mock-section .mock-header h1 {
+  font-family: "Raleway Dots", sans-serif;
+  opacity: 0.25;
+  transition: 0.5s;
+}
+#mock-section .mock-description {
+  pointer-events: all;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  width: 25%;
+}
+#mock-section .mock-description p {
+  font-family: "Raleway Dots", sans-serif;
+  font-weight: 800;
+  line-height: 48px;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+#mock-section .mock-description::after {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  height: 110%;
+  width: 4px;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+#mock-section .mock-ipad {
+  pointer-events: all;
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  width: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+#mock-section .mock-ipad img {
+  width: 100%;
+  height: auto;
+  filter: brightness(70%) grayscale(20%);
+  transition: 1.5s;
+}
+#mock-section .mock-ipad:hover {
+  margin-top: 12px;
+  margin-right: 20px;
+}
+#mock-section .mock-ipad:hover img {
+  filter: brightness(100%) grayscale(0%);
+}
+#mock-section .mock-rake {
+  position: absolute;
+  height: 480px;
+  width: auto;
+  right: 1%;
+  top: 20%;
+  transform: translateY(-50%);
+}
+#mock-section:hover .mock-description p {
+  margin-left: calc(40px / 4);
+}
+#mock-section:hover .mock-header h1 {
+  opacity: 0.75;
+  margin-left: calc(40px / 2);
+}
+
+#skillset-toolbox {
+  position: relative;
+  width: 65%;
+  right: 40px;
+  transform: translateX(30%);
+}
+#skillset-toolbox .beehouse {
+  position: absolute;
+  width: 35%;
+  top: 60%;
+  left: 0px;
+  transform: translate(-72%, -50%) rotate(-2deg);
+  filter: grayscale(20%);
+  opacity: 0.75;
+}
+#skillset-toolbox .beehouse img {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=myfarm.css.map */
