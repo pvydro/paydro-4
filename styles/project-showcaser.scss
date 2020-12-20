@@ -715,7 +715,7 @@
             width: 72px;
             opacity: 0;
             overflow: visible;
-            z-index: 99;
+            z-index: 1;
             .central-inner {
                 transition: 0.5s;
                 opacity: 0;
@@ -726,6 +726,9 @@
                     width: auto;
                 }
             }
+        }
+        &:hover {
+            cursor: pointer;
         }
     }
 

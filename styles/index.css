@@ -1871,7 +1871,7 @@
   width: 72px;
   opacity: 0;
   overflow: visible;
-  z-index: 99;
+  z-index: 1;
 }
 .showcaser-video .video-controls .central-button .central-inner {
   transition: 0.5s;
@@ -1882,6 +1882,9 @@
 .showcaser-video .video-controls .central-button .central-inner img {
   height: 100%;
   width: auto;
+}
+.showcaser-video .video-controls:hover {
+  cursor: pointer;
 }
 .showcaser-video video {
   opacity: 0;
