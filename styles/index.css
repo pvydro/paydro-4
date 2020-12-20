@@ -2736,6 +2736,10 @@
   font-weight: 800;
   font-size: 48px;
 }
+#project-dropper .project-dropper-cell .cell-header h1 small {
+  font-family: "Raleway Dots", sans-serif;
+  font-size: 24px;
+}
 #project-dropper .project-dropper-cell .cell-header h2 {
   font-family: "Inconsolata", sans-serif;
   text-transform: uppercase;

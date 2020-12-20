@@ -18,11 +18,8 @@
 .summary-content {
     position: relative;
     .summary-header {
-        position: relative;
         font-family: 'Inconsolata', sans-serif;
         font-size: 24px;
-        text-transform: lowercase;
-        opacity: 0.5;
     }
     .summary-paragraph {
         position: relative;
@@ -41,39 +38,6 @@
             background-color: $darkblack;
             opacity: 0.7;
             z-index: -1;
-        }
-    }
-    .summary-mockup {
-        pointer-events: all;
-        position: absolute;
-        height: 120%;
-        top: 50%;
-        right: 0px;
-        transform: translateY(-50%);
-        transition: 0.75s;
-        transition-timing-function: $easeinoutxtra;
-        z-index: 0;
-        img {
-            height: 100%;
-            width: auto;
-            transition: 2s;
-            opacity: 0.4;
-        }
-        &:hover {
-            cursor: pointer;
-            top: 55%;
-            transform: translateY(-50%) skew(0.5deg, -0.5deg);
-            transition-timing-function: $lightsnapandeaseout;
-            img {
-                opacity: 0.85;
-            }
-        }
-        &:active {
-            top: 52.5%;
-            img {
-                transition: 0.25s;
-                opacity: 0.5;
-            }
         }
     }
     .summary-year {
@@ -212,6 +176,22 @@
                 bottom: $border-vdistance-hovered;
             }
         }
+        &::after {
+            opacity: 0.2;
+        }
+    }
+    // Darkener
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 0;
+        transition: 1s;
+        z-index: 100;
     }
     &::before {
         content: '';
@@ -222,104 +202,5 @@
         height: 50%;
         background-color: $darkblack;
         transform: translate(-50%, -30%);
-    }
-}
-
-#cross-platform {
-    position: relative;
-    .responsive-row {
-        margin-top: $defaultpadding;
-        position: relative;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        .screens-image {
-            position: relative;
-            width: 60%;
-            img {
-                width: 100%;
-                height: auto;
-                filter: brightness(80%) grayscale(50%);
-            }
-        }
-        .responsiveness-description {
-            pointer-events: all;
-            position: relative;
-            width: 30%;
-            background-color: $darkgray;
-            transition: 0.5s;
-            transition-timing-function: $lightsnapandeaseout;
-            p {
-                font-family: 'Raleway Dots', sans-serif;
-                font-weight: 800;
-                position: absolute;
-                top: 50%;
-                left: $defaultpadding;
-                transform: translateY(-50%);
-                line-height: 48px;
-            }
-            &::before, &::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 0px;
-                content: '';
-            }
-            &::after {
-                transform: translate(-50%, -50%);
-                width: 4px;
-                height: 320px;
-                border-top-left-radius: 50%;
-                border-bottom-right-radius: 50%;
-                background-color: white;
-                opacity: 0.5;
-            }
-            &::before {
-                background-color: black;
-                width: 50%;
-                transform: translate(-5%, -50%);
-                border-radius: 50%;
-                height: 80%;
-                z-index: -1;
-                filter: blur(30px);
-                opacity: 0.35;
-                transition: 0.5s;
-            }
-            &:hover {
-                // transform: translateX(-$defaultpadding);
-                margin-left: -12px;
-                &::before {
-                    transform: translate(5%, -50%);
-                }
-            }
-        }
-    }
-}
-
-.cross-platform-header {
-    position: relative;
-    h1 {
-        font-family: 'Mate SC', sans-serif;
-        font-size: 48px;
-        margin-top: 0px;
-        line-height: 42px;
-    }
-    h2 {
-        font-family: 'Raleway Dots', sans-serif;
-        font-family: 18px;
-        opacity: 0.5;
-        margin-bottom: 0px;
-    }
-    .cross-platform-header-icon {
-        position: absolute;
-        height: 70%;
-        top: 50%;
-        left: -$defaultpadding;
-        transform: translate(-100%, -50%);
-        img {
-            max-height: 100%;
-            width: auto;
-            opacity: 0.5;
-        }
     }
 }

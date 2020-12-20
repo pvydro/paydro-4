@@ -107,6 +107,10 @@ $cell-logo-distance: 7.5vw;
                 text-transform: uppercase;
                 font-weight: 800;
                 font-size: 48px;
+                small {
+                    font-family: 'Raleway Dots', sans-serif;
+                    font-size: 24px;
+                }
             }
             h2 {
                 font-family: 'Inconsolata', sans-serif;
