@@ -190,7 +190,7 @@
 .summary-content {
     position: relative;
     transition: 0.5s;
-    transition-delay: 1.55s;
+    transition-delay: 1s;
     .time {
         font-family: 'DM Sans', sans-serif;
         position: absolute;
@@ -638,6 +638,25 @@
             width: 100%;
             min-height: 100%;
             height: auto;
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    .proj-header {
+        img {
+            width: 13vw;
+        }
+    }
+    .summary-content {
+        .summary-text {
+            width: 90%;
+            padding: $defaultpaddingportrait;
+            .summary-paragraph {
+                p {
+                    line-height: 40px;
+                }
+            }
         }
     }
 }

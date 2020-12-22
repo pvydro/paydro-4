@@ -67,3 +67,17 @@
         }
     }
 }
+
+@media (orientation: portrait) {
+    .proj-header {
+        img {
+            width: 10vw;
+        }
+    }
+    .summary-content {
+        .summary-text {
+            width: 90%;
+            padding: $defaultpaddingportrait;
+        }
+    }
+}

@@ -258,6 +258,7 @@
                 mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
                 -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
                 @media (max-width: 1654px) {
+                    display: none;
                     opacity: 0;
                 }
                 .showcaser-p {

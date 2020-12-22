@@ -1162,6 +1162,17 @@
   left: -50px;
 }
 
+@media (orientation: portrait) {
+  .executed-cells .executed-cell {
+    min-width: 80%;
+  }
+  .executed-cells .executed-cell .executed-cell-content {
+    opacity: 1;
+  }
+  .executed-cells .executed-cell .executed-cell-content .executed-cell-list {
+    opacity: 1;
+  }
+}
 .back-to-home {
   pointer-events: all;
   position: fixed;
@@ -1395,7 +1406,7 @@
 }
 @media (orientation: portrait) {
   .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational {
-    margin-left: 50px;
+    margin-left: 10px;
   }
 }
 @media (max-width: 890px) {
@@ -1461,6 +1472,7 @@
 }
 @media (max-width: 1654px) {
   .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-paragraph {
+    display: none;
     opacity: 0;
   }
 }
@@ -2082,7 +2094,7 @@
 .summary-content {
   position: relative;
   transition: 0.5s;
-  transition-delay: 1.55s;
+  transition-delay: 1s;
 }
 .summary-content .time {
   font-family: "DM Sans", sans-serif;
@@ -2481,6 +2493,19 @@
   height: auto;
 }
 
+@media (orientation: portrait) {
+  .proj-header img {
+    width: 13vw;
+  }
+
+  .summary-content .summary-text {
+    width: 90%;
+    padding: 20px;
+  }
+  .summary-content .summary-text .summary-paragraph p {
+    line-height: 40px;
+  }
+}
 @keyframes flintro-box-intro {
   0% {
     height: 56px;
@@ -2957,7 +2982,7 @@ body {
 }
 @media (orientation: portrait) {
   .content-box-padded {
-    padding: 40px 50px;
+    padding: 40px 10px;
   }
 }
 

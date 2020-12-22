@@ -23,3 +23,19 @@
         filter: blur(4px);
     }
 }
+
+@media (orientation: portrait) {
+    .summary-content {
+        display: flex;
+        flex-direction: column;
+        .summary-photo {
+            display: none;
+            width: 100%;
+        }
+        .summary-paragraph {
+            p {
+                line-height: 40px;
+            }
+        }
+    }
+}

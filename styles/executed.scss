@@ -274,3 +274,17 @@
         }
     }
 }
+
+@media (orientation: portrait) {
+    .executed-cells {
+        .executed-cell {
+            min-width: 80%;
+            .executed-cell-content {
+                opacity: 1;
+                .executed-cell-list {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
