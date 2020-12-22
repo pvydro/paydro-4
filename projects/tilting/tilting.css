@@ -11,6 +11,7 @@
 @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Syne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,400;0,700;0,800;0,900;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Fredoka+One&&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap");
@@ -24,6 +25,7 @@
 @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Syne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 .proj-summary-page {
   padding: 0px;
 }
@@ -201,6 +203,10 @@
 .proj-header-page .proj-header-image:hover img {
   transition: 6s;
   top: -88%;
+}
+
+.proj-summary-page .summary-paragraph p {
+  line-height: 48px;
 }
 
 .play-ad-page {
@@ -397,6 +403,91 @@
 
 .skillset-toolbox {
   margin-top: -24px;
+}
+
+@media (orientation: portrait) {
+  .proj-header-page {
+    height: 20vh;
+  }
+  .proj-header-page .proj-header-image img {
+    top: 50%;
+    height: auto;
+    width: 100%;
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+  .proj-header-page .proj-header-image:hover img {
+    top: 50%;
+  }
+  .proj-header-page .proj-header h2 {
+    font-size: 5vw;
+  }
+  .proj-header-page .proj-header img {
+    width: 40vw;
+  }
+
+  .proj-summary-page .summary-content {
+    width: 100%;
+  }
+  .proj-summary-page .summary-content .summary-paragraph {
+    line-height: 42px;
+  }
+}
+@media (max-width: 480px) {
+  .proj-header img {
+    width: 80vw !important;
+  }
+
+  .proj-summary-page .summary-content .time {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+  }
+  .proj-summary-page .summary-content .summary-header {
+    display: none;
+  }
+  .proj-summary-page .summary-content .summary-paragraph {
+    line-height: 32px;
+  }
+}
+@media (max-width: 680px) {
+  .proj-summary-page .summary-content .time {
+    font-size: 24px;
+    transform: translateY(100%);
+    left: auto;
+    right: 20px;
+  }
+  .proj-summary-page .summary-content .summary-header {
+    margin-left: 20px;
+    padding-right: 20px;
+  }
+  .proj-summary-page .summary-content .summary-paragraph {
+    margin-bottom: 148px;
+  }
+  .proj-summary-page .summary-content .summary-paragraph p {
+    text-align: center;
+    margin-left: 20px;
+    padding-right: 20px;
+  }
+
+  .proj-header img {
+    width: 70vw;
+  }
+
+  .play-ad-page {
+    height: 130vh;
+  }
+
+  .playable-ad {
+    top: 50%;
+    right: auto;
+    left: 58%;
+    transform: rotate(1deg) scale(1.15) translate(-50%, -50%);
+    opacity: 1;
+  }
+  .playable-ad:hover {
+    transform: rotate(1deg) scale(1.15) translate(-50%, -50%);
+  }
 }
 
 /*# sourceMappingURL=tilting.css.map */

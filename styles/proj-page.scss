@@ -56,21 +56,6 @@
     top: 100%;
     right: 42px;
     transform: translateY(-50%);
-    // &.animated {
-    //     transition: 0.5s;
-    //     h1, h2 {
-    //         opacity: 1;
-    //         margin-right: 0px;
-    //         transition-delay: 0.25s;
-    //     }
-    //     h2 {
-    //         opacity: 0.25;
-    //         transition-delay: 0.5s;
-    //         &::after {
-    //             width: 80%;
-    //         }
-    //     }
-    // }
     h1, h2 {
         transition: 0.5s;
         transition-timing-function: $lightsnapandeaseout;
@@ -110,7 +95,7 @@
         z-index: 999;
     }
     &::before, &::after {
-        $spacing: 60px;
+        $spacing: 48px;
         content: '';
         position: absolute;
         top: 50%;
@@ -654,7 +639,7 @@
             padding: $defaultpaddingportrait;
             .summary-paragraph {
                 p {
-                    line-height: 40px;
+                    line-height: 12px;
                 }
             }
         }

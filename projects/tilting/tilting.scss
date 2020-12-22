@@ -22,6 +22,14 @@ $seccolor: #ed1c25;
     }
 }
 
+.proj-summary-page {
+    .summary-paragraph {
+        p {
+            line-height: 48px;
+        }
+    }
+}
+
 .play-ad-page {
     height: 60vh;
     position: relative;
@@ -234,4 +242,107 @@ $seccolor: #ed1c25;
 }
 .skillset-toolbox {
     margin-top: -24px;
+}
+
+@media (orientation: portrait) {
+    .proj-header-page {
+        height: 20vh;
+        .proj-header-image {
+            img {
+                top: 50%;
+                height: auto;
+                width: 100%;
+                opacity: 0.8;
+                transform: translate(-50%, -50%) scale(1.3);
+            }
+            &:hover {
+                img {
+                    top: 50%;
+                }
+            }
+        }
+        .proj-header {
+            h2 {
+                font-size: 5vw;
+            }
+            img {
+                width: 40vw;
+            }
+        }
+    }
+    .proj-summary-page {
+        .summary-content {
+            width: 100%;
+            .summary-paragraph {
+                line-height: 42px;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-narrow) {
+    .proj-header {
+        img {
+            width: 80vw !important;
+        }
+    }
+    .proj-summary-page {
+        .summary-content {
+            .time {
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%) !important;
+            }
+            .summary-header {
+                display: none;
+            }
+            .summary-paragraph {
+                line-height: 32px;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-phone) {
+    .proj-summary-page {
+        .summary-content {
+            .time {
+                font-size: 24px;
+                transform: translateY(100%);
+                left: auto;
+                right: $defaultpaddingportrait;
+            }
+            .summary-header {
+                margin-left: $defaultpaddingportrait;
+                padding-right: $defaultpaddingportrait;
+            }
+            .summary-paragraph {
+                p {
+                    text-align: center;
+                    margin-left: $defaultpaddingportrait;
+                    padding-right: $defaultpaddingportrait;
+                }
+                margin-bottom: 148px;
+            }
+        }
+    }
+    .proj-header {
+        img {
+            width: 70vw;
+        }
+    }
+    .play-ad-page {
+        height: 130vh;
+    }
+    .playable-ad {
+        top: 50%;
+        right: auto;
+        left: 58%;
+        $scl: 1.15;
+        transform: rotate(1deg) scale($scl) translate(-50%, -50%);
+        opacity: 1;
+        &:hover {
+            transform: rotate(1deg) scale($scl) translate(-50%, -50%);
+        }
+    }
 }
