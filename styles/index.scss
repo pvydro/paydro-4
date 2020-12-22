@@ -310,3 +310,26 @@ footer {
         }
     }
 }
+
+@media (orientation: portrait) {
+    #intro-center {
+        h1 {
+            font-size: 24px;
+        }
+    }
+    #intro-subpiece {
+        top: $defaultpaddingportrait;
+        right: $defaultpaddingportrait;
+        #social-links {
+            bottom: -5px;
+            transform: translateY(100%);
+            i {
+                font-size: 56px;
+            }
+        }
+    }
+    .intro-header {
+        top: 20%;
+        transform: translate(-15%, -50%) scale(0.6);
+    }
+}

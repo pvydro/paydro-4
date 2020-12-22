@@ -13,7 +13,7 @@ $cell-logo-distance: 7.5vw;
     position: relative;
     // border: 2px dashed red;
     min-height: 100vh;
-    margin-bottom: 248px;;
+    margin-bottom: 248px;
 
     .project-dropper-header {
         position: absolute;
@@ -39,11 +39,10 @@ $cell-logo-distance: 7.5vw;
 
     .project-dropper-col {
         width: 50vw;
-        // border: 2px dashed blue;
         &.right {
             position: absolute;
             left: 50vw;
-            top: calc(#{$pjd-cell-height} / 2);//0px;
+            top: calc(#{$pjd-cell-height} / 2);
             .project-dropper-cell {
                 margin-left: auto;
                 margin-right: -10%;
@@ -236,6 +235,27 @@ $cell-logo-distance: 7.5vw;
 
             &::before {
                 opacity: 1;
+            }
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    #project-dropper {
+        .project-dropper-col {
+            width: 100vw;
+            .project-dropper-cell {
+                margin-bottom: calc(#{ $pjd-cell-height } / 2);
+                margin-top: calc(#{ $pjd-cell-height } / 2);
+            }
+            &.right {
+                top: calc(#{ $pjd-cell-height } / 4);
+                margin-top: calc(#{ $pjd-cell-height });
+                left: auto;
+                right: 0px;
+                .project-dropper-cell {
+                    transform: translateY(calc(#{ -$pjd-cell-height }));
+                }
             }
         }
     }

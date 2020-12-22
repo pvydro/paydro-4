@@ -17,11 +17,12 @@ $(document).ready(() => {
 })
 
 function isScrolledIntoView(elem, minusHeight) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
+    const docViewTop = $(window).scrollTop()
+    const docViewBottom = docViewTop + $(window).height()
 
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + (minusHeight ? 0 : $(elem).height())// + $(elem).height();
+    const offset = $(elem).offset()
+    const elemTop = offset ? offset.top : undefined
+    const elemBottom = elemTop + (minusHeight ? 0 : $(elem).height())// + $(elem).height()
 
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop))
 }
