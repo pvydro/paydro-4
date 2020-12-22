@@ -113,6 +113,9 @@ body {
             width: 0px;
             transform: translateX(-50%);
             animation: intro-center-separator 0.8s 2s forwards cubic-bezier(.63,.02,.29,.94);
+            @media (max-width: $breakpoint-phone) {
+                animation: intro-center-separator-portrait 0.8s 2s forwards cubic-bezier(.63,.02,.29,.94);
+            }
         }
     }
 }
@@ -320,6 +323,8 @@ footer {
     #intro-subpiece {
         top: $defaultpaddingportrait;
         right: $defaultpaddingportrait;
+        text-align: right;
+        opacity: 0.5;
         #social-links {
             bottom: -5px;
             transform: translateY(100%);
@@ -330,6 +335,7 @@ footer {
     }
     .intro-header {
         top: 20%;
-        transform: translate(-15%, -50%) scale(0.6);
+        transform: translate(-20%, -50%) scale(0.4);
+        right: $defaultpaddingportrait;
     }
 }

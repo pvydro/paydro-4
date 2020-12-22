@@ -82,6 +82,23 @@
         border-radius: 25%;
     }
 }
+@keyframes intro-center-separator-portrait {
+    0% {
+        width: 0px;
+    }
+    60% {
+        width: 60%;
+        border-radius: 1px;
+    }
+    80% {
+        width: 60%;
+        border-radius: 1px;
+    }
+    100% {
+        width: 60%;
+        border-radius: 25%;
+    }
+}
 @keyframes popout-up {
     0% {
         opacity: 0;
