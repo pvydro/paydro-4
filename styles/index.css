@@ -3362,8 +3362,8 @@ footer a:hover {
   }
 
   .intro-header {
-    top: 20%;
-    transform: translate(-20%, -50%) scale(0.4);
+    top: 50%;
+    transform: translate(-25%, -50%) scale(0.4);
     right: 20px;
   }
 }
