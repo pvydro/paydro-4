@@ -26,6 +26,20 @@
     }
 }
 
+.toolbox {
+    .toolbox-content {
+        width: 80%;
+        .toolbox-internal {
+            .toolbox-internal-paragraph {
+                width: 100%;
+                p {
+                    line-height: 36px;
+                }
+            }
+        }
+    }
+}
+
 #solitaire-show {
     margin-top: 96px;
     .solitaire-header {

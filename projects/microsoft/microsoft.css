@@ -32,6 +32,16 @@
   display: none;
 }
 
+.toolbox .toolbox-content {
+  width: 80%;
+}
+.toolbox .toolbox-content .toolbox-internal .toolbox-internal-paragraph {
+  width: 100%;
+}
+.toolbox .toolbox-content .toolbox-internal .toolbox-internal-paragraph p {
+  line-height: 36px;
+}
+
 #solitaire-show {
   margin-top: 96px;
 }
