@@ -216,7 +216,7 @@
 @media (orientation: portrait) {
     .skillset-toolbox {
         height: auto;
-        padding-top: 64px;
+        padding-top: 32px;
         &::before {
             height: 120%;
         }
@@ -229,7 +229,7 @@
                         max-width: 33%;
                         height: 128px;
                         img {
-                            width: 80%;
+                            width: 50%;
                             height: auto;
                         }
                     }

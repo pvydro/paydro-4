@@ -961,7 +961,7 @@
 @media (orientation: portrait) {
   .skillset-toolbox {
     height: auto;
-    padding-top: 64px;
+    padding-top: 32px;
   }
   .skillset-toolbox::before {
     height: 120%;
@@ -978,7 +978,7 @@
     height: 128px;
   }
   .skillset-toolbox .skillset-toolbox-content .skillset-toolbox-scroll-container .skillset-toolbox-row .skillset-toolbox-cell img {
-    width: 80%;
+    width: 50%;
     height: auto;
   }
 }
