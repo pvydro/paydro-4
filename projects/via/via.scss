@@ -12,20 +12,29 @@
 
 .proj-summary-page {
     position: relative;
+    display: flex;
+    overflow: hidden;
+    justify-content: flex-end;
     .summary-header {
         font-size: 18px;
+        z-index: 3;
+        padding-left: $defaultpaddingportrait;
+        &::after {
+            left: $defaultpaddingportrait;
+
+        }
     }
     .summary-bg-gradient {
         position: absolute;
         top: 0px;
-        left: 0px;
+        left: 10px;
         height: 100%;
         width: auto;
         z-index: 0;
         img {
             height: 100%;
             width: auto;
-            opacity: 0.15;
+            opacity: 0.35;
             filter: grayscale(20%);
         }
     }
@@ -34,9 +43,88 @@
         z-index: 2;
         margin-left: 15%;
     }
-    .summary-paragraph {
+    .summary-decor {
+        pointer-events: all;
+        position: absolute;
+        top: 50%;
+        left: 42%;
+        height: 80%;
+        z-index: 0;
+        transform: translate(-50%, -50%);
+        transition: 0.5s;
+        transition-timing-function: $lightsnapandeaseout;
+        img {
+            height: 100%;
+            width: auto;
+            transition: 2s;
+            transition-timing-function: $easeinoutxtra;
+            filter: brightness(40%) grayscale(20%);
+        }
+        &:hover {
+            left: 40%;
+            img {
+                filter: brightness(90%) grayscale(0%) drop-shadow(-10px -10px 10px rgba(0, 0, 0, 0.15));
+            }
+        }
+    }
+    .summary-content {
+        pointer-events: all;
+        width: 60%;
         position: relative;
-        z-index: 3;
+        .summary-paragraph {
+            pointer-events: all;
+            position: relative;
+            z-index: 3;
+            padding-left: $defaultpadding;
+            p {
+                line-height: 42px;
+            }
+            &::after {
+                $mask-distance: 10%;
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0px;
+                transform: translate(-50%, -50%);
+                width: 2px;
+                height: 85%;
+                background-color: white;
+                opacity: 0.5;
+                mask-image: -webkit-gradient(linear, left top, left bottom,
+                    color-stop(0%, rgba(0,0,0,0)),
+                    color-stop($mask-distance, rgba(0,0,0,1)), 
+                    color-stop(calc(100% - #{ $mask-distance }), rgba(0,0,0,1)),
+                    color-stop(100%, rgba(0,0,0,0)));
+                -webkit-mask-image: -webkit-gradient(linear, left top, left bottom,
+                    color-stop(0%, rgba(0,0,0,0)), 
+                    color-stop($mask-distance, rgba(0,0,0,1)),
+                    color-stop(calc(100% - #{ $mask-distance }), rgba(0,0,0,1)),
+                    color-stop(100%, rgba(0,0,0,0)));
+            }
+        }
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0px;
+        }
+        &::before {
+            width: 50%;
+            height: 90%;
+            transform: translate(-10%, -50%);
+            border-radius: 50%;
+            z-index: 0;
+            background-color: black;
+            opacity: 0.35;
+            filter: blur(30px);
+
+        }
+        &::after {
+            background-color: $darkblack;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 130%;
+        }
     }
 }
 
@@ -126,6 +214,78 @@
             transition: all 2s right 0.2s;
             transition-timing-function: $easeinoutxtra;
             right: 124px;
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .proj-summary-page {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: $defaultpadding $contentboxpaddingportrait;
+        .summary-content {
+            position: relative;
+            width: 60%;
+        }
+        .summary-image {
+            display: none;
+        }
+        .summary-bg-gradient {
+            left: -10%;
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    .proj-header-page {
+        .proj-header {
+            img {
+                width: 55vw;
+            }
+        }
+    }
+    .proj-summary-page {
+        .summary-decor {
+            pointer-events: none;
+            left: auto;
+            right: 0px;
+            transform: translate(50%, -50%);
+            img {
+                filter: brightness(20%) grayscale(60%);
+            }
+        }
+        .summary-content {
+            overflow: hidden;
+            width: 100%;
+            .summary-paragraph {
+                padding: 0px $defaultpaddingportrait;
+                // overflow: hidden;
+                p {
+                    font-size: 20px;
+                    z-index: 3;
+                    opacity: 0.9;
+                }
+                &::after, &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                }
+                &::before {
+                    width: 120%;
+                    height: 105%;
+                    background-color: rgba(0, 0, 0, 0.25);
+                    z-index: -1;
+                    transform: translate(-50%, -50%);
+                }
+                &::after {
+                    display: none;
+                }
+            }
+            &::after {
+                background-color: transparent;
+            }
         }
     }
 }
