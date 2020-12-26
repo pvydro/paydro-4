@@ -325,7 +325,11 @@
     width: 55vw;
   }
 
+  .proj-summary-page .summary-bg-gradient {
+    filter: brightness(50%) blur(2px);
+  }
   .proj-summary-page .summary-decor {
+    display: none;
     pointer-events: none;
     left: auto;
     right: 0px;
@@ -364,6 +368,30 @@
   }
   .proj-summary-page .summary-content::after {
     background-color: transparent;
+  }
+
+  .play-ad-page {
+    height: 980px;
+  }
+  .play-ad-page .ad-info {
+    width: 80%;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .play-ad-page .ad-info .project-desc {
+    float: none;
+    width: 90%;
+  }
+  .play-ad-page .playable-ad:nth-child(1) {
+    display: none;
+  }
+  .play-ad-page .playable-ad:nth-child(2) {
+    right: 50%;
+    transform-origin: center;
+    transform: scale(1.15) translateX(43.5%);
+    opacity: 1;
+    filter: brightness(90%), grayscale(10%);
   }
 }
 
