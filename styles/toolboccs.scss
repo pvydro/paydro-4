@@ -129,16 +129,6 @@
         position: relative;
         width: calc(100% - #{$nav-width});
         margin-left: 20px;
-        @media (orientation: portrait) {
-            width: 100%;
-            height: 420px;
-            margin-left: 0px;
-            .toolbox-internal-icons img {
-                height: 25% !important;
-                margin-right: 42px;
-            }
-        }
-
         .toolbox-internal.go-away {
             img {
                 opacity: 0 !important;
@@ -241,10 +231,6 @@
                 transition: 0.5s;
                 transition-delay: 0s;
                 opacity: 0;
-                @media (orientation: portrait) {
-                    width: 100%;
-                    margin-left: 0px;
-                }
                 h2 {
                     font-family: 'Raleway Dots', sans-serif;
                     text-transform: uppercase;
@@ -269,8 +255,72 @@
                     opacity: 0;
                 }
             }
-            @media (orientation: portrait) {
-                padding: 0px
+        }
+    }
+}
+
+@media (max-width: 1520px) {
+    .toolbox {
+        .toolbox-content {
+            .toolbox-internal {
+                .toolbox-internal-paragraph {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    .toolbox {
+        .toolbox-nav-list {
+            .toolbox-nav-item {
+                padding-left: $defaultpaddingportrait;
+                margin-left: 0px;
+            }
+        }
+        .toolbox-content {
+            width: 95%;
+            height: 420px;
+            margin-left: 0px;
+            .toolbox-internal {
+                padding: $defaultpaddingportrait;
+                width: 100%;
+                .toolbox-internal-icons {
+                    height: 50%;
+                    position: absolute;
+                    top: -50%;
+                    right: 25%;
+                    transform: translateY(-50%);
+                    width: 120px;
+                    img {
+                        margin-right: 42px;
+                        width: auto;
+                        height: 75%;
+                    }
+                }
+                .toolbox-internal-paragraph {
+                    width: 100%;
+                    margin-left: 0px;
+                    text-align: right;
+                    right: 0px;
+                    h2 {
+                        text-align: left;
+                        margin-bottom: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-narrow) {
+    .toolbox {
+        .toolbox-content {
+            .toolbox-internal {
+                .toolbox-internal-icons {
+                    right: 5%;
+                }
             }
         }
     }

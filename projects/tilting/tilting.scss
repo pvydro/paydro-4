@@ -444,6 +444,7 @@ $seccolor: #ed1c25;
                 overflow: visible;
                 left: 50%;
                 top: 100%;
+                filter: brightness(100%);
                 transform: translateX(-50%);
             }
         }

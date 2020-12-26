@@ -607,6 +607,7 @@
     overflow: visible;
     left: 50%;
     top: 100%;
+    filter: brightness(100%);
     transform: translateX(-50%);
   }
   .other-ads-page .other-header {
