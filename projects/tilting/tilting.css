@@ -405,6 +405,77 @@
   margin-top: -24px;
 }
 
+.mobile-try-it-header {
+  display: none;
+  position: absolute;
+  top: calc(40px * -4);
+  left: 20px;
+  z-index: 99;
+}
+.mobile-try-it-header h2 {
+  font-family: "Raleway Dots", sans-serif;
+  font-size: 36px;
+}
+.mobile-try-it-header h3 {
+  margin-top: 10px;
+  font-family: "Inconsolata";
+}
+.mobile-try-it-header::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  width: 80%;
+  height: 4px;
+  background-color: white;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+.mobile-open-button {
+  display: none;
+  pointer-events: all;
+  position: absolute;
+  width: 64px;
+  top: 25%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 99;
+  opacity: 0.6;
+  transition: 0.5s;
+}
+.mobile-open-button::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 0%;
+  height: 0%;
+  border: 0px solid white;
+  border-bottom: none;
+  border-left: none;
+  transition: width 0.5s, height 0.5s;
+  transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
+}
+.mobile-open-button img {
+  width: 100%;
+  height: auto;
+}
+.mobile-open-button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.mobile-open-button:hover::after {
+  border-width: 7px;
+  width: 75%;
+  height: 75%;
+}
+
+@media (max-width: 1620px) {
+  .header-logo {
+    display: none;
+  }
+}
 @media (orientation: portrait) {
   .proj-header-page {
     height: 20vh;
@@ -432,6 +503,46 @@
   .proj-summary-page .summary-content .summary-paragraph {
     line-height: 42px;
   }
+
+  .mobile-try-it-header {
+    display: block;
+  }
+
+  .mobile-open-button {
+    display: block;
+  }
+
+  .ad-info {
+    display: none;
+  }
+
+  .play-ad-page {
+    height: 90vh;
+    margin-top: 240px;
+  }
+  .play-ad-page .header-logo {
+    display: block !important;
+    left: -96px;
+    top: 15%;
+    opacity: 0.5;
+    transform: translateY(-50%) rotate(-35deg);
+  }
+  .play-ad-page .playable-ad {
+    transform: scale(1.25);
+    right: 25%;
+    filter: brightness(0.9) grayscale(15%);
+  }
+  .play-ad-page::after {
+    top: 30%;
+    background-color: #171717;
+    width: 120vw;
+    height: 60%;
+    z-index: -3;
+  }
+
+  .skillset-toolbox {
+    margin-top: 64px;
+  }
 }
 @media (max-width: 480px) {
   .proj-header img {
@@ -448,6 +559,32 @@
   }
   .proj-summary-page .summary-content .summary-paragraph {
     line-height: 32px;
+  }
+
+  .mobile-open-button {
+    opacity: 1;
+    overflow: visible;
+  }
+  .mobile-open-button img {
+    position: relative;
+    z-index: 2;
+  }
+  .mobile-open-button::before {
+    content: "";
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    background-color: #171717;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  .play-ad-page .header-logo {
+    opacity: 0.25;
   }
 }
 @media (max-width: 680px) {
@@ -474,15 +611,24 @@
     width: 70vw;
   }
 
+  .mobile-try-it-header {
+    top: calc(40px * 2);
+  }
+
+  .mobile-open-button {
+    top: 45%;
+  }
+
   .play-ad-page {
     height: 130vh;
+    margin-top: 12px;
   }
 
   .playable-ad {
     top: 50%;
-    right: auto;
-    left: 58%;
-    transform: rotate(1deg) scale(1.15) translate(-50%, -50%);
+    right: auto !important;
+    left: 58% !important;
+    transform: rotate(1deg) scale(1.15) translate(-50%, -50%) !important;
     opacity: 1;
   }
   .playable-ad:hover {

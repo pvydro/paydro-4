@@ -28,7 +28,7 @@
     width: 100%;
   }
   .summary-content .summary-paragraph p {
-    line-height: 40px;
+    line-height: 42px !important;
   }
 }
 

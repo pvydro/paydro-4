@@ -243,6 +243,78 @@ $seccolor: #ed1c25;
 .skillset-toolbox {
     margin-top: -24px;
 }
+.mobile-try-it-header {
+    display: none;
+    position: absolute;
+    top: calc(#{$defaultpadding} * -4);
+    left: $defaultpaddingportrait;
+    z-index: 99;
+    h2 {
+        font-family: 'Raleway Dots', sans-serif;
+        font-size: 36px;
+    }
+    h3 {
+        margin-top: 10px;
+        font-family: 'Inconsolata';
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0px;
+        width: 80%;
+        height: 4px;
+        background-color: white;
+        transform: translateY(-50%);
+        opacity: 0.5;
+    }
+}
+.mobile-open-button {
+    display: none;
+    pointer-events: all;
+    position: absolute;
+    width: 64px;
+    top: 25%;
+    left: $defaultpaddingportrait;
+    transform: translateY(-50%);
+    z-index: 99;
+    opacity: 0.6;
+    transition: 0.5s;
+    &::after {
+        $open-margin: -12px;
+        content: '';
+        position: absolute;
+        top: $open-margin;
+        right: $open-margin;
+        width: 0%;
+        height: 0%;
+        border: 0px solid white;
+        border-bottom: none;
+        border-left: none;
+        transition: width 0.5s, height 0.5s;
+        transition-timing-function: $easeinoutxtra;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    &:hover {
+        cursor: pointer;
+        opacity: 0.9;
+        &::after {
+            border-width: 7px;
+            width: 75%;
+            height: 75%;
+        }
+    }
+}
+
+@media (max-width: 1620px) {
+    .header-logo {
+        display: none;
+    }
+}
+
 
 @media (orientation: portrait) {
     .proj-header-page {
@@ -278,6 +350,41 @@ $seccolor: #ed1c25;
             }
         }
     }
+    .mobile-try-it-header {
+        display: block;
+    }
+    .mobile-open-button {
+        display: block;
+    }
+    .ad-info {
+        display: none;
+    }
+    .play-ad-page {
+        height: 90vh;
+        margin-top: 240px;
+        .header-logo {
+            display: block !important;
+            left: -96px;
+            top: 15%;
+            opacity: 0.5;
+            transform: translateY(-50%) rotate(-35deg);
+        }
+        .playable-ad {
+            transform: scale(1.25);
+            right: 25%;
+            filter: brightness(0.9) grayscale(15%);
+        }
+        &::after {
+            top: 30%;
+            background-color: $darkblack;
+            width: 120vw;
+            height: 60%;
+            z-index: -3;
+        }
+    }
+    .skillset-toolbox {
+        margin-top: 64px;
+    }
 }
 
 @media (max-width: $breakpoint-narrow) {
@@ -299,6 +406,32 @@ $seccolor: #ed1c25;
             .summary-paragraph {
                 line-height: 32px;
             }
+        }
+    }
+    .mobile-open-button {
+        opacity: 1;
+        overflow: visible;
+        img {
+            position: relative;
+            z-index: 2;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 84px;
+            height: 84px;
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            background-color: $darkblack;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            opacity: 0.5;
+        }
+    }
+    .play-ad-page {
+        .header-logo {
+            opacity: 0.25;
         }
     }
 }
@@ -331,15 +464,22 @@ $seccolor: #ed1c25;
             width: 70vw;
         }
     }
+    .mobile-try-it-header {
+        top: calc(#{$defaultpadding} * 2);
+    }
+    .mobile-open-button {
+        top: 45%;
+    }
     .play-ad-page {
         height: 130vh;
+        margin-top: 12px;
     }
     .playable-ad {
         top: 50%;
-        right: auto;
-        left: 58%;
+        right: auto !important;
+        left: 58% !important;
         $scl: 1.15;
-        transform: rotate(1deg) scale($scl) translate(-50%, -50%);
+        transform: rotate(1deg) scale($scl) translate(-50%, -50%) !important;
         opacity: 1;
         &:hover {
             transform: rotate(1deg) scale($scl) translate(-50%, -50%);
