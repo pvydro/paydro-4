@@ -932,6 +932,30 @@
   transform: translate(-50%, 50%);
 }
 
+@media (orientation: portrait) {
+  .skillset-toolbox {
+    height: auto;
+    padding-top: 64px;
+  }
+  .skillset-toolbox::before {
+    height: 120%;
+  }
+  .skillset-toolbox .skillset-toolbox-content .skillset-toolbox-scroll-container {
+    position: relative;
+  }
+  .skillset-toolbox .skillset-toolbox-content .skillset-toolbox-scroll-container .skillset-toolbox-row {
+    position: relative;
+    flex-wrap: wrap;
+  }
+  .skillset-toolbox .skillset-toolbox-content .skillset-toolbox-scroll-container .skillset-toolbox-row .skillset-toolbox-cell {
+    max-width: 33%;
+    height: 128px;
+  }
+  .skillset-toolbox .skillset-toolbox-content .skillset-toolbox-scroll-container .skillset-toolbox-row .skillset-toolbox-cell img {
+    width: 80%;
+    height: auto;
+  }
+}
 #work-executed {
   margin-top: 84px;
 }

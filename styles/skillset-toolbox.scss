@@ -120,8 +120,8 @@
                 transform: translateX(-50%);
 
                 .skillset-toolbox-cell {
-                    pointer-events: all;
                     $size: 150px;
+                    pointer-events: all;
                     position: relative;
                     min-width: $size;
                     width: $size;
@@ -210,5 +210,34 @@
         border-radius: 50%;
         opacity: 0.45;
         transform: translate(-50%, 50%);
+    }
+}
+
+@media (orientation: portrait) {
+    .skillset-toolbox {
+        height: auto;
+        padding-top: 64px;
+        &::before {
+            height: 120%;
+        }
+        .skillset-toolbox-content {
+            .skillset-toolbox-scroll-container {
+                position: relative;
+                .skillset-toolbox-row {
+                    position: relative;
+                    .skillset-toolbox-cell {                        
+                        max-width: 33%;
+                        height: 128px;
+                        img {
+                            width: 80%;
+                            height: auto;
+                        }
+                    }
+                    flex-wrap: wrap;
+                    // display: inline-block;
+
+                }
+            }
+        }
     }
 }
