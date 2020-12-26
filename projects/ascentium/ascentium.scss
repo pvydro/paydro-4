@@ -323,3 +323,34 @@
         }
     }
 }
+
+@media (orientation: portrait) {
+    .proj-summary-page {
+        .summary-content {
+            .summary-header {
+                z-index: 999;
+            }
+            .summary-mockup {
+                pointer-events: none;
+                img {
+                    filter: brightness(40%) grayscale(50%);
+                }
+            }
+            .summary-paragraph {
+                width: 100%;
+                p {
+                    font-size: 18px;
+                }
+            }
+            &::before {
+                width: 90%;
+            }
+        }
+        .summary-year {
+            left: auto;
+            right: 0px;
+            font-size: 32px;
+            z-index: 99;
+        }
+    }
+}

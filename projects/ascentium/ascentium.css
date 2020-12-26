@@ -11,6 +11,7 @@
 @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Syne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 .proj-header-page {
   z-index: 999;
   margin-bottom: 40px;
@@ -326,6 +327,33 @@
   max-height: 100%;
   width: auto;
   opacity: 0.5;
+}
+
+@media (orientation: portrait) {
+  .proj-summary-page .summary-content .summary-header {
+    z-index: 999;
+  }
+  .proj-summary-page .summary-content .summary-mockup {
+    pointer-events: none;
+  }
+  .proj-summary-page .summary-content .summary-mockup img {
+    filter: brightness(40%) grayscale(50%);
+  }
+  .proj-summary-page .summary-content .summary-paragraph {
+    width: 100%;
+  }
+  .proj-summary-page .summary-content .summary-paragraph p {
+    font-size: 18px;
+  }
+  .proj-summary-page .summary-content::before {
+    width: 90%;
+  }
+  .proj-summary-page .summary-year {
+    left: auto;
+    right: 0px;
+    font-size: 32px;
+    z-index: 99;
+  }
 }
 
 /*# sourceMappingURL=ascentium.css.map */
