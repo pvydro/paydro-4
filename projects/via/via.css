@@ -239,6 +239,7 @@
   right: auto;
   left: 200px;
   text-align: left;
+  z-index: 99;
 }
 .play-ad-page .ad-info .project-desc {
   float: auto;
@@ -369,7 +370,8 @@
   .proj-summary-page .summary-content::after {
     background-color: transparent;
   }
-
+}
+@media (max-width: 1400px) {
   .play-ad-page {
     height: 980px;
   }
@@ -383,11 +385,16 @@
     float: none;
     width: 90%;
   }
+  .play-ad-page .playable-ad {
+    margin-right: 10%;
+  }
+}
+@media (max-width: 680px) {
   .play-ad-page .playable-ad:nth-child(1) {
     display: none;
   }
   .play-ad-page .playable-ad:nth-child(2) {
-    right: 50%;
+    right: 40%;
     transform-origin: center;
     transform: scale(1.15) translateX(43.5%);
     opacity: 1;

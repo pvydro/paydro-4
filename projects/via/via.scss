@@ -149,6 +149,7 @@
         right: auto;
         left: $contentboxpadding;
         text-align: left;
+        z-index: 99;
         .project-desc {
             float: auto;
         }
@@ -292,8 +293,10 @@
             }
         }
     }
+}
+
+@media (max-width: 1400px) {
     .play-ad-page {
-        // border: 3px dashed red;
         height: 980px;
         .ad-info {
             width: 80%;
@@ -306,11 +309,19 @@
             }
         }
         .playable-ad {
+            margin-right: 10%;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-phone) {
+    .play-ad-page {
+        .playable-ad {
             &:nth-child(1) {
                 display: none;
             }
             &:nth-child(2) {
-                right: 50%;
+                right: 40%;
                 transform-origin: center;
                 transform: scale(1.15) translateX(43.5%);
                 opacity: 1;
@@ -318,4 +329,5 @@
             }
         }
     }
+
 }
