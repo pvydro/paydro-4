@@ -313,8 +313,34 @@ $seccolor: #ed1c25;
     .header-logo {
         display: none;
     }
+    .other-row {
+        position: absolute;
+        flex-wrap: wrap;
+        width: 50% !important;
+        right: 0px;
+        .other-cell {
+            width: auto;
+            height: 240px;
+            img {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
 }
 
+@media (max-width: 1200px) {
+    .other-header {
+        margin-top: -96px;
+        z-index: 999;
+    }
+    .other-row {
+        transform: translateY(-10%);
+        .other-cell {
+            height: 160px;
+        }
+    }
+}
 
 @media (orientation: portrait) {
     .proj-header-page {
@@ -384,6 +410,59 @@ $seccolor: #ed1c25;
     }
     .skillset-toolbox {
         margin-top: 64px;
+    }
+    .other-ads-page {
+        margin-top: 0px;
+        margin-bottom: 300px;
+        overflow: visible;
+        .other-row {
+            position: relative;
+            flex-wrap: nowrap;
+            width: 100% !important;
+            .other-cell {
+                width: auto;
+                height: 240px;
+                img {
+                    width: auto;
+                    height: 100%;
+                }
+            }
+        }
+        .other-holder {
+            height: 360px;
+            margin-top: 48px;
+            overflow: visible;
+            .other-cell {
+                width: 175px;
+                height: auto;
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+            .other-showcase {
+                overflow: visible;
+                left: 50%;
+                top: 100%;
+                transform: translateX(-50%);
+            }
+        }
+        .other-header {
+            right: $defaultpaddingportrait;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -300px;
+            width: 90%;
+            height: 4px;
+            transform: translateX(-50%);
+            background-color: white;
+            opacity: 0.5;
+            mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(10%, rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,1)), color-stop(90%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
+            -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,0)), color-stop(10%, rgba(0,0,0,1)), color-stop(50%, rgba(0,0,0,1)), color-stop(90%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,0)));
+        }
     }
 }
 

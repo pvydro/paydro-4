@@ -5,10 +5,11 @@ const ids = {
     siege: 'siege'
 }
 
-currentGame = ids.lang
+currentGame = ids.ftc
 
 $(document).ready(() => {
-    
+    // assignLeftAndRight()    
+
     // Switching sliders
     $('.other-row .other-cell').on('click', (ev) => {
         const ele = $(ev.target)

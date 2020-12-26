@@ -475,6 +475,34 @@
   .header-logo {
     display: none;
   }
+
+  .other-row {
+    position: absolute;
+    flex-wrap: wrap;
+    width: 50% !important;
+    right: 0px;
+  }
+  .other-row .other-cell {
+    width: auto;
+    height: 240px;
+  }
+  .other-row .other-cell img {
+    width: auto;
+    height: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  .other-header {
+    margin-top: -96px;
+    z-index: 999;
+  }
+
+  .other-row {
+    transform: translateY(-10%);
+  }
+  .other-row .other-cell {
+    height: 160px;
+  }
 }
 @media (orientation: portrait) {
   .proj-header-page {
@@ -542,6 +570,60 @@
 
   .skillset-toolbox {
     margin-top: 64px;
+  }
+
+  .other-ads-page {
+    margin-top: 0px;
+    margin-bottom: 300px;
+    overflow: visible;
+  }
+  .other-ads-page .other-row {
+    position: relative;
+    flex-wrap: nowrap;
+    width: 100% !important;
+  }
+  .other-ads-page .other-row .other-cell {
+    width: auto;
+    height: 240px;
+  }
+  .other-ads-page .other-row .other-cell img {
+    width: auto;
+    height: 100%;
+  }
+  .other-ads-page .other-holder {
+    height: 360px;
+    margin-top: 48px;
+    overflow: visible;
+  }
+  .other-ads-page .other-holder .other-cell {
+    width: 175px;
+    height: auto;
+  }
+  .other-ads-page .other-holder .other-cell img {
+    height: 100%;
+    width: auto;
+  }
+  .other-ads-page .other-holder .other-showcase {
+    overflow: visible;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+  }
+  .other-ads-page .other-header {
+    right: 20px;
+  }
+  .other-ads-page::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -300px;
+    width: 90%;
+    height: 4px;
+    transform: translateX(-50%);
+    background-color: white;
+    opacity: 0.5;
+    mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(10%, black), color-stop(50%, black), color-stop(90%, black), color-stop(100%, rgba(0, 0, 0, 0)));
+    -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(10%, black), color-stop(50%, black), color-stop(90%, black), color-stop(100%, rgba(0, 0, 0, 0)));
   }
 }
 @media (max-width: 480px) {
