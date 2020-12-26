@@ -183,6 +183,9 @@
         right: 52px;
         font-size: 32px;
         opacity: 0.125;
+        @media (orientation: portrait) {
+            right: $contentboxpaddingportrait;
+        }
     }
     .summary-header {
         position: relative;

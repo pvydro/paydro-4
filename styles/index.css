@@ -2171,6 +2171,11 @@
   font-size: 32px;
   opacity: 0.125;
 }
+@media (orientation: portrait) {
+  .summary-content .time {
+    right: 10px;
+  }
+}
 .summary-content .summary-header {
   position: relative;
   font-family: "Questrial", sans-serif;

@@ -16,6 +16,10 @@
   width: 80%;
 }
 
+.summary-content .summary-paragraph p {
+  line-height: 42px;
+}
+
 .proj-header-image {
   filter: grayscale(80%) blur(5px);
 }
@@ -121,10 +125,27 @@
 }
 
 @media (orientation: portrait) {
+  .proj-header-page .proj-header img {
+    width: 40vw;
+  }
+
   .summary-image {
     display: none;
   }
 
+  .summary-content .summary-header {
+    position: relative;
+  }
+  .summary-content .summary-header::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 48px;
+    width: 100%;
+    height: 100%;
+    background-color: #171717;
+    opacity: 1;
+  }
   .summary-content .summary-paragraph p {
     line-height: 42px;
     opacity: 0.8;
@@ -147,7 +168,11 @@
     width: 100%;
     margin-left: 0px;
   }
+  #solitaire-show .solitaire-row .solitaire-paragraph p {
+    opacity: 0.9;
+  }
   #solitaire-show .solitaire-row .solitaire-paragraph p.upper {
+    opacity: 1;
     padding-left: calc(20px * 2);
   }
 }
