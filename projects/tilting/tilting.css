@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
@@ -19,6 +20,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
@@ -132,7 +134,8 @@
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 .play-ad-page .ad-info .header {
-  font-family: "Raleway Dots", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
   opacity: 0.8;
 }
 .play-ad-page .ad-info .project-header {
@@ -141,8 +144,8 @@
   opacity: 0.25;
 }
 .play-ad-page .ad-info .project-desc {
-  font-family: "Raleway Dots", sans-serif;
-  font-weight: 800;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
   width: 480px;
   float: right;
   opacity: 0.5;
@@ -280,7 +283,7 @@
 }
 .other-ads-page .other-header h2 {
   opacity: 0.5;
-  font-family: "Raleway Dots", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 .other-ads-page .other-holder {
   position: relative;
@@ -413,7 +416,7 @@
   z-index: 99;
 }
 .mobile-try-it-header h2 {
-  font-family: "Raleway Dots", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 36px;
 }
 .mobile-try-it-header h3 {
@@ -645,8 +648,9 @@
   }
 
   .mobile-open-button {
-    opacity: 1;
+    opacity: 0.5;
     overflow: visible;
+    transition: 0.5s;
   }
   .mobile-open-button img {
     position: relative;
@@ -664,6 +668,9 @@
     transform: translate(-50%, -50%);
     z-index: 0;
     opacity: 0.5;
+  }
+  .mobile-open-button:active {
+    opacity: 1;
   }
 
   .play-ad-page .header-logo {

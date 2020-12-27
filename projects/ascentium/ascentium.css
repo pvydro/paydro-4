@@ -130,10 +130,10 @@
   position: relative;
   height: 48px;
   z-index: 99;
+  margin-right: 40px;
 }
 #quiz-player .quiz-header, #quiz-player .quiz-subheader {
   text-align: right;
-  margin-right: 40px;
   transition: 0.25s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
@@ -330,6 +330,16 @@
 }
 
 @media (orientation: portrait) {
+  .proj-header-page .proj-header img {
+    display: none;
+  }
+  .proj-header-page .proj-header::after {
+    width: 90vw;
+    right: auto;
+    left: 10px;
+    transform: translate(-100%, -50%);
+  }
+
   .proj-summary-page .summary-content .summary-header {
     z-index: 999;
   }
@@ -353,6 +363,37 @@
     right: 0px;
     font-size: 32px;
     z-index: 99;
+    transform: translateY(-110%);
+  }
+
+  #quiz-player .quiz-headers {
+    margin-right: 20px;
+  }
+  #quiz-player .quiz-frame {
+    width: 100%;
+  }
+  #quiz-player .quiz-frame iframe {
+    filter: brightness(100%) grayscale(20%);
+  }
+
+  #cross-platform .responsive-row {
+    display: flex;
+    flex-direction: column;
+  }
+  #cross-platform .responsive-row .screens-image {
+    text-align: center;
+    min-width: 110%;
+  }
+  #cross-platform .responsive-row .responsiveness-description {
+    margin-top: 25%;
+    width: 100%;
+    margin-bottom: 5%;
+  }
+  #cross-platform .responsive-row .responsiveness-description::after {
+    left: 50%;
+    top: -120px;
+    width: 75%;
+    height: 4px;
   }
 }
 

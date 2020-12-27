@@ -31,7 +31,8 @@
             transition-timing-function: $lightsnapandeaseout;
         }
         .header {
-            font-family: 'Raleway Dots', sans-serif;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 800;
             opacity: 0.8;
         }
         .project-header {
@@ -40,8 +41,8 @@
             opacity: 0.25;
         }
         .project-desc {
-            font-family: 'Raleway Dots', sans-serif;
-            font-weight: 800;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
             width: 480px;
             float: right;
             opacity: 0.5;
@@ -71,6 +72,7 @@
     transition: 0.5s;
     transition-timing-function: cubic-bezier(.55,-0.01,.41,1);
     filter: brightness(0.5) grayscale(50%);
+    z-index: 3;
     .player-bg {
         height: 700px;
         img {

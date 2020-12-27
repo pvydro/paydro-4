@@ -221,8 +221,8 @@
             opacity: 0.5 !important; 
         }
         p {
-            font-family: 'Raleway Dots', sans-serif;
-            font-weight: 800;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
         }
     }
     // &.animated {
@@ -642,6 +642,8 @@
             padding: $defaultpaddingportrait;
             .summary-paragraph {
                 p {
+                    font-family: 'Raleway', sans-serif;
+                    font-weight: 300;
                     line-height: 12px;
                 }
             }

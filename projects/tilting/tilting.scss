@@ -101,8 +101,7 @@ $seccolor: #ed1c25;
         transform: translateY(100%);
         h2 {
             opacity: 0.5;
-            // text-transform: uppercase;
-            font-family: 'Raleway Dots', sans-serif;
+            font-family: 'Raleway', sans-serif;
         }
     }
     .other-holder {
@@ -182,19 +181,6 @@ $seccolor: #ed1c25;
                     &.active {
                         z-index: 999;
                     }
-                    // &.active {
-                    //     &::after {
-                    //         content: '';
-                    //         position: absolute;
-                    //         left: 0px;
-                    //         top: 0px;
-                    //         width: 100%;
-                    //         height: 100%;
-                    //         pointer-events: all !important;
-                    //         border: 2px dashed red;
-                    //         z-index: 999;
-                    //     }
-                    // }
                     &:not(.active) {
                         transition: 0.5s;
                         transition-timing-function: $lightsnapandeaseout;
@@ -250,7 +236,7 @@ $seccolor: #ed1c25;
     left: $defaultpaddingportrait;
     z-index: 99;
     h2 {
-        font-family: 'Raleway Dots', sans-serif;
+        font-family: 'Raleway', sans-serif;
         font-size: 36px;
     }
     h3 {
@@ -489,8 +475,9 @@ $seccolor: #ed1c25;
         }
     }
     .mobile-open-button {
-        opacity: 1;
+        opacity: 0.5;
         overflow: visible;
+        transition: 0.5s;
         img {
             position: relative;
             z-index: 2;
@@ -507,6 +494,9 @@ $seccolor: #ed1c25;
             transform: translate(-50%, -50%);
             z-index: 0;
             opacity: 0.5;
+        }
+        &:active {
+            opacity: 1;
         }
     }
     .play-ad-page {
