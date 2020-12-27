@@ -25,6 +25,7 @@ $seccolor: #ed1c25;
 .proj-summary-page {
     .summary-paragraph {
         p {
+            font-size: 22px;
             line-height: 48px;
         }
     }
@@ -521,6 +522,7 @@ $seccolor: #ed1c25;
             }
             .summary-paragraph {
                 p {
+                    font-size: 18px;
                     text-align: center;
                     margin-left: $defaultpaddingportrait;
                     padding-right: $defaultpaddingportrait;

@@ -177,6 +177,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-60%);
+        transition: 0.5s;
         width: 25%;
         p {
             font-family: 'Raleway', sans-serif;
@@ -299,14 +300,16 @@
     }
     #mock-section {
         .mock-description {
-            width: 100%;
+            width: 100vw;
             z-index: 1;
             p, h2 {
                 z-index: 3;
                 opacity: 1;
             }
             p {
+                width: 60%;
                 padding-right: $defaultpaddingportrait;
+                line-height: 32px;
             }
             &::before {
                 content: '';
@@ -355,10 +358,13 @@
         min-height: 860px;
     }
     #mock-section {
+        .mock-description {
+            pointer-events: none;
+        }
         .mock-ipad {
             right: auto;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             width: 200%;
         }
         .mock-rake {

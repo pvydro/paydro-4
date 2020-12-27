@@ -403,6 +403,10 @@
     opacity: 1;
     filter: brightness(90%), grayscale(10%);
   }
+  .play-ad-page .playable-ad:nth-child(2):hover {
+    transform: scale(1.15) translateX(43.5%);
+    right: 43%;
+  }
 }
 
 /*# sourceMappingURL=via.css.map */

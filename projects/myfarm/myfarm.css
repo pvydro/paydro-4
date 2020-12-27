@@ -188,6 +188,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-60%);
+  transition: 0.5s;
   width: 25%;
 }
 #mock-section .mock-description p {
@@ -299,7 +300,7 @@
   }
 
   #mock-section .mock-description {
-    width: 100%;
+    width: 100vw;
     z-index: 1;
   }
   #mock-section .mock-description p, #mock-section .mock-description h2 {
@@ -307,7 +308,9 @@
     opacity: 1;
   }
   #mock-section .mock-description p {
+    width: 60%;
     padding-right: 20px;
+    line-height: 32px;
   }
   #mock-section .mock-description::before {
     content: "";
@@ -354,10 +357,13 @@
     min-height: 860px;
   }
 
+  #mock-section .mock-description {
+    pointer-events: none;
+  }
   #mock-section .mock-ipad {
     right: auto;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 200%;
   }
   #mock-section .mock-rake {

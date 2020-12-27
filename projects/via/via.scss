@@ -326,6 +326,10 @@
                 transform: scale(1.15) translateX(43.5%);
                 opacity: 1;
                 filter: brightness(90%), grayscale(10%);
+                &:hover {
+                    transform: scale(1.15) translateX(43.5%);
+                    right: 43%;
+                }
             }
         }
     }

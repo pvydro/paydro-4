@@ -226,7 +226,7 @@
                 position: relative;
                 .skillset-toolbox-row {
                     position: relative;
-                    .skillset-toolbox-cell {                        
+                    .skillset-toolbox-cell {        
                         max-width: 33%;
                         height: 128px;
                         img {
@@ -235,6 +235,20 @@
                         }
                     }
                     flex-wrap: wrap;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-phone) {
+    .skillset-toolbox {
+        .skillset-toolbox-content {
+            .skillset-toolbox-scroll-container {
+                .skillset-toolbox-row {
+                    .skillset-toolbox-cell {
+                        pointer-events: none;
+                    }
                 }
             }
         }

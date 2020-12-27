@@ -27,7 +27,7 @@ a {
 }
 
 * {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Cormorant Garamond', serif;
     color: white;
     padding: 0px;
     margin: 0px;
@@ -98,7 +98,7 @@ body {
 
     h1 {
         opacity: 0;
-        font-family: "Inconsolata", sans-serif;
+        font-family: 'Inconsolata', sans-serif;
         font-weight: 400;
         font-size: 70px;
         text-transform: uppercase;
@@ -163,7 +163,7 @@ body {
     }
     #intro-sub-header {
         h2 {
-            font-family: "Mate SC", serif;
+            font-family: 'Mate SC', serif;
             font-size: 28px;
             opacity: 0;
             animation: intro-sub-header-in 0.5s $intro-sub-header-delay forwards $lightsnapandeaseout;
@@ -190,7 +190,7 @@ body {
             list-style: none;
             li {
                 opacity: 0;
-                font-family: "Manrope", sans-serif;
+                font-family: 'Manrope', sans-serif;
                 padding: 10px 0px;
                 font-size: 24px;
                 transition: 0.8s;
@@ -217,7 +217,7 @@ body {
     top: 230px;
     right: 70px;
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         right: 0px;
         bottom: 0px;
@@ -226,12 +226,12 @@ body {
     }
     .intro-side-piece {
         opacity: 0;
-        font-family: "Manrope", sans-serif;
+        font-family: 'Manrope', sans-serif;
         text-transform: uppercase;
         letter-spacing: 5px;
         font-size: 16px;
         span {
-            font-family: "Manrope", sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-size: 12px;
             &.cascadia-show {
                 opacity: 0.8 !important;
@@ -281,7 +281,7 @@ body {
             p {
                 text-transform: uppercase;
                 font-size: 42px;
-                font-family: "Manrope", sans-serif;
+                font-family: 'Manrope', sans-serif;
             }
         }
     }
@@ -292,7 +292,7 @@ footer {
     margin-top: 184px;
     background-color: $darkblack;
     h3, h5, h6 {
-        font-family: "Manrope", sans-serif;
+        font-family: 'Manrope', sans-serif;
         font-size: 16px;
         opacity: 0.5;
     }

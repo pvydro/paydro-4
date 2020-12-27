@@ -1,0 +1,419 @@
+@import '../../styles/vars.scss';
+
+:root {
+    --showcase-y: 0px;
+}
+
+.proj-header {
+    h1 {
+        font-size: 24px;
+    }
+}
+
+.proj-summary-page {
+    .summary-content {
+        .summary-header {
+            font-family: 'Bungee', sans-serif;
+            font-size: 28px;
+        }
+        .summary-paragraph {
+            width: 110%;
+            p {
+                line-height: 48px;
+            }
+        }
+    }
+}
+
+.screenshots-grid {
+    /* border: 2px dashed orange; */
+    /* width: 70%; */
+    width: calc(100% - 420px - 84px);
+}
+
+#screenshots {
+    padding: 42px 100px;
+}
+
+.screenshots-header h1 {
+    text-align: left !important;
+}
+
+.showcase-video-col {
+    position: absolute;
+    /* border: 2px dashed red; */
+    width: calc(30% - 200px);
+    min-width: 420px;
+    width: 420px;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s;
+    overflow-x: visible;
+}
+
+@media (orientation: portrait) {
+    .screenshots-grid {
+        width: 100%;
+    }
+    .showcase-video-holder {
+        transform: translateX(50%);
+    }
+    .showcase-video-col {
+        position: relative;
+        transform: translateX(-50%);
+        top: auto;
+        right: auto;
+    }
+}
+
+#showcase-video-content {
+    position: relative;
+    transform: translateY(var(--showcase-y));
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(.07, .75, .32, .96);
+}
+
+.showcase-video-col.animated .showcase-video-header {
+    opacity: 1;
+    transform: translateX(0px);
+    transition-delay: 0.25s !important;
+    transition-timing-function: cubic-bezier(.07, .75, .32, .96);
+    transition: 0.5s;
+}
+
+.showcase-video-col.animated .showcase-video-header::after {
+    width: 60%;
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(.07, .75, .32, .96);
+    transition-delay: 0.5s !important;
+}
+
+.showcase-video-col.animated .showcase-video-description {
+    opacity: 0.5;
+    transform: translateX(0px);
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(.07, .75, .32, .96);
+    transition-delay: 0.75s !important;
+}
+
+.showcase-video-col.animated .showcase-video {
+    transform: translateX(0px);
+    opacity: 1;
+
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(.07, .75, .32, .96);
+    transition-delay: 1s !important;
+}
+
+.showcase-video-col.animated .showcase-video-footer .youtube-icon {
+    transform: translateX(0px);
+    opacity: 0.25;
+
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(.07, .75, .32, .96);
+    transition-delay: 1.75s !important;
+}
+
+.showcase-video-header {
+    position: relative;
+    margin-bottom: 42px;
+    transform: translateX(42px);
+    opacity: 0;
+}
+
+.showcase-video-header h4 {
+    position: relative;
+    font-family: 'Iceland', cursive;
+    font-size: 48px;
+    text-align: right;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+.showcase-video-header::after {
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    right: 0px;
+    width: 0px;
+    height: 4px;
+    background-color: white;
+    opacity: 0.8;
+    transform: translateY(-50%);
+}
+
+.showcase-video-description {
+    transform: translateX(84px);
+    opacity: 0;
+}
+
+.showcase-video-description p {
+    font-family: 'Manrope', sans-serif;
+    opacity: 0.6;
+}
+
+.showcase-video {
+    pointer-events: all;
+    position: relative;
+    margin-top: 42px;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(42px);
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+}
+
+.showcase-video.open {
+    border-radius: 10px;
+}
+
+.showcase-video-container {
+    height: 370px;
+    overflow: hidden;
+    transition: 0.25s;
+    transition-timing-function: cubic-bezier(.07, .75, .32, .96);
+}
+
+.showcase-video.open .showcase-video-container {
+    height: 720px;
+}
+
+.showcase-video-container video {
+    position: absolute;
+    left: 50%;
+    height: 790px;
+    transform: translateX(-50%) scale(1.08);
+    width: auto;
+    opacity: 0.35;
+    transition: 0.25s;
+    transition-timing-function: cubic-bezier(.07, .75, .32, .96);
+}
+
+.showcase-video-shine {
+    pointer-events: none;
+    position: absolute;
+    width: 200%;
+    height: 30%;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    background-color: white;
+    opacity: 0.2;
+    transition: 0.6s;
+    transition-timing-function: cubic-bezier(.34,1.5,0, .94);
+}
+
+.showcase-video.open .showcase-video-shine,
+.showcase-video:hover .showcase-video-shine {
+    cursor: pointer;
+    transition: 0.3s;
+    transition-timing-function: cubic-bezier(.48,0, .59, .94);
+    left: -50%;
+    opacity: 0;
+}
+
+.showcase-video:not(.open):hover video {
+    cursor: pointer;
+    opacity: 0.75;
+    transform: translateX(-50%) scale(1.04);
+}
+
+.showcase-video.open video {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(1);
+}
+
+.showcase-video-footer {
+    overflow-x: visible;
+}
+
+.showcase-video-footer .youtube-icon {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 24px;
+    text-align: right;
+    font-size: 48px;
+    opacity: 0;
+    transform: translateX(42px);
+    overflow-x: visible;
+}
+
+.showcase-video-footer .youtube-icon {
+    pointer-events: all;
+}
+
+.showcase-video-footer .youtube-icon .fa-angle-double-right {
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translate(calc(100% - 42px), -50%);
+    opacity: 0;
+    transition-timing-function: cubic-bezier(.07, .75, .32, .96);
+    transition: 0.75s;
+    font-size: 50%;
+}
+
+.showcase-video-footer .youtube-icon:hover,
+.showcase-video-footer .youtube-icon:hover * {
+    cursor: pointer;
+}
+
+.showcase-video-footer .youtube-icon:hover .fa-angle-double-right {
+    transition: 0.25s;
+    opacity: 1;
+    transform: translate(100%, -50%);
+}
+
+.showcase-video:hover .showcase-video-play-button img {
+    opacity: 0.1;
+}
+
+.showcase-video:hover .showcase-video-play-button {
+    opacity: 0;
+    transform: translateY(-42px);
+}
+
+.showcase-video-play-button {
+    pointer-events: none;
+    transition: 0.25s;
+    transition-delay: 0.25s;
+}
+
+.showcase-video.open .showcase-video-play-button {
+    display: none;
+}
+
+.showcase-video-play-button img {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+    transition: opacity 0.25s;
+}
+
+.showcase-video-play-button,
+.showcase-video-control-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.showcase-video-control-overlay {
+    background-color: rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transition: 0.25s;
+}
+
+.showcase-video.open .showcase-video-control-overlay {
+    opacity: 0;
+}
+
+.showcase-video:hover .showcase-video-control-overlay {
+    display: block !important;
+    transition: 1s;
+    opacity: 1;
+}
+
+.showcase-video:not(.open):hover .showcase-video-control-overlay {
+    pointer-events: none;
+}
+
+.showcase-video:not(.open) .showcase-video-control-overlay {
+    pointer-events: none;
+    display: block !important;
+    transition: 1s;
+    opacity: 1;
+}
+
+.showcase-video:not(.open) .showcase-video-control-overlay .mute-button {
+    opacity: 0;
+}
+
+.showcase-video-control-overlay {
+    pointer-events: all;
+}
+
+.showcase-video-control-overlay .mute-button {
+    opacity: 0.4;
+    transition: 0.25s;
+    transition-timing-function: cubic-bezier(.34,1.5,0, .94);
+}
+
+.showcase-video-control-overlay .mute-button i {
+    pointer-events: all;
+    transform: translateY(42px);
+    font-size: 42px;
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    transition: 0.5s;
+}
+
+.showcase-video-control-overlay .mute-button .mute-button-on {
+    opacity: 0;
+}
+
+.showcase-video-control-overlay .mute-button.on .mute-button-off {
+    opacity: 0;
+}
+
+.showcase-video-control-overlay .mute-button.on .mute-button-on {
+    opacity: 1;
+}
+
+.showcase-video-control-overlay .mute-button i:hover {
+    cursor: pointer !important;
+    opacity: 0.75;
+}
+
+.showcase-video-control-overlay:hover .mute-button i {
+    transform: translateY(0px)
+}
+
+@media (orientation: portrait) {
+    .proj-header-page {
+        .proj-header {
+            z-index: 99;
+        }
+    }
+    .proj-summary-page {
+        position: relative;
+        .summary-image {
+            position: absolute;
+            right: $defaultpaddingportrait;
+            top: -4vh;
+            transform: scaleX(-1);
+            img {
+                transform: scale(0.8);
+            }
+        }
+        .summary-content {
+            .summary-paragraph {
+                width: 100%;
+                p {
+                    font-size: 18px;
+                    line-height: 42px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-phone) {
+    .proj-summary-page {
+        .summary-image {
+            right: calc(#{ $defaultpaddingportrait } * 2);
+            transform: translateX(50%) scaleX(-1);
+        }
+    }
+}
