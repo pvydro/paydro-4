@@ -1,3 +1,5 @@
+@import './vars.scss';
+
 #signature {
     position: fixed;
     bottom: 0px;
@@ -27,5 +29,11 @@
             transform: translateY(-75%);
             opacity: 0.5;
         }
+    }
+}
+
+@media (max-width: $breakpoint-phone) {
+    #signature {
+        display: none;
     }
 }
