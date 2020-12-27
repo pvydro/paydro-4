@@ -350,6 +350,20 @@
   }
 }
 @media (max-width: 680px) {
+  .summary-content {
+    min-height: 860px;
+  }
+
+  #mock-section .mock-ipad {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200%;
+  }
+  #mock-section .mock-rake {
+    display: none;
+  }
+
   #skillset-toolbox .beehouse {
     width: 120%;
   }
