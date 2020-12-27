@@ -316,8 +316,8 @@
   width: 25%;
 }
 #mock-section .mock-description p {
-  font-family: "Raleway Dots", sans-serif;
-  font-weight: 800;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
   line-height: 48px;
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
@@ -392,6 +392,71 @@
 #skillset-toolbox .beehouse img {
   width: 100%;
   height: auto;
+}
+
+@media (orientation: portrait) {
+  .proj-header-page .proj-header img {
+    display: none;
+  }
+  .proj-header-page .proj-header::after {
+    left: 0px;
+    right: 10px;
+    transform: translate(-100%, -50%);
+  }
+  .proj-header-page .super-logo {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .summary-content .summary-graphic {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    filter: brightness(70%);
+  }
+  .summary-content .summary-paragraph {
+    width: 100%;
+  }
+  .summary-content .summary-paragraph::before {
+    opacity: 0.9;
+  }
+
+  #mock-section .mock-description {
+    width: 100%;
+    z-index: 1;
+  }
+  #mock-section .mock-description p, #mock-section .mock-description h2 {
+    z-index: 3;
+    opacity: 1;
+  }
+  #mock-section .mock-description p {
+    padding-right: 20px;
+  }
+  #mock-section .mock-description::before {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  #mock-section .mock-ipad, #mock-section .mock-rake {
+    filter: brightness(60%);
+  }
+  #mock-section .mock-ipad {
+    width: 120%;
+    opacity: 0.5;
+  }
+  #mock-section .mock-rake {
+    right: 22%;
+    top: 30%;
+    filter: brightness(40%);
+  }
 }
 
 /*# sourceMappingURL=myfarm.css.map */
