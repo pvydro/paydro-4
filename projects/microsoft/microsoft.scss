@@ -50,7 +50,8 @@
             font-size: 24px;
         }
         h1 {
-            font-family: 'Raleway Dots', sans-serif;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
             font-size: 32px;
             text-transform: uppercase;
         }
@@ -83,9 +84,9 @@
             margin-left: 96px;
             p {
                 opacity: 0.5;
-                font-family: 'Raleway Dots', sans-serif;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 300;
                 line-height: 32px;
-                font-weight: 800;
                 &.upper {
                     // width: 100%;
                     padding-left: 30%;
@@ -140,6 +141,17 @@
 }
 
 @media (orientation: portrait) {
+    .toolbox {
+        .toolbox-content {
+            width: 100%;
+            .toolbox-internal {
+                .toolbox-internal-paragraph {
+                    width: 100%;
+                    padding-right: $defaultpaddingportrait;
+                }
+            }
+        }
+    }
     .proj-header-page {
         .proj-header {
             img {

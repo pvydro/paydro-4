@@ -636,15 +636,16 @@
             width: 13vw;
         }
     }
-    .summary-content {
-        .summary-text {
-            width: 90%;
-            padding: $defaultpaddingportrait;
-            .summary-paragraph {
-                p {
-                    font-family: 'Raleway', sans-serif;
-                    font-weight: 300;
-                    line-height: 12px;
+    .proj-summary-page {
+        .summary-content {
+            .summary-text {
+                width: 90%;
+                .summary-paragraph {
+                    p {
+                        font-family: 'Raleway', sans-serif;
+                        font-weight: 300;
+                        line-height: 12px;
+                    }
                 }
             }
         }

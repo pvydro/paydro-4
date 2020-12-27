@@ -1492,7 +1492,7 @@
 }
 @media (orientation: portrait) {
   .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational {
-    margin-left: 10px;
+    margin-left: 20px;
   }
 }
 @media (max-width: 890px) {
@@ -2192,7 +2192,7 @@
 }
 @media (orientation: portrait) {
   .summary-content .time {
-    right: 10px;
+    right: 20px;
   }
 }
 .summary-content .summary-header {
@@ -2589,11 +2589,10 @@
     width: 13vw;
   }
 
-  .summary-content .summary-text {
+  .proj-summary-page .summary-content .summary-text {
     width: 90%;
-    padding: 20px;
   }
-  .summary-content .summary-text .summary-paragraph p {
+  .proj-summary-page .summary-content .summary-text .summary-paragraph p {
     font-family: "Raleway", sans-serif;
     font-weight: 300;
     line-height: 12px;
@@ -3160,7 +3159,7 @@ body {
 }
 @media (orientation: portrait) {
   .content-box-padded {
-    padding: 40px 10px;
+    padding: 40px 20px;
   }
 }
 

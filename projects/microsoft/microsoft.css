@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
@@ -54,7 +55,8 @@
   font-size: 24px;
 }
 #solitaire-show .solitaire-header h1 {
-  font-family: "Raleway Dots", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
   font-size: 32px;
   text-transform: uppercase;
 }
@@ -84,9 +86,9 @@
 }
 #solitaire-show .solitaire-row .solitaire-paragraph p {
   opacity: 0.5;
-  font-family: "Raleway Dots", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
   line-height: 32px;
-  font-weight: 800;
 }
 #solitaire-show .solitaire-row .solitaire-paragraph p.upper {
   padding-left: 30%;
@@ -135,6 +137,14 @@
 }
 
 @media (orientation: portrait) {
+  .toolbox .toolbox-content {
+    width: 100%;
+  }
+  .toolbox .toolbox-content .toolbox-internal .toolbox-internal-paragraph {
+    width: 100%;
+    padding-right: 20px;
+  }
+
   .proj-header-page .proj-header img {
     width: 40vw;
   }

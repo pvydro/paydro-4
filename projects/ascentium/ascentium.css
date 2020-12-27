@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
@@ -259,11 +260,11 @@
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
 }
 #cross-platform .responsive-row .responsiveness-description p {
-  font-family: "Raleway Dots", sans-serif;
-  font-weight: 800;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
   position: absolute;
   top: 50%;
-  left: 40px;
+  padding: 40px;
   transform: translateY(-50%);
   line-height: 48px;
 }
@@ -339,9 +340,16 @@
     left: 10px;
     transform: translate(-100%, -50%);
   }
+  .proj-header-page .super-logo {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
   .proj-summary-page .summary-content .summary-header {
     z-index: 999;
+  }
+  .proj-summary-page .summary-content .summary-header::after {
+    display: none;
   }
   .proj-summary-page .summary-content .summary-mockup {
     pointer-events: none;
@@ -385,15 +393,28 @@
     min-width: 110%;
   }
   #cross-platform .responsive-row .responsiveness-description {
-    margin-top: 25%;
+    margin-top: 40%;
     width: 100%;
-    margin-bottom: 5%;
+    margin-bottom: 15%;
   }
   #cross-platform .responsive-row .responsiveness-description::after {
     left: 50%;
-    top: -120px;
+    top: -196px;
     width: 75%;
     height: 4px;
+  }
+}
+@media (max-width: 680px) {
+  .summary-paragraph p {
+    padding: 10px 20px;
+  }
+
+  #cross-platform {
+    margin-top: 128px;
+  }
+  #cross-platform .responsive-row .responsiveness-description {
+    margin-bottom: 25%;
+    margin-top: 65%;
   }
 }
 
