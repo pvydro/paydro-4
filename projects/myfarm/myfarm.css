@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Iceland&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
@@ -38,6 +39,7 @@
   position: relative;
   height: 100%;
   transform: translateY(15%);
+  left: 0px;
 }
 .summary-content .summary-graphic .plant-leaf {
   position: absolute;
@@ -76,6 +78,18 @@
   filter: brightness(50%);
 }
 .summary-content .summary-graphic .flower-plant img {
+  height: 100%;
+  width: auto;
+}
+.summary-content .summary-graphic .inbetween-plant {
+  position: absolute;
+  left: 0%;
+  bottom: -20%;
+  transform: translate(-50%, 0%);
+  height: 110%;
+  filter: brightness(65%);
+}
+.summary-content .summary-graphic .inbetween-plant img {
   height: 100%;
   width: auto;
 }
