@@ -813,8 +813,11 @@ $img-section-offset: $defaultpadding;
                 right: calc(#{$defaultpaddingportrait} + #{$img-section-offset} - 96px);
             }
             .project-showcaser-mainsectional {
+                z-index: 999;
                 .project-showcaser-informational {
+                    z-index: 999;
                     .pjsc-informational-content {
+                        z-index: 999;
                         h2, .title {
                             font-size: 16px;
                         }
@@ -835,14 +838,6 @@ $img-section-offset: $defaultpadding;
                         .project-showcaser-link {
                             width: 48px;
                             height: 48px;
-                            &:hover {
-                                img {
-                                    transform: translateX(-60px);
-                                }
-                                .tooltip {
-                                    transform: translateX(calc(-50% - 60px));
-                                }
-                            }
                         }
                     }
                 }

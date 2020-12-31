@@ -2086,6 +2086,15 @@
   .project-showcaser .project-showcaser-content .project-showcaser-col-img {
     right: calc(20px + 40px - 96px);
   }
+  .project-showcaser .project-showcaser-content .project-showcaser-mainsectional {
+    z-index: 999;
+  }
+  .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational {
+    z-index: 999;
+  }
+  .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content {
+    z-index: 999;
+  }
   .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content h2, .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-informational .pjsc-informational-content .title {
     font-size: 16px;
   }
@@ -2105,12 +2114,6 @@
   .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link {
     width: 48px;
     height: 48px;
-  }
-  .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link:hover img {
-    transform: translateX(-60px);
-  }
-  .project-showcaser .project-showcaser-content .project-showcaser-mainsectional .project-showcaser-links .project-showcaser-link-row .project-showcaser-link:hover .tooltip {
-    transform: translateX(calc(-50% - 60px));
   }
 }
 * {
