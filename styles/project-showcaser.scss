@@ -1,13 +1,13 @@
+$showcase-height: 50vh;
+$img-section-offset: $defaultpadding;
 .project-showcaser {
-    $showcase-height: 50vh;
-    $img-section-offset: $defaultpadding;
     pointer-events: none;
     position: relative;
     width: 100%;
     margin-bottom: 42px;
     opacity: 1;
     transition: 0.15s;
-    overflow-y: hidden;
+    // overflow-y: hidden;
     .project-showcaser-header {
         pointer-events: none;
         position: relative;
@@ -199,9 +199,6 @@
                 text-align: right;
                 @media (orientation: portrait) {
                     margin-left: $contentboxpaddingportrait;
-                }
-                @media (max-width: 890px) {
-                    opacity: 0;
                 }
                 @media (max-width: 1654px) {
                     width: 35%;
@@ -711,17 +708,6 @@
     }
 
     @media (max-width: $breakpoint-phone) {
-        // border: 10px dashed yellow;
-
-        .project-showcaser-content-background {
-            &::after {
-                transform: translate(0%, -50%) rotate(-55deg) !important;
-                display: none;
-            }
-            &::before {
-                // display: none;
-            }
-        }
         .project-showcaser-content {
             .project-showcaser-mainsectional::after {
                 transform: translate(0%, -50%) rotate(35deg) !important;
@@ -730,7 +716,7 @@
         .project-showcaser-background-clicker {
             .showcaser-bg-clicker-col {
                 &::after {
-                    transform: translateY(-50%) rotate(15deg);
+                    transform: translateY(-40%) rotate(15deg);
                 }
             }
         }
@@ -819,8 +805,24 @@
 
 @media (max-width: $breakpoint-phone) {
     .project-showcaser {
+        .project-showcaser-background-clicker {
+            display: none;
+        }
         .project-showcaser-content {
+            .project-showcaser-col-img {
+                right: calc(#{$defaultpaddingportrait} + #{$img-section-offset} - 96px);
+            }
             .project-showcaser-mainsectional {
+                .project-showcaser-informational {
+                    .pjsc-informational-content {
+                        h2, .title {
+                            font-size: 16px;
+                        }
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                }
                 .project-showcaser-links {
                     position: absolute;
                     // border: 10px dashed red;
@@ -830,6 +832,18 @@
                     transform: translateX(50%);
                     .project-showcaser-link-row {
                         flex-direction: column;
+                        .project-showcaser-link {
+                            width: 48px;
+                            height: 48px;
+                            &:hover {
+                                img {
+                                    transform: translateX(-60px);
+                                }
+                                .tooltip {
+                                    transform: translateX(calc(-50% - 60px));
+                                }
+                            }
+                        }
                     }
                 }
             }
