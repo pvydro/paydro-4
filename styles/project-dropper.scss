@@ -78,11 +78,7 @@ $cell-logo-distance: 7.5vw;
         margin-bottom: 0px;//calc(#{$pjd-cell-height} / 2);
         margin-left: -10%;
         height: $pjd-cell-height;
-        opacity: 0;
-        &.animated {
-            opacity: 1;
-            animation: dropper-cell-in-left 1s;
-        }
+        opacity: 1;
         .cell-header {
             width: 100%;
             position: absolute;

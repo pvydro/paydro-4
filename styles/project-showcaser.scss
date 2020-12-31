@@ -7,6 +7,7 @@
     margin-bottom: 42px;
     opacity: 1;
     transition: 0.15s;
+    overflow-y: hidden;
     .project-showcaser-header {
         pointer-events: none;
         position: relative;
@@ -187,7 +188,6 @@
                 z-index: 99;
                 transition: 0.25s;
                 transition-timing-function: $lightsnapandeaseout;
-                // border: 10px dashed yellow;
                 // overflow-y: hidden !important;
             }
             .project-showcaser-informational {
@@ -437,6 +437,7 @@
                 transition-timing-function: cubic-bezier(.42,.17,.37,1.01);
                 transform: translateX(-96px);
                 opacity: 0 !important;
+                // border: 2px dashed yellow;
                 .clicker-cell-caption {
                     // display: none;
                     opacity: 0;
@@ -493,6 +494,9 @@
                         filter: blur(0px) brightness(0.4);
                         transform: scale(1.01);
                     }
+                    &::before {
+                        height: 6px;
+                    }
                 }
                 &.active {
                     height: $showcase-height !important;
@@ -521,6 +525,21 @@
                         // transform: translate(-50%, -50%);
                         // background-color: $darkblack;
                     }
+                    &::before {
+                        height: 0px;
+                    }
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 2px;
+                    background-color: white;
+                    z-index: 999;
+                    transition: 0.125s;
+                    transition-timing-function: $lightsnapandeaseout;
                 }
             }
             // Cover-up
@@ -690,6 +709,32 @@
             }
         }
     }
+
+    @media (max-width: $breakpoint-phone) {
+        // border: 10px dashed yellow;
+
+        .project-showcaser-content-background {
+            &::after {
+                transform: translate(0%, -50%) rotate(-55deg) !important;
+                display: none;
+            }
+            &::before {
+                // display: none;
+            }
+        }
+        .project-showcaser-content {
+            .project-showcaser-mainsectional::after {
+                transform: translate(0%, -50%) rotate(35deg) !important;
+            }
+        }
+        .project-showcaser-background-clicker {
+            .showcaser-bg-clicker-col {
+                &::after {
+                    transform: translateY(-50%) rotate(15deg);
+                }
+            }
+        }
+    }
 }
 
 .showcaser-video {
@@ -702,7 +747,7 @@
     flex-direction: column;
     align-items: center;
     .video-controls {
-        pointer-events: all;
+        pointer-events: none;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -729,8 +774,11 @@
             }
         }
         &:hover {
-            cursor: pointer;
+            cursor: pointer !important;
         }
+    }
+    &:hover {
+        cursor: pointer !important;
     }
 
     video {
@@ -746,10 +794,11 @@
 .showcaser-bg-clicker-cell.active {
     z-index: 1;
     .showcaser-video .video-controls {
+        pointer-events: all;
         .central-button {
             animation: popout-up 1s 1s $lightsnapandeaseout forwards;
             &:hover {
-                cursor: pointer;
+                cursor: pointer !important;
                 opacity: 0.75;
                 .central-inner.active {
                     opacity: 1;
@@ -766,4 +815,25 @@
         opacity: 1;
         transform: translateX(10%);
     }
+}
+
+@media (max-width: $breakpoint-phone) {
+    .project-showcaser {
+        .project-showcaser-content {
+            .project-showcaser-mainsectional {
+                .project-showcaser-links {
+                    position: absolute;
+                    // border: 10px dashed red;
+                    left: auto;
+                    right: 50%;
+                    z-index: 99;
+                    transform: translateX(50%);
+                    .project-showcaser-link-row {
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+
 }

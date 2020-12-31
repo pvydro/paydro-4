@@ -60,6 +60,7 @@
     flex-wrap: nowrap;
     align-items: flex-end;
     overflow-x: auto;
+    overflow-y: hidden;
     pointer-events: all;
 
     mask-image: -webkit-gradient(linear, left top, right top,
@@ -72,15 +73,20 @@
         color-stop(100%, rgba(0,0,0,1)));
     .executed-cell {
         position: relative;
-        // border: 3px dotted rgba(255,255,255,0.1);
-        min-width: 25%;
-        width: 25%;
-        min-height: 300px;
+
+        min-width: 400px;
+        width: 400px;
+        height: 100%;
         padding: calc(#{$defaultpadding} / 2);
         margin: 12px;
         align-self: flex-start;
         &:nth-child(1) {
             margin-left: 42px;
+        }
+        @media (orientation: portrait) {
+            &:nth-child(1) {
+                margin-left: 8px;
+            }
         }
         .executed-cell-header {
             $bottom-border-bottom: -24px;
@@ -198,7 +204,7 @@
             .executed-cell-more-info {
                 pointer-events: none;
                 position: absolute;
-                top: 0px;
+                top: 42px;
                 right: 0px;
                 width: 100%;
                 height: 100%;
@@ -278,7 +284,7 @@
 @media (orientation: portrait) {
     .executed-cells {
         .executed-cell {
-            min-width: 80%;
+            min-width: 92%;
             .executed-cell-content {
                 opacity: 1;
                 .executed-cell-list {
