@@ -5,6 +5,5 @@ window.onload = () => {
 }
 
 function goHome() {
-    console.log('goHome')
-    window.location.pathname = window.location.href + '../../index.html'
+    window.location.href = 'https://www.paydro.dev/'
 }

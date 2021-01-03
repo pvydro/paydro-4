@@ -1,6 +1,7 @@
 .summary-content .summary-paragraph p {
+  font-size: 18px;
   opacity: 1;
-  line-height: 56px;
+  line-height: 32px;
 }
 
 .toolbox-internal-paragraph {
