@@ -143,3 +143,19 @@
         opacity: 1;
     }
 }
+@keyframes showcaser-cell-highlight {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 6px;
+    }
+}
+@keyframes showcaser-caption-highlight {
+    0% {
+        padding-bottom: 0px;
+    }
+    100% {
+        padding-bottom: 8px;
+    }
+}
