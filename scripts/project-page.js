@@ -3,43 +3,46 @@ let vidJustShown = false
 let vidShown = false
 
 $(document).ready(() => {
+    const showcaseA = $('#project-showcase-a')
+    const clickerCells = $('.showcaser-bg-clicker-cell')
+    const videoCentralBtn = $('.video-controls .central-button')
+    const closeBtn = $('#project-showcaser-close-button')
+
     Toolboccs()
 
-    window.addEventListener('keydown', (ev) => {
-        if (ev.which === 65) {
-            closeShowcaseSection()
-        }
-    })
-
     // showcaser content expansion
-    $('.showcaser-bg-clicker-cell').each((index, ele) => {
+    clickerCells.each((index, ele) => {
         const el = $(ele)
         el.on('mouseenter', () => {
-            $('#project-showcase-a').addClass('video-hovered')
-            console.log('uh')
+            showcaseA.addClass('video-hovered')
         })
         el.on('mouseleave', () => {
-            $('#project-showcase-a').removeClass('video-hovered')
+            showcaseA.removeClass('video-hovered')
         })
         el.on('click', () => {
-            $('#project-showcase-a').addClass('video-shown')
-            $('.showcaser-bg-clicker-cell').removeClass('active')
+            showcaseA.addClass('video-shown')
+            clickerCells.removeClass('active')
+
             el.addClass('active')
             el.parent().addClass('active')
+
             showCloseButton()
 
+            // Force pause if opening other showcase
             if (index !== 1 && vidPlaying) {
-                console.log('Force pause showcase video')
                 pauseShowcaseVideo()
             } else if (index === 1) {
                 vidShown = true
                 vidJustShown = true
-                setTimeout(() => { vidJustShown = false }, 10)
+
+                setTimeout(() => {
+                    vidJustShown = false
+                }, 10)
             }
         })
     })
 
-    $('.video-controls .central-button').on('click', () => {
+    videoCentralBtn.on('click', () => {
         if (vidShown && !vidJustShown) {
             if (vidPlaying) {
                 pauseShowcaseVideo()
@@ -49,21 +52,21 @@ $(document).ready(() => {
         }
     })
 
-    $('#project-showcaser-close-button').on('click', () => {
+    closeBtn.on('click', () => {
         closeShowcaseSection()
     })
 })
 
 function showCloseButton() {
-    const closeButton = $('#project-showcaser-close-button')
+    const closeBtn = $('#project-showcaser-close-button')
 
-    closeButton.addClass('active')
+    closeBtn.addClass('active')
 }
 
 function closeShowcaseSection() {
-    const closeButton = $('#project-showcaser-close-button')
+    const closeBtn = $('#project-showcaser-close-button')
 
-    closeButton.removeClass('active')
+    closeBtn.removeClass('active')
     $('#project-showcase-a').removeClass('video-shown')
 
     $('.showcaser-bg-clicker-cell').each((index, ele) => {

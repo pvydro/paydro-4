@@ -1238,7 +1238,7 @@
 .executed-cells .executed-cell .executed-cell-content .executed-cell-more-info {
   pointer-events: none;
   position: absolute;
-  top: 42px;
+  top: 0px;
   right: 0px;
   width: 100%;
   height: 100%;
@@ -1318,6 +1318,9 @@
   }
   .executed-cells .executed-cell .executed-cell-content .executed-cell-list {
     opacity: 1;
+  }
+  .executed-cells .executed-cell .executed-cell-content .executed-cell-more-info {
+    top: 42px;
   }
 }
 .back-to-home {
