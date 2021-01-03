@@ -1486,6 +1486,31 @@
   height: 50vh;
   overflow-x: visible !important;
 }
+.project-showcaser .project-showcaser-content #project-showcaser-close-button {
+  position: absolute;
+  right: 1170px;
+  top: 10%;
+  width: 64px;
+  height: 64px;
+  opacity: 0;
+  transition: 0.25s;
+  transition-delay: 0s;
+  filter: brightness(50%);
+}
+.project-showcaser .project-showcaser-content #project-showcaser-close-button img {
+  width: 100%;
+  height: auto;
+}
+.project-showcaser .project-showcaser-content #project-showcaser-close-button.active {
+  pointer-events: all;
+  transition-delay: 1.5s;
+  opacity: 1;
+}
+.project-showcaser .project-showcaser-content #project-showcaser-close-button.active:hover {
+  cursor: pointer;
+  transition-delay: 0s;
+  filter: brightness(100%);
+}
 .project-showcaser .project-showcaser-content .project-showcaser-row {
   pointer-events: none;
   position: relative;
@@ -1891,8 +1916,8 @@
   left: 0px;
   width: 100%;
   height: 0px;
-  background-color: #8D99AE;
-  filter: brightness(75%);
+  background-color: #ff7c0a;
+  filter: brightness(70%);
   transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
   transition: 0.25s;
   transition-delay: 0s;
@@ -1929,6 +1954,11 @@
   z-index: 99;
   background-color: white;
   opacity: 0.25;
+}
+.project-showcaser.video-shown .project-showcaser-row .project-showcaser-mainsectional .project-showcaser-links {
+  transition: 0.5s !important;
+  transition-delay: 0s !important;
+  opacity: 0 !important;
 }
 .project-showcaser.video-shown .project-showcaser-background-clicker .showcaser-bg-clicker-col {
   outline-width: 8px;
