@@ -159,3 +159,11 @@
         padding-bottom: 8px;
     }
 }
+@keyframes showcaser-clicker-shine {
+    0% {
+        right: -50%;
+    }
+    100% {
+        right: 150%;
+    }
+}

@@ -335,6 +335,14 @@
     padding-bottom: 8px;
   }
 }
+@keyframes showcaser-clicker-shine {
+  0% {
+    right: -50%;
+  }
+  100% {
+    right: 150%;
+  }
+}
 #projects-page {
   position: relative;
 }
@@ -1901,14 +1909,37 @@
   transform: translateY(-50%) rotate(45deg);
   transition: 1s;
 }
+.project-showcaser .project-showcaser-background-clicker {
+  overflow-y: hidden;
+}
+.project-showcaser .project-showcaser-background-clicker .showcaser-bg-clicker-col {
+  outline-width: 0px;
+  outline-color: rgba(8, 8, 12, 0.75);
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+}
+.project-showcaser .project-showcaser-background-clicker::after {
+  content: "";
+  position: absolute;
+  right: -50%;
+  top: 50%;
+  width: 164px;
+  height: 960px;
+  transform: translate(-50%, -50%) rotate(10deg);
+  z-index: 99;
+  background-color: white;
+  opacity: 0.25;
+}
 .project-showcaser.video-shown .project-showcaser-background-clicker .showcaser-bg-clicker-col {
-  outline-width: 16px;
-  outline-style: solid;
-  outline-color: #08080C;
+  outline-width: 8px;
 }
 .project-showcaser.video-shown .project-showcaser-background-clicker .showcaser-bg-clicker-col .showcaser-bg-clicker-cell::before {
   transition: 1s;
   opacity: 0;
+}
+.project-showcaser.video-shown .project-showcaser-background-clicker::after {
+  animation-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  animation: showcaser-clicker-shine 1.75s 1.5s forwards;
 }
 .project-showcaser.video-shown .project-showcaser-paragraph {
   transition-delay: 0.5s !important;
@@ -3005,6 +3036,14 @@
   }
   100% {
     padding-bottom: 8px;
+  }
+}
+@keyframes showcaser-clicker-shine {
+  0% {
+    right: -50%;
+  }
+  100% {
+    right: 150%;
   }
 }
 #project-dropper {
