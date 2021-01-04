@@ -13,6 +13,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Syne&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 .play-ad-page {
   height: 60vh;
   position: relative;
@@ -20,7 +21,7 @@
 .play-ad-page .ad-info {
   pointer-events: all;
   position: absolute;
-  right: 612px;
+  right: 642px;
   width: 50%;
   text-align: right;
   top: 50%;
@@ -86,7 +87,7 @@
   z-index: 3;
 }
 .playable-ad .player-bg {
-  height: 700px;
+  height: 75vh;
 }
 .playable-ad .player-bg img {
   height: 100%;
@@ -95,7 +96,8 @@
 .playable-ad .ad-iframe {
   pointer-events: all;
   position: absolute;
-  height: 530px;
+  height: 56.75vh;
+  width: 32.25vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -108,8 +110,17 @@
   transform: rotate(1.5deg);
 }
 
+:root {
+  randomRoto: 180deg;
+}
+
 .proj-header-page {
   z-index: 5;
+}
+.proj-header-page .proj-header::after {
+  height: 6px;
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 40%;
 }
 .proj-header-page .proj-header-image img {
   opacity: 0.5;
@@ -124,10 +135,10 @@
 .proj-summary-page .summary-header {
   font-size: 18px;
   z-index: 3;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 .proj-summary-page .summary-header::after {
-  left: 20px;
+  left: 0px;
 }
 .proj-summary-page .summary-bg-gradient {
   position: absolute;
@@ -140,8 +151,17 @@
 .proj-summary-page .summary-bg-gradient img {
   height: 100%;
   width: auto;
-  opacity: 0.35;
+  opacity: 0.85;
   filter: grayscale(20%);
+}
+.proj-summary-page .summary-bg-gradient::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset -10px 10px 40px 20px rgba(23, 23, 23, 0.5);
 }
 .proj-summary-page .summary-image {
   position: relative;
@@ -152,52 +172,55 @@
   pointer-events: all;
   position: absolute;
   top: 50%;
-  left: 42%;
-  height: 80%;
+  left: 32%;
+  height: 70%;
   z-index: 0;
   transform: translate(-50%, -50%);
-  transition: 0.5s;
-  transition-timing-function: cubic-bezier(0.07, 0.75, 0.32, 0.96);
+  transition: 0.75s;
+  transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
+  transition-delay: 0.7s;
 }
 .proj-summary-page .summary-decor img {
   height: 100%;
   width: auto;
-  transition: 2s;
+  transition: 1s;
   transition-timing-function: cubic-bezier(0.74, 0, 0.48, 1.01);
-  filter: brightness(40%) grayscale(20%);
+  filter: brightness(80%) grayscale(20%);
 }
 .proj-summary-page .summary-decor:hover {
-  left: 40%;
+  margin-left: -40px;
+  filter: drop-shadow(16px 0px 0px rgba(23, 23, 23, 0.75));
 }
 .proj-summary-page .summary-decor:hover img {
-  filter: brightness(90%) grayscale(0%) drop-shadow(-10px -10px 10px rgba(0, 0, 0, 0.15));
+  filter: brightness(95%) grayscale(0%) drop-shadow(-10px -10px 10px rgba(0, 0, 0, 0.15));
 }
 .proj-summary-page .summary-content {
   pointer-events: all;
-  width: 60%;
+  width: 70%;
   position: relative;
 }
 .proj-summary-page .summary-content .summary-paragraph {
   pointer-events: all;
   position: relative;
   z-index: 3;
-  padding-left: 40px;
+  padding-left: calc(40px * 2);
 }
 .proj-summary-page .summary-content .summary-paragraph p {
+  font-size: 18px;
   line-height: 42px;
 }
 .proj-summary-page .summary-content .summary-paragraph::after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 36.5%;
   left: 0px;
   transform: translate(-50%, -50%);
-  width: 2px;
-  height: 85%;
+  width: 4px;
+  height: 150%;
   background-color: white;
-  opacity: 0.5;
-  mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(10%, black), color-stop(calc(100% - 10%), black), color-stop(100%, rgba(0, 0, 0, 0)));
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(10%, black), color-stop(calc(100% - 10%), black), color-stop(100%, rgba(0, 0, 0, 0)));
+  filter: brightness(80%);
+  mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.25)), color-stop(7.5%, black), color-stop(calc(100% - 7.5%), black), color-stop(100%, rgba(0, 0, 0, 0.25)));
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.25)), color-stop(7.5%, black), color-stop(calc(100% - 7.5%), black), color-stop(100%, rgba(0, 0, 0, 0.25)));
 }
 .proj-summary-page .summary-content::after, .proj-summary-page .summary-content::before {
   content: "";

@@ -1,8 +1,19 @@
 @import '../../styles/vars.scss';
 @import '../../styles/play-ad.scss';
 
+:root {
+    randomRoto: 180deg;
+}
+
 .proj-header-page {
     z-index: 5;
+    .proj-header {
+        &::after {
+            height: 6px;
+            border-top-left-radius: 40%;
+            border-bottom-left-radius: 40%;
+        }
+    }
     .proj-header-image {
         img {
             opacity: 0.5;
@@ -18,10 +29,9 @@
     .summary-header {
         font-size: 18px;
         z-index: 3;
-        padding-left: $defaultpaddingportrait;
+        padding-left: $defaultpadding;
         &::after {
-            left: $defaultpaddingportrait;
-
+            left: 0px;//$defaultpaddingportrait;
         }
     }
     .summary-bg-gradient {
@@ -34,8 +44,17 @@
         img {
             height: 100%;
             width: auto;
-            opacity: 0.35;
+            opacity: 0.85;
             filter: grayscale(20%);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset -10px 10px 40px 20px rgba($color: $darkblack, $alpha: 0.5);
         }
     }
     .summary-image {
@@ -47,59 +66,69 @@
         pointer-events: all;
         position: absolute;
         top: 50%;
-        left: 42%;
-        height: 80%;
+        left: 32%;
+        height: 70%;
         z-index: 0;
         transform: translate(-50%, -50%);
-        transition: 0.5s;
-        transition-timing-function: $lightsnapandeaseout;
+        transition: 0.75s;
+        // transition-timing-function: $lightsnapandeaseout;
+        transition-timing-function: $easeinoutxtra;
+        transition-delay: 0.7s;
         img {
             height: 100%;
             width: auto;
-            transition: 2s;
+            transition: 1s;
             transition-timing-function: $easeinoutxtra;
-            filter: brightness(40%) grayscale(20%);
+            filter: brightness(80%)
+                    grayscale(20%);
         }
         &:hover {
-            left: 40%;
+            // $random-roto: random(365) + 195;
+            margin-left: -$defaultpadding;
+            // left: 40%;
+            filter: drop-shadow(16px 0px 0px rgba($color: $darkblack, $alpha: 0.75));
             img {
-                filter: brightness(90%) grayscale(0%) drop-shadow(-10px -10px 10px rgba(0, 0, 0, 0.15));
+                filter: brightness(95%) grayscale(0%) drop-shadow(-10px -10px 10px rgba(0, 0, 0, 0.15));
+                // transform: rotate(var(--randomRoto)deg);
+                // rotate(#{ random(365) + 195 }deg);
+                //rotate(#{ $random-roto }deg);
             }
         }
     }
     .summary-content {
         pointer-events: all;
-        width: 60%;
+        width: 70%;
         position: relative;
         .summary-paragraph {
             pointer-events: all;
             position: relative;
             z-index: 3;
-            padding-left: $defaultpadding;
+            padding-left: calc(#{ $defaultpadding } * 2);
             p {
+                font-size: 18px;
                 line-height: 42px;
             }
             &::after {
-                $mask-distance: 10%;
+                $mask-distance: 7.5%;
                 content: '';
                 position: absolute;
-                top: 50%;
+                top: 36.5%;
                 left: 0px;
                 transform: translate(-50%, -50%);
-                width: 2px;
-                height: 85%;
+                width: 4px;
+                height: 150%;
                 background-color: white;
-                opacity: 0.5;
+                filter: brightness(80%);
                 mask-image: -webkit-gradient(linear, left top, left bottom,
-                    color-stop(0%, rgba(0,0,0,0)),
+                    color-stop(0%, rgba(0,0,0,0.25)),
                     color-stop($mask-distance, rgba(0,0,0,1)), 
                     color-stop(calc(100% - #{ $mask-distance }), rgba(0,0,0,1)),
-                    color-stop(100%, rgba(0,0,0,0)));
+                    color-stop(100%, rgba(0,0,0,0.25)));
                 -webkit-mask-image: -webkit-gradient(linear, left top, left bottom,
-                    color-stop(0%, rgba(0,0,0,0)), 
+                    color-stop(0%, rgba(0,0,0,0.25)), 
                     color-stop($mask-distance, rgba(0,0,0,1)),
                     color-stop(calc(100% - #{ $mask-distance }), rgba(0,0,0,1)),
-                    color-stop(100%, rgba(0,0,0,0)));
+                    color-stop(100%, rgba(0,0,0,0.25)));
             }
         }
         &::after, &::before {
