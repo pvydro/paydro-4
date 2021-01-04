@@ -23,6 +23,7 @@
         font-size: 24px;
         text-transform: lowercase;
         opacity: 0.5;
+        white-space: nowrap;
     }
     .summary-paragraph {
         position: relative;
@@ -409,9 +410,42 @@
 }
 
 @media (max-width: $breakpoint-phone) {
-    .summary-paragraph {
-        p {
-            padding: $contentboxpaddingportrait $defaultpaddingportrait;
+    .proj-summary-page {
+        .summary-year {
+            transform: translateY(-160%);
+        }
+    }
+    .proj-header-page {
+        .super-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            transform: translate(-50%, -50%);
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+    .summary-content {
+        .summary-mockup {
+            right: -40%;
+            img {
+                opacity: 0.9;
+            }
+        }
+        .summary-paragraph {
+            p {
+                padding: $contentboxpaddingportrait $defaultpaddingportrait;
+                line-height: 36px;
+                padding: 0px;
+            }
+            &::before {
+                margin-top: -7vh;
+                height: 180%;
+                opacity: 0.9;
+            }
         }
     }
     #cross-platform {

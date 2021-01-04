@@ -86,7 +86,7 @@
             // $random-roto: random(365) + 195;
             margin-left: -$defaultpadding;
             // left: 40%;
-            filter: drop-shadow(16px 0px 0px rgba($color: $darkblack, $alpha: 0.75));
+            filter: drop-shadow(-8px 0px 0px rgba($color: $darkblack, $alpha: 0.5));
             img {
                 filter: brightness(95%) grayscale(0%) drop-shadow(-10px -10px 10px rgba(0, 0, 0, 0.15));
                 // transform: rotate(var(--randomRoto)deg);

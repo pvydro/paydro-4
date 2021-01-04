@@ -189,7 +189,7 @@
 }
 .proj-summary-page .summary-decor:hover {
   margin-left: -40px;
-  filter: drop-shadow(16px 0px 0px rgba(23, 23, 23, 0.75));
+  filter: drop-shadow(-8px 0px 0px rgba(23, 23, 23, 0.5));
 }
 .proj-summary-page .summary-decor:hover img {
   filter: brightness(95%) grayscale(0%) drop-shadow(-10px -10px 10px rgba(0, 0, 0, 0.15));

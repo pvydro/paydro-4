@@ -737,7 +737,7 @@
   flex-direction: column;
   justify-content: center;
   margin-left: 30px;
-  width: 50%;
+  width: 90%;
   transition: 0.5s;
   transition-delay: 0s;
   opacity: 0;
@@ -2831,6 +2831,13 @@
     font-family: "Raleway", sans-serif;
     font-weight: 300;
     line-height: 12px;
+  }
+}
+@media (max-width: 680px) {
+  .proj-header-page .proj-header::after {
+    width: 150vw !important;
+    left: -5vw !important;
+    transform: translate(-70%, -50%) !important;
   }
 }
 @keyframes flintro-box-intro {

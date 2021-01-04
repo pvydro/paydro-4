@@ -1,6 +1,6 @@
 $(document).ready(() => {
-    const decorImg = $('#summary-decor-image')
     let lastRotation = 0
+    const decorImg = $('#summary-decor-image')
 
     $('.summary-decor').on('mouseenter', () => {
         const randomRotation = Math.random() * 365
@@ -8,6 +8,7 @@ $(document).ready(() => {
         const baseRotation = 360
         const result = randomRotation + baseRotation
         const calculatedRotation = lastRotation + (plusOrMinus ? result : result * -1)
+
         lastRotation = calculatedRotation
 
         decorImg.css({ transform: 'rotate(' + calculatedRotation + 'deg)' })

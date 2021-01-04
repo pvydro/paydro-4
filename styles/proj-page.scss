@@ -653,3 +653,15 @@
     }
 }
 
+@media (max-width: $breakpoint-phone) {
+    .proj-header-page {
+        .proj-header {
+            &::after {
+                width: 150vw !important;
+                left: -5vw !important;
+                transform: translate(-70%, -50%) !important;
+            }
+        }
+    }
+}
+

@@ -10,12 +10,6 @@ $(document).ready(() => {
 })
 
 window.onload = () => {
-    // cascadia({
-    //     delayIncrement: 250,
-    //     showByDefault: true
-    // })
-
-    console.log('viz onload')
     cesVideo = document.getElementById('showcaser-vid')
 
     $('#showcaser-vid-playpause').on('click', () => {
@@ -41,6 +35,5 @@ function showPlayButton(shouldShow) {
     } else {
         $('#showcaser-vid-playpause .pause-button').addClass('active')
         $('#showcaser-vid-playpause .play-button').removeClass('active')
-        // Show pause
     }
 }
