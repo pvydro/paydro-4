@@ -9,13 +9,13 @@ $(document).ready(() => {
     })
 })
 
-window.onload = () => {
+$(document).ready(() => {
     cesVideo = document.getElementById('showcaser-vid')
 
     $('#showcaser-vid-playpause').on('click', () => {
         playOrPauseCESVideo()
     })
-}
+})
 
 function playOrPauseCESVideo() {
     if (cesIsPlaying) {

@@ -1,4 +1,4 @@
-window.onload = () => {
+$(document).ready(() => {
     frame = $('.quiz-frame')
     frameParent = $('#quiz-player')
     frame.mouseover(() => {
@@ -7,4 +7,4 @@ window.onload = () => {
     frame.mouseleave(() => {
         frameParent.removeClass('hovered')
     })
-}
+})
