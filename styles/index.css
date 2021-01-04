@@ -2423,6 +2423,7 @@
   right: 52px;
   font-size: 32px;
   opacity: 0.125;
+  transform: translateY(100%);
 }
 @media (orientation: portrait) {
   .summary-content .time {

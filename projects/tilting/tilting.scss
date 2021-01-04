@@ -24,9 +24,10 @@ $seccolor: #ed1c25;
 
 .proj-summary-page {
     .summary-paragraph {
+        margin-top: 72px !important;
         p {
-            font-size: 22px;
-            line-height: 48px;
+            font-size: 18px;
+            line-height: 40px;
         }
     }
 }
@@ -465,7 +466,7 @@ $seccolor: #ed1c25;
             .time {
                 left: 50% !important;
                 right: auto !important;
-                transform: translateX(-50%) !important;
+                transform: translate(-50%, 100%) !important;
             }
             .summary-header {
                 display: none;
