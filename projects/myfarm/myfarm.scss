@@ -123,10 +123,13 @@
         right: 0px;
         top: 50%;
         width: 70%;
-        line-height: 48px;
         z-index: 1;
         opacity: 0.8;
         transform: translateY(-50%);
+        p {
+            line-height: 38px;
+            font-size: 18px;
+        }
         &::before {
             content: '';
             position: absolute;
@@ -147,6 +150,7 @@
         left: 0px;
         top: 0px;
         opacity: 0.25;
+        transform: translateY(50%);
     }
     &::after {
         content: '';
@@ -163,7 +167,7 @@
 #mock-section {
     position: relative;
     min-height: 40vh;
-    margin-top: calc(#{ $defaultpadding } * 2);
+    margin-top: calc(#{ $defaultpadding } * 6);
     .mock-header {
         margin-bottom: $defaultpadding;
         h1 {
@@ -299,17 +303,26 @@
         }
     }
     #mock-section {
+        .mock-header {
+            h1 {
+                opacity: 1;
+            }
+        }
         .mock-description {
             width: 100vw;
             z-index: 1;
             p, h2 {
-                z-index: 3;
+                position: relative;
                 opacity: 1;
             }
             p {
                 width: 60%;
                 padding-right: $defaultpaddingportrait;
                 line-height: 32px;
+                z-index: 3;
+            }
+            h2 {
+                z-index: 4;
             }
             &::before {
                 content: '';
@@ -319,8 +332,7 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                background-color: rgba(0, 0, 0, 0.5);
-                z-index: 0;
+                background-color: $black;
                 opacity: 0.5;
             }
         }

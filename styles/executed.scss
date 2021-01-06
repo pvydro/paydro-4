@@ -92,7 +92,7 @@
             $bottom-border-bottom: -24px;
             position: relative;
             h2 {
-                opacity: 0.25;
+                opacity: 0.8;
                 font-family: 'Inconsolata', sans-serif;
             }
             .executed-cell-header-border-bottom {
@@ -147,10 +147,10 @@
             position: relative;
             margin-top: 42px;
             height: 81%;
-            opacity: 0.5;
+            opacity: 0.75;
             transition: opacity 2s;
             &:hover {
-                opacity: 0.8;
+                opacity: 1;
             }
             .executed-cell-list {
                 list-style: none;
@@ -183,7 +183,7 @@
                         font-size: 17px;
                         transition: 0.25s;
                         transition-timing-function: $lightsnapandeaseout;
-                        opacity: 0.75;
+                        opacity: 0.7;
                     }
                     &:hover {
                         cursor: pointer;

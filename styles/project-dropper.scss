@@ -131,7 +131,7 @@ $cell-logo-distance: 7.5vw;
                 transition: 3s;
                 transition-delay: 0.25s;
                 opacity: 0.25;
-                filter: grayscale(100%) brightness(80%);
+                filter: grayscale(20%) brightness(80%);
             }
         }
 
@@ -197,22 +197,22 @@ $cell-logo-distance: 7.5vw;
                 img {
                     transition: 0.75s;
                     transition-delay: 0s;
-                    filter: grayscale(50%) brightness(100%);
+                    filter: grayscale(5%) brightness(100%);
                     opacity: 0.35;
                 }
             }
 
             .cell-logo {
                 top: 100px;
-                opacity: 0.25;
+                opacity: 0.9;
                 img {
-                    filter: grayscale(75%);
+                    filter: grayscale(0%);
                 }
             }
 
             &::after {
                 opacity: 1;
-                height: 72%;
+                height: 60%;
                 border-radius: 0px;
                 transition: 0.2s;
             }

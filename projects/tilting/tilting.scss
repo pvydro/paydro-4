@@ -12,12 +12,32 @@ $seccolor: #ed1c25;
             transform: translate(-50%, 0%);
             transition: 1s;
             transition-timing-function: cubic-bezier(.55,-0.01,.41,1);
+            opacity: 1;
+            z-index: -2;
+            filter: grayscale(30%);
         }
         &:hover {
             img {
                 transition: 6s;
                 top: -88%;
+                filter: grayscale(5%);
             }
+        }
+        &::after {
+            opacity: 0.5;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 60px;
+            background-color: black;
+            z-index: 0;
+            transform: translateY(50%);
+            opacity: 0.5;
+            filter: blur(10px);
         }
     }
 }

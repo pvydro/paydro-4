@@ -13,6 +13,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Syne&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 .proj-header-page {
   z-index: 999;
   margin-bottom: 40px;
@@ -134,10 +135,13 @@
   right: 0px;
   top: 50%;
   width: 70%;
-  line-height: 48px;
   z-index: 1;
   opacity: 0.8;
   transform: translateY(-50%);
+}
+.summary-content .summary-paragraph p {
+  line-height: 38px;
+  font-size: 18px;
 }
 .summary-content .summary-paragraph::before {
   content: "";
@@ -158,6 +162,7 @@
   left: 0px;
   top: 0px;
   opacity: 0.25;
+  transform: translateY(50%);
 }
 .summary-content::after {
   content: "";
@@ -173,7 +178,7 @@
 #mock-section {
   position: relative;
   min-height: 40vh;
-  margin-top: calc(40px * 2);
+  margin-top: calc(40px * 6);
 }
 #mock-section .mock-header {
   margin-bottom: 40px;
@@ -299,18 +304,25 @@
     opacity: 0.9;
   }
 
+  #mock-section .mock-header h1 {
+    opacity: 1;
+  }
   #mock-section .mock-description {
     width: 100vw;
     z-index: 1;
   }
   #mock-section .mock-description p, #mock-section .mock-description h2 {
-    z-index: 3;
+    position: relative;
     opacity: 1;
   }
   #mock-section .mock-description p {
     width: 60%;
     padding-right: 20px;
     line-height: 32px;
+    z-index: 3;
+  }
+  #mock-section .mock-description h2 {
+    z-index: 4;
   }
   #mock-section .mock-description::before {
     content: "";
@@ -320,8 +332,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 0;
+    background-color: #08080C;
     opacity: 0.5;
   }
   #mock-section .mock-ipad, #mock-section .mock-rake {

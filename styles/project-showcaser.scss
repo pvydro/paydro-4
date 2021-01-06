@@ -386,7 +386,7 @@ $img-section-offset: $defaultpadding;
                 height: 100%;
                 width: auto;
                 transition: 0.5s;
-                filter: grayscale(90%);
+                filter: grayscale(60%);
             }
             &::after {
                 content: '2020 VIZIO Voice Remote';
@@ -510,7 +510,7 @@ $img-section-offset: $defaultpadding;
                 }
                 &:hover:not(.active) {
                     cursor: pointer !important;
-                    opacity: 0.5 !important;
+                    opacity: 0.95 !important;
                     transition-delay: 0s !important;
                     img {
                         filter: blur(0px) brightness(0.4);
@@ -678,7 +678,7 @@ $img-section-offset: $defaultpadding;
         .showcaser-bg-clicker-cell:hover {
             .clicker-cell-caption {
                 transition: 0.25s;
-                opacity: 0.5;
+                opacity: 0.75;
             }
         }
         @media (max-width: 1760px) {
@@ -718,7 +718,7 @@ $img-section-offset: $defaultpadding;
         .project-showcaser-paragraph {
             transition: 0.5s;
             transform: translateX(-6px);
-            opacity: 0.75;
+            opacity: 0.9;
         }
     }
     &.animated {
@@ -747,13 +747,13 @@ $img-section-offset: $defaultpadding;
             .title {
                 transition: 0.5s;
                 transition-delay: 1.25s !important;
-                opacity: 0.25 !important;
+                opacity: 0.5 !important;
                 transform: translateX(0px) !important;
             }
             p {
                 transition: 0.5s;
                 transition-delay: 1s !important;
-                opacity: 0.5 !important;
+                opacity: 0.75 !important;
                 transform: translateX(0px) !important;
             }
         }
@@ -784,7 +784,7 @@ $img-section-offset: $defaultpadding;
             .showcaser-p {
                 transition: 0.75s;
                 transition-delay: 1.5s !important;
-                opacity: 0.5 !important;
+                opacity: 0.8 !important;
                 transform: translateX(0px) !important;
             }
         }
@@ -800,7 +800,7 @@ $img-section-offset: $defaultpadding;
                 transition: 0.5s;
                 transition-timing-function: $lightsnapandeaseout;
                 transform: translateX(0px);
-                opacity: 0.125 !important;
+                opacity: 0.5 !important;
                 img {
                     transition: 1s;
                     transition-delay: 1.75s !important;

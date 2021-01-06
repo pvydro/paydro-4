@@ -1,4 +1,23 @@
+.proj-header-page {
+    height: 30vh;
+    .proj-header-image {
+        img {
+            filter: blur(0px);
+            top: auto;
+            bottom: -27.5%;
+            transform: translateX(-50%);
+            opacity: 0.9;
+        }
+    }
+}
+
 .summary-content {
+    .summary-photo {
+        img {
+            filter: grayscale(10%);
+            opacity: 0.8;
+        }
+    }
     .summary-paragraph {
         p {
             font-size: 18px;
@@ -18,12 +37,6 @@
     height: 30px !important;
     flex-direction: column;
     justify-content: center;
-}
-
-.proj-header-image {
-    img {
-        filter: blur(4px);
-    }
 }
 
 @media (orientation: portrait) {

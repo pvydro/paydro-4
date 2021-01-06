@@ -1,0 +1,214 @@
+#similar-projects {
+    margin-top: 96px;
+
+    .similar-project-title {
+        font-family: 'Raleway', sans-serif;
+        width: 50%;
+        display: flex;
+        transition: 0.5s;
+        transition-timing-function: $lightsnapandeaseout;
+        flex-direction: column;
+        align-self: flex-end;
+        font-size: 32px;
+        padding: 0px $defaultpaddingportrait;
+        opacity: 0.7;
+        // border: 3px dashed red;
+        .similar-project-subtitle {
+            font-family: 'Inconsolata', sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+            opacity: 0.3;
+        }
+    }
+
+    .similar-project-image {
+        position: relative;
+        max-width: 50%;
+        width: 70%;
+        height: 100%;
+        align-items: safe center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 0.25s;
+        opacity: 0.9;
+        filter: brightness(60%) grayscale(50%);
+        img {
+            width: 100%;
+            min-height: 100%;
+            height: auto;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 4px;
+            width: 125%;
+            background-color: white;
+            transition: 0.5s;
+            transition-delay: 0.25s;
+            transition-timing-function: $lightsnapandeaseout;
+            filter: brightness(50%);
+        }
+        &:nth-child(2) {
+            &::after {
+                left: auto;
+                right: 0px;
+            }
+        }
+    }
+
+    &.animated {
+        .similar-projects-grid {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+        .similar-projects-header {
+            margin-left: 0px;
+            opacity: 1;
+        }
+    }
+    .similar-projects-header {
+        transition: 0.5s;
+        transition-delay:x 0.5s;
+        margin-left: 42px;
+        opacity: 0;
+        h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 28px;
+            font-weight: 300;
+            opacity: 0.4;
+        }
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 0px;
+            height: 2px;
+            width: 20%;
+            background-color: white;
+            opacity: 0.25;
+        }
+    }
+    .similar-projects-grid {
+        margin-top: 64px;
+        position: relative;
+        width: 100%;
+        opacity: 0;
+        transition: 0.5s;
+        transition-delay: 1s;
+        transform: translateY(42px);
+        .row {
+            position: relative;
+            display: flex;
+            width: 100%;
+            .cell {
+                $indicatorSpacing: 20px;
+                $margin: 24px;
+                position: relative;
+                width: 50%;
+                height: 196px;
+                display: flex;
+                flex-direction: row;
+                overflow: hidden;
+                pointer-events: all;
+                &:nth-child(1) {
+                    &::after {
+                        left: calc(100% - #{$indicatorSpacing});
+                        transform: translate(-100%, -50%);
+                        // right: 0px;
+                    }
+                }
+                &:nth-child(2) {
+                    text-align: right;
+                    &::before {
+                        left: auto;
+                        right: 0px;
+                    }
+                }
+                &::before {
+                    content: '';
+                    background-color: black;
+                    position: absolute;
+                    width: 75%;//calc(100% - #{$indicatorSpacing});
+                    height: 80%;
+                    left: 0px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    opacity: 0.1;
+                    transition: 0.5s;
+                    z-index: -1;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: $indicatorSpacing;
+                    transform: translate(-50%, -50%);
+                    transition: 0.25s;
+                    transition-timing-function: $lightsnapandeaseout;
+                    height: 60%;
+                    width: 2px;
+                    background-color: white;
+                    filter: brightness(50%);
+                }
+                &:hover {
+                    cursor: pointer;
+                    * {
+                        cursor: pointer !important;
+                    }
+                    &::before {
+                        opacity: 0.2;
+                    }
+                    &::after {
+                        height: 70%;
+                        width: 4px;
+                        filter: brightness(80%);
+                    }
+                    .similar-project-image {
+                        position: relative;
+                        transition: 0.5s;
+                        opacity: 1;
+                        filter: brightness(100%) grayscale(0%);
+                        img {
+                            transition: 0.75s;
+                            transition-delay: 0.5s;
+                        }
+                        &::after {
+                            transition-delay: 0.125s;
+                            width: 135%;
+                            filter: brightness(80%);
+                        }
+                    }
+                    .similar-project-title {
+                        padding: 0px 16px;
+                        opacity: 1;
+                        .similar-project-subtitle {
+                            opacity: 0.4;
+                        }
+                    }
+                    &::before {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    #similar-projects {
+        .similar-projects-grid {
+            .row {
+                flex-direction: column;
+                width: 100%;
+                .cell {
+                    width: 100%;
+                    margin-top: 42px;
+                }
+            }
+        }
+    }
+}

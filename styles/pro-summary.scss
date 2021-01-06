@@ -23,7 +23,7 @@
             min-height: 100%;
             transform: translate(-50%, -50%);
             transition: 0.5s;
-            opacity: 0.25;
+            opacity: 0.8;
 
             mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0,0,0,0.5)), color-stop(20%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
             -webkit-mask-image: -webkit-gradient(linear, right top, left top, color-stop(0%, rgba(0,0,0,0.5)), color-stop(20%, rgba(0,0,0,1)), color-stop(100%, rgba(0,0,0,1)));
@@ -45,7 +45,7 @@
         }
         &:hover {
             .mockup-image {
-                opacity: 0.4;
+                opacity: 1;
             }
             .mockup-logo {
                 bottom: 24px;
