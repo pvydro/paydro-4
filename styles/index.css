@@ -2281,7 +2281,7 @@
   background-position: center;
   transition: 0.25s;
   opacity: 0.9;
-  filter: brightness(60%) grayscale(50%);
+  filter: brightness(80%) grayscale(20%);
 }
 #similar-projects .similar-project-image img {
   width: 100%;
@@ -3316,7 +3316,7 @@
 
 @media (orientation: portrait) {
   #project-dropper .project-dropper-header {
-    top: 0px;
+    top: -112px;
     right: auto;
     left: 20px;
   }
@@ -3328,8 +3328,9 @@
     width: 100vw;
   }
   #project-dropper .project-dropper-col .project-dropper-cell {
-    margin-bottom: calc(480px / 2);
-    margin-top: calc(480px / 2);
+    height: 256px;
+    margin-bottom: calc(256px * 3);
+    margin-top: calc(256px * 1.5);
   }
   #project-dropper .project-dropper-col .project-dropper-cell .cell-logo {
     opacity: 0.25;

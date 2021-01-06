@@ -2,6 +2,7 @@
 @import './animations.scss';
 
 $pjd-cell-height: 480px;
+$pjd-cell-height-portrait: 256px;
 $midlinecol: #4f4f4f;
 $cell-logo-distance: 7.5vw;
 
@@ -227,7 +228,7 @@ $cell-logo-distance: 7.5vw;
 @media (orientation: portrait) {
     #project-dropper {
         .project-dropper-header {
-            top: 0px;
+            top: -112px;
             right: auto;
             left: $defaultpaddingportrait;
             h1 {
@@ -238,8 +239,9 @@ $cell-logo-distance: 7.5vw;
         .project-dropper-col {
             width: 100vw;
             .project-dropper-cell {
-                margin-bottom: calc(#{ $pjd-cell-height } / 2);
-                margin-top: calc(#{ $pjd-cell-height } / 2);
+                height: $pjd-cell-height-portrait;
+                margin-bottom: calc(#{ $pjd-cell-height-portrait } * 3);
+                margin-top: calc(#{ $pjd-cell-height-portrait } * 1.5);
                 .cell-logo {
                     opacity: 0.25;
                     left: auto;
