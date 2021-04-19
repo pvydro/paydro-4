@@ -1,10 +1,6 @@
 @import '../../styles/vars.scss';
 @import '../../styles/play-ad.scss';
 
-:root {
-    randomRoto: 180deg;
-}
-
 .proj-header-page {
     z-index: 5;
     .proj-header {
@@ -16,7 +12,7 @@
     }
     .proj-header-image {
         img {
-            opacity: 0.5;
+            opacity: 1;
         }
     }
 }
@@ -231,12 +227,16 @@
         transition: 2s;
         transform: rotate(0deg);
     }
+
+    .player-bg {
+        height: 700px;
+    }
 }
 
 .playable-ad-row {
     .playable-ad:nth-child(2) {
-        // filter: brightness(0.5) grayscale(70%);
-        opacity: 0.5;
+        filter: brightness(90%) grayscale(10%);
+        opacity: 0.8;
         right: 86px;//196px;
         transform: translateX(-100%) scale(0.9);
         z-index: 4;

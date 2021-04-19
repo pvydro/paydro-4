@@ -74,8 +74,7 @@
     filter: brightness(0.8) grayscale(20%);
     z-index: 3;
     .player-bg {
-        // height: 700px;
-        height: 75vh;
+        height: 700px;
         img {
             height: 100%;
             width: auto;
@@ -84,9 +83,6 @@
     .ad-iframe {
         pointer-events: all;
         position: absolute;
-        // height: 530px;
-        height: 56.75vh;
-        width: 32.25vh;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

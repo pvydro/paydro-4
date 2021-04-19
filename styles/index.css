@@ -1459,7 +1459,7 @@
   content: "";
   pointer-events: none;
   position: absolute;
-  background-color: #646464;
+  background-color: white;
   width: 40%;
   height: 2px;
 }
@@ -1468,6 +1468,7 @@
   left: 0px;
   top: 0px;
   z-index: -99;
+  background-color: #646464;
   mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, black), color-stop(30%, black), color-stop(100%, rgba(0, 0, 0, 0)));
   -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0%, black), color-stop(30%, black), color-stop(100%, rgba(0, 0, 0, 0)));
 }

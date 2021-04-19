@@ -83,11 +83,11 @@
   transform: rotate(2deg);
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.55, -0.01, 0.41, 1);
-  filter: brightness(0.5) grayscale(50%);
+  filter: brightness(0.8) grayscale(20%);
   z-index: 3;
 }
 .playable-ad .player-bg {
-  height: 75vh;
+  height: 700px;
 }
 .playable-ad .player-bg img {
   height: 100%;
@@ -96,8 +96,6 @@
 .playable-ad .ad-iframe {
   pointer-events: all;
   position: absolute;
-  height: 56.75vh;
-  width: 32.25vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -110,10 +108,6 @@
   transform: rotate(1.5deg);
 }
 
-:root {
-  randomRoto: 180deg;
-}
-
 .proj-header-page {
   z-index: 5;
 }
@@ -123,7 +117,7 @@
   border-bottom-left-radius: 40%;
 }
 .proj-header-page .proj-header-image img {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .proj-summary-page {
@@ -161,7 +155,7 @@
   left: 0px;
   width: 100%;
   height: 100%;
-  box-shadow: inset -10px 10px 40px 20px rgba(23, 23, 23, 0.5);
+  box-shadow: inset -10px 10px 40px 20px rgba(18, 18, 18, 0.5);
 }
 .proj-summary-page .summary-image {
   position: relative;
@@ -189,7 +183,7 @@
 }
 .proj-summary-page .summary-decor:hover {
   margin-left: -40px;
-  filter: drop-shadow(-8px 0px 0px rgba(23, 23, 23, 0.5));
+  filter: drop-shadow(-8px 0px 0px rgba(18, 18, 18, 0.5));
 }
 .proj-summary-page .summary-decor:hover img {
   filter: brightness(95%) grayscale(0%) drop-shadow(-10px -10px 10px rgba(0, 0, 0, 0.15));
@@ -239,7 +233,7 @@
   filter: blur(30px);
 }
 .proj-summary-page .summary-content::after {
-  background-color: #171717;
+  background-color: #121212;
   transform: translateY(-50%);
   width: 100%;
   height: 130%;
@@ -255,7 +249,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-2deg);
-  background-color: #171717;
+  background-color: #121212;
   width: 120vw;
   height: 60%;
   z-index: -3;
@@ -316,9 +310,13 @@
   transition: 2s;
   transform: rotate(0deg);
 }
+.playable-ad .player-bg {
+  height: 700px;
+}
 
 .playable-ad-row .playable-ad:nth-child(2) {
-  opacity: 0.5;
+  filter: brightness(90%) grayscale(10%);
+  opacity: 0.8;
   right: 86px;
   transform: translateX(-100%) scale(0.9);
   z-index: 4;

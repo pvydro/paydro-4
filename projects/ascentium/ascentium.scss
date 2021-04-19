@@ -13,6 +13,11 @@
             width: auto;
         }
     }
+    .proj-header-image {
+        img {
+            opacity: 1;
+        }
+    }
 }
 
 .summary-content {
@@ -58,7 +63,8 @@
             height: 100%;
             width: auto;
             transition: 2s;
-            opacity: 0.4;
+            opacity: 0.9;
+            filter: brightness(70%);
         }
         &:hover {
             cursor: pointer;
@@ -66,7 +72,8 @@
             transform: translateY(-50%) skew(0.5deg, -0.5deg);
             transition-timing-function: $lightsnapandeaseout;
             img {
-                opacity: 0.85;
+                opacity: 1;
+                filter: brightness(100%);
             }
         }
         &:active {
@@ -154,9 +161,9 @@
             border-top-left-radius: 15px;
             border-bottom-right-radius: 15px;
             transition: 1.5s;
-            filter: brightness(50%) grayscale(70%);
+            filter: brightness(70%) grayscale(40%);
             &:hover {
-                filter: brightness(100%) grayscale(20%);
+                filter: brightness(100%) grayscale(00%);
             }
         }
         &::after, &::before {
@@ -240,7 +247,7 @@
             img {
                 width: 100%;
                 height: auto;
-                filter: brightness(80%) grayscale(50%);
+                filter: brightness(90%) grayscale(20%);
             }
         }
         .responsiveness-description {
