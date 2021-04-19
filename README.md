@@ -1,5 +1,5 @@
 # paydro-4
-[2020] Paydro updated portfolio site - www.paydro.dev
+[2020] Paydro updated portfolio site in pure HTML5 with SCSS - www.paydro.dev
 
 # Run
 
